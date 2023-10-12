@@ -1,0 +1,39 @@
+name: JavaScript CodeQL Analysis
+
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch name
+
+jobs:
+  codeql:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      id: setup-node
+      run: |
+        # Get the Node.js version from .nvmrc
+        NODE_VERSION=$(cat .nvmrc)
+        # Use Node.js Setup action to set the specified version
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+        nvm install $NODE_VERSION
+        nvm use $NODE_VERSION
+        node --version
+      shell: bash
+
+    - name: Set up CodeQL for JavaScript
+      uses: github/codeql-action/setup@v1
+      with:
+        languages: javascript
+
+    - name: Run CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
+
+    - name: Upload CodeQL results
+      uses: github/codeql-action/upload-sarif@v1
