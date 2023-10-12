@@ -33,7 +33,7 @@
 About the project
 -----------------
 
-Don't want to set up repository, work with those boring documentations, scripts and want to work as fast as possible on your project, but also have a wish for your project to be great in extensibility and automation?
+Don't want to set up repository, work with those boring documentations, scripts and want to work as fast as possible on your project, but also have a wish for your project to be great in extensibility and automation?[^1]
 
 Project of this is the exact problem solution for you, the big and advanced repository with some documentations, scripts, settings, configs, simple things with simple solutions.
 
@@ -98,9 +98,6 @@ Guidelines for installation of source code of this project:
 
 <!-- USAGE:
  -->
-
-Usage
------
 
 Usage
 -----
