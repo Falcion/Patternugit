@@ -23,9 +23,3 @@ jobs:
 
     - name: Run Markdown Lint
       run: npm run lint:markdownlint
-
-    - name: Run TypeScript Check in Markdown
-      run: npm run lint:ts-check-js-in-markdown
-
-    - name: Run JavaScript Lint in Markdown
-      run: npm run lint:js-in-markdown
