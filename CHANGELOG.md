@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/mokkapps/changelog-generator-demo/compare/v0.1.0...v0.2.0) (2023-10-21)
+
+
+### Build system
+
+* **deps-dev:** bump @types/node from 20.8.4 to 20.8.6 ([7f41e89](https://github.com/mokkapps/changelog-generator-demo/commits/7f41e8978444a47747963e4330f74a424a306116))
+* **deps-dev:** bump lint-staged from 14.0.1 to 15.0.1 ([516d9e6](https://github.com/mokkapps/changelog-generator-demo/commits/516d9e60a60b2ca150c18bc83976b586e7721b02))
+* **deps:** bump tough-cookie and lint ([6ccf53a](https://github.com/mokkapps/changelog-generator-demo/commits/6ccf53a7b070b540201a908be18b6dfbc92df940))
+
+
+### Common
+
+* **code:** append the functionality of project ([23e4deb](https://github.com/mokkapps/changelog-generator-demo/commits/23e4debb3de2c4a266b3a4d2a5d0ed5f1422db24))
+
 ## 0.1.0 (2023-10-12)
 
 
