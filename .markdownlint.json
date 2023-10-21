@@ -1,3 +1,4 @@
 {
-    "extends": "@electron/lint-roller/configs/markdownlint.json"
+    "extends": "@electron/lint-roller/configs/markdownlint.json",
+    "excludedFiles": ["**/*.ts", "**/*.js"]
 }

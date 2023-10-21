@@ -10,8 +10,7 @@
   "scripts": {
     "preinit": "npm i --force",
     "preinit:main": "tsc  main.ts -m commonjs",
-    "run:init": "tsc main.ts -m commonjs && node support.cjs && node main.cjs",
-    "run:postinit": "node main.cjs",
+    ".": "node support.cjs && tsc main.ts -m commonjs && node support.cjs && node main.cjs",
     "generate-version-json": "node script/generate-version-json.js",
     "lint": "node ./script/lint.js && npm run lint:docs",
     "lint:js": "node ./script/lint.js --js",
@@ -104,14 +103,13 @@
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-markdownlint": "^0.5.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-standard": "^5.0.0",
     "folder-hash": "^4.0.4",
     "fs-extra": "^11.1.1",
     "husky": "^8.0.3",
     "lint": "^1.1.2",
     "lint-staged": "^15.0.1",
     "markdownlint": "^0.31.1",
-    "markdownlint-cli": "^0.37.0",
+    "markdownlint-cli2": "^0.10.0",
     "minimist": "^1.2.8",
     "prettier": "^3.0.3",
     "remark": "^15.0.1",
@@ -120,8 +118,11 @@
     "ts-loader": "^9.5.0",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.2.2",
+    "typescript": "^4.9.5",
     "unicorn": "^0.0.1",
     "url": "^0.11.3"
+  },
+  "dependencies": {
+    "@npmcli/package-json": "^5.0.0"
   }
 }

@@ -1,15 +1,20 @@
 import * as fs from 'fs-extra';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
-import * as readline from 'node:readline';
+import * as readline from 'readline';
 
 const ROOT_DIRECTORY = __dirname;
 
 const EXCLUDING_DIRECTORIES = ['node_modules', 'venv', '.git', 'out'];
 
-const TARGET_VALUES = ['FALCION', 'PATTERNUGIT'];
+let TARGET_VALUES = ['FALCION', 'PATTERNUGIT'];
 
 (async () => {
+  const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+  });
+
   const search_data = async (path: string, search_data: string[]) => {
     const content = (await fs.readFile(path, 'utf-8')).split('\n');
 
@@ -57,8 +62,6 @@ const TARGET_VALUES = ['FALCION', 'PATTERNUGIT'];
     await fs.writeFile('manifest.json', JSON.stringify(manifestJSON, null, 4));
   };
 
-  traverse_dir(ROOT_DIRECTORY);
-
   if(!await fs.pathExists(ROOT_DIRECTORY + '/.env')) {
     await fs.createFile('.env');
     await fs.writeFile('.env', 'EXAMPLE_API_KEY=');
@@ -79,7 +82,7 @@ const TARGET_VALUES = ['FALCION', 'PATTERNUGIT'];
 
   const manifestAsJSON = JSON.parse(fs.readFileSync('manifest.json', { encoding: 'utf-8'}));
 
-  let checkingRes = packageJSON.id === manifestAsJSON.id && packageJSON.name === manifestAsJSON.name
+  const checkingRes = packageJSON.id === manifestAsJSON.id && packageJSON.name === manifestAsJSON.name
                   && packageJSON.description === manifestAsJSON.description && packageJSON.author === manifestAsJSON.author
                   && packageJSON.license === manifestAsJSON.license && packageJSON.version === manifestAsJSON.version;
 
@@ -89,4 +92,25 @@ const TARGET_VALUES = ['FALCION', 'PATTERNUGIT'];
   await fs.copyFile('manifest.json', 'manifest-backup.json');
 
   await write_manifest(packageJSON);
+
+  rl.question('Do you want to change the finding signature for the script? (y/n): ', (answ1) => {
+    if(answ1 == 'y')
+      rl.question('What words you need to find? (separated by comma): ', (answ2) => {
+        let res = answ2.split(',');
+
+        res.forEach(element => {
+          if(res[0] == ' ')
+            res[0]= res[0].slice(1);
+        });
+
+        TARGET_VALUES = res;
+
+        traverse_dir(ROOT_DIRECTORY);
+        rl.close();
+      });
+    else {
+      traverse_dir(ROOT_DIRECTORY);
+      rl.close();
+    }
+  });
 })();

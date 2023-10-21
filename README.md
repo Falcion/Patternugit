@@ -104,9 +104,8 @@ Usage
 
 Usage of this project is very easy and comfortable for common user, its not provided with any advanced code or anything, it just the "data" which user must interpretate as it wants.
 
-1. Go to your vault's settings and seek for "community plugins" sector, if you have restricted mode, repeat first and second steps of official installation guide[^2];
-2. If you have installed plugin and app saw it, you can see element named "UNITADE": open it and seek for setting named “extensions” and type an array of extensions, separated by comma;
-3. Now, you can edit extensions which you typed in settings.
+1. Go to your project's directory and paste the contents of this template, which were installed with help of installation guides[^2];
+2. Now, you can continue to work on your project with this template's data in it.
 
 > Before preparing to work on the projects that you prepared, initialize entire repository via initialize and prepare commandlets of NPM (through either bash or powershell):
 
@@ -116,7 +115,7 @@ Usage of this project is very easy and comfortable for common user, its not prov
 # Installing every dependency for package:
 npm i
 # Using prepare script for this repository:
-npm prepare
+npm run prepare
 ```
 
 <!-- ROADMAP:
@@ -127,7 +126,9 @@ Roadmap
 - [x] Create primary documentations for project directive;
 - [x] Create scripts and workflows for the project;
 - [x] Write every README for specified purposes (in specified paths);
-- [x] Finalize the project; 
+- [x] Finalize the project and make the first publish version;
+- [x] Make the fixes for the repository;
+- [x] Finalize the project's main .TS script. 
 
 <!-- CONTRIBUTING: 
  -->

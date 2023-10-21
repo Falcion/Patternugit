@@ -35,18 +35,23 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var fs = require("fs-extra");
 var path = require("path");
 var dotenv = require("dotenv");
+var readline = require("readline");
 var ROOT_DIRECTORY = __dirname;
 var EXCLUDING_DIRECTORIES = ['node_modules', 'venv', '.git', 'out'];
 var TARGET_VALUES = ['FALCION', 'PATTERNUGIT'];
 (function () { return __awaiter(void 0, void 0, void 0, function () {
-    var search_data, traverse_dir, packageJSON, manifestJSON;
+    var rl, search_data, traverse_dir, write_manifest, packageJSON, manifestAsJSON, checkingRes;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
+                rl = readline.createInterface({
+                    input: process.stdin,
+                    output: process.stdout
+                });
                 search_data = function (path, search_data) { return __awaiter(void 0, void 0, void 0, function () {
                     var content, i, line, _i, search_data_1, searching_string;
                     return __generator(this, function (_a) {
@@ -109,7 +114,27 @@ var TARGET_VALUES = ['FALCION', 'PATTERNUGIT'];
                         }
                     });
                 }); };
-                traverse_dir(ROOT_DIRECTORY);
+                write_manifest = function (packageJSON) { return __awaiter(void 0, void 0, void 0, function () {
+                    var manifestJSON;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                manifestJSON = {
+                                    id: packageJSON.name,
+                                    name: "".concat(packageJSON.name[0].toUpperCase()).concat(packageJSON.name.slice(1, packageJSON.name.length)),
+                                    description: packageJSON.description,
+                                    author: packageJSON.author,
+                                    license: packageJSON.license,
+                                    version: packageJSON.version,
+                                    authorUrl: '-'
+                                };
+                                return [4 /*yield*/, fs.writeFile('manifest.json', JSON.stringify(manifestJSON, null, 4))];
+                            case 1:
+                                _a.sent();
+                                return [2 /*return*/];
+                        }
+                    });
+                }); };
                 return [4 /*yield*/, fs.pathExists(ROOT_DIRECTORY + '/.env')];
             case 1:
                 if (!!(_a.sent())) return [3 /*break*/, 4];
@@ -125,27 +150,48 @@ var TARGET_VALUES = ['FALCION', 'PATTERNUGIT'];
                     path: './.env',
                     encoding: 'utf-8'
                 });
+                packageJSON = JSON.parse(fs.readFileSync('package.json', { encoding: 'utf-8' }));
                 return [4 /*yield*/, fs.pathExists(ROOT_DIRECTORY + '/manifest.json')];
             case 5:
                 if (!!(_a.sent())) return [3 /*break*/, 8];
                 return [4 /*yield*/, fs.createFile('manifest.json')];
             case 6:
                 _a.sent();
-                packageJSON = JSON.parse(fs.readFileSync('package.json', { encoding: 'utf-8' }));
-                manifestJSON = {
-                    id: packageJSON.name,
-                    name: "".concat(packageJSON.name[0].toUpperCase()).concat(packageJSON.name.slice(1, packageJSON.name.length)),
-                    description: packageJSON.description,
-                    author: packageJSON.author,
-                    license: packageJSON.license,
-                    version: packageJSON.version,
-                    authorUrl: '-'
-                };
-                return [4 /*yield*/, fs.writeFile('manifest.json', JSON.stringify(manifestJSON, null, 4))];
+                return [4 /*yield*/, write_manifest(packageJSON)];
             case 7:
                 _a.sent();
                 _a.label = 8;
-            case 8: return [2 /*return*/];
+            case 8:
+                manifestAsJSON = JSON.parse(fs.readFileSync('manifest.json', { encoding: 'utf-8' }));
+                checkingRes = packageJSON.id === manifestAsJSON.id && packageJSON.name === manifestAsJSON.name
+                    && packageJSON.description === manifestAsJSON.description && packageJSON.author === manifestAsJSON.author
+                    && packageJSON.license === manifestAsJSON.license && packageJSON.version === manifestAsJSON.version;
+                if (!checkingRes)
+                    console.error('There is desync in Manifest JSON and Package JSON! Causing override to manifest.json, but backuping at manifest-copy.json');
+                return [4 /*yield*/, fs.copyFile('manifest.json', 'manifest-backup.json')];
+            case 9:
+                _a.sent();
+                return [4 /*yield*/, write_manifest(packageJSON)];
+            case 10:
+                _a.sent();
+                rl.question('Do you want to change the finding signature for the script? (y/n): ', function (answ1) {
+                    if (answ1 == 'y')
+                        rl.question('What words you need to find? (separated by comma): ', function (answ2) {
+                            var res = answ2.split(',');
+                            res.forEach(function (element) {
+                                if (res[0] == ' ')
+                                    res[0] = res[0].slice(1);
+                            });
+                            TARGET_VALUES = res;
+                            traverse_dir(ROOT_DIRECTORY);
+                            rl.close();
+                        });
+                    else {
+                        traverse_dir(ROOT_DIRECTORY);
+                        rl.close();
+                    }
+                });
+                return [2 /*return*/];
         }
     });
 }); })();
