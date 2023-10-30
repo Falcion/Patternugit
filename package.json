@@ -88,6 +88,8 @@
     }
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.2.0",
+    "@commitlint/config-conventional": "^18.1.0",
     "@electron/lint-roller": "^1.9.0",
     "@types/fs-extra": "^11.0.2",
     "@types/minimist": "^1.2.3",

@@ -7,7 +7,7 @@ const ROOT_DIRECTORY = __dirname;
 
 const EXCLUDING_DIRECTORIES = ['node_modules', 'venv', '.git', 'out'];
 
-let TARGET_VALUES = ['FALCION', 'PATTERNUGIT'];
+let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
 
 (async () => {
   const rl = readline.createInterface({

@@ -42,7 +42,7 @@ var dotenv = require("dotenv");
 var readline = require("readline");
 var ROOT_DIRECTORY = __dirname;
 var EXCLUDING_DIRECTORIES = ['node_modules', 'venv', '.git', 'out'];
-var TARGET_VALUES = ['FALCION', 'PATTERNUGIT'];
+var TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
 (function () { return __awaiter(void 0, void 0, void 0, function () {
     var rl, search_data, traverse_dir, write_manifest, packageJSON, manifestAsJSON, checkingRes;
     return __generator(this, function (_a) {
