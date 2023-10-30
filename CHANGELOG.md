@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/mokkapps/changelog-generator-demo/compare/v0.2.0...v0.2.1) (2023-10-30)
+
+
+### Features
+
+* **issues:** add universal issue template in .MD ([1f2295a](https://github.com/mokkapps/changelog-generator-demo/commits/1f2295a523d21b7937db03df26da85680342770e))
+* **patcher:** add special git patcher for branches ([c0dc4e4](https://github.com/mokkapps/changelog-generator-demo/commits/c0dc4e4c03db7bb0a60acf049edcc175722fa68d))
+
+
+### Common
+
+* **corecode:** refactor the main entrance file and it's around ([0a3e72f](https://github.com/mokkapps/changelog-generator-demo/commits/0a3e72f44a658b5d302ffcb7dd5c9de6c784dc88))
+* **docs:** delete unused legal files ([4aa2802](https://github.com/mokkapps/changelog-generator-demo/commits/4aa2802a37e5648baaea797a88496c2f0331cec4))
+* **docs:** macroupdate for README and GIT specials ([f662019](https://github.com/mokkapps/changelog-generator-demo/commits/f6620191e377e3606a0f19628aa5fcb63d8f6784))
+
+
+### Fixes
+
+* **docs:** replaced special reference to stale project ([86d419e](https://github.com/mokkapps/changelog-generator-demo/commits/86d419e0e2ab78c62cb2dbd3ab648c44a41d0f76))
+* **workflow:** fix automerging workflow for not seeking right token ([e0ac9fc](https://github.com/mokkapps/changelog-generator-demo/commits/e0ac9fc987bbf36e657b3876b2275e15654caad7))
+
 ## [0.2.0](https://github.com/mokkapps/changelog-generator-demo/compare/v0.1.0...v0.2.0) (2023-10-21)
 
 
