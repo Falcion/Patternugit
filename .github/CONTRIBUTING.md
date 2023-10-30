@@ -3,7 +3,7 @@ Before you jump into contributing code, documentation, bug reports, or any other
 This document outlines our expectations for contributors and offers information on how to get started, what to work on, and how to interact with the community, please take a moment to familiarize yourself with these guidelines to help team maintain a positive and productive atmosphere for all.
 
 - Before making any contributions or reading this document, make yourself familliar with code of conduct of this project:\
-[“Code-doc” of UNITADE's community](./CODE_OF_CONDUCT.md)
+[“Code-doc” of PATTERNU's community](./CODE_OF_CONDUCT.md)
 
 Contribution guidelines
 =======================
