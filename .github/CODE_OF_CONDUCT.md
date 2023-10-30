@@ -1,8 +1,8 @@
-At UNITADE, project's maintainers are commited to creating an inclusive and respectful environment for all members, participants, and contributors: it is believed, that a strong and welcoming community is essential to fostering collaboration, innovation, and growth.
+At PATTERNU, project's maintainers are commited to creating an inclusive and respectful environment for all members, participants, and contributors: it is believed, that a strong and welcoming community is essential to fostering collaboration, innovation, and growth.
 
 To uphold these values and ensure that everyone feels safe and respected, we have developed this code of conduct (thereafter as “code-doc” or “document”): this document outlines the standards of behavior and expectations we uphold within our community, it serves as a guide for all individuals, regardless of their role or level of involvement, to understand the principles we hold dear and the conduct we expect from one another.
 
-Project's maintainers invite you to familiarize yourself with this code-doc and embrace its principles as you engage with our community, by doing so, you contribute to making UNITADE's community a place where diverse perspectives are valued, ideas are freely exchanged, and where we can collectively thrive.
+Project's maintainers invite you to familiarize yourself with this code-doc and embrace its principles as you engage with our community, by doing so, you contribute to making PATTERNU's community a place where diverse perspectives are valued, ideas are freely exchanged, and where we can collectively thrive.
 
 Code-doc of this, aims to foster an open, innovative, and inclusive community around open source, all participants of this project are expected to abide by this code of conduct, both online and during in-person events associated with this repository either organization or project, to clarify expected behaviour in the community, this document was adopted/created/inspired with:
 

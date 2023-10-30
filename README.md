@@ -33,7 +33,7 @@
 About the project
 -----------------
 
-Don't want to set up repository, work with those boring documentations, scripts and want to work as fast as possible on your project, but also have a wish for your project to be great in extensibility and automation?[^1]
+Don't want to set up repository, work with those boring documentations, scripts and want to work as fast as possible on your project, but also have a wish[^1] for your project to be great in extensibility and automation?
 
 Project of this is the exact problem solution for you, the big and advanced repository with some documentations, scripts, settings, configs, simple things with simple solutions.
 
@@ -154,7 +154,7 @@ More about it in this article:
 License
 -------
 
-Project thanks the [Electron.js](https://github.com/electron/electron/) for their amazing repository scripts and entire infrastructure, which partially were imported to this repository. 
+Project thanks the [Electron.js](https://github.com/electron/electron/) and [Angular.js](https://github.com/angular/angular/) for their amazing repository scripts and entire infrastructure, which partially were imported to this repository. 
 
 Project itself is being distributed under the [MIT License](https://choosealicense.com/licenses/mit/) — see the file for more specified information.
 

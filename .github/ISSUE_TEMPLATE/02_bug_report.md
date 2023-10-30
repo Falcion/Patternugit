@@ -1,5 +1,5 @@
 ---
-name: Bug report
+name: Bug report (in .MD)
 about: A more conservative way to create a bug report to help to improve the project
 title: '[BUG]: '
 labels: Bug
@@ -21,13 +21,13 @@ Body of the issue below:
 
 <!-- A concise description of what you're experiencing. -->
 
-...
+...how does the project behave in your case?
 
 ##### Behaviour of the expected case:
 
 <!-- A concise description of what you expected to happen. -->
 
-...
+...how was project expected to behave?
 
 ##### A guideline to reproduce:
 
