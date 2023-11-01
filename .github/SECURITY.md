@@ -1,8 +1,8 @@
-At UNITADE, project takes the security of its code, data, and the broader community seriously, this security policy (thereafter as “policy”) outlines the measures and expectations we have in place to safeguard our repository and its users from potential security threats.
+At PATTERNU, project takes the security of its code, data, and the broader community seriously, this security policy (thereafter as “policy”) outlines the measures and expectations we have in place to safeguard our repository and its users from potential security threats.
 
 Project's commitment to security encompasses not only the codebase itself but also the interactions, discussions, and contributions that occur within this repository, it is believe that a collective effort towards security enhances the overall experience for everyone involved.
 
-Policy is intended to provide clear guidelines and procedures for addressing security-related issues, reporting vulnerabilities, and maintaining a safe and productive environment for all contributors and users, UNITADE wants to encourage you to read and adhere to these guidelines as you engage with this repository.
+Policy is intended to provide clear guidelines and procedures for addressing security-related issues, reporting vulnerabilities, and maintaining a safe and productive environment for all contributors and users, PATTERNU wants to encourage you to read and adhere to these guidelines as you engage with this repository.
 
 By working together to prioritize security, we can maintain the integrity of our codebase and protect the interests of our community.
 
@@ -19,7 +19,7 @@ If you prefer to submit the report without logging in, you can send an email to 
 
 - <a href="mailto: io.falcion@outlook.com">E-mail MAILTO</a>
 
-> Please, refrain from reporting security vulnerabilities through public GitHub issues or pull requests.
+> Please, refrain from reporting security vulnerabilities through public github's issues or pull requests.
 
 When reporting a security vulnerability, please include the following information (as much as you can provide) to help us better understand the nature and scope of the issue:
 
@@ -42,9 +42,12 @@ Another option is to use a private service that will also report the vulnerabili
 
 By adhering to “CDV”, researchers allow the vendor the opportunity to diagnose and provide fully tested updates, workarounds, or other corrective measures before any party discloses detailed vulnerability or exploit information to the public, throughout the vulnerability investigation, the vendor maintains coordination with the researcher and provides updates on the progress of the case.
 
-Any security-issue NOT related to this plugin directly, but to the Obsidian™ app itself, contact the developers of the app, not the team of this project:
+<!-- 
+ Write here reference to security and support for media you are creating project, example:
+ Any security-issue NOT related to this plugin directly, but to the Obsidian™ app itself, contact the developers of the app, not the team of this project:
 
 - https://help.obsidian.md/help+and+support/
+ -->
 
 Once an update is released, the vendor may recognize the researcher for their research and privately reporting the issue, in cases where attacks are already underway in the wild, and the vendor is still working on the update, the researcher and vendor collaborate as closely as possible to provide early public vulnerability disclosure to protect customers: the objective is to offer timely and consistent guidance to customers in order to help them protect themselves.
 

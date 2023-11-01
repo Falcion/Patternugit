@@ -12,5 +12,5 @@ module.exports = {
       "no-case-declarations": "off",
       "@typescript-eslint/no-var-requires": "off"
     },
-    "ignorePatterns": [".eslintrc.cjs", "**/database/**/*.js", "**/database/**/*.ts", "*.js"]
+    "ignorePatterns": [".eslintrc.cjs", "**/database/**/*.js", "**/database/**/*.ts", "*.cjs", "main.ts"],
 };

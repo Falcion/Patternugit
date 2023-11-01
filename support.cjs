@@ -1,4 +1,5 @@
 const fs = require('fs-extra');
+const path = require('node:path');
 
 const ROOT_DIRECTORY = __dirname;
 
