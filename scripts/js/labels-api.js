@@ -12,7 +12,10 @@
 
   var reposlug;
   try {
-    window.location.hostname.indexOf("github.com") != -1 && (reposlug = window.location.pathname.match(/([^\/]+\/[^\/]+)\/labels/i)[1].toLowerCase().replace(/\//ig, "__"));
+    // Incomplete URL substring sanitization
+    // window.location.hostname.indexOf("github.com")
+    // ->
+    window.location.hostname.indexOf("https://github.com") != -1 && (reposlug = window.location.pathname.match(/([^\/]+\/[^\/]+)\/labels/i)[1].toLowerCase().replace(/\//ig, "__"));
   } catch(e) { }
   if (!reposlug) {
      throw "It seems that you are not in a github.com repo labels page: " + window.location;
