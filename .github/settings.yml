@@ -137,6 +137,8 @@ labels:
     color: '#b160a1'
   - name: security/data
     color: '#b160a1'
+  - name: security/leak
+    color: '#b160a1'
   - name: no-backport
     color: '#05263e'
   - name: performance 🏁
@@ -194,6 +196,7 @@ labels:
 # Milestones: define milestones for Issues and Pull Requests
 milestones:
   - title: Public release of project
+    description: "A preparations and milestone, including everything to prepare for one final release to publish project as ready-to-use without any bugs, leaks, security problems and etc., doesn't mean that project won't be updated and etc."
     state: open
   #- title: milestone-title
     #description: milestone-description
