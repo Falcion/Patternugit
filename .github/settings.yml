@@ -7,10 +7,10 @@ repository:
   name: PatternuGIT
 
   # A short description of the repository that will show up on GitHub
-  description: A special pattern for Github™ repository with universal cases for markdown files of documentations and other actions/scripts
+  description: 'A special pattern for Github™ repository with universal cases for markdown files of documentations and other actions/scripts'
 
   # A URL with more information about the repository
-  homepage: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
+  homepage: ''
 
   # A comma-separated list of topics to set on the repository
   topics: github, documentation, repository, repository-template, github-template, workflows-to-access, workflows-reusable
@@ -61,40 +61,28 @@ repository:
 labels:
   - name: announcement 📣
     color: '#0075ca'
-    description: 
   - name: api-review/approved ✅
     color: '#d73a4a'
-    description:
   - name: api-review/declined ❌
     color: '#d73a4a'
-    description:
   - name: api-review/requested 🗳
     color: '#d73a4a'
-    description:
   - name: api-review/reviewed
     color: '#d73a4a'
-    description:
   - name: arch/arm
     color: '#cfd3d7'
-    description:
   - name: arch/arm64
     color: '#cfd3d7'
-    description:
   - name: arch/x64
     color: '#cfd3d7'
-    description:
   - name: arch/x86
     color: '#cfd3d7'
-    description:
   - name: backport/approved ✅ 
     color: '#d876e3'
-    description:
   - name: backport/declined ❌
     color: '#d876e3'
-    description:
   - name: backport/requested 🗳
     color: '#d876e3'
-    description:
   - name: backport
     color: '#b9927c'
     description: 'Issue or pull request related to backport'
@@ -112,136 +100,93 @@ labels:
     description: 'Releases shouldn't go out without this fix'
   - name: bug 🪲
     color: '#e4e669'
-    description:
   - name: crash 💥
     color: '#006b75'
-    description:
   - name: dependencies
     color: '#a3452c'
     description: 'Pull requests that update a dependency file'
   - name: deprecation-review/complete ✅
     color: '#e22801'
-    description:
   - name: deprecation-review/requested 📝
     color: '#e22801'
-    description:
   - name: discussion
     color: '#f463e9'
-    description:
   - name: not-merging
     color: '#a21855'
-    description:
   - name: documentation 📓
     color: '#a2eeef'
-    description:
   - name: duplicate
     color: '#ffffff'
-    description:
   - name: enhancement ✨
     color: '#008672'
-    description:
   - name: has-repro-comment
     color: '#71a111'
-    description:
   - name: has-repro-gist
     color: '#71a111'
-    description:
   - name: has-repro-repo
     color: '#71a111'
-    description:
   - name: invalid
     color: '#c3d22b'
-    description:
   - name: machine-dependent
     color: '#704c92'
-    description:
   - name: machine
     color: '#704c92'
-    description:
   - name: main
     color: '#659c0b'
-    description:
   - name: security/memory
     color: '#b160a1'
-    description:
   - name: security/data
     color: '#b160a1'
-    description:
   - name: no-backport
     color: '#05263e'
-    description:
   - name: performance 🏁
     color: '#f7df40'
-    description:
   - name: platform/all
     color: '#b79ccd'
-    description:
   - name: platform/linux
     color: '#b79ccd'
-    description:
   - name: platform/macos
     color: '#b79ccd'
-    description:
   - name: platform/windows
     color: '#b79ccd'
-    description:
   - name: release
     color: '#73a854'
-    description:
   - name: release-notes/highlight
     color: '#c88887'
-    description:
   - name: release-notes/mentioning
     color: '#c88887'
-    description:
   - name: release-notes/common
     color: '#c88887'
-    description:
   - name: security 🔒
     color: '#4287b9'
-    description:
   - name: semver/major
     color: '#465341'
-    description:
   - name: semver/minor
     color: '#465341'
-    description: 
   - name: semver/none
     color: '#465341'
-    description:
   - name: semver/patch
     color: '#465341'
-    description:
   - name: stale
     color: '#63b8ba'
-    description:
   - name: status/confirmed
     color: '#c4c880'
-    description:
   - name: status/reviewed
     color: '#c4c880'
-    description:
   - name: status/declined
     color: '#c4c880'
-    description:
   - name: status/staling
     color: '#c4c880'
-    description:
   - name: unsupported-version
     color: '#10a9e7'
-    description:
   - name: WOA
     color: '#94cbc1'
-    description:
   - name: WIP
     color: '#b89022'
-    description:
   - name: WONTFIX
     color: '#9f24fa'
-    description:
   - name: question
     color: '5bb222'
-    description:
   #- name: 
   #  color: ''
   #  description:
