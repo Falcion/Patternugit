@@ -191,4 +191,4 @@ Acknowledgments
 [^1]: For this, please, read [README](./README) and keep in mind, that this is a template and if you want to, you could redefine entire structure of this file or entire repository.
 [^2]: for contributing policy, see — [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
 [^3]: [.../#installation](#installation)
-[^4]: read the files of [commiting convention policy](./docs/github/COMMIT_CONVENTION.md) and [contributioning policy](.github/CONTRIBUTING.md)
+[^4]: read the files of [commiting convention policy](./docs/github/COMMIT_CONVENTION.md) and [contributioning policy](./.github/CONTRIBUTING.md)
