@@ -104,7 +104,7 @@ Usage
 
 Usage of this project is very easy and comfortable for common user, its not provided with any advanced code or anything, it just the "data" which user must interpretate as it wants.
 
-1. Go to your project's directory and paste the contents of this template, which were installed with help of installation guides[^2];
+1. Go to your project's directory and paste the contents of this template, which were installed with help of installation guides[^3];
 2. Now, you can continue to work on your project with this template's data in it.
 
 > Before preparing to work on the projects that you prepared, initialize entire repository via initialize and prepare commandlets of NPM (through either bash or powershell):
