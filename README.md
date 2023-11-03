@@ -2,11 +2,11 @@
  BLOCK OF SHIELDS AND LOGO:
  -->
  <div align="center">
-    <a href="https://github.com/Falcion/PatternuGIT/graphs/contributors"><img src="https://img.shields.io/github/contributors/Falcion/PatternuGIT" alt="contributors"/></a>
-    <a href="https://github.com/Falcion/PatternuGIT/stargazers"><img src="https://img.shields.io/github/stars/Falcion/PatternuGIT" alt="stargazers"/></a>
-    <a href="https://github.com/Falcion/PatternuGIT/forks"><img src="https://img.shields.io/github/forks/Falcion/PatternuGIT" alt="forks"/></a>
-    <a href="https://github.com/Falcion/PatternuGIT/issues"><img src="https://img.shields.io/github/issues/Falcion/PatternuGIT" alt="issues"/></a>
-    <a href="https://github.com/Falcion/PatternuGIT/commits"><img src="https://img.shields.io/github/last-commit/Falcion/PatternuGIT" alt="commit-activity"/></a>
+    <a href="https://github.com/Falcion/Patternugit/graphs/contributors"><img src="https://img.shields.io/github/contributors/Falcion/Patternugit" alt="contributors"/></a>
+    <a href="https://github.com/Falcion/Patternugit/stargazers"><img src="https://img.shields.io/github/stars/Falcion/Patternugit" alt="stargazers"/></a>
+    <a href="https://github.com/Falcion/Patternugit/forks"><img src="https://img.shields.io/github/forks/Falcion/Patternugit" alt="forks"/></a>
+    <a href="https://github.com/Falcion/Patternugit/issues"><img src="https://img.shields.io/github/issues/Falcion/Patternugit" alt="issues"/></a>
+    <a href="https://github.com/Falcion/Patternugit/commits"><img src="https://img.shields.io/github/last-commit/Falcion/Patternugit" alt="commit-activity"/></a>
 </div>
 <!-- -->
 <br/>
@@ -15,15 +15,15 @@
     <img src="./.github/images/icon.png" alt="icon" style="width:100;height:100%;"/>
     <!-- TEXTS -->
     <h3>
-        PatternuGIT</h3>
+        Patternugit</h3>
      <p>
     Everything could be systemized, you just need to try.
     <br/>
-    <a href="https://github.com/Falcion/PatternuGIT/compare/">Contribute to us</a>
+    <a href="https://github.com/Falcion/Patternugit/compare/">Contribute to us</a>
     /
-    <a href="https://github.com/Falcion/PatternuGIT/tags/">View tags</a>
+    <a href="https://github.com/Falcion/Patternugit/tags/">View tags</a>
     /
-    <a href="https://github.com/Falcion/PatternuGIT/issues/">Report a bug</a>
+    <a href="https://github.com/Falcion/Patternugit/issues/">Report a bug</a>
     </p>
 </div>
 
@@ -85,7 +85,7 @@ If you want to use this project, there are two ways to download-and-use this pro
 Guidelines for direct-installation way:
 
 1. Download last tag on project's repository, for the last ZIP-tarball link provided below:\
-   [download latest release](https://github.com/Falcion/PatternuGIT/releases/latest/)
+   [download latest release](https://github.com/Falcion/Patternugit/releases/latest/)
    - or just download the source-code through "Code → Download ZIP (or any option that you want)", and proceed to the next step;
 2. Within downloaded ZIP (or project), clone everything and paste to the directory of your project via "copy+paste" procedure;
 3. Now, you can use project just as if you installed it from other algorithms.

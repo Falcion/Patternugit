@@ -1,9 +1,9 @@
 {
-    "id": "patternu-git",
-    "name": "Patternu-git",
+    "id": "patternugit",
+    "name": "Patternugit",
     "description": "A special pattern for Github™ repository with universal cases for markdown files of documentations and other actions/scripts",
     "author": "Falcion",
     "license": "MIT",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "authorUrl": "-"
 }

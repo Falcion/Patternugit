@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/mokkapps/changelog-generator-demo/compare/v0.2.1...v0.2.2) (2023-11-03)
+
+
+### Features
+
+* **scripts:** add note and scripts for in-browser label clone ([3c90d67](https://github.com/mokkapps/changelog-generator-demo/commits/3c90d6717bd56778294901aec7941be498a39e6e))
+* **workflow:** add app for automated settings ([33408a5](https://github.com/mokkapps/changelog-generator-demo/commits/33408a57428fd82bcdc963c2727c18bc511f1d64))
+
+
+### Fixes
+
+* **eslint:** remove markdownlint for code styling ([48cfc38](https://github.com/mokkapps/changelog-generator-demo/commits/48cfc383096cb83bc0035b378b142f8f30e8c294))
+
 ### [0.2.1](https://github.com/mokkapps/changelog-generator-demo/compare/v0.2.0...v0.2.1) (2023-10-30)
 
 
