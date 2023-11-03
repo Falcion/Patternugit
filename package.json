@@ -1,6 +1,6 @@
 {
   "name": "patternu-git",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A special pattern for Github™ repository with universal cases for markdown files of documentations and other actions/scripts",
   "main": "main.ts",
   "type": "module",
