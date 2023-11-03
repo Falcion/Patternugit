@@ -96,12 +96,7 @@ let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
   rl.question('Do you want to change the finding signature for the script? (y/n): ', (answ1) => {
     if(answ1 == 'y')
       rl.question('What words you need to find? (separated by comma): ', (answ2) => {
-        let res = answ2.split(',');
-
-        res.forEach(element => {
-          if(res[0] == ' ')
-            res[0]= res[0].slice(1);
-        });
+        const res = answ2.split(',');
 
         TARGET_VALUES = res;
 
