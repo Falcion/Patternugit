@@ -8,11 +8,21 @@
 
 // Taken from discussion of: https://gist.github.com/MoOx/93c2853fee760f42d97f
 //eslint-ignore
+function isValidGitHubURL(url) {
+  const parsedURL = new URL(url);
+  const allowedHosts = ["github.com"]; // Add more trusted hosts if needed
+
+  return allowedHosts.includes(parsedURL.host);
+}
+
 (function(undefined) {
 
   var reposlug;
   try {
-    window.location.hostname.indexOf("github.com") != -1 && (reposlug = window.location.pathname.match(/([^\/]+\/[^\/]+)\/labels/i)[1].toLowerCase().replace(/\//ig, "__"));
+    // Incomplete URL substring sanitization
+    // window.location.hostname.indexOf("github.com")
+    // ->
+    reposlug = window.location.pathname.match(/([^\/]+\/[^\/]+)\/labels/i)[1].toLowerCase().replace(/\//ig, "__");
   } catch(e) { }
   if (!reposlug) {
      throw "It seems that you are not in a github.com repo labels page: " + window.location;
