@@ -183,7 +183,7 @@ labels:
     color: '#94cbc1'
   - name: WIP
     color: '#b89022'
-  - name: WONTFIX
+  - name: 'WONTFIX'
     color: '#9f24fa'
   - name: question
     color: '5bb222'
@@ -192,7 +192,7 @@ labels:
   #  description:
 
 # Milestones: define milestones for Issues and Pull Requests
-milestones:
+#milestones:
   #- title: milestone-title
     #description: milestone-description
     # The state of the milestone. Either `open` or `closed`
@@ -200,7 +200,7 @@ milestones:
 
 # Collaborators: give specific users access to this repository.
 # See https://docs.github.com/en/rest/reference/repos#add-a-repository-collaborator for available options
-collaborators:
+#collaborators:
   # - username: bkeepers
   #   permission: push
   # - username: hubot
@@ -215,17 +215,17 @@ collaborators:
   # * `triage` - Recommended for contributors who need to proactively manage issues and pull requests without write access.
 
 # See https://docs.github.com/en/rest/reference/teams#add-or-update-team-repository-permissions for available options
-teams:
-  - name: core
+#teams:
+#  - name: core
     # The permission to grant the team. Can be one of:
     # * `pull` - can pull, but not push to or administer this repository.
     # * `push` - can pull and push, but not administer this repository.
     # * `admin` - can pull, push and administer this repository.
     # * `maintain` - Recommended for project managers who need to manage the repository without access to sensitive or destructive actions.
     # * `triage` - Recommended for contributors who need to proactively manage issues and pull requests without write access.
-    permission: admin
-  - name: docs
-    permission: push
+#    permission: admin
+#  - name: docs
+#    permission: push
 
 branches:
   - name: main
