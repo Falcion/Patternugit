@@ -104,7 +104,7 @@ Usage
 
 Usage of this project is very easy and comfortable for common user, its not provided with any advanced code or anything, it just the "data" which user must interpretate as it wants.
 
-1. Go to your project's directory and paste the contents of this template, which were installed with help of installation guides[^2];
+1. Go to your project's directory and paste the contents of this template, which were installed with help of installation guides[^3];
 2. Now, you can continue to work on your project with this template's data in it.
 
 > Before preparing to work on the projects that you prepared, initialize entire repository via initialize and prepare commandlets of NPM (through either bash or powershell):
@@ -188,7 +188,7 @@ Acknowledgments
 <!-- HYPERLINKS-NOTES:
  -->
 
-[^1]: For this, please, read [README](./README) and keep in mind, that this is a template and if you want to, you could redefine entire structure of this file or entire repository.
-[^2]: for contributing policy, see — [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
+[^1]: For this, please, read [README](./main/README) and keep in mind, that this is a template and if you want to, you could redefine entire structure of this file or entire repository.
+[^2]: for contributing policy, see — [CONTRIBUTING.md](./main/.github/CONTRIBUTING.md)
 [^3]: [.../#installation](#installation)
-[^4]: read the files of [commiting convention policy](./docs/github/COMMIT_CONVENTION.md) and [contributioning policy](.github/CONTRIBUTING.md)
+[^4]: read the files of [commiting convention policy](./main/docs/github/COMMIT_CONVENTION.md) and [contributioning policy](./main/.github/CONTRIBUTING.md)
