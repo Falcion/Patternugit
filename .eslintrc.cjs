@@ -1,5 +1,5 @@
 module.exports = {
-    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:markdownlint/recommended'],
+    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint'],
     root: true,
@@ -10,7 +10,7 @@ module.exports = {
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
       "no-case-declarations": "off",
-      "@typescript-eslint/no-var-requires": "off"
+      "@typescript-eslint/no-var-requires": "off",
     },
-    "ignorePatterns": [".eslintrc.cjs", "**/database/**/*.js", "**/database/**/*.ts", "*.cjs", "main.ts"],
+    "ignorePatterns": [".eslintrc.cjs", "**/database/**/*.js", "**/database/**/*.ts", "*.cjs"],
 };
