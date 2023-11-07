@@ -1,6 +1,6 @@
 {
   "name": "patternugit",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A special pattern for Github™ repository with universal cases for markdown files of documentations and other actions/scripts",
   "main": "main.ts",
   "type": "module",

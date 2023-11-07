@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/mokkapps/changelog-generator-demo/compare/v0.2.2...v0.2.3) (2023-11-07)
+
+
+### Fixes
+
+* **core:** fix YAML exception in settings ([0d45e28](https://github.com/mokkapps/changelog-generator-demo/commits/0d45e28d12cb097ba8e4fccaaa732833d9965497))
+* **docs:** fix issue templates and README ([4c4efa4](https://github.com/mokkapps/changelog-generator-demo/commits/4c4efa46bf477e2272ba0387222ab657e2fc0f81))
+* **main:** fix type error in main typescript path ([b0ca21d](https://github.com/mokkapps/changelog-generator-demo/commits/b0ca21dea0072c887d4f96849ed46ffda72e88ae))
+* **readme:** fix of footnotes in README ([31ef470](https://github.com/mokkapps/changelog-generator-demo/commits/31ef4701e79d194b38ee332d5a9a806c61b88254))
+* **release:** last fix-update before finalizing release ([7cab19a](https://github.com/mokkapps/changelog-generator-demo/commits/7cab19a5cd5dec875310bbe48d51897b9a6c9b1d))
+
 ### [0.2.2](https://github.com/mokkapps/changelog-generator-demo/compare/v0.2.1...v0.2.2) (2023-11-03)
 
 
