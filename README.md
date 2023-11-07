@@ -128,7 +128,8 @@ Roadmap
 - [x] Write every README for specified purposes (in specified paths);
 - [x] Finalize the project and make the first publish version;
 - [x] Make the fixes for the repository;
-- [x] Finalize the project's main .TS script. 
+- [x] Finalize the project's main .TS script; 
+- [x] Finalize the project's fixes and debug.
 
 <!-- CONTRIBUTING: 
  -->

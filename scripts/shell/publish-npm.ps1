@@ -5,7 +5,7 @@ $scriptDir = Split-Path -Parent -Path $MyInvocation.MyCommand.Definition
 Set-Location -Path $scriptDir
 
 # Load the package.json file
-$packageJson = Get-Content -Path ".\package.json" | ConvertFrom-Json
+$packageJson = Get-Content -Path ".\..\..\package.json" | ConvertFrom-Json
 
 # Extract the package name and version from package.json
 $packageName = $packageJson.name

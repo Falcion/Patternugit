@@ -1,5 +1,5 @@
 # Define the path to the manifest file (manifest.json or package.json)
-$manifestPath = Join-Path -Path $PSScriptRoot -ChildPath ".\manifest.json"
+$manifestPath = Join-Path -Path $PSScriptRoot -ChildPath ".\..\..\manifest.json"
 
 # Load the manifest file (or package.json if using JavaScript/Node.js)
 $manifestContent = Get-Content -Path $manifestPath | ConvertFrom-Json
@@ -9,7 +9,7 @@ $packageName = $manifestContent.name
 $packageVersion = $manifestContent.version
 
 # Define the path to the .env file in the root directory
-$envFilePath = Join-Path -Path $PSScriptRoot -ChildPath ".\.env"
+$envFilePath = Join-Path -Path $PSScriptRoot -ChildPath ".\..\..\.env"
 
 # Load the .env file and extract the NuGet API key
 $envContent = Get-Content -Path $envFilePath | ForEach-Object {
@@ -21,7 +21,7 @@ $envContent = Get-Content -Path $envFilePath | ForEach-Object {
 $apiKey = $envContent | ForEach-Object { $_.Trim() }
 
 # Set the path to the .nupkg file
-$packageFilePath = Join-Path -Path $PSScriptRoot -ChildPath ".\source\$packageName\$packageName.$packageVersion.nupkg"
+$packageFilePath = Join-Path -Path $PSScriptRoot -ChildPath ".\..\..\source\$packageName\$packageName.$packageVersion.nupkg"
 
 # Set the NuGet server URL (change to your specific server if not using NuGet.org)
 $nugetServer = "https://api.nuget.org/v3/index.json"

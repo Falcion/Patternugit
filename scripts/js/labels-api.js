@@ -10,7 +10,7 @@
 //eslint-ignore
 function isValidGitHubURL(url) {
   const parsedURL = new URL(url);
-  const allowedHosts = ["github.com"]; // Add more trusted hosts if needed
+  const allowedHosts = ["github.com"];
 
   return allowedHosts.includes(parsedURL.host);
 }
