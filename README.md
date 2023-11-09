@@ -69,6 +69,8 @@ But, for contributing to this project, we highly recommending following those pr
 - Installed [Node.js](https://dotnet.microsoft.com/en-us/download/) on your desktop on which you will edit/setup this project;
 - Installed [Python](https://www.python.org/) if you want to contribute to the scripts of this project (in terms of .PY scripts);
 
+<p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
+
 <!-- INSTALLATION:
  -->
 
@@ -96,6 +98,8 @@ Guidelines for installation of source code of this project:
    https://www.howtogeek.com/451360/how-to-clone-a-github-repository/
 2. Open it with any suitable for you editor and feel free to customize, update and/or contribute to this project[^2].
 
+<p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
+
 <!-- USAGE:
  -->
 
@@ -117,19 +121,26 @@ npm i
 # Using prepare script for this repository:
 npm run prepare
 ```
+<p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
 
 <!-- ROADMAP:
  -->
 
 Roadmap
 -------
-- [x] Create primary documentations for project directive;
-- [x] Create scripts and workflows for the project;
-- [x] Write every README for specified purposes (in specified paths);
-- [x] Finalize the project and make the first publish version;
-- [x] Make the fixes for the repository;
-- [x] Finalize the project's main .TS script; 
-- [x] Finalize the project's fixes and debug.
+
+- [x] Create basic repository infrastructure for this project, including:
+  - [x] basic .MD documentations and dealings stuff (like README, LICENSE and etc.);
+  - [x] scripts and actions within CI/CD for supporting high-quality of this project;
+- [x] Write and publish the demo (pre-release) version of project, including the most basic logic of this one.
+- [x] Write the documentation for this demo-project and:
+  - [x] make it one as archive for technical docs purposes (hyperlinking directive);
+- [x] Refactor and prepare for “advancing” the project's logic and write an entire functionality of it.
+  - [x] Write an advanced .TS script for managing core of this project's functionality (being a template);
+  - [x] Write an advanced infrastructure for project's surroundings and etc.;
+- [ ] Refactor and prepare for “advancing” the project's documentation and publish it via the archive.
+
+<p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
 
 <!-- CONTRIBUTING: 
  -->
@@ -148,6 +159,7 @@ If you want to contribute to this project, please, read contributioning policy a
 More about it in this article:
 - [“Working with forks”](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork/) about syncing one-file fork;
 
+<p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
 
 <!-- LICENSE:
  -->
@@ -158,6 +170,8 @@ License
 Project thanks the [Electron.js](https://github.com/electron/electron/) and [Angular.js](https://github.com/angular/angular/) for their amazing repository scripts and entire infrastructure, which partially were imported to this repository. 
 
 Project itself is being distributed under the [MIT License](https://choosealicense.com/licenses/mit/) — see the file for more specified information.
+
+<p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
 
 <!-- CONTACT:
  -->
@@ -173,6 +187,8 @@ For any legal purposes, you can contact developer/maintainer through its e-mail:
 
 If the developer/maintainer didn't answered, or you have other questions in nature, you can use issues page on this repository via specified templates or indirect self-written issue.
 
+<p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
+
 <!-- ACKNOWLEDGEMENTS:
  -->
 
@@ -185,6 +201,8 @@ Acknowledgments
 - https://gitignore.io/
 - https://gitattributes.io/
 - [Best README template](https://github.com/othneildrew/Best-README-Template)
+
+<p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
 
 <!-- HYPERLINKS-NOTES:
  -->
