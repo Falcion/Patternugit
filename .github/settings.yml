@@ -7,7 +7,7 @@ repository:
   name: Patternugit
 
   # A short description of the repository that will show up on GitHub
-  description: 'A special pattern for Github™ repository with universal cases for markdown files of documentations and other actions/scripts'
+  description: 'Special pattern for “github” repository with universal cases for markdown files of documentations and other actions/scripts'
 
   # A URL with more information about the repository
   homepage: ''
