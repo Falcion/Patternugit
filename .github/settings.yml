@@ -188,7 +188,15 @@ labels:
   - name: WONTFIX
     color: '#9f24fa'
   - name: question
-    color: '5bb222'
+    color: '#5bb222'
+  - name: repository
+    color: '#1bd867'
+  - name: repository/javascripts
+    color: '#1bd867'
+  - name: repository/pages
+    color: '#1bd867'
+  - name: repository/other
+    color: '#1bd867'
   #- name: 
   #  color: ''
   #  description:
