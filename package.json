@@ -1,16 +1,16 @@
 {
   "name": "patternugit",
+  "private": "true",
   "version": "0.2.3",
-  "description": "A special pattern for Github™ repository with universal cases for markdown files of documentations and other actions/scripts",
-  "main": "main.ts",
-  "type": "module",
+  "description": "Preconfigured pattern for your repository with universal cases for markdown files of documentations and other actions/scripts",
+  "main": "prepare.ts",
+  "type": "commonjs",
   "directories": {
     "doc": "docs"
   },
+  "readme": "https://github.com/Falcion/Patternugit#readme",
   "scripts": {
     "preinit": "npm i --force",
-    "preinit:main": "tsc  main.ts -m commonjs",
-    ".": "node support.cjs && tsc main.ts -m commonjs && node support.cjs && node main.cjs",
     "generate-version-json": "node scripts/js/generate-version-json.js",
     "lint": "node ./scripts/lint.js && npm run lint:docs",
     "lint:js": "node ./scripts/lint.js --js",
@@ -22,10 +22,11 @@
     "lint:js-in-markdown": "electron-lint-markdown-standard --root docs \"**/*.md\"",
     "precommit": "lint-staged",
     "prepack": "check-for-leaks",
-    "prepare": "husky install && cd scripts/python && py -m venv venv",
+    "prepare": "husky install && cd scripts/python && py -m venv venv && node run prepare:main",
     "prepare:husky": "husky install",
     "prepare:python": "cd scripts/python && py -m venv venv",
-    "build": "tsc -noEmit -skipLibCheck main.ts && node esbuild.config.mjs production",
+    "prepare:main": "node prepare.ts",
+    "build": "tsc -noEmit -skipLibCheck prepare.ts && node esbuild.config.mjs production",
     "pack": "python scripts/python/pack.py",
     "release": "standard-version",
     "release:minor": "standard-version --release-as minor",
@@ -34,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Falcion/PatternuGIT.git"
+    "url": "git+https://github.com/Falcion/Patternugit.git"
   },
   "keywords": [
     "github",
@@ -48,9 +49,18 @@
   "author": "Falcion",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Falcion/PatternuGIT/issues"
+    "url": "https://github.com/Falcion/Patternugit/issues"
   },
-  "homepage": "https://github.com/Falcion/PatternuGIT#readme",
+  "homepage": "https://github.com/Falcion/Patternugit#readme",
+  "prettier": {
+    "tabWidth": 4,
+    "useTabs": true,
+    "bracketSpacing": true,
+    "singleQuote": false,
+    "endOfLine": "crlf",
+    "trailingComma": "all",
+    "semi": true
+  },
   "lint-staged": {
     "*.{js,ts}": [
       "node scripts/lint.js --js --fix --only --"
@@ -120,6 +130,7 @@
     "markdownlint-cli2": "^0.12.1",
     "minimist": "^1.2.8",
     "mocha": "^10.3.0",
+    "npm-update": "^3.0.1",
     "prettier": "^3.2.5",
     "remark": "^15.0.1",
     "standard-version": "^9.5.0",
@@ -130,5 +141,32 @@
     "typescript": "^5.3.3",
     "unicorn": "^0.0.1",
     "url": "^0.11.3"
-  }
+  },
+  "badges": [
+    {
+      "description": "contributors",
+      "href": "https://github.com/Falcion/Patternugit/graphs/contributors",
+      "url": "https://img.shields.io/github/contributors/Falcion/Patternugit"
+    },
+    {
+      "description": "stargazers",
+      "href": "https://github.com/Falcion/Patternugit/stargazers",
+      "url": "https://img.shields.io/github/stars/Falcion/Patternugit"
+    },
+    {
+      "description": "forks",
+      "href": "https://github.com/Falcion/Patternugit/forks",
+      "url": "https://img.shields.io/github/forks/Falcion/Patternugit"
+    },
+    {
+      "description": "issues",
+      "href": "https://github.com/Falcion/Patternugit/issues",
+      "url": "https://img.shields.io/github/issues/Falcion/Patternugit"
+    },
+    {
+      "description": "last-commit",
+      "href": "https://github.com/Falcion/Patternugit/commits",
+      "url": "https://img.shields.io/github/last-commit/Falcion/Patternugit"
+    }
+  ]
 }
