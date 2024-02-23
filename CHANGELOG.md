@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/mokkapps/changelog-generator-demo/compare/v0.2.3...v0.2.4) (2024-02-23)
+
+
+### Features
+
+* **settings:** add new labels into the YAML settings for issues and pull requests ([9963590](https://github.com/mokkapps/changelog-generator-demo/commits/99635902cd1c72b07f46bf8a0444334a6440dd83))
+
+
+### Documentation
+
+* **readme:** little refactor for READMEs ([13b8ad0](https://github.com/mokkapps/changelog-generator-demo/commits/13b8ad01338d1a0649e25549a3b5db292f2a7b18))
+
+
+### Common
+
+* **script:** move preparation scripts to `ts-node` ([c5f2161](https://github.com/mokkapps/changelog-generator-demo/commits/c5f2161d06402b0846556814e2915cebd53c8a59))
+
+
+### Build system
+
+* **config:** update of `jsconfig.json` ([a8521e0](https://github.com/mokkapps/changelog-generator-demo/commits/a8521e06349e90a71899c06313c229711296847e))
+* **deps-dev:** add Docker and Kubernetes support ([b037dbf](https://github.com/mokkapps/changelog-generator-demo/commits/b037dbf329af81613302cb5cd04675ece4227f24))
+* **deps-dev:** bump chai from 4.3.10 to 5.0.0 ([ca2fbdc](https://github.com/mokkapps/changelog-generator-demo/commits/ca2fbdc7611f4f9cfd1af7cf058459cc3a5c5a60))
+* **deps-dev:** bump chai from 4.3.10 to 5.0.0 ([08f024b](https://github.com/mokkapps/changelog-generator-demo/commits/08f024be4c82c647409a382f2bdedcb2121507d2))
+* **deps-dev:** bump dotenv-safe from 8.2.0 to 9.0.0 ([ad20119](https://github.com/mokkapps/changelog-generator-demo/commits/ad2011951a6b3ba81b2aeba379e24dbac75a4a55))
+* **deps-dev:** bump dotenv-safe from 8.2.0 to 9.0.0 ([b89845e](https://github.com/mokkapps/changelog-generator-demo/commits/b89845e71a305472166bbbed7fcaeeb0154fea33))
+* **deps-dev:** bump husky from 8.0.3 to 9.0.10 ([0929f51](https://github.com/mokkapps/changelog-generator-demo/commits/0929f5198e6547754e92d1f925421fe858904de8))
+* **deps-dev:** bump husky from 8.0.3 to 9.0.10 ([0d432bf](https://github.com/mokkapps/changelog-generator-demo/commits/0d432bf0500e66ddb03bb10ef8e89b2b5f1c22a4))
+* **deps-dev:** bump markdownlint from 0.31.1 to 0.32.1 ([c230847](https://github.com/mokkapps/changelog-generator-demo/commits/c230847a7f8b440d39b9fa08588780acc405d914))
+* **deps-dev:** bump markdownlint from 0.31.1 to 0.32.1 ([1679173](https://github.com/mokkapps/changelog-generator-demo/commits/16791730e7736d9bd5dff761888529d7ce095914))
+* **deps-dev:** bump markdownlint from 0.32.1 to 0.33.0 ([76e8683](https://github.com/mokkapps/changelog-generator-demo/commits/76e868362a85a8c1577b3034a8b8470abfe1d9ff))
+* **deps-dev:** bump markdownlint from 0.32.1 to 0.33.0 ([00dda94](https://github.com/mokkapps/changelog-generator-demo/commits/00dda944dfc535a20437bea24a302b1f4306c290))
+* **deps-dev:** bump markdownlint-cli2 from 0.10.0 to 0.11.0 ([5ee237b](https://github.com/mokkapps/changelog-generator-demo/commits/5ee237b6d8cc576b7f3a14a2a74c6b1ca5884e48))
+* **deps-dev:** bump markdownlint-cli2 from 0.10.0 to 0.11.0 ([#10](https://github.com/Falcion/Patternugit/issues/10)) ([15ec9b8](https://github.com/mokkapps/changelog-generator-demo/commits/15ec9b87fb74c45ee218cd5d0f4484dbf0b7d45d))
+* **deps-dev:** bump markdownlint-cli2 from 0.11.0 to 0.12.1 ([60a9bae](https://github.com/mokkapps/changelog-generator-demo/commits/60a9bae5455017db9e4eb4f445ea9c21114f62d0))
+* **deps-dev:** bump markdownlint-cli2 from 0.11.0 to 0.12.1 ([497b048](https://github.com/mokkapps/changelog-generator-demo/commits/497b048b2e122c6ead7cec7be9ad47e4ccc51002))
+* **deps-dev:** bump typescript from 4.9.5 to 5.3.3 ([f2fef94](https://github.com/mokkapps/changelog-generator-demo/commits/f2fef94538186ad95961b3e5628a1f92daef6b7d))
+* **deps-dev:** bump typescript from 4.9.5 to 5.3.3 ([d0f9f27](https://github.com/mokkapps/changelog-generator-demo/commits/d0f9f27d2c8a06ccceb77be725e71882f122c77b))
+* **deps-dev:** update package versioning in root ([2e3a69d](https://github.com/mokkapps/changelog-generator-demo/commits/2e3a69df81a9de4d2b42441130e7160f612a1ab7))
+* **deps:** change POSIX and matrix in CodeQL ([052aaa9](https://github.com/mokkapps/changelog-generator-demo/commits/052aaa9535ac9df07a17e4960189c5de54fab2c9))
+* **deps:** update most of dependencies and other ([cce3dc2](https://github.com/mokkapps/changelog-generator-demo/commits/cce3dc274de0917efec97785f65487492ca086a9))
+
 ### [0.2.3](https://github.com/mokkapps/changelog-generator-demo/compare/v0.2.2...v0.2.3) (2023-11-07)
 
 

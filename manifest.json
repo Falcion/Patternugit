@@ -1,9 +1,9 @@
 {
     "id": "patternugit",
     "name": "Patternugit",
-    "description": "A special pattern for Github™ repository with universal cases for markdown files of documentations and other actions/scripts",
+    "description": "Preconfigured pattern for your repository with universal cases for markdown files of documentations and other actions/scripts",
     "author": "Falcion",
     "license": "MIT",
-    "version": "0.2.3",
-    "authorUrl": "-"
+    "version": "0.2.4",
+    "authorUrl": "https://github.com/Falcion"
 }
