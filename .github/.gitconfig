@@ -1,4 +1,4 @@
-# Aliases for GIT config and its commands
+# Aliases for .gitconfig and it's commands
 [alias]
     addremove = !git r && git add . --all
     # Display every of aliases inside the git config
@@ -84,7 +84,7 @@
 [core]
     # Disable paginating system
     pager = cat
-    # Edit the default IGNORE file
+    # Edit the default .gitignore file
     # excludesfile = ~/.gitignore
     excludesfile = ~/../.gitignore
     # Declare mode of commands with output

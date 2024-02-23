@@ -15,19 +15,19 @@ let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
       output: process.stdout
   });
 
-  const search_data = async (path: string, search_data: string[]) => {
+  const searchData = async (path: string, searchData: string[]) => {
     const content = (await fs.readFile(path, 'utf-8')).split('\n');
 
     for(let i = 0; i < content.length; i++) {
       const line = content[i].toUpperCase();
 
-      for(const searching_string of search_data)
-        if(line.includes(searching_string))
-          console.log(`Found "${searching_string}" in L#${i++} of "${path}"`);
+      for(const searchingString of searchData)
+        if(line.includes(searchingString))
+          console.log(`Found "${searchingString}" in L#${i++} of "${path}"`);
     }
   };
 
-  const traverse_dir = async (dirpath: string) => {
+  const traverseDir = async (dirpath: string) => {
     try {
       const files = await fs.readdir(dirpath);
 
@@ -37,10 +37,10 @@ let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
 
         if (fstat.isDirectory()) {
           if (!EXCLUDING_DIRECTORIES.includes(file)) {
-            await traverse_dir(fpath);
+            await traverseDir(fpath);
           }
         } else if (fstat.isFile()) {
-          await search_data(fpath, TARGET_VALUES);
+          await searchData(fpath, TARGET_VALUES);
         }
       }
     } catch (err) {
@@ -48,15 +48,15 @@ let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
     }
   };
 
-  const write_manifest = async (packageJSON: any) => {
+  const writeManifest = async (json: any, authorUrl: string | undefined) => {
     const manifestJSON = {
-      id: packageJSON.name,
-      name: `${packageJSON.name[0].toUpperCase()}${packageJSON.name.slice(1, packageJSON.name.length)}`,
-      description: packageJSON.description,
-      author: packageJSON.author,
-      license: packageJSON.license,
-      version: packageJSON.version,
-      authorUrl: '-'
+      id: json.name,
+      name: `${json.name[0].toUpperCase()}${json.name.slice(1, json.name.length)}`,
+      description: json.description,
+      author: json.author,
+      license: json.license,
+      version: json.version,
+      authorUrl: `${authorUrl === undefined ? '-' : authorUrl}`
     };
 
     await fs.writeFile('manifest.json', JSON.stringify(manifestJSON, null, 4));
@@ -77,10 +77,15 @@ let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
   if(!await fs.pathExists(ROOT_DIRECTORY + '/manifest.json')) {
     await fs.createFile('manifest.json');
 
-    await write_manifest(packageJSON);
+    await writeManifest(packageJSON, undefined);
   }
 
   const manifestAsJSON = JSON.parse(fs.readFileSync('manifest.json', { encoding: 'utf-8'}));
+
+  let authorUrl = manifestAsJSON.authorUrl;
+
+  if(authorUrl === '-')
+    authorUrl = undefined;
 
   const checkingRes = packageJSON.id === manifestAsJSON.id && packageJSON.name === manifestAsJSON.name
                   && packageJSON.description === manifestAsJSON.description && packageJSON.author === manifestAsJSON.author
@@ -91,7 +96,7 @@ let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
 
   await fs.copyFile('manifest.json', 'manifest-backup.json');
 
-  await write_manifest(packageJSON);
+  await writeManifest(packageJSON, authorUrl);
 
   rl.question('Do you want to change the finding signature for the script? (y/n): ', (answ1) => {
     if(answ1 == 'y')
@@ -100,11 +105,11 @@ let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
 
         TARGET_VALUES = res;
 
-        traverse_dir(ROOT_DIRECTORY);
+        traverseDir(ROOT_DIRECTORY);
         rl.close();
       });
     else {
-      traverse_dir(ROOT_DIRECTORY);
+      traverseDir(ROOT_DIRECTORY);
       rl.close();
     }
   });

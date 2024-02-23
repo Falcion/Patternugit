@@ -7,7 +7,7 @@ repository:
   name: Patternugit
 
   # A short description of the repository that will show up on GitHub
-  description: 'Special pattern for “github” repository with universal cases for markdown files of documentations and other actions/scripts'
+  description: 'Preconfigured pattern for your repository with universal cases for markdown files of documentations and other actions/scripts'
 
   # A URL with more information about the repository
   homepage: ''
@@ -205,7 +205,7 @@ labels:
 milestones:
   - title: Public release of project
     description: "A preparations and milestone, including everything to prepare for one final release to publish project as ready-to-use without any bugs, leaks, security problems and etc., doesn't mean that project won't be updated and etc."
-    state: open
+    state: closed
   #- title: milestone-title
     #description: milestone-description
     # The state of the milestone. Either `open` or `closed`
