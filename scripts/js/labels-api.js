@@ -7,7 +7,7 @@
 // How to bookmark: https://gist.github.com/caseywatts/c0cec1f89ccdb8b469b1
 
 // Taken from discussion of: https://gist.github.com/MoOx/93c2853fee760f42d97f
-//eslint-ignore
+
 function isValidGitHubURL(url) {
   const parsedURL = new URL(url);
   const allowedHosts = ["github.com"];

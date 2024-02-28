@@ -3,6 +3,8 @@ import * as path from 'path';
 import * as dotenv from 'dotenv';
 import * as readline from 'readline';
 
+import * as colors from 'colors';
+
 const ROOT_DIRECTORY = __dirname;
 
 const EXCLUDING_DIRECTORIES = ['node_modules', 'venv', '.git', 'out'];
@@ -36,10 +38,9 @@ let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
         const fstat = await fs.stat(fpath);
 
         if (fstat.isDirectory()) {
-          if (!EXCLUDING_DIRECTORIES.includes(file)) {
+          if (!EXCLUDING_DIRECTORIES.includes(file))
             await traverseDir(fpath);
-          }
-        } else if (fstat.isFile()) {
+        else if (fstat.isFile())
           await searchData(fpath, TARGET_VALUES);
         }
       }
@@ -63,8 +64,9 @@ let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
   };
 
   if(!await fs.pathExists(ROOT_DIRECTORY + '/.env')) {
-    await fs.createFile('.env');
-    await fs.writeFile('.env', 'EXAMPLE_API_KEY=');
+    await fs.createFile('.env').then(async () => {
+      await fs.writeFile('.env', 'EXAMPLE_API_KEY=');
+    });
   }
 
   dotenv.config({
@@ -75,9 +77,9 @@ let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
   const packageJSON = JSON.parse(fs.readFileSync('package.json', { encoding: 'utf-8'}));
 
   if(!await fs.pathExists(ROOT_DIRECTORY + '/manifest.json')) {
-    await fs.createFile('manifest.json');
-
-    await writeManifest(packageJSON, undefined);
+    await fs.createFile('manifest.json').then(async () => {
+      await writeManifest(packageJSON, undefined);
+    });
   }
 
   const manifestAsJSON = JSON.parse(fs.readFileSync('manifest.json', { encoding: 'utf-8'}));
@@ -92,15 +94,15 @@ let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
                   && packageJSON.license === manifestAsJSON.license && packageJSON.version === manifestAsJSON.version;
 
   if(!checkingRes)
-    console.error('There is desync in Manifest JSON and Package JSON! Causing override to manifest.json, but backuping at manifest-copy.json');
+    console.error(colors.red('There is desync in Manifest JSON and Package JSON! Causing override to manifest.json, but backuping at manifest-copy.json'));
 
   await fs.copyFile('manifest.json', 'manifest-backup.json');
 
   await writeManifest(packageJSON, authorUrl);
 
-  rl.question('Do you want to change the finding signature for the script? (y/n): ', (answ1) => {
+  rl.question(colors.yellow('Do you want to change the finding signature for the script? (y/n): '), (answ1) => {
     if(answ1 == 'y')
-      rl.question('What words you need to find? (separated by comma): ', (answ2) => {
+      rl.question(colors.yellow('What words you need to find? (separated by comma): '), (answ2) => {
         const res = answ2.split(',');
 
         TARGET_VALUES = res;
