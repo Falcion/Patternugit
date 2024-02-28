@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/mokkapps/changelog-generator-demo/compare/v0.2.4...v0.3.0) (2024-02-28)
+
+
+### Features
+
+* **docs:** add managing guide and additional files ([b3bd307](https://github.com/mokkapps/changelog-generator-demo/commits/b3bd30733e8980f503ef8bfa2276c1f38a741b71))
+* **docs:** add SemVer document ([48b94e8](https://github.com/mokkapps/changelog-generator-demo/commits/48b94e8710e8356c9d0d8904f95ffbf529f79882))
+
+
+### Build system
+
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([ba64e06](https://github.com/mokkapps/changelog-generator-demo/commits/ba64e069c9b3d288a78ad18788e1ac7775972f54))
+* **deps-dev:** bump @typescript-eslint/parser from 6.21.0 to 7.0.1 ([a60ae19](https://github.com/mokkapps/changelog-generator-demo/commits/a60ae19136977ea5f9b711469d74255a8665efbe)), closes [#22](https://github.com/Falcion/Patternugit/issues/22)
+* **deps-dev:** bump @typescript-eslint/parser from 6.21.0 to 7.0.1 ([3cc5c1d](https://github.com/mokkapps/changelog-generator-demo/commits/3cc5c1dcf8b9538fdd5dafdf933dbfddde8d1280))
+* **deps-dev:** bump @typescript-eslint/parser from 6.21.0 to 7.0.2 ([607bb9b](https://github.com/mokkapps/changelog-generator-demo/commits/607bb9b47cd7bdbe73edba8b6462edf60087ac0b))
+* **publishing:** add Shell scripts to publish (Nuget & NPM) ([b71e5cf](https://github.com/mokkapps/changelog-generator-demo/commits/b71e5cf3881df098f6960383b4fd19c6c6aed2ee))
+
+
+### Refactoring
+
+* **docs:** rewrite intro in the README ([c30d980](https://github.com/mokkapps/changelog-generator-demo/commits/c30d980263326823f2a057ad50c18dbfd7bb55d4))
+* **docs:** update date in licenses ([2495d78](https://github.com/mokkapps/changelog-generator-demo/commits/2495d7829f7cd0cda9a19ee9831bff8204694295))
+* **script:** refactor of preparation script ([2e97175](https://github.com/mokkapps/changelog-generator-demo/commits/2e971754da7887c2f77fa02c52ae482080199fb6))
+* **scripts:** add license and author references to scripts ([d464d91](https://github.com/mokkapps/changelog-generator-demo/commits/d464d9155898e57be7b2805144bf381f047597ca))
+* **scripts:** refactor entire script base of schema ([55fd939](https://github.com/mokkapps/changelog-generator-demo/commits/55fd939f013f2221af63529a79a8b134281a5c64))
+* **scripts:** refactor publishing scripts (NuGet & NPM) ([a2136c3](https://github.com/mokkapps/changelog-generator-demo/commits/a2136c3fcb16007dfd237e1a0d8689be6649ecfa))
+
 ### [0.2.4](https://github.com/mokkapps/changelog-generator-demo/compare/v0.2.3...v0.2.4) (2024-02-23)
 
 
