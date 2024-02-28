@@ -1,8 +1,7 @@
-$scriptDir = Split-Path -Parent -Path $MyInvocation.MyCommand.Definition
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
+Set-Location $scriptDir
 
-Set-Location -Path $scriptDir
-
-$packageJson = Get-Content -Path ".\..\..\package.json" | ConvertFrom-Json
+$packageJson = Get-Content -Raw "../../package.json" | ConvertFrom-Json
 $packageName = $packageJson.name
 $packageVersion = $packageJson.version
 
@@ -10,6 +9,6 @@ npm login
 npm publish
 npm logout
 
-Write-Host "Published $packageName@$packageVersion to NPM."
+Write-Output "Published $packageName@$packageVersion to NPM."
 
-Set-Location -Path $scriptDir
+Set-Location $scriptDir
