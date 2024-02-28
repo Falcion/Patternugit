@@ -1,3 +1,6 @@
+# Workflow made by mixing two templates which were made by: @Mattraks
+# Use on your own risk.
+
 name: Delete old workflow runs
 on:
     #schedule:
