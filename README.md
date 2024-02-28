@@ -33,9 +33,9 @@
 About the project
 -----------------
 
-Don't want to set up repository, work with those boring documentations, scripts and want to work as fast as possible on your project, but also have a wish[^1] for your project to be great in extensibility and automation?
+Are you looking to skip the hassle of setting up a repository, dealing with tedious documentation and scripts, and dive right into your project while ensuring it's extensible[^1] and automated[^1]? 
 
-Project of this is the exact problem solution for you, the big and advanced repository with some documentations, scripts, settings, configs, simple things with simple solutions.
+Look no further! This project is designed to provide a comprehensive solution to your needs, offering a robust repository packed with documentation, scripts, settings, configurations, and simple yet effective solutions.
 
 
 <!-- BUILT WITH:
