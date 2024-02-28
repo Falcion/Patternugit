@@ -98,7 +98,7 @@ labels:
   - name: blocks-release
     color: '#7057ff'
     description: "Releases shouldn't go out without this fix"
-  - name: bug 🪲
+  - name: bug
     color: '#e4e669'
   - name: crash 💥
     color: '#006b75'
@@ -197,6 +197,27 @@ labels:
     color: '#1bd867'
   - name: repository/other
     color: '#1bd867'
+  - name: status/considered
+    color: '#e2d8e2'
+    description:
+  - name: status/planned
+    color: '#c2f75a'
+    description:
+  - name: status/ignored
+    color: '#4386db'
+    description:
+  - name: status/denied
+    color: '#4386db'
+    description:
+  - name: status/accepted
+    color: '#154e5e'
+    description:
+  - name: status/fixed
+    color: '#154e5e'
+    description:
+  - name: status/implemented
+    color: '#c603ad'
+    description:
   #- name: 
   #  color: ''
   #  description:
@@ -240,6 +261,8 @@ teams:
   - name: docs
     permission: push
 
+# Keep in mind, that protections need to be made by your own, app checks the requirements and parameters, but does not
+# set up or create them just as with code analysis and other security settings.
 branches:
   - name: main
     # https://docs.github.com/en/rest/reference/repos#update-branch-protection
