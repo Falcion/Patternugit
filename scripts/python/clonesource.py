@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+# MIT License
+# Copyright (c) Falcion 2023-2024
+# Free to share, use or change.
+
 import shutil
 import os
 
