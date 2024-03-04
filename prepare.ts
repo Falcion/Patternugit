@@ -1,9 +1,9 @@
 import * as fs from 'fs-extra';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
-import * as readline from 'readline';
+import readline from 'readline';
 
-import * as colors from 'colors';
+import colors from 'colors/safe';
 
 /*
  * Script was made by: @Falcion
@@ -35,7 +35,7 @@ let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
 
       for (const searchingString of searchData) {
         if (line.includes(searchingString)) {
-          console.log(`Found "${searchingString}" in L#${i} of "${filePath}"`);
+          console.log(colors.green(`Found "${searchingString}" in L#${i} of:\n` + colors.blue(`"${filePath}"`)));
         }
       }
     }
