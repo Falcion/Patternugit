@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/mokkapps/changelog-generator-demo/compare/v0.3.0...v0.3.1) (2024-03-04)
+
+
+### Features
+
+* **labels:** add priority labels to settings ([8d05e68](https://github.com/mokkapps/changelog-generator-demo/commits/8d05e68720d36783727bf8509c8a325170dadceb))
+
+
+### Fixes
+
+* **husky:** update husky preparation and fix deprecated bug ([4210ed3](https://github.com/mokkapps/changelog-generator-demo/commits/4210ed326a8ca7104f4530a677082715afeb1365)), closes [#26](https://github.com/Falcion/Patternugit/issues/26)
+
 ## [0.3.0](https://github.com/mokkapps/changelog-generator-demo/compare/v0.2.4...v0.3.0) (2024-02-28)
 
 
