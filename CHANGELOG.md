@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/mokkapps/changelog-generator-demo/compare/v0.3.1...v0.3.2) (2024-03-04)
+
+
+### Fixes
+
+* **build:** fix `ts-node` build in prepare script ([b3ea578](https://github.com/mokkapps/changelog-generator-demo/commits/b3ea578f8d27a958d4479a3e15586fb0b4f306b7))
+* **build:** fix main prepare script from package's JSON ([3bdce2c](https://github.com/mokkapps/changelog-generator-demo/commits/3bdce2c3f807535f10d75f2ef56d2458b659b72d))
+* **import:** fix imports of `colors` to `colors/safe` in prepare .TS script ([ce35ab4](https://github.com/mokkapps/changelog-generator-demo/commits/ce35ab42492c7dbbabbe49e9089b5110ac8ba763))
+
 ### [0.3.1](https://github.com/mokkapps/changelog-generator-demo/compare/v0.3.0...v0.3.1) (2024-03-04)
 
 
