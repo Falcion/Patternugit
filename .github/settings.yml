@@ -218,6 +218,18 @@ labels:
   - name: status/implemented
     color: '#c603ad'
     description:
+  - name: priority/extreme
+    color: '#ff5733'
+    description:
+  - name: priority/high
+    color: '#ff8333'
+    description:
+  - name: priority/medium
+    color: '#d4ac0d'
+    description:
+  - name: priority/low
+    color: '#13ff00'
+    description:
   #- name: 
   #  color: ''
   #  description:
