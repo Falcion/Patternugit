@@ -1,19 +1,23 @@
+/**
+ * The MIT License (MIT)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * @license MIT
+ * @author Falcion
+ * @year 2023-2024
+ */
+
 import * as fs from 'fs-extra';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
 import readline from 'readline';
 
 import colors from 'colors/safe';
-
-/*
- * Script was made by: @Falcion
- * https://github.com/Falcion/Patternugit
- *
- * Patternugit's repository is licensed and distributed under
- * MIT License.
- *
- * Copyright (c) 2023-2024 Falcion.
- */
 
 const ROOT_DIRECTORY = __dirname;
 
@@ -22,11 +26,11 @@ const EXCLUDING_DIRECTORIES = ['node_modules', 'venv', '.git', 'out'];
 let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
 
 (async () => {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-
+  /**
+   * Searches for specific strings in a file.
+   * @param {string} filePath - The path to the file to search in.
+   * @param {string[]} searchData - The strings to search for.
+   */
   const searchData = async (filePath: string, searchData: string[]) => {
     const content = (await fs.readFile(filePath, 'utf-8')).split('\n');
 
@@ -41,6 +45,10 @@ let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
     }
   };
 
+  /**
+   * Traverses directories recursively and searches for target values.
+   * @param {string} dirPath - The path to the directory to traverse.
+   */
   const traverseDir = async (dirPath: string) => {
     try {
       const files = await fs.readdir(dirPath);
@@ -62,6 +70,11 @@ let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
     }
   };
 
+  /**
+   * Writes manifest data to a file.
+   * @param {any} json - The data (in JSON) to write to the manifest.
+   * @param {string} authorUrl - The URL of the author's profile.
+   */
   const writeManifest = async (json: any, authorUrl: string | undefined) => {
     const manifestJSON = {
       id: json.name,
@@ -115,6 +128,11 @@ let TARGET_VALUES = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
   await fs.copyFile('manifest.json', 'manifest-backup.json');
 
   await writeManifest(packageJSON, authorUrl);
+
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
 
   rl.question(colors.yellow('Do you want to change the finding signature for the script? (y/n): '), (answ1) => {
     if (answ1 === 'y') {
