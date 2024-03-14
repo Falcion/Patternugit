@@ -17,7 +17,7 @@
     <h3>
         Patternugit</h3>
      <p>
-    Everything could be systemized, you just need to try.
+    Patterns are the keys.
     <br/>
     <a href="https://github.com/Falcion/Patternugit/compare/">Contribute to us</a>
     /
@@ -33,10 +33,9 @@
 About the project
 -----------------
 
-Are you looking to skip the hassle of setting up a repository, dealing with tedious documentation and scripts, and dive right into your project while ensuring it's extensible[^1] and automated[^1]? 
+Many projects lack sufficient development and preparation in the area of their environment and sometimes are not intended as such at all due to the overall complexity, time-consuming and non-adaptive nature of such a process[^1].
 
-Look no further! This project is designed to provide a comprehensive solution to your needs, offering a robust repository packed with documentation, scripts, settings, configurations, and simple yet effective solutions.
-
+With this project, all you have to do is run some scripts, edit the necessary data and add your own basic project plugins and you will have a fully customized project from an open source perspective, ready for a development environment not only for you but for others as well.
 
 <!-- BUILT WITH:
  -->
@@ -138,7 +137,7 @@ Roadmap
 - [x] Refactor and prepare for “advancing” the project's logic and write an entire functionality of it.
   - [x] Write an advanced .TS script for managing core of this project's functionality (being a template);
   - [x] Write an advanced infrastructure for project's surroundings and etc.;
-- [ ] Refactor and prepare for “advancing” the project's documentation and publish it via the archive.
+- [x] Refactor and prepare for “advancing” the project's documentation and publish it via the archive.
 
 <p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
 
@@ -169,6 +168,8 @@ License
 
 Project thanks the [Electron.js](https://github.com/electron/electron/) and [Angular.js](https://github.com/angular/angular/) for their amazing repository scripts and entire infrastructure, which partially were imported to this repository. 
 
+> For individual licensing and credits information, seek correspondive files and/or sources.
+
 Project itself is being distributed under the [MIT License](https://choosealicense.com/licenses/mit/) — see the file for more specified information.
 
 <p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
@@ -183,7 +184,8 @@ For any legal purposes, you can contact developer/maintainer through its e-mail:
 
 <!-- Using "MAILTO" for better view of README -->
 
-- <a href="mailto: io.falcion@outlook.com">Outlook E-mail</a>
+- <a href="mailto: io.falcion@outlook.com">Outlook E-mail</a>\
+  You can also check contact information in [CODEOWNERS](./.github/CODEOWNERS) file within referencing our contacts.
 
 If the developer/maintainer didn't answered, or you have other questions in nature, you can use issues page on this repository via specified templates or indirect self-written issue.
 
@@ -197,7 +199,6 @@ Acknowledgments
 
 - https://shields.io/
 - https://simpleicons.org/
-- [Electron.js](https://github.com/electron/electron)
 - https://gitignore.io/
 - https://gitattributes.io/
 - [Best README template](https://github.com/othneildrew/Best-README-Template)
