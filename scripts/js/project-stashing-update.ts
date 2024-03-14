@@ -40,15 +40,51 @@ async function updateProject(repositoryPath: string) {
     const currentBranch = await getCurrentBranch(repositoryPath);
 
     // Stash any local changes
-    await executeCommand(['git', 'stash']);
+    await new Promise((resolve, reject) => {
+      exec(['git', 'stash'].join(' '), (error, stdout, stderr) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+        if (stderr) {
+          console.error(stderr);
+        }
+        console.log(stdout);
+        resolve(stdout.trim());
+      });
+    });
     // Checkout the desired tag
-    await executeCommand(['git', 'checkout', `${latestTag}`]);
+    await new Promise((resolve, reject) => {
+      exec(['git', 'checkout', `${latestTag}`].join(' '), (error, stdout, stderr) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+        if (stderr) {
+          console.error(stderr);
+        }
+        console.log(stdout);
+        resolve(stdout.trim());
+      });
+    });
 
     const oldVersionDir = path.join(tempDir, `old_patch-${latestTag}`);
     await fs.copy(repositoryPath, oldVersionDir);
 
     // Checkout back to the current branch
-    await executeCommand(['git', 'checkout', `${currentBranch}`]);
+    await new Promise((resolve, reject) => {
+      exec(['git', 'checkout', `${currentBranch}`].join(' '), (error, stdout, stderr) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+        if (stderr) {
+          console.error(stderr);
+        }
+        console.log(stdout);
+        resolve(stdout.trim());
+      });
+    });
 
     console.log(`Old version from tag '${latestTag}' loaded into '${oldVersionDir}'`);
   } catch (error) {
@@ -57,13 +93,13 @@ async function updateProject(repositoryPath: string) {
 }
 
 /**
- * Executes a shell command asynchronously.
- * @param {string[]} args - The arguments of the command to execute.
- * @returns {Promise<string>} A promise that resolves with the command output when the command execution is completed.
+ * Gets the name of the current branch of the repository.
+ * @param {string} repositoryPath - The path to the repository.
+ * @returns {Promise<string>} A promise that resolves with the name of the current branch.
  */
-function executeCommand(args: string[]): Promise<string> {
-  return new Promise((resolve, reject) => {
-    exec(args.join(' '), (error, stdout, stderr) => {
+async function getCurrentBranch(repositoryPath: string): Promise<string> {
+  return await new Promise((resolve, reject) => {
+    exec(['git', 'branch', '--show-current'].join(' '), (error, stdout, stderr) => {
       if (error) {
         reject(error);
         return;
@@ -75,16 +111,6 @@ function executeCommand(args: string[]): Promise<string> {
       resolve(stdout.trim());
     });
   });
-}
-
-/**
- * Gets the name of the current branch of the repository.
- * @param {string} repositoryPath - The path to the repository.
- * @returns {Promise<string>} A promise that resolves with the name of the current branch.
- */
-async function getCurrentBranch(repositoryPath: string): Promise<string> {
-  const stdout = await executeCommand(['git', 'branch', '--show-current']);
-  return stdout;
 }
 
 /**

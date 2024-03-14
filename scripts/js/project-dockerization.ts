@@ -42,42 +42,71 @@ async function deploy(projectName: string) {
     const imageFullName = `${registry}/${projectName}:${imageTag}`;
     const deploymentFilePath = path.resolve(__dirname, '../../../deployment.yml');
 
-    await executeCommand(['docker', 'build', '-t', projectName, '.']);
+    await new Promise((resolve, reject) => {
+      const command = ['docker', 'build', '-t', projectName, '.'].join(' '); // Join arguments into a single command string
+      exec(command, (error, stdout, stderr) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+        if (stderr) {
+          console.error(stderr);
+        }
+        console.log(stdout);
+        resolve(undefined);
+      });
+    });
 
-    await executeCommand(['docker', 'tag', projectName, imageFullName]);
+    await new Promise((resolve, reject) => {
+      const command = ['docker', 'tag', projectName, imageFullName].join(' '); // Join arguments into a single command string
+      exec(command, (error, stdout, stderr) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+        if (stderr) {
+          console.error(stderr);
+        }
+        console.log(stdout);
+        resolve(undefined);
+      });
+    });
 
-    await executeCommand(['docker', 'push', `${imageFullName}`]);
+    await new Promise((resolve, reject) => {
+      const command = ['docker', 'push', `${imageFullName}`].join(' '); // Join arguments into a single command string
+      exec(command, (error, stdout, stderr) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+        if (stderr) {
+          console.error(stderr);
+        }
+        console.log(stdout);
+        resolve(undefined);
+      });
+    });
 
-    await executeCommand(['kubectl', 'apply', '-f', `${deploymentFilePath}`]);
+    await new Promise((resolve, reject) => {
+      const command = ['kubectl', 'apply', '-f', `${deploymentFilePath}`].join(' '); // Join arguments into a single command string
+      exec(command, (error, stdout, stderr) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+        if (stderr) {
+          console.error(stderr);
+        }
+        console.log(stdout);
+        resolve(undefined);
+      });
+    });
 
     console.log('Deployment completed successfully!');
   } catch (error) {
     console.error('Error during deployment:', error);
   }
 }
-
-/**
- * Executes a shell command asynchronously.
- * @param {string[]} args - An array of command arguments.
- * @returns {Promise<void>} A promise that resolves when the command execution is completed.
- */
-function executeCommand(args: string[]): Promise<void> {
-  return new Promise((resolve, reject) => {
-    const command = args.join(' '); // Join arguments into a single command string
-    exec(command, (error, stdout, stderr) => {
-      if (error) {
-        reject(error);
-        return;
-      }
-      if (stderr) {
-        console.error(stderr);
-      }
-      console.log(stdout);
-      resolve();
-    });
-  });
-}
-
 
 const packageJsonPath = path.resolve(__dirname, '../../../package.json');
 
