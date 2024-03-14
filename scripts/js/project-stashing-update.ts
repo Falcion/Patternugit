@@ -1,18 +1,3 @@
-/**
- * The MIT License (MIT)
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- *
- * @license MIT
- * @author Falcion
- * @year 2023-2024
- */
-
-
 import { exec } from 'child_process';
 import * as fs from 'fs-extra';
 import * as path from 'path';
@@ -59,12 +44,12 @@ async function updateProject(repositoryPath: string) {
 
 /**
  * Executes a shell command asynchronously.
- * @param {string} command - The command to execute.
- * @returns {Promise<void>} A promise that resolves when the command execution is completed.
+ * @param {string[]} args - The arguments of the command to execute.
+ * @returns {Promise<string>} A promise that resolves with the command output when the command execution is completed.
  */
-function executeCommand(command: string): Promise<string> {
+function executeCommand(args: string): Promise<string> {
   return new Promise((resolve, reject) => {
-    exec(command, (error, stdout, stderr) => {
+    exec(args, (error, stdout, stderr) => {
       if (error) {
         reject(error);
         return;
@@ -84,7 +69,7 @@ function executeCommand(command: string): Promise<string> {
  * @returns {Promise<string>} A promise that resolves with the name of the current branch.
  */
 async function getCurrentBranch(repositoryPath: string): Promise<string> {
-  const stdout = await executeCommand('git branch --show-current');
+  const stdout = await executeCommand(['git', 'branch', '--show-current'].join(' '));
   return stdout;
 }
 
