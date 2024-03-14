@@ -42,13 +42,13 @@ async function deploy(projectName: string) {
     const imageFullName = `${registry}/${projectName}:${imageTag}`;
     const deploymentFilePath = path.resolve(__dirname, '../../../deployment.yml');
 
-    await executeCommand(`docker build -t ${projectName} .`);
+    await executeCommand(['docker', 'build', '-t', projectName, '.']);
 
-    await executeCommand(`docker tag ${projectName} ${imageFullName}`);
+    await executeCommand(['docker', 'tag', projectName, imageFullName]);
 
-    await executeCommand(`docker push ${imageFullName}`);
+    await executeCommand(['docker', 'push', `${imageFullName}`]);
 
-    await executeCommand(`kubectl apply -f ${deploymentFilePath}`);
+    await executeCommand(['kubectl', 'apply', '-f', `${deploymentFilePath}`]);
 
     console.log('Deployment completed successfully!');
   } catch (error) {
@@ -58,11 +58,12 @@ async function deploy(projectName: string) {
 
 /**
  * Executes a shell command asynchronously.
- * @param {string} command - The command to execute.
+ * @param {string[]} args - An array of command arguments.
  * @returns {Promise<void>} A promise that resolves when the command execution is completed.
  */
-function executeCommand(command: string): Promise<void> {
+function executeCommand(args: string[]): Promise<void> {
   return new Promise((resolve, reject) => {
+    const command = args.join(' '); // Join arguments into a single command string
     exec(command, (error, stdout, stderr) => {
       if (error) {
         reject(error);
@@ -76,6 +77,7 @@ function executeCommand(command: string): Promise<void> {
     });
   });
 }
+
 
 const packageJsonPath = path.resolve(__dirname, '../../../package.json');
 
