@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: deployment
 metadata:
   name: my-app-deployment
 spec:
@@ -12,8 +12,13 @@ spec:
       labels:
         app: my-app
     spec:
-      containers:
-        - name: my-app-container
-          image: your-docker-image:latest
-          ports:
-            - containerPort: 3000
+  containers:
+    - name: nginx-container
+      image: nginx
+      resources:
+        limits:
+          memory: 512Mi
+          cpu: "1"
+        requests:
+          memory: 256Mi
+          cpu: "0.2"
