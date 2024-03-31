@@ -68,8 +68,7 @@ Community leaders have the right and responsibility to remove, edit, or reject c
 Enforcement
 ===========
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at two ways:
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at two ways:
 
 - contacting via default methods, e-mail[^1] or issues page, but for privacy purposes, its recommended to use the first method;
 - if the behaviour breaks the “github-ian” code-doc, you can also report him via support service of the website;
