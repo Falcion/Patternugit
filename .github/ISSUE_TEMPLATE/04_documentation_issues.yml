@@ -2,8 +2,6 @@ name: Issue about the documentation
 description: Use this form to report any issues or inconsistencies you encounter in the project's documentation
 title: "[DOCS]: "
 labels: ["Documentation"]
-projects: [""]
-assignees: [""]
 body:
   - type: markdown
     attributes:
@@ -17,7 +15,7 @@ body:
     id: contact
     attributes:
       label: Contact details
-      description: If possible, write down the contact information if you need additional communication, if you want contact via “github”, write it down.
+      description: If possible, write down the contact information if you need additional communication, if you want contact via “github”, leave this field blank.
       placeholder: example@domain.com
     validations:
       required: false
