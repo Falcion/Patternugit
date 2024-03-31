@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# MIT License
+# Copyright (c) Falcion 2023-2024
+# Free to share, use or change.
+
 manifest_path="$PSScriptRoot/../../manifest.json"
 manifest_content=$(<"$manifest_path")
 package_name=$(echo "$manifest_content" | jq -r '.name')

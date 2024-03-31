@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# MIT License
+# Copyright (c) Falcion 2023-2024
+# Free to share, use or change.
+
 script_dir=$(dirname "$(readlink -f "$0")")
 cd "$script_dir" || exit
 

@@ -1,3 +1,7 @@
+# MIT License
+# Copyright (c) Falcion 2023-2024
+# Free to share, use or change.
+
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 Set-Location $scriptDir
 

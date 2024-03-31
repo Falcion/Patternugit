@@ -1,6 +1,3 @@
-import { spawnSync } from 'node:child_process';
-import * as path from 'node:path';
-
 /*
  * Script was made by: @electron
  * Will not be refactored or touched, for more information, see their
@@ -13,6 +10,9 @@ import * as path from 'node:path';
  * Copyright (c) Electron contributors
  * Copyright (c) 2013-2020 GitHub Inc.
  */
+
+import { spawnSync } from 'node:child_process';
+import * as path from 'node:path';
 
 const srcPath = path.resolve(__dirname, '..', '..', '..');
 const patchExportFnPath = path.resolve(__dirname, 'export_all_patches.py');

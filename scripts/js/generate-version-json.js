@@ -1,6 +1,3 @@
-const fs = require('node:fs');
-const semver = require('semver');
-
 /*
  * Script was made by: @electron
  * Will not be refactored or touched, for more information, see their
@@ -13,6 +10,9 @@ const semver = require('semver');
  * Copyright (c) Electron contributors
  * Copyright (c) 2013-2020 GitHub Inc.
  */
+
+const fs = require('node:fs');
+const semver = require('semver');
 
 const outputPath = process.argv[2];
 const currentVersion = process.argv[3];

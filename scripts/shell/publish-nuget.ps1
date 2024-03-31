@@ -1,3 +1,7 @@
+# MIT License
+# Copyright (c) Falcion 2023-2024
+# Free to share, use or change.
+
 $manifestPath = Join-Path $PSScriptRoot "../../manifest.json"
 $manifestContent = Get-Content -Raw $manifestPath | ConvertFrom-Json
 $packageName = $manifestContent.name

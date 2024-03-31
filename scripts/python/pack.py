@@ -7,20 +7,18 @@
 import os
 import zipfile
 
-repo_root = "./../../"
+ROOT = "./../../"
+PATH = os.path.join(ROOT, "scripts", "python")
 
-script_dir = os.path.join(repo_root, "scripts", "python")
+ZIP = zipfile.ZipFile(os.path.join(PATH, "BACKUP.zip"), "w", zipfile.ZIP_DEFLATED)
 
-zip_filename = "repo_backup.zip"
-zip_file = zipfile.ZipFile(os.path.join(script_dir, zip_filename), "w", zipfile.ZIP_DEFLATED)
-
-for root, dirs, files in os.walk(repo_root):
+for root, dirs, files in os.walk(ROOT):
     if ".git" in dirs:
         dirs.remove(".git")
     for file in files:
-        file_path = os.path.join(root, file)
-        zip_file.write(file_path, os.path.relpath(file_path, repo_root))
+        filepath = os.path.join(root, file)
+        ZIP.write(filepath, os.path.relpath(filepath, ROOT))
 
-zip_file.close()
+ZIP.close()
 
-print("Repository compressed into", zip_filename)
+print("Repository compressed into \"BACKUP.zip\" successfully.")

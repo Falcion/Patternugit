@@ -7,32 +7,37 @@
 import shutil
 import os
 
+ROOT, TARGET = "./../../", "source"
+
+
 def confirm_copy():
     while True:
-        response = input("Do you want to copy the files? (y/n): ").strip().lower()
-        if response in ("y", "n"):
-            return response == "y"
+        response = input("Do you want to copy the files? (Y/N): ").strip().upper()
+
+        if response in ("Y", "N"):
+            return response == "Y"
         else:
-            print("Invalid input. Please enter 'y' or 'n'.")
+            print("Invalid input, please, enter 'Y' or 'N' as an answer.")
 
-source_dir = "./../../"  # Root directory
-destination_dir = "source"  # Destination folder
 
-files_to_copy = ["main.ts", "manifest.json"]
-
-if not os.path.exists(destination_dir):
-    os.makedirs(destination_dir)
+COPIED_FILES = ["main.ts", "manifest.json"]
 
 if confirm_copy():
-    for file_name in files_to_copy:
-        source_path = os.path.join(source_dir, file_name)
-        destination_path = os.path.join(destination_dir, file_name)
-        
+    if not os.path.exists(TARGET):
+        os.makedirs(TARGET)
+
+    for file in COPIED_FILES:
+        filepath = os.path.join(ROOT, file)
+        copypath = os.path.join(TARGET, file)
+
         try:
-            shutil.copy(source_path, destination_path)
-            print(f"Copied {file_name} to {destination_dir}")
-        except FileNotFoundError:
-            print(f"File {file_name} not found in the root directory.")
+            shutil.copy(filepath, copypath)
+
+            print(
+                f"Entity \"{file}\" was copied to \"{TARGET}\" successfully.")
+        except Exception:
+            print(
+                f"Entity {file} not found in the root directory, thrown error.")
 
     print("Copy process completed.")
 else:
