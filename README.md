@@ -118,8 +118,19 @@ Usage of this project is very easy and comfortable for common user, its not prov
 # Installing every dependency for package:
 npm i
 # Using prepare script for this repository:
-npm run prepare
+npm run prepare:main
 ```
+
+After setting up project's template within custom provided script, it is recommended to follow this algorithm:
+1. You MUST update .GITIGNORE file, for more information and sources, check .GITIGNORE-README;
+2. You MUST update .GITATTRIBUTES file, for more information and sources, check .GITATTRIBUTES-README;
+3. If you don't use DOCKER/KUBERNETES, do this:\
+    REMOVE any related file either to DOCKER or KUBERNETES;
+4. It is RECOMMENDED to set up custom workflows for your code;
+5. It is RECOMMENDED to set up custom attributes for .GITCONFIG of your project (check GITHUB subdirectory);
+6. It is RECOMMENDED to read applied in this template documentation, you may disagree or want to edit it up; 
+7. PLEASE, don't be stupid and update LICENSE and README according to your project (image is from README template by othneildrew).
+
 <p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
 
 <!-- ROADMAP:
@@ -127,6 +138,13 @@ npm run prepare
 
 Roadmap
 -------
+
+<!-- 
+  This roadmap is general and initial,
+  meaning it is created only at the start 
+  of project development and discontinued 
+  after completion of it.  
+ -->
 
 - [x] Create basic repository infrastructure for this project, including:
   - [x] basic .MD documentations and dealings stuff (like README, LICENSE and etc.);
@@ -201,6 +219,8 @@ Acknowledgments
 - https://simpleicons.org/
 - https://gitignore.io/
 - https://gitattributes.io/
+  - this generator is discontinued, use:\
+    https://richienb.github.io/gitattributes-generator/
 - [Best README template](https://github.com/othneildrew/Best-README-Template)
 
 <p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
