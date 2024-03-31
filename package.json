@@ -1,13 +1,20 @@
 {
   "name": "patternugit",
+  "displayName": "Patternugit",
   "private": "true",
   "version": "0.3.3",
   "description": "Preconfigured pattern for your repository with universal cases for markdown files of documentations and other actions/scripts",
   "main": "prepare.ts",
   "type": "commonjs",
+  "markdown": "github",
   "directories": {
     "doc": "docs"
   },
+  "os": [
+    "linux",
+    "win32",
+    "win64"
+  ],
   "readme": "https://github.com/Falcion/Patternugit#readme",
   "scripts": {
     "preinit": "npm i --force",
@@ -47,7 +54,11 @@
     "workflows-to-access",
     "workflows-reusable"
   ],
-  "author": "Falcion",
+  "author": {
+    "name": "Falcion",
+    "email": "io.falcion@outlook.com",
+    "url": "https://github.com/Falcion/"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Falcion/Patternugit/issues"
@@ -86,12 +97,6 @@
       "node scripts/lint.js --patches --only --",
       "ts-node scripts/js/check-patch-diff.ts"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "sh .husky/pre-commit",
-      "commit-msg": "sh .husky/commit-msg"
-    }
   },
   "config": {
     "commitizen": {
