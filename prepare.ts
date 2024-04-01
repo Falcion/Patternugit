@@ -24,16 +24,16 @@ class PREPARE_MODULE {
     ROOT_DIRECTORY: string = __dirname;
 
     EXCLUDING_FOLDER: string[] = ['node_modules', 'venv', '.git', 'out'];
-    EXCLUDING_VALUES: string[] = ['FALCION',
+    EXCLUDING_VALUES: string[] = [
+        'FALCION',
         'PATTERNU',
-        'PATTERNUGIT'];
+        'PATTERNUGIT'
+    ];
 
     constructor(entries: string[]) {
         if (entries[0] != 'NO')
-            for (const item in entries)
+            for (const item of entries)
                 this.EXCLUDING_VALUES.push(item);
-        else
-            this.EXCLUDING_VALUES = this.EXCLUDING_VALUES;
     }
 
     async search(filepath: string,
@@ -53,21 +53,20 @@ class PREPARE_MODULE {
         try {
             const files: string[] = await fs.readdir(directory);
 
-            for (const file in files) {
+            for (const file of files) {
                 const filepath = path.join(directory, file);
 
                 const filestat = await fs.stat(filepath);
 
-
-                if (filestat.isDirectory())
-                    if (!this.EXCLUDING_FOLDER.includes(file))
+                if (filestat.isDirectory()) {
+                    if (!this.EXCLUDING_FOLDER.includes(file)) {
                         await this.traverse(filepath);
-                    else if (filestat.isFile())
-                        await this.search(filepath, this.EXCLUDING_VALUES);
-                    else
-                        throw new Error(colors.red('No correct data was found, exception attribute is:') + colors.bgRed(` ${filepath}`));
+                    }
+                } else
+                    await this.search(filepath, this.EXCLUDING_VALUES);
             }
-        } catch (err) { console.error(colors.red('Error via reading given directory: ' + `${err}`)); }
+        }
+        catch (err) { console.error(colors.red('Error via reading given directory: ' + `${err}`)); }
     }
 }
 
@@ -101,13 +100,13 @@ else {
     fs.copyFileSync('manifest.json', 'manifest-backup.json');
 
     const input_json: any = {
-        id: PACKAGE_JSON.name,
-        name: PACKAGE_JSON.displayName,
-        description: PACKAGE_JSON.description,
-        author: PACKAGE_JSON.author.name,
-        authorUrl: PACKAGE_JSON.author.url,
-        license: PACKAGE_JSON.license,
-        version: PACKAGE_JSON.version,
+        'id': 		PACKAGE_JSON.name,
+        'name': 	PACKAGE_JSON.displayName,
+        'description': PACKAGE_JSON.description,
+        'author': 	PACKAGE_JSON.author.name,
+        'authorUrl': PACKAGE_JSON.author.url,
+        'license': 	PACKAGE_JSON.license,
+        'version': 	PACKAGE_JSON.version,
     };
 
     fs.writeFileSync('manifest.json', JSON.stringify(input_json, undefined, 4));
@@ -123,11 +122,11 @@ RL.question(colors.bold('Change finding signatures (words) for the finder script
             new PREPARE_MODULE(input).traverse(__dirname);
 
             RL.close();
-        })
+        });
     }
     else {
         new PREPARE_MODULE(['NO']).traverse(__dirname);
-
-        RL.close();
     }
 });
+
+RL.close();
