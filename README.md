@@ -129,7 +129,7 @@ After setting up project's template within custom provided script, it is recomme
 4. It is RECOMMENDED to set up custom workflows for your code;
 5. It is RECOMMENDED to set up custom attributes for .GITCONFIG of your project (check GITHUB subdirectory);
 6. It is RECOMMENDED to read applied in this template documentation, you may disagree or want to edit it up; 
-7. PLEASE, don't be stupid and update LICENSE and README according to your project (image is from README template by othneildrew).
+7. It is RECOMMENDED to update LICENSE and README according to your project (image is from README template, for references see links below).
 
 <p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
 
