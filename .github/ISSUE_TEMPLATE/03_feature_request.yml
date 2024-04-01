@@ -54,4 +54,3 @@ body:
       options:
         - label: I agree to follow this project's issue policy
           required: true
-    

@@ -8,11 +8,11 @@
 		"allowSyntheticDefaultImports": true,
 		"skipLibCheck": true,
 		"target": "es6",
-        "lib": [
-            "es2022",
-            "dom",
-            "dom.iterable"
-        ],
+		"lib": [
+			"es2022",
+			"dom",
+			"dom.iterable"
+		],
 		"outDir": "out",
 		"baseUrl": "./",
 		"incremental": true,
@@ -21,6 +21,13 @@
 		"strict": true,
 		"sourceMap": false
 	},
-	"exclude": ["node_modules", "out", "git", "venv"],
-	"include": ["**/*.ts"]
+	"exclude": [
+		"node_modules",
+		"out",
+		"git",
+		"venv"
+	],
+	"include": [
+		"**/*.ts"
+	]
 }

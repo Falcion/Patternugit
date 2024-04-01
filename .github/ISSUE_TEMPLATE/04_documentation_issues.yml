@@ -24,7 +24,7 @@ body:
     attributes:
       label: Where is the essence of the bug
       description: Write the file name and the line of the bugs you've encountered, like “README:L#53”.
-      placeholder: 'ISSUE_POLICY:L#1'
+      placeholder: "ISSUE_POLICY:L#1"
     validations:
       required: true
   - type: textarea
