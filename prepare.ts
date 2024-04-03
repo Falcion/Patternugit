@@ -127,6 +127,6 @@ RL.question(colors.bold('Change finding signatures (words) for the finder script
     else {
         new PREPARE_MODULE(['NO']).traverse(__dirname);
     }
-});
 
-RL.close();
+    RL.close();
+});
