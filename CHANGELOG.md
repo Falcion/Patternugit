@@ -2,6 +2,102 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.4](https://github.com/mokkapps/changelog-generator-demo/compare/v0.3.3...v0.3.4) (2024-04-01)
+
+
+### Features
+
+* **build:** update and refactor .EDITORCONFIG ([94d89b5](https://github.com/mokkapps/changelog-generator-demo/commits/94d89b5682d57cadb57e4ba944a435e84d7f63b3))
+* **code:** add references and common refactoring to scripts ([cff3227](https://github.com/mokkapps/changelog-generator-demo/commits/cff3227e1b833d16abbb0b048accaba83b190154))
+* **core:** add core support and prefs for OBSIDIAN ([11ad823](https://github.com/mokkapps/changelog-generator-demo/commits/11ad823ca45f64a0b31b224a6347fb7acad8990d))
+* **git:** add OBSIDIAN to the ignore file ([e1a3aa4](https://github.com/mokkapps/changelog-generator-demo/commits/e1a3aa41f7b2b468d1a1c0eb147120398154a244))
+* **git:** add READMEs for .GIT files ([4b19c02](https://github.com/mokkapps/changelog-generator-demo/commits/4b19c02f1ad82dd6b9cb1cfd8599793ca2d5d355))
+* **git:** fix and update issue templates accordingly to YAML and GIT ([addb6c5](https://github.com/mokkapps/changelog-generator-demo/commits/addb6c5329490fa52ccb606a530601c1c9406663))
+
+
+### Refactoring
+
+* **readme:** update README file ([16ffd04](https://github.com/mokkapps/changelog-generator-demo/commits/16ffd0441fa57fba2667fd783747ce0ce69e69da))
+
+
+### Fixes
+
+* **docs:** linefix of LF and multilining (L[#70](https://github.com/Falcion/Patternugit/issues/70)) in code of conduct ([906d9d8](https://github.com/mokkapps/changelog-generator-demo/commits/906d9d815ad6cd2934b785c7550985e57b44669f))
+* **security:** fix securities issues [#31](https://github.com/Falcion/Patternugit/issues/31) and [#32](https://github.com/Falcion/Patternugit/issues/32) ([111c4d0](https://github.com/mokkapps/changelog-generator-demo/commits/111c4d0d377f650f120631e0a44ad32e2ac6322f))
+
+
+### Build system
+
+* **deploy:** add resource management in DOCKER ([f05aa77](https://github.com/mokkapps/changelog-generator-demo/commits/f05aa7753b87360f40c6bf8c0d14df27c1cec4cf))
+* **deploy:** add resource management in KUBERNETES ([75b22a6](https://github.com/mokkapps/changelog-generator-demo/commits/75b22a60dab28b93b5eb26a590400ea11bd5a11c))
+* **deps-dev:** bump @commitlint/cli from 18.6.1 to 19.1.0 ([cb5eaf3](https://github.com/mokkapps/changelog-generator-demo/commits/cb5eaf385fd9e9fd26f9b3fb2ad6e885bbd42acb))
+* **deps-dev:** bump @commitlint/config-conventional ([a15d451](https://github.com/mokkapps/changelog-generator-demo/commits/a15d45125e1054e0364a45a0e4c09065b3edd715))
+* **docs:** add documentation to HUSKY issues ([9715937](https://github.com/mokkapps/changelog-generator-demo/commits/97159374ba967f0f2ecd10f58f2fe1a1a3f688d5))
+* **husky:** update and refactor commit message script in deletion ([741562e](https://github.com/mokkapps/changelog-generator-demo/commits/741562e2b9797da9cd92ad2b24f791c5b2560f68))
+* **package-deps:** update package manifest ([9c38d4b](https://github.com/mokkapps/changelog-generator-demo/commits/9c38d4b3c46860bf7a1f7dcf25075bf920c1df22))
+* **settings:** add preferences for VS-CODE editor ([2160753](https://github.com/mokkapps/changelog-generator-demo/commits/2160753e9fa74f2b128452911448942ef92e55a8))
+* **workflows:** remove auto-merge ([#34](https://github.com/Falcion/Patternugit/issues/34)) for dependabot ([a50fe5b](https://github.com/mokkapps/changelog-generator-demo/commits/a50fe5b5e764b2ba816a32962ad4ea5a65a0da91))
+
+
+### Documentation
+
+* **readme:** mass update of README ([140ebc7](https://github.com/mokkapps/changelog-generator-demo/commits/140ebc7da5f5c4cdc22bf0c00cf1b6183546a7cd))
+
+### [0.3.3](https://github.com/mokkapps/changelog-generator-demo/compare/v0.3.2...v0.3.3) (2024-03-14)
+
+
+### Common
+
+* **scripts:** add new adapt script functionality ([29e653e](https://github.com/mokkapps/changelog-generator-demo/commits/29e653e5a89ef87d86f9121c0bafbae89510bd48))
+
+### [0.3.2](https://github.com/mokkapps/changelog-generator-demo/compare/v0.3.1...v0.3.2) (2024-03-04)
+
+
+### Fixes
+
+* **build:** fix `ts-node` build in prepare script ([b3ea578](https://github.com/mokkapps/changelog-generator-demo/commits/b3ea578f8d27a958d4479a3e15586fb0b4f306b7))
+* **build:** fix main prepare script from package's JSON ([3bdce2c](https://github.com/mokkapps/changelog-generator-demo/commits/3bdce2c3f807535f10d75f2ef56d2458b659b72d))
+* **import:** fix imports of `colors` to `colors/safe` in prepare .TS script ([ce35ab4](https://github.com/mokkapps/changelog-generator-demo/commits/ce35ab42492c7dbbabbe49e9089b5110ac8ba763))
+
+### [0.3.1](https://github.com/mokkapps/changelog-generator-demo/compare/v0.3.0...v0.3.1) (2024-03-04)
+
+
+### Features
+
+* **labels:** add priority labels to settings ([8d05e68](https://github.com/mokkapps/changelog-generator-demo/commits/8d05e68720d36783727bf8509c8a325170dadceb))
+
+
+### Fixes
+
+* **husky:** update husky preparation and fix deprecated bug ([4210ed3](https://github.com/mokkapps/changelog-generator-demo/commits/4210ed326a8ca7104f4530a677082715afeb1365)), closes [#26](https://github.com/Falcion/Patternugit/issues/26)
+
+## [0.3.0](https://github.com/mokkapps/changelog-generator-demo/compare/v0.2.4...v0.3.0) (2024-02-28)
+
+
+### Features
+
+* **docs:** add managing guide and additional files ([b3bd307](https://github.com/mokkapps/changelog-generator-demo/commits/b3bd30733e8980f503ef8bfa2276c1f38a741b71))
+* **docs:** add SemVer document ([48b94e8](https://github.com/mokkapps/changelog-generator-demo/commits/48b94e8710e8356c9d0d8904f95ffbf529f79882))
+
+
+### Build system
+
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([ba64e06](https://github.com/mokkapps/changelog-generator-demo/commits/ba64e069c9b3d288a78ad18788e1ac7775972f54))
+* **deps-dev:** bump @typescript-eslint/parser from 6.21.0 to 7.0.1 ([a60ae19](https://github.com/mokkapps/changelog-generator-demo/commits/a60ae19136977ea5f9b711469d74255a8665efbe)), closes [#22](https://github.com/Falcion/Patternugit/issues/22)
+* **deps-dev:** bump @typescript-eslint/parser from 6.21.0 to 7.0.1 ([3cc5c1d](https://github.com/mokkapps/changelog-generator-demo/commits/3cc5c1dcf8b9538fdd5dafdf933dbfddde8d1280))
+* **deps-dev:** bump @typescript-eslint/parser from 6.21.0 to 7.0.2 ([607bb9b](https://github.com/mokkapps/changelog-generator-demo/commits/607bb9b47cd7bdbe73edba8b6462edf60087ac0b))
+* **publishing:** add Shell scripts to publish (Nuget & NPM) ([b71e5cf](https://github.com/mokkapps/changelog-generator-demo/commits/b71e5cf3881df098f6960383b4fd19c6c6aed2ee))
+
+
+### Refactoring
+
+* **docs:** rewrite intro in the README ([c30d980](https://github.com/mokkapps/changelog-generator-demo/commits/c30d980263326823f2a057ad50c18dbfd7bb55d4))
+* **docs:** update date in licenses ([2495d78](https://github.com/mokkapps/changelog-generator-demo/commits/2495d7829f7cd0cda9a19ee9831bff8204694295))
+* **script:** refactor of preparation script ([2e97175](https://github.com/mokkapps/changelog-generator-demo/commits/2e971754da7887c2f77fa02c52ae482080199fb6))
+* **scripts:** add license and author references to scripts ([d464d91](https://github.com/mokkapps/changelog-generator-demo/commits/d464d9155898e57be7b2805144bf381f047597ca))
+* **scripts:** refactor entire script base of schema ([55fd939](https://github.com/mokkapps/changelog-generator-demo/commits/55fd939f013f2221af63529a79a8b134281a5c64))
+* **scripts:** refactor publishing scripts (NuGet & NPM) ([a2136c3](https://github.com/mokkapps/changelog-generator-demo/commits/a2136c3fcb16007dfd237e1a0d8689be6649ecfa))
+
 ### [0.2.4](https://github.com/mokkapps/changelog-generator-demo/compare/v0.2.3...v0.2.4) (2024-02-23)
 
 

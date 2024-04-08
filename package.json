@@ -1,13 +1,20 @@
 {
   "name": "patternugit",
+  "displayName": "Patternugit",
   "private": "true",
-  "version": "0.2.4",
+  "version": "0.3.4",
   "description": "Preconfigured pattern for your repository with universal cases for markdown files of documentations and other actions/scripts",
   "main": "prepare.ts",
   "type": "commonjs",
+  "markdown": "github",
   "directories": {
     "doc": "docs"
   },
+  "os": [
+    "linux",
+    "win32",
+    "win64"
+  ],
   "readme": "https://github.com/Falcion/Patternugit#readme",
   "scripts": {
     "preinit": "npm i --force",
@@ -22,10 +29,11 @@
     "lint:js-in-markdown": "electron-lint-markdown-standard --root docs \"**/*.md\"",
     "precommit": "lint-staged",
     "prepack": "check-for-leaks",
-    "prepare": "husky install && cd scripts/python && py -m venv venv && node run prepare:main",
-    "prepare:husky": "husky install",
+    "prepare": "husky .husky/ && cd scripts/python && py -m venv venv && cd ./../../ && npm run prepare:main",
+    "prepare:husky": "husky .husky/",
     "prepare:python": "cd scripts/python && py -m venv venv",
-    "prepare:main": "node prepare.ts",
+    "prepare:main": "ts-node prepare.ts",
+    "update-analytics": "ts-node scripts/js/analytics-workflow.ts",
     "build": "tsc -noEmit -skipLibCheck prepare.ts && node esbuild.config.mjs production",
     "pack": "python scripts/python/pack.py",
     "release": "standard-version",
@@ -46,7 +54,11 @@
     "workflows-to-access",
     "workflows-reusable"
   ],
-  "author": "Falcion",
+  "author": {
+    "name": "Falcion",
+    "email": "io.falcion@outlook.com",
+    "url": "https://github.com/Falcion/"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Falcion/Patternugit/issues"
@@ -86,34 +98,30 @@
       "ts-node scripts/js/check-patch-diff.ts"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "sh .husky/pre-commit",
-      "commit-msg": "sh .husky/commit-msg"
-    }
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-customizable"
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.6.1",
-    "@commitlint/config-conventional": "^18.6.2",
-    "@electron/lint-roller": "^1.11.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@commitlint/cli": "^19.1.0",
+    "@electron/lint-roller": "^1.12.0",
     "@npmcli/package-json": "^5.0.0",
     "@octokit/rest": "^20.0.2",
     "@types/extend": "^3.0.4",
     "@types/fs-extra": "^11.0.4",
     "@types/minimist": "^1.2.5",
-    "@types/node": "^20.11.20",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
+    "@types/node": "^20.11.27",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "axios": "^1.6.7",
     "chai": "^5.1.0",
     "check-for-leaks": "^1.2.1",
+    "colors": "^1.4.0",
     "dotenv": "^16.4.5",
-    "dotenv-safe": "^9.0.0",
-    "eslint": "^8.56.0",
+    "dotenv-safe": "^9.1.0",
+    "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin": "^1.0.1",
     "eslint-plugin-import": "^2.29.1",
@@ -123,11 +131,11 @@
     "folder-hash": "^4.0.4",
     "fs-extra": "^11.2.0",
     "husky": "^9.0.11",
-    "inquirer": "^9.2.15",
+    "inquirer": "^9.2.16",
     "lint": "^1.1.2",
     "lint-staged": "^15.2.2",
     "markdownlint": "^0.33.0",
-    "markdownlint-cli2": "^0.12.1",
+    "markdownlint-cli2": "^0.13.0",
     "minimist": "^1.2.8",
     "mocha": "^10.3.0",
     "npm-update": "^3.0.1",
@@ -138,7 +146,7 @@
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.2",
     "unicorn": "^0.0.1",
     "url": "^0.11.3"
   },

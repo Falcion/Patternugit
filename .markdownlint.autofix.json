@@ -1,7 +1,10 @@
 {
     "default": false,
     "no-trailing-spaces": {
-      "br_spaces": 0
+        "br_spaces": 0
     },
-    "excludedFiles": ["**/*.ts", "**/*.js"]
+    "excludedFiles": [
+        "**/*.ts",
+        "**/*.js"
+    ]
 }

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+# MIT License.
+#
+# Copyright (c) Electron contributors
+# Copyright (c) 2013-2020 GitHub Inc.
+
 import codecs
 import os
 

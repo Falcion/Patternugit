@@ -1,26 +1,18 @@
-# Get the root directory of the project where publish-npm.ps1 is located
-$scriptDir = Split-Path -Parent -Path $MyInvocation.MyCommand.Definition
+# MIT License
+# Copyright (c) Falcion 2023-2024
+# Free to share, use or change.
 
-# Change to the root directory of the project
-Set-Location -Path $scriptDir
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
+Set-Location $scriptDir
 
-# Load the package.json file
-$packageJson = Get-Content -Path ".\..\..\package.json" | ConvertFrom-Json
-
-# Extract the package name and version from package.json
+$packageJson = Get-Content -Raw "../../package.json" | ConvertFrom-Json
 $packageName = $packageJson.name
 $packageVersion = $packageJson.version
 
-# Log in to NPM (you may need to install the `npm-cli` package globally)
 npm login
-
-# Publish the package to NPM
 npm publish
-
-# Logout from NPM (optional)
 npm logout
 
-Write-Host "Published $packageName@$packageVersion to NPM."
+Write-Output "Published $packageName@$packageVersion to NPM."
 
-# Return to the original directory (optional)
-Set-Location -Path $scriptDir
+Set-Location $scriptDir

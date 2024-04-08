@@ -1,5 +1,8 @@
 name: Checker of release tags
 
+# This workflow is stale and in theory doesn't work
+# Ignore this workflow or delete if you want.
+
 on:
   release:
     types:

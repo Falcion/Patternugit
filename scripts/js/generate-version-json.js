@@ -1,3 +1,16 @@
+/*
+ * Script was made by: @electron
+ * Will not be refactored or touched, for more information, see their
+ * GitHub page:
+ * https://github.com/electron/electron
+ *
+ * Electron.js repository is licensed and distributed under
+ * MIT License.
+ *
+ * Copyright (c) Electron contributors
+ * Copyright (c) 2013-2020 GitHub Inc.
+ */
+
 const fs = require('node:fs');
 const semver = require('semver');
 

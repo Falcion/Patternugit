@@ -4,7 +4,6 @@ Conventional commits specification is a lightweight convention on top of commit 
 
 Keep in mind, this is NOT the original document, for one-true version, seek the link.
 
-
 Commit's message formatting
 ===========================
 

@@ -116,3 +116,7 @@ out/
 # Git repository infrastructure
 package-lock.json
 manifest-backup.json
+
+# Obsidian
+!.obsidian/
+.obsidian/workspace.json
