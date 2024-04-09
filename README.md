@@ -6,6 +6,7 @@
     <a href="https://github.com/Falcion/Patternugit/stargazers"><img src="https://img.shields.io/github/stars/Falcion/Patternugit" alt="stargazers"/></a>
     <a href="https://github.com/Falcion/Patternugit/forks"><img src="https://img.shields.io/github/forks/Falcion/Patternugit" alt="forks"/></a>
     <a href="https://github.com/Falcion/Patternugit/issues"><img src="https://img.shields.io/github/issues/Falcion/Patternugit" alt="issues"/></a>
+    <a href="https://github.com/Falcion/Patternugit/actions/workflows/analytics.yml"><img src="https://img.shields.io/github/actions/workflow/status/Falcion/Patternugit/.github%2Fworkflows%2Fanalytics.yml" alt="build"></a>
     <a href="https://github.com/Falcion/Patternugit/commits"><img src="https://img.shields.io/github/last-commit/Falcion/Patternugit" alt="commit-activity"/></a>
 </div>
 <!-- -->
