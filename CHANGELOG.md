@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.5](https://github.com/mokkapps/changelog-generator-demo/compare/v0.3.4...v0.3.5) (2024-04-21)
+
+
+### Features
+
+* **full-revamp-script:** now prepare module is revampled ([bd576b4](https://github.com/mokkapps/changelog-generator-demo/commits/bd576b490304c6bc4bf45207f6790d85fc623d8d))
+* **manifest-prepare:** revamped preparation script in terms of working with files ([dd951eb](https://github.com/mokkapps/changelog-generator-demo/commits/dd951eb916e428ec4062d29203ec9f6ea2c1bef6))
+
+
+### Fixes
+
+* **build:** fix script for not asking user for input ([3bece80](https://github.com/mokkapps/changelog-generator-demo/commits/3bece803a3fb90c25dc0576deec7cac800b6dcd8))
+
+
+### Documentation
+
+* **conv:** update README file for more conventional text ([19532da](https://github.com/mokkapps/changelog-generator-demo/commits/19532da8c881df29cbb5abb5118708accaf3991b))
+* **index:** reimplement docs and remove them into new folder for pages data ([a215a03](https://github.com/mokkapps/changelog-generator-demo/commits/a215a03dfc7e39d02e157bf90b9caa5a1c56b97c))
+
+
+### Build system
+
+* **deps-dev:** bump markdownlint-cli2 from 0.12.1 to 0.13.0 ([e40c6da](https://github.com/mokkapps/changelog-generator-demo/commits/e40c6da74c2c0bf27253ad3047a5328b50e80086))
+* **editor:** add CODE's launch configurations ([0db54c1](https://github.com/mokkapps/changelog-generator-demo/commits/0db54c1aedcb1514351ea1393c11b3c0f38c2634))
+
+
+### Refactoring
+
+* **script:** refactor code structure in PREPARE script ([f9d78f1](https://github.com/mokkapps/changelog-generator-demo/commits/f9d78f1acf969151d9bd80e23db6f1ae6cb419ae))
+* **script:** refactor naming and whitespaces in PREPARE script ([27db9ce](https://github.com/mokkapps/changelog-generator-demo/commits/27db9ce8207e694b73ded550524856a86258ab22))
+
 ### [0.3.4](https://github.com/mokkapps/changelog-generator-demo/compare/v0.3.3...v0.3.4) (2024-04-01)
 
 
