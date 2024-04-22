@@ -7,10 +7,16 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "weekly"
+      interval: 'daily'
     # Add assignees
     assignees:
-      - "octocat"
+      - 'octocat'
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    # Add assignees
+      - 'octocat'
