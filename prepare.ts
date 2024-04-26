@@ -1,15 +1,27 @@
-/**
- * The MIT License (MIT)
+/*
+ * MIT License
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ * Copyright (c) 2023-2024 Falcion
  *
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- *
- * @license MIT
- * @author Falcion
- * @year 2023-2024
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ * 
+ * Any code and/or API associated with OBSIDIAN behaves as stated in their distribution policy.
  */
 
 import * as path from 'path';
@@ -25,7 +37,7 @@ import readline from 'readline';
  * This module includes functionality for searching directories, updating manifests, and more.
  * @class
  */
-class PREPARE_MODULE {
+export default class PREPARE_MODULE {
     /**
      * The root directory of the project.
      * @type {string}
@@ -40,6 +52,7 @@ class PREPARE_MODULE {
         'node_modules',
         'venv',
         '.git',
+        '$git',
         'out'
     ];
     /**
@@ -49,7 +62,8 @@ class PREPARE_MODULE {
     private EXCLUDING_VALUES: string[] = [
         'FALCION',
         'PATTERNU',
-        'PATTERNUGIT'
+        'PATTERNUGIT',
+        'PATTERNUGIT.NET'
     ];
 
     /**
@@ -61,8 +75,8 @@ class PREPARE_MODULE {
     /**
      * Creates an instance of the `PREPARE_MODULE` class.
      * @constructor
-     * @param {string[]} entries - Custom signatures (words) for file content search.
-     * @param {string} extraction_mode - Extraction mode: 'Y' for appending, 'N' for replacing, 'C' for custom.
+     * @param {string[]}    entries         - Custom signatures (words) for file content search.
+     * @param {string}      extraction_mode - Extraction mode: 'Y' for appending, 'N' for replacing, 'C' for custom.
      */
     constructor(entries: string[], extraction_mode: string = 'C') {
         if (extraction_mode == 'Y') {
@@ -79,11 +93,11 @@ class PREPARE_MODULE {
 
     /**
      * Asynchronously searches for custom signatures (words) in the content of a file.
-     * @param {string} filepath - The path of the file to search.
-     * @param {string[]} data - Custom signatures (words) to search for.
+     * @param {string}      filepath    - The path of the file to search.
+     * @param {string[]}    data        - Custom signatures (words) to search for.
      * @returns {Promise<void>}
      */
-    async __searchDir(filepath: string, data: string[]): Promise<void> {
+    async __search_directory(filepath: string, data: string[]): Promise<void> {
         const filedata: string = await fsxt.readFile(filepath, 'utf-8');
         const contents: string[] = filedata.split('\n');
 
@@ -101,7 +115,7 @@ class PREPARE_MODULE {
      * @param {string} directory - The directory to traverse.
      * @returns {Promise<void>}
      */
-    async __traverDir(directory: string): Promise<void> {
+    async __traverse_directory(directory: string): Promise<void> {
         try {
             const files: string[] = await fsxt.readdir(directory);
 
@@ -112,10 +126,10 @@ class PREPARE_MODULE {
 
                 if (filestat.isDirectory()) {
                     if (!this.EXCLUDING_FOLDER.includes(file)) {
-                        await this.__traverDir(filepath);
+                        await this.__traverse_directory(filepath);
                     }
                 } else if (filestat.isFile()) {
-                    await this.__searchDir(filepath, this.EXCLUDING_VALUES);
+                    await this.__search_directory(filepath, this.EXCLUDING_VALUES);
                 }
                 else
                     continue;
@@ -130,7 +144,7 @@ class PREPARE_MODULE {
      * Asynchronously prepares project files, such as .env and manifest.json.
      * @returns {Promise<void>}
      */
-    async __prpPrjct(): Promise<void> {
+    async __prepare_project(): Promise<void> {
         const input1: string =
             [
                 '# Type here any requested keys, token or other, for example, API or connection data',
@@ -206,7 +220,7 @@ const RL = readline.createInterface({ input: process.stdin, output: process.stdo
 
 RL.question(colors.bold('Change signatures of manifesto (JSON) for the repository [Y/N]: '), (input) => {
     if (input.toUpperCase() == 'Y') {
-        new PREPARE_MODULE([], 'C').__prpPrjct();
+        new PREPARE_MODULE([], 'C').__prepare_project();
 
         RL.close();
     } else if (input.toUpperCase() == 'N') {
@@ -219,7 +233,7 @@ RL.question(colors.bold('Change finding signatures (words) for the finder script
         RL.question(colors.bold('Enter your custom signatures (words) separatedly by commas: '), (addition) => {
             const input: string[] = addition.split(',');
 
-            new PREPARE_MODULE(input, 'Y').__traverDir(__dirname);
+            new PREPARE_MODULE(input, 'Y').__traverse_directory(__dirname);
 
             RL.close();
         });
@@ -227,12 +241,12 @@ RL.question(colors.bold('Change finding signatures (words) for the finder script
         RL.question(colors.bold('Enter your custom signatures (words) separatedly by commas: '), (addition) => {
             const input: string[] = addition.split(',');
 
-            new PREPARE_MODULE(input, 'C').__traverDir(__dirname);
+            new PREPARE_MODULE(input, 'C').__traverse_directory(__dirname);
 
             RL.close();
         });
     } else if (answer.toUpperCase() == 'N') {
-        new PREPARE_MODULE([], 'N').__traverDir(__dirname);
+        new PREPARE_MODULE([], 'N').__traverse_directory(__dirname);
 
         RL.close();
     }
