@@ -28,9 +28,9 @@ import * as path from 'path';
 import * as fsxt from 'fs-extra';
 import * as dotenv from 'dotenv';
 
-import colors from 'colors/safe';
+import * as colors from 'colors/safe';
 
-import readline from 'readline';
+import * as readline from 'readline';
 
 /**
  * Class representing a module for preparing and managing project files.

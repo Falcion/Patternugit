@@ -1,180 +1,187 @@
 {
-  "name": "patternugit",
-  "displayName": "Patternugit",
-  "private": "true",
-  "version": "0.3.5",
-  "description": "Preconfigured pattern for your repository with universal cases for markdown files of documentations and other actions/scripts",
-  "main": "prepare.ts",
-  "type": "commonjs",
-  "markdown": "github",
-  "directories": {
-    "doc": "docs"
-  },
-  "os": [
-    "linux",
-    "win32",
-    "win64"
-  ],
-  "readme": "https://github.com/Falcion/Patternugit#readme",
-  "scripts": {
-    "preinit": "npm i --force",
-    "generate-version-json": "node scripts/js/generate-version-json.js",
-    "lint": "node ./scripts/lint.js && npm run lint:docs",
-    "lint:js": "node ./scripts/lint.js --js",
-    "lint:docs": "remark docs -qf && npm run lint:js-in-markdown && npm run create-typescript-definitions && npm run lint:ts-check-js-in-markdown && npm run lint:docs-fiddles && npm run lint:docs-relative-links && npm run lint:markdownlint",
-    "lint:docs-fiddles": "standard \"docs/fiddles/**/*.js\"",
-    "lint:docs-relative-links": "electron-lint-markdown-links --root docs \"**/*.md\"",
-    "lint:markdownlint": "electron-markdownlint \"*.md\" \"docs/**/*.md\"",
-    "lint:ts-check-js-in-markdown": "electron-lint-markdown-ts-check --root docs \"**/*.md\" --ignore \"breaking-changes.md\"",
-    "lint:js-in-markdown": "electron-lint-markdown-standard --root docs \"**/*.md\"",
-    "precommit": "lint-staged",
-    "prepack": "check-for-leaks",
-    "prepare": "husky .husky/ && cd scripts/python && py -m venv venv && cd ./../../ && npm run prepare:main",
-    "prepare:husky": "husky .husky/",
-    "prepare:python": "cd scripts/python && py -m venv venv",
-    "prepare:main": "ts-node prepare.ts",
-    "update-analytics": "ts-node scripts/js/analytics-workflow.ts",
-    "build": "tsc -noEmit -skipLibCheck prepare.ts && node esbuild.config.mjs production",
-    "pack": "python scripts/python/pack.py",
-    "release": "standard-version",
-    "release:minor": "standard-version --release-as minor",
-    "release:patch": "standard-version --release-as patch",
-    "release:major": "standard-version --release-as major"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Falcion/Patternugit.git"
-  },
-  "keywords": [
-    "github",
-    "documentation",
-    "repository",
-    "repository-template",
-    "github-template",
-    "workflows-to-access",
-    "workflows-reusable"
-  ],
-  "author": {
-    "name": "Falcion",
-    "email": "io.falcion@outlook.com",
-    "url": "https://github.com/Falcion/"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Falcion/Patternugit/issues"
-  },
-  "homepage": "https://github.com/Falcion/Patternugit#readme",
-  "prettier": {
-    "tabWidth": 4,
-    "useTabs": true,
-    "bracketSpacing": true,
-    "singleQuote": false,
-    "endOfLine": "crlf",
-    "trailingComma": "all",
-    "semi": true
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "node scripts/lint.js --js --fix --only --"
+    "name": "patternugit",
+    "displayName": "Patternugit",
+    "private": "true",
+    "version": "0.3.5",
+    "description": "Preconfigured pattern for your repository with universal cases for markdown files of documentations and other actions/scripts",
+    "main": "prepare.ts",
+    "type": "commonjs",
+    "markdown": "github",
+    "directories": {
+        "doc": "docs"
+    },
+    "os": [
+        "linux",
+        "win32",
+        "win64"
     ],
-    "*.{js,ts,d.ts}": [
-      "ts-node scripts/gen-filenames.ts"
+    "readme": "https://github.com/Falcion/Patternugit#readme",
+    "scripts": {
+        "preinit": "npm i --force",
+        "generate-version-json": "node scripts/js/generate-version-json.js",
+        "lint": "node ./scripts/lint.js && npm run lint:docs",
+        "lint:js": "node ./scripts/lint.js --js",
+        "lint:docs": "remark docs -qf && npm run lint:js-in-markdown && npm run create-typescript-definitions && npm run lint:ts-check-js-in-markdown && npm run lint:docs-fiddles && npm run lint:docs-relative-links && npm run lint:markdownlint",
+        "lint:docs-fiddles": "standard \"docs/fiddles/**/*.js\"",
+        "lint:docs-relative-links": "electron-lint-markdown-links --root docs \"**/*.md\"",
+        "lint:markdownlint": "electron-markdownlint \"*.md\" \"docs/**/*.md\"",
+        "lint:ts-check-js-in-markdown": "electron-lint-markdown-ts-check --root docs \"**/*.md\" --ignore \"breaking-changes.md\"",
+        "lint:js-in-markdown": "electron-lint-markdown-standard --root docs \"**/*.md\"",
+        "precommit": "lint-staged",
+        "prepack": "check-for-leaks",
+        "prepare": "husky .husky/ && cd scripts/python && py -m venv venv && cd ./../../ && npm run prepare:main",
+        "prepare:husky": "husky .husky/",
+        "prepare:python": "cd scripts/python && py -m venv venv",
+        "prepare:main": "ts-node prepare.ts",
+        "update-analytics": "ts-node scripts/js/analytics-workflow.ts",
+        "build": "tsc -noEmit -skipLibCheck prepare.ts && node esbuild.config.mjs production",
+        "tsbuild": "tsc",
+        "pack": "python scripts/python/pack.py",
+        "release": "standard-version",
+        "release:minor": "standard-version --release-as minor",
+        "release:patch": "standard-version --release-as patch",
+        "release:major": "standard-version --release-as major"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Falcion/Patternugit.git"
+    },
+    "keywords": [
+        "github",
+        "documentation",
+        "repository",
+        "repository-template",
+        "github-template",
+        "workflows-to-access",
+        "workflows-reusable"
     ],
-    "*.{cc,mm,c,h}": [
-      "python3 scripts/run-clang-format.py -r -c --fix"
+    "author": {
+        "name": "Falcion",
+        "email": "io.falcion@outlook.com",
+        "url": "https://github.com/Falcion/"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Falcion/Patternugit/issues"
+    },
+    "homepage": "https://github.com/Falcion/Patternugit#readme",
+    "prettier": {
+        "tabWidth": 4,
+        "useTabs": true,
+        "bracketSpacing": true,
+        "singleQuote": false,
+        "endOfLine": "crlf",
+        "trailingComma": "all",
+        "semi": true
+    },
+    "lint-staged": {
+        "*.{js,ts}": [
+            "node scripts/lint.js --js --fix --only --"
+        ],
+        "*.{js,ts,d.ts}": [
+            "ts-node scripts/gen-filenames.ts"
+        ],
+        "*.{cc,mm,c,h}": [
+            "python3 scripts/run-clang-format.py -r -c --fix"
+        ],
+        "*.md": [
+            "npm run lint:docs"
+        ],
+        "*.{gn,gni}": [
+            "npm run gn-check",
+            "npm run gn-format"
+        ],
+        "*.py": [
+            "node scripts/lint.js --py --fix --only --"
+        ],
+        "{*.patch,.patches}": [
+            "node scripts/lint.js --patches --only --",
+            "ts-node scripts/js/check-patch-diff.ts"
+        ]
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-customizable"
+        }
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^19.3.0",
+        "@commitlint/config-conventional": "^19.2.2",
+        "@electron/lint-roller": "^1.12.1",
+        "@npmcli/package-json": "^5.1.0",
+        "@octokit/rest": "^20.1.0",
+        "@types/extend": "^3.0.4",
+        "@types/fs-extra": "^11.0.4",
+        "@types/minimist": "^1.2.5",
+        "@types/node": "^20.12.7",
+        "@typescript-eslint/eslint-plugin": "^7.7.1",
+        "@typescript-eslint/parser": "^7.7.1",
+        "axios": "^1.6.8",
+        "chai": "^5.1.0",
+        "check-for-leaks": "^1.2.1",
+        "colors": "^1.4.0",
+        "dotenv": "^16.4.5",
+        "dotenv-safe": "^9.1.0",
+        "eslint": "^8.57.0",
+        "eslint-config-standard": "^17.1.0",
+        "eslint-plugin": "^1.0.1",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-markdownlint": "^0.5.0",
+        "eslint-plugin-node": "^11.1.0",
+        "extend": "^3.0.2",
+        "folder-hash": "^4.0.4",
+        "fs-extra": "^11.2.0",
+        "husky": "^9.0.11",
+        "inquirer": "^9.2.19",
+        "lint": "^1.1.2",
+        "lint-staged": "^15.2.2",
+        "markdownlint": "^0.33.0",
+        "markdownlint-cli2": "^0.13.0",
+        "minimist": "^1.2.8",
+        "mocha": "^10.4.0",
+        "npm-update": "^3.0.1",
+        "prettier": "^3.2.5",
+        "remark": "^15.0.1",
+        "standard-version": "^9.5.0",
+        "temp": "^0.9.4",
+        "ts-loader": "^9.5.1",
+        "ts-node": "^10.9.2",
+        "tsconfig-paths": "^4.2.0",
+        "typescript": "^5.4.5",
+        "unicorn": "^0.0.1",
+        "url": "^0.11.3"
+    },
+    "badges": [
+        {
+            "description": "contributors",
+            "href": "https://github.com/Falcion/Patternugit/graphs/contributors",
+            "url": "https://img.shields.io/github/contributors/Falcion/Patternugit"
+        },
+        {
+            "description": "stargazers",
+            "href": "https://github.com/Falcion/Patternugit/stargazers",
+            "url": "https://img.shields.io/github/stars/Falcion/Patternugit"
+        },
+        {
+            "description": "forks",
+            "href": "https://github.com/Falcion/Patternugit/forks",
+            "url": "https://img.shields.io/github/forks/Falcion/Patternugit"
+        },
+        {
+            "description": "issues",
+            "href": "https://github.com/Falcion/Patternugit/issues",
+            "url": "https://img.shields.io/github/issues/Falcion/Patternugit"
+        },
+        {
+            "description": "last-commit",
+            "href": "https://github.com/Falcion/Patternugit/commits",
+            "url": "https://img.shields.io/github/last-commit/Falcion/Patternugit"
+        }
     ],
-    "*.md": [
-      "npm run lint:docs"
-    ],
-    "*.{gn,gni}": [
-      "npm run gn-check",
-      "npm run gn-format"
-    ],
-    "*.py": [
-      "node scripts/lint.js --py --fix --only --"
-    ],
-    "{*.patch,.patches}": [
-      "node scripts/lint.js --patches --only --",
-      "ts-node scripts/js/check-patch-diff.ts"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-customizable"
+    "dependencies": {
+        "esbuild": "^0.20.2",
+        "esbuild-plugin-glsl": "^1.2.2",
+        "esbuild-plugin-node-externals": "^1.0.1",
+        "esbuild-sass-plugin": "^3.2.0"
     }
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^19.3.0",
-    "@commitlint/config-conventional": "^19.2.2",
-    "@electron/lint-roller": "^1.12.1",
-    "@npmcli/package-json": "^5.1.0",
-    "@octokit/rest": "^20.1.0",
-    "@types/extend": "^3.0.4",
-    "@types/fs-extra": "^11.0.4",
-    "@types/minimist": "^1.2.5",
-    "@types/node": "^20.12.7",
-    "@typescript-eslint/eslint-plugin": "^7.7.1",
-    "@typescript-eslint/parser": "^7.7.1",
-    "axios": "^1.6.8",
-    "chai": "^5.1.0",
-    "check-for-leaks": "^1.2.1",
-    "colors": "^1.4.0",
-    "dotenv": "^16.4.5",
-    "dotenv-safe": "^9.1.0",
-    "eslint": "^8.57.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin": "^1.0.1",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-markdownlint": "^0.5.0",
-    "eslint-plugin-node": "^11.1.0",
-    "extend": "^3.0.2",
-    "folder-hash": "^4.0.4",
-    "fs-extra": "^11.2.0",
-    "husky": "^9.0.11",
-    "inquirer": "^9.2.19",
-    "lint": "^1.1.2",
-    "lint-staged": "^15.2.2",
-    "markdownlint": "^0.33.0",
-    "markdownlint-cli2": "^0.13.0",
-    "minimist": "^1.2.8",
-    "mocha": "^10.4.0",
-    "npm-update": "^3.0.1",
-    "prettier": "^3.2.5",
-    "remark": "^15.0.1",
-    "standard-version": "^9.5.0",
-    "temp": "^0.9.4",
-    "ts-loader": "^9.5.1",
-    "ts-node": "^10.9.2",
-    "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.4.5",
-    "unicorn": "^0.0.1",
-    "url": "^0.11.3"
-  },
-  "badges": [
-    {
-      "description": "contributors",
-      "href": "https://github.com/Falcion/Patternugit/graphs/contributors",
-      "url": "https://img.shields.io/github/contributors/Falcion/Patternugit"
-    },
-    {
-      "description": "stargazers",
-      "href": "https://github.com/Falcion/Patternugit/stargazers",
-      "url": "https://img.shields.io/github/stars/Falcion/Patternugit"
-    },
-    {
-      "description": "forks",
-      "href": "https://github.com/Falcion/Patternugit/forks",
-      "url": "https://img.shields.io/github/forks/Falcion/Patternugit"
-    },
-    {
-      "description": "issues",
-      "href": "https://github.com/Falcion/Patternugit/issues",
-      "url": "https://img.shields.io/github/issues/Falcion/Patternugit"
-    },
-    {
-      "description": "last-commit",
-      "href": "https://github.com/Falcion/Patternugit/commits",
-      "url": "https://img.shields.io/github/last-commit/Falcion/Patternugit"
-    }
-  ]
 }
