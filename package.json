@@ -1,0 +1,104 @@
+{
+    "name": "patternugit",
+    "displayName": "Patternugit",
+    "version": "1.0.0",
+    "description": "Preconfigured pattern for your repository with universal cases for markdown files of documentations and other actions/scripts",
+    "main": "environment.ts",
+    "private": true,
+    "scripts": {
+      "test": "tsc --version"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Falcion/Patternugit.git"
+    },
+    "markdown": "github",
+    "os": ["linux", "win32", "win64"],
+    "directories": {
+      "doc": "docs",
+      "lib": "lib"
+    },
+    "keywords": [
+      "github",
+      "documentation",
+      "repository",
+      "repository-template",
+      "github-template",
+      "workflows-to-access",
+      "workflows-reusable"
+    ],
+    "author": {
+      "email": "io.falcion@outlook.com",
+      "name": "Falcion",
+      "url": "https://github.com/Falcion"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/Falcion/Patternugit/issues",
+      "email": "io.falcion@outlook.com"
+    },
+    "homepage": "https://github.com/Falcion/Patternugit#readme",
+    "badges": [
+      {
+        "description": "contributors",
+        "href": "https://github.com/Falcion/Patternugit/graphs/contributors",
+        "url": "https://img.shields.io/github/contributors/Falcion/Patternugit"
+      },
+      {
+        "description": "stargazers",
+        "href": "https://github.com/Falcion/Patternugit/stargazers",
+        "url": "https://img.shields.io/github/stars/Falcion/Patternugit"
+      },
+      {
+        "description": "forks",
+        "href": "https://github.com/Falcion/Patternugit/forks",
+        "url": "https://img.shields.io/github/forks/Falcion/Patternugit"
+      },
+      {
+        "description": "issues",
+        "href": "https://github.com/Falcion/Patternugit/issues",
+        "url": "https://img.shields.io/github/issues/Falcion/Patternugit"
+      },
+      {
+        "description": "last-commit",
+        "href": "https://github.com/Falcion/Patternugit/commits",
+        "url": "https://img.shields.io/github/last-commit/Falcion/Patternugit"
+      }
+    ],
+    "capabilities": {
+      "untrustedWorkspaces": {
+        "supported": "limited",
+        "description": "Creates an environment for your projects"
+      },
+      "virtualWorkspaces": true
+    },
+    "readme": "https://github.com/Falcion/Patternugit#readme",
+    "release": {
+      "tagFormat": "v${version}",
+      "dryRun": true,
+      "branches": [
+        "+([0-9])?(.{+([0-9]),x}).x",
+        "main",
+        "main-update",
+        "next",
+        "next-major",
+        {
+          "name": "beta",
+          "prerelease": true
+        },
+        {
+          "name": "alpha",
+          "prerelease": true
+        }
+      ]
+    },
+    "packageManager": "npm@10.7.0",
+    "module": "patternugit",
+    "dist": {
+      "tarball": "https://api.github.com/repos/Falcion/Patternugit/tarball/main"
+    },
+    "engines": {
+      "npm": ">=10.0.0",
+      "node": ">=16.0.0"
+    }
+  }
