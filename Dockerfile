@@ -10,6 +10,7 @@ COPY environment.d.ts ./typings/
 
 RUN npm i
 
+# Copying rest of the project after setting up the dependencies
 COPY . .
 
 EXPOSE 3000
