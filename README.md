@@ -68,6 +68,7 @@ But, for contributing to this project, we highly recommending following those pr
 
 - Installed [Node.js](https://dotnet.microsoft.com/en-us/download/) on your desktop on which you will edit/setup this project;
 - Installed [Python](https://www.python.org/) if you want to contribute to the scripts of this project (in terms of .PY scripts);
+- It is recommended to use [Github CLI](https://cli.github.com/) on your machine for better experience via working not only within this project, but this the .GIT in entirety;
 
 <p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
 

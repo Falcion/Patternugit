@@ -7,7 +7,6 @@ root = true
 [*]
 end_of_line = crlf
 insert_final_newline = true
-max_line_length = 800
 
 [*.js, *.ts]
 indent_size = 2
@@ -16,5 +15,5 @@ single = true
 end_of_line = crlf
 
 [*.json]
-indent_size = 4
+indent_size = 2
 end_of_line = crlf
