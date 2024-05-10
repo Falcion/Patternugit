@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/mokkapps/changelog-generator-demo/compare/v0.3.5...v1.0.0) (2024-05-10)
+
+
+### Refactoring
+
+* **prepare:** append formatting in JS docs of preparation script and add little semantic tweaks ([36cb3a0](https://github.com/mokkapps/changelog-generator-demo/commits/36cb3a0a77e5d7f9a94b2151069e45ca31cb3f5b))
+
+
+### Build system
+
+* **deps-dev:** bump eslint-plugin-markdownlint from 0.5.0 to 0.6.0 ([06cc9e9](https://github.com/mokkapps/changelog-generator-demo/commits/06cc9e9dc7f62f9eabd95d6addc4e76c5322caf1))
+* **deps:** add unicorn@^0.0.1 ([338d31a](https://github.com/mokkapps/changelog-generator-demo/commits/338d31ab326316df0d9341b17737e3f3f50994ca))
+* **deps:** bump actions/checkout from 3 to 4 ([d4f1a7a](https://github.com/mokkapps/changelog-generator-demo/commits/d4f1a7adf9d13305c7c0cc794564ccc5aa1620c1))
+* **deps:** bump actions/stale from 3 to 9 ([c949cf3](https://github.com/mokkapps/changelog-generator-demo/commits/c949cf3f8b700bb3459ef4c8784c208372ff0ffa))
+* **deps:** bump github/codeql-action from 2 to 3 ([a248167](https://github.com/mokkapps/changelog-generator-demo/commits/a2481678aec9036b828c7f8084dd0b14111f1e71))
+* **deps:** update @commitlint/cli from ^19.1.0 to ^19.3.0 ([59f8591](https://github.com/mokkapps/changelog-generator-demo/commits/59f85912db2474ab7c3b95cde9327380aef804fb))
+* **deps:** update @commitlint/config-conventional from ^19.1.0 to ^19.2.2 ([ea462c5](https://github.com/mokkapps/changelog-generator-demo/commits/ea462c538598b214f2c311af47382e66d93f6ba1))
+* **deps:** update @electron/lint-roller from ^1.12.0 to ^1.12.1 ([e868707](https://github.com/mokkapps/changelog-generator-demo/commits/e868707e923d58c9d2a4a3a68cb915bb61f0cb8d))
+* **deps:** update @npmcli/package-json from ^5.0.0 to ^5.1.0 ([6c1f901](https://github.com/mokkapps/changelog-generator-demo/commits/6c1f901967aae036c3cac8eaf67701f914b4bc8c))
+* **deps:** update @octokit/rest from ^20.0.2 to ^20.1.0 ([0789996](https://github.com/mokkapps/changelog-generator-demo/commits/0789996b9f7c4060d10b358a93cd5f6ae8bf35cc))
+* **deps:** update @types/node from ^20.11.27 to ^20.12.7 ([0dc76b6](https://github.com/mokkapps/changelog-generator-demo/commits/0dc76b6db901ab72d8d062d0372aba93c2336d7a))
+* **deps:** update @typescript-eslint/eslint-plugin from ^7.2.0 to ^7.7.1 ([5e96073](https://github.com/mokkapps/changelog-generator-demo/commits/5e960731e32ba2f31e709d9f3a6fad80e4a0d016))
+* **deps:** update @typescript-eslint/parser from ^7.2.0 to ^7.7.1 ([3e170a9](https://github.com/mokkapps/changelog-generator-demo/commits/3e170a9db9b69572a6c4d630d52cdfa0ebfff38d))
+* **deps:** update axios from ^1.6.7 to ^1.6.8 ([cd001ec](https://github.com/mokkapps/changelog-generator-demo/commits/cd001ec3e79be609bea9ddc484eec63d2350ea41))
+* **deps:** update inquirer from ^9.2.16 to ^9.2.19 ([ecce495](https://github.com/mokkapps/changelog-generator-demo/commits/ecce4955cec7226a57ed61079def29adcb52a5cb))
+* **deps:** update mocha from ^10.3.0 to ^10.4.0 ([2cc31c9](https://github.com/mokkapps/changelog-generator-demo/commits/2cc31c9767b141b6cf1507abca8fc98d14fb7621))
+* **deps:** update multiple NPM dependencies ([12b3fa4](https://github.com/mokkapps/changelog-generator-demo/commits/12b3fa49dc2505f9d2a1ffca990ba49ad77251b7))
+* **deps:** update typescript from ^5.4.2 to ^5.4.5 ([5a7d5d2](https://github.com/mokkapps/changelog-generator-demo/commits/5a7d5d2af3271de2a89b40ef0248659432ecfbe5))
+* **env:** add CLI GITHUB to the project ([eefc00f](https://github.com/mokkapps/changelog-generator-demo/commits/eefc00ff1ddc595f9d90c38523525d14c6528cf1))
+* **esbuild:** add esbuild configurating module to build project's scripts ([9260e43](https://github.com/mokkapps/changelog-generator-demo/commits/9260e43cdd826feddfdb47e9103eb95d988dc5c2))
+
 ### [0.3.5](https://github.com/mokkapps/changelog-generator-demo/compare/v0.3.4...v0.3.5) (2024-04-21)
 
 
