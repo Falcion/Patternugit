@@ -1,19 +1,21 @@
+# Use an existing base image
 FROM node:20
 
-WORKDIR /repos/app
+# Set the working directory inside the container
+WORKDIR /app
 
-COPY package.json ./
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+COPY prepare.ts ./
 
-COPY environment.ts ./
-# Ensure copying typings for TS for ensure typesafe onload
-COPY environment.d.ts ./typings/
+# Install dependencies
+RUN npm install
 
-RUN npm i
-
-# Copying rest of the project after setting up the dependencies
+# Copy the rest of the application code to the working directory
 COPY . .
 
+# Expose the port your app runs on
 EXPOSE 3000
 
-# Set up and start the app
-CMD npm start
+# Command to start your application
+CMD ["npm", "run", "prepare:main"]

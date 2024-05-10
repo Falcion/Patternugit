@@ -1,0 +1,20 @@
+.example-title {
+    text-align: center;
+    width: auto;
+    height: auto;
+}
+
+.example-paragraph {
+    margin-top: 0.1%;
+    width: auto;
+    height: auto;
+}
+
+.current-time {
+    color: gray;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 0.1%;
+    width: auto;
+    height: auto;
+}
