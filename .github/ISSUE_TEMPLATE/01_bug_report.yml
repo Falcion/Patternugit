@@ -1,7 +1,7 @@
 name: Bug report
 description: Create a bug report to help to improve the project
 title: "[BUG]: "
-labels: ["Bug"]
+labels: ["bug", "priority/medium"]
 body:
   - type: markdown
     attributes:
