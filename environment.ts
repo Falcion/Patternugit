@@ -44,9 +44,21 @@ const PROMPTS: string[] =
  */
 if(ndos.type() === 'Darwin') process.abort();
 
+/**
+ * @class
+ * Represents a logger utility for logging messages with different severity levels and colors.
+ */
 export class LOCALE_LOGGER {
-    private static session_id = process.ppid;
+    /**
+     * A process ID which represents session of localized logger instance.
+     * @type {number}
+     */
+    private static session_id: number = process.ppid;
 
+    /**
+     * Logs the info message.
+     * @param {...any} data - The data to be logged.
+     */
     public static info(...data: any[]): void {
         const datetime = new Date().toLocaleString();
 
@@ -54,6 +66,10 @@ export class LOCALE_LOGGER {
             colors.blue(`[${datetime}] <${this.session_id}> \t - ${data.join(' ')}`));
     }
 
+    /**
+     * Logs the warn message.
+     * @param {...any} data - The data to be logged.
+     */
     public static warn(...data: any[]): void {
         const datetime = new Date().toLocaleString();
 
@@ -61,13 +77,21 @@ export class LOCALE_LOGGER {
             colors.yellow(`[${datetime}] <${this.session_id}> \t - ${data.join(' ')}`));
     }
 
-    static error(...data: any[]): void {
+    /**
+     * Logs the error message.
+     * @param {...any} data - The data to be logged.
+     */
+    public static error(...data: any[]): void {
         const datetime = Date.now().toLocaleString();
 
         console.error(
             colors.bgRed(colors.white(`[${datetime}] <${this.session_id}> \t - ${data}`)));
     }
 
+    /**
+     * Logs the success message.
+     * @param {...any} data - The data to be logged.
+     */
     public static success(...data: any[]): void {
         const datetime = Date.now().toLocaleString();
 
@@ -75,19 +99,42 @@ export class LOCALE_LOGGER {
             colors.green(`[${datetime}] <${this.session_id}> \t - ${data}`));
     }
 
+    /**
+     * Logs the message with custom color.
+     * @param {(str: string) => string} color - The color function.
+     * @param {...any} data - The data to be logged.
+     */
     public static raw(color: (str: string) => string, ...data: any[]): void {
         console.debug(
             color(data.join(' ')));
     }
 
+     /**
+     * Formats a message with custom color.
+     * @param {(str: string) => string} color - The color function.
+     * @param {string} message - The message to be formatted.
+     * @returns {string} The formatted message.
+     */
     public static msg(color: (str: string) => string, message: string): string {
         return color(message);
     }
 }
 
+/**
+ * @class
+ * Represents a module for searching and updating files.
+ */
 export default class LOCALE_MODULE {
+     /**
+     * The root directory of the module.
+     * @type {string}
+     */
     public ROOT_DIRECTORY: string = __dirname;
 
+    /**
+     * Directories to be excluded from traversal.
+     * @type {string[]}
+     */
     private EXCLUDING_FOLDERS: string[] = [
         'node_modules',
         'dist',
@@ -99,6 +146,10 @@ export default class LOCALE_MODULE {
         'bin',
     ];
 
+    /**
+     * Values to be excluded from file content search.
+     * @type {string[]}
+     */
     private EXCLUDING_VALUES: string[] = [
         'FALCION',
         'PATTERNU',
@@ -106,6 +157,11 @@ export default class LOCALE_MODULE {
         'PATTERNUGIT.NET'
     ];
 
+    /**
+     * Updates the exclusion settings based on user input.
+     * @param {string[]} entries - Entries to be added to the exclusion list.
+     * @param {string} actions - User action (Y or N).
+     */
     public update(
         entries: string[], 
         actions: string): void {
@@ -126,6 +182,12 @@ export default class LOCALE_MODULE {
         }
     }
 
+    /**
+     * Searches for specified words in file contents.
+     * @param {string} filepath - The path of the file to search.
+     * @param {string[]} data - Words to search for.
+     * @returns {Promise<void>} A promise representing the search operation.
+     */
     public async search(filepath: string, data: string[]): Promise<void> {
         const buffer: string = await fsxt.readFile(filepath, { 'encoding': 'utf-8' });
 
@@ -142,6 +204,11 @@ export default class LOCALE_MODULE {
         }
     }
 
+     /**
+     * Traverses directories and searches files for specified words.
+     * @param {string} directory - The directory to start traversal from.
+     * @returns {Promise<void>} A promise representing the traversal operation.
+     */
     public async traverse(directory: string = __dirname): Promise<void> {
         try {
             const items: string[] = await fsxt.readdir(directory);
