@@ -155,7 +155,7 @@
   "dependencies": {
     "check-for-leaks": "^1.2.1",
     "colors": "^1.4.0",
-    "esbuild": "^0.20.2",
+    "esbuild": "^0.21.2",
     "esbuild-plugin-glsl": "^1.2.2",
     "esbuild-plugin-node-externals": "^1.0.1",
     "esbuild-sass-plugin": "^3.2.0",
