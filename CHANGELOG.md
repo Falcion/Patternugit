@@ -2,6 +2,44 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.0.0...v1.0.1) (2024-05-14)
+
+
+### Features
+
+* **code-docs:** add js-docs to the code and typings ([a0c7d19](https://github.com/mokkapps/changelog-generator-demo/commits/a0c7d19118d0af09b75eceb09c3c0e53bc184849))
+* **kubernetes:** add Kubernetes to the repo ([7689f20](https://github.com/mokkapps/changelog-generator-demo/commits/7689f20236f6ba03ae39defbaa77ef71f63d8197))
+* **labeling:** add labels in issue and discussions templates ([3364c53](https://github.com/mokkapps/changelog-generator-demo/commits/3364c53521496ac05161cc27a180e24a25411bc4))
+* **labeling:** add new simple labels for issues and etc., fix of [#46](https://github.com/Falcion/Patternugit/issues/46) ([01b14b0](https://github.com/mokkapps/changelog-generator-demo/commits/01b14b018dea3f0e2dc7d58f9070bb6d1f683d67))
+* **scripting:** add new version of environment setup script to the project ([bce5011](https://github.com/mokkapps/changelog-generator-demo/commits/bce50114eb0ed060afc3a0fafc9fc0132bdfa0dc))
+* **template:** add discussions templates, fix of [#50](https://github.com/Falcion/Patternugit/issues/50) ([604058c](https://github.com/mokkapps/changelog-generator-demo/commits/604058ced2815e9cd149ecfbc3f37bfc42d60075))
+* **typings:** add typescript typing for script ([c4b1ae1](https://github.com/mokkapps/changelog-generator-demo/commits/c4b1ae119332fbfedfc4650235e9538091337f4c))
+
+
+### Fixes
+
+* **docs:** fix of [#48](https://github.com/Falcion/Patternugit/issues/48), wrong header in PULL_REQUEST_TEMPLATE ([283fa63](https://github.com/mokkapps/changelog-generator-demo/commits/283fa634b8c845579710e9c4c88d354d5a1b94dc))
+* **labeling:** fix of [#46](https://github.com/Falcion/Patternugit/issues/46) ([2aab80f](https://github.com/mokkapps/changelog-generator-demo/commits/2aab80f6d61727fabeb620d44f4d1775766d4621))
+
+
+### Build system
+
+* **build-deps:** add ESBUILD to the building configs ([6a9d909](https://github.com/mokkapps/changelog-generator-demo/commits/6a9d90920d43b39aa1eb18b6c05a6c45dc16d516))
+* **build-deps:** upgrade @electron/lint-roller to "^1.13.0" ([57416c0](https://github.com/mokkapps/changelog-generator-demo/commits/57416c0b3b3a96aaee730f40088644ffad3eee96))
+* **build-env:** add new scripts, modules and setups in current JSON of package ([f75750f](https://github.com/mokkapps/changelog-generator-demo/commits/f75750fece6fc11b9dd8630f5168b6124440d362))
+* **build-env:** import HUSKY from previous iterations ([889e3cd](https://github.com/mokkapps/changelog-generator-demo/commits/889e3cd4daf0ce19e79a2f9f486729ac931dfb24))
+* **build-env:** new infrastructure and NPM+NODE implementation in JSON config ([40dbafb](https://github.com/mokkapps/changelog-generator-demo/commits/40dbafb7b94cdf61c1169342b4ce84102c257e05))
+* **deps-dev:** bump eslint from 8.57.0 to 9.2.0 ([05aabcd](https://github.com/mokkapps/changelog-generator-demo/commits/05aabcd927b815d2c30cdf7996bee51dd3e274d8))
+* **deps-dev:** bump eslint-plugin-markdownlint from 0.5.0 to 0.6.0 ([ccc3e16](https://github.com/mokkapps/changelog-generator-demo/commits/ccc3e16a88c811a699b0a136797edae701b41215))
+* **deps:** bump esbuild from 0.20.2 to 0.21.2 ([f76cc53](https://github.com/mokkapps/changelog-generator-demo/commits/f76cc53baea88a36778afdef96296ba0eedce307))
+* **docker-env:** add DOCKERFILE and ignore for docker to the project ([aa54ba5](https://github.com/mokkapps/changelog-generator-demo/commits/aa54ba52e0c8f1e7beba9d78c461ebed26fc6ac7))
+
+
+### Documentation
+
+* **husky-issues:** add README about husky issues ([9836842](https://github.com/mokkapps/changelog-generator-demo/commits/98368426899f6adc5001e630708e9184933c8076))
+* **page:** remove pages from docs ([9fa0437](https://github.com/mokkapps/changelog-generator-demo/commits/9fa0437db8ab7af17c78abad48f926cd71dfb08d))
+
 ## [1.0.0](https://github.com/mokkapps/changelog-generator-demo/compare/v0.3.5...v1.0.0) (2024-05-10)
 
 
