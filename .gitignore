@@ -120,3 +120,6 @@ manifest-backup.json
 # Obsidian
 !.obsidian/
 .obsidian/workspace.json
+
+# TS config
+ts*.buildinfo*
