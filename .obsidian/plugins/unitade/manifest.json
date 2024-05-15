@@ -1,10 +1,10 @@
 {
     "id": "unitade",
-    "name": "Unitade",
-    "version": "1.2.0",
+    "name": "UNITADE.md",
+    "version": "2.2.1",
     "minAppVersion": "1.0.0",
-    "description": "Effortlessly treat any file extension as note, organize diverse file formats in your vault.",
+    "description": "Effortlessly treat any file extension as note, organize diverse file formats in your vault and take advancements in control of extension system even with custom modals.",
     "author": "Falcion",
-    "authorUrl": "https://github.com/Falcion/UnitadeOBSIDIAN",
+    "authorUrl": "https://github.com/Falcion/UNITADE.md",
     "isDesktopOnly": false
 }
