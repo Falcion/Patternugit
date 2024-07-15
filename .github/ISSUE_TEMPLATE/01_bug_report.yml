@@ -24,7 +24,7 @@ body:
     attributes:
       label: What the essence of the bug
       description: And tell the maintainers, what did you expect to happen.
-      placeholder: Write that form, tell us what you see!
+      placeholder: Write this box, tell us where is the issue.
       value: ...
     validations:
       required: true
