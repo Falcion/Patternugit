@@ -1,37 +1,18 @@
-# About more varioations of linters:
-# https://github.com/marketplace/actions/lint-action
-name: Lint
+name: Lint Code Base
 
-on:
-  # Trigger the workflow on push or pull request,
-  # but only for the main branch
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
-  run-linters:
-    name: Run linters
+  build:
+    name: Lint Code Base
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out Git repository
+
+      - name: Checkout Code
         uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
         with:
-          node-version: 12
-
-      # ESLint and Prettier must be in `package.json`
-      - name: Install Node.js dependencies
-        run: npm ci
-
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          prettier: true
+          fetch-depth: 0
+      
+      - name: Lint Code Base
+        uses: github/super-linter@v4

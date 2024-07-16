@@ -2,7 +2,7 @@
     "apps": [
         {
             "name": "Settings",
-            "url": ""
+            "url": "https://github.com/apps/settings"
         },
         {
             "name": "SonarCloud",
