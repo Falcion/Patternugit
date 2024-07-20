@@ -1,7 +1,13 @@
 {
-    "yaml.schemas": {
-        "none": [
-            "site.yaml",
-        ]
-    }
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true
+  },
+  "yaml.schemas": {
+    "none": [
+      "site.yaml",
+    ]
+  },
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
 }
