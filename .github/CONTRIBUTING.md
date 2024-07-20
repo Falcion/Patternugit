@@ -98,6 +98,7 @@ For more information on working with fixup commits, refer to the “angular's”
     git push --force-with-lease
     ```
 
+> [!Note]
 > If you need to update the commit message of an earlier commit, you can use interactive mode with “git rebase”.
 >  
 > Refer to the GIT's documentation for more details on this procedure:\

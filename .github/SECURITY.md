@@ -19,6 +19,7 @@ If you prefer to submit the report without logging in, you can email the address
 
 - <a href="mailto: io.falcion@outlook.com">E-mail MAILTO</a>
 
+> [!Warning]
 > Please, refrain from reporting security vulnerabilities through public “github's” issues or pull requests.
 
 When reporting a security vulnerability, please include the following as much information as you can provide to help us better understand the nature and scope of the issue:
