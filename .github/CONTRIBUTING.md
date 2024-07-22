@@ -46,14 +46,14 @@ Before submitting a pull request, please consider the following guidelines:
 
 1. search for repositories for open or closed PRs related to your submission to avoid duplicating existing efforts;
 2. make sure the issue you are fixing is described or that the feature you want to add is documented in an issue: discussing the design upfront helps ensure that we are ready to accept your work;
-3. if it's asked, sign the CLA before sending PRs: the organization cannot accept code without a signed CLA, make sure your commits are associated with the e-mail address used in your CLA signature.
+3. if it's asked, sign the CLA before sending PRs: the organization cannot accept code without a signed CLA, make sure your commits are associated with the email address used in your CLA signature.
 4. fork the repository;
-5. in your forked repository, create a new git branch for your changes;
+5. in your forked repository, create a new GIT branch for your changes;
 6. make your changes, including appropriate checks and testing;
 7. follow the coding conventions or adhere to the existing conventions;
 8. commit your changes using a descriptive commit message that follows “commits convention”[^1]: adhering to this convention is necessary because release notes are automatically generated from these messages;
 9. push your branch to the repository;
-10. on this website-service, send a pull request to the main production branch;
+10. on this site-service, send a pull request to the main production branch;
 
 ```powershell
 git checkout -b <BRANCH>
@@ -124,7 +124,7 @@ For more information on working with fixup commits, refer to the “angular's”
 
 For ensuring consistency throughout the source code, please keep the following rules in mind when working with our open-source project:
 
-- Every feature or bug-fix must be tested (if possible);
+- Every feature or bugfix must be tested (if possible);
 - Every public API method, function, field etc. must be documented by means of code;
 
 > Last term is optional because of some temporal cases, for example, code that is directly in-built with other APIs, like plugins, extensions etc.
@@ -138,12 +138,12 @@ Sometimes, you may be asked to sign the “Contributor license agreement” (CLA
 
 - For individuals:\
   https://cla.developers.google.com/about/google-individual/
-- For corporations: print, sign, scan, and e-mail the provided form:\
+- For corporations: print, sign, scan, and email the provided form:\
   https://cla.developers.google.com/about/google-corporate/
 
-If you have multiple accounts or multiple e-mail addresses associated with a single account, you must sign the CLA using the primary email address of the “github.com” account used to author git commits and send pull requests.
+If you have multiple accounts or multiple email addresses associated with a single account, you must sign the CLA using the primary email address of the “github.com” account used to author GIT commits and send pull requests.
 
-The following documents can help you sort out issues with accounts and multiple e-mail addresses:
+The following documents can help you sort out issues with accounts and multiple email addresses:
 
 - https://help.github.com/articles/setting-your-commit-email-address-in-git/
 - https://help.github.com/articles/about-commit-email-addresses/
