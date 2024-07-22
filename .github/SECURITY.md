@@ -17,7 +17,7 @@ If you believe you have discovered a security vulnerability in any of their prod
 
 If you prefer to submit the report without logging in, you can email the address specified in the code of conduct or the one provided below, if possible, you could try to crypt your message using the “PGP” keys provided in repository.
 
-- <a href="mailto: io.falcion@outlook.com">E-mail MAILTO</a>
+- <a href="mailto: io.falcion@outlook.com">Email MAILTO</a>
 
 > [!Warning]
 > Please, refrain from reporting security vulnerabilities through public “github's” issues or pull requests.
