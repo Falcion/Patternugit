@@ -9,5 +9,5 @@
     ]
   },
   "files.autoSave": "onFocusChange",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": true
 }
