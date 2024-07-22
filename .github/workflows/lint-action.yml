@@ -32,3 +32,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MARKDOWN_CONFIG_FILE: .markdownlint.json
           FILTER_REGEX_EXCLUDE: .*workflows/.*
+          LINTER_RULES_PATH: /
