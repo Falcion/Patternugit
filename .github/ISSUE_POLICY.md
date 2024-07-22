@@ -9,7 +9,7 @@ Issue policy
 
 Policy outlines the different categories of issues in the project's “github-ian” repository and provides guidelines and processes associated with each type of issue.
 
-- For general support inquiries or questions, please ask on special websites for it:
+- For general support inquiries or questions, please ask on special sites for it, for example:
   https://stackoverflow.com/questions/
 
 Before creating a new issue, please search for related issues and check if they address your concern.
