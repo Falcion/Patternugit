@@ -186,7 +186,7 @@
     "@types/fs-extra": "^11.0.4",
     "@types/minimist": "^1.2.5",
     "@types/semver": "^7.5.8",
-    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
     "@typescript-eslint/parser": "^7.16.0",
     "eslint": "^9.7.0",
     "eslint-config-standard": "^17.1.0",
