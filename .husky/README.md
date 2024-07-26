@@ -1,46 +1,70 @@
-About issues, problems etc. related with HUSKY hooks:
+This file contains instuctions and useful references to materials that can help in correcting errors when using HUSKY hooks system, as well as some other secondary materials and instructions for working with HUSKY system.
 
-1. Initially, you need to have WSL (if OS is not UNIX-like) and installed distributive for your system, in development process, we are using debian;
-2. If NPM/NPX not found:
-   1. https://github.com/desktop/desktop/issues/12562
-   2. Also, check your "%PATH% → Node.js/bin/" paths in variable:
-      - Windows users, if you have everything set up and installed, check this comment from issue above:\
-        https://github.com/desktop/desktop/issues/12562#issuecomment-1007154382
-3. If you're migrating from "V4" to "V9":\
-   https://typicode.github.io/husky/migrate-from-v4.html
+> [!Note]
+> If OS of your machine is not UNIX-like (for example, any distributive of Linux), it is highly recommended to install the WSL and some distributives on your system, this documentation references debian-system as standard:\
+> [Download WSL on your system](https://learn.microsoft.com/en-us/windows/wsl/install).
 
-More about WSL (you must install NVM+NPM on it):
+Also, to use more advanced hooks on WSL you require to install Node.js on the WSL's distributives, it also fixes some errors within WSL:\
+https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl
 
-1. https://github.com/microsoft/WSL/issues/4249/
-2. https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl
+## Problems within setup or usage
 
-This materials also can be helpful for fixing HUSKY hooks:
+Problems can be separated in three categories: ones with WSL, ones with HUSKY itself and ones with OS/desktop clients of GIT.
 
-- https://stackoverflow.com/questions/67115897/vscode-github-desktop-pre-commit-hook-npx-command-not-found
-- https://github.com/typicode/husky/issues/
-- https://learn.microsoft.com/en-us/windows/wsl/install
-- https://stackoverflow.com/questions/44829878/trying-to-use-bash-on-windows-and-got-no-installed-distributions-message
-- https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+- If NPM/NODE does not work in the WSL on your machine:\
+  https://github.com/microsoft/WSL/issues/4249/
+- If NPM/NPX not found message appears:\
+  https://github.com/desktop/desktop/issues/12562
+> [!Tip]
+> Also, check your "%PATH% → Node.js/bin/" paths in environment variables context:\
+> - Windows users, if you have everything set up and installed, check this comment from same issue:\
+>   https://github.com/desktop/desktop/issues/12562#issuecomment-1007154382
+
 
 ## Error codes within usage
 
 Next one are popular errors and fails thrown by hooks:
 
-### Code /001/
+### Error-code "001"
 
-Set up and install WSL OR set up instructions by this:\
+Code of this exception can be fixed by setting up and installing WSL or set up instructions of renaming executables:
+
+- Rename "npm" into "npm.cmd" within your setups;
+- Rename "npx" into "npx.cmd" within your setups;
+
+Source:\
 https://github.com/desktop/desktop/issues/12562#issuecomment-1007154382
 
-If this not helping, go through entire algorithm of fixing hooks from HUSKY and setting up WSL.
+> [!Note]
+> If this not helping, go through entire algorithm of fixing hooks from HUSKY and setting up virtual machine for UNIX-subsystem.
 
-### Code /127/
+### Error-code "127"
 
 Code of this exception contains multiple subtypes:
 
-- Bash not found: check "%PATH%" (for .GIT correct paths), otherwise see guidelines above;
-- "NPX" not found: make changes "npx" → "npx.cmd" in your scripts;
-- "NPM" not found: make changes "npm" → "npm.cmd" in your scripts;
-- "NVM" not found: download NVM on your PC and make ref in "%PATH%" variable, otherwise, set up WSL:
-  - https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
-  - https://learn.microsoft.com/en-us/windows/wsl/install
-- Node not found: check "%PATH%" (for NODE correct paths), otherwise see guidelines above;
+- **Bash not found:**\
+  check "%PATH%" (for .GIT correct paths), otherwise see guidelines before.
+
+- **"NPX" not found:**\
+  make changes "npx" → "npx.cmd" in your scripts.
+
+- **"NPM" not found:**\
+  make changes "npm" → "npm.cmd" in your scripts.
+
+- **"NVM" not found:**\
+  download NVM on your computer and make ref in "%PATH%" (for win-system) variable, otherwise, set up WSL system:
+    - https://learn.microsoft.com/en-us/windows/wsl/install
+    - https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+
+- **Node not found:**\
+  check "%PATH%" (for NODE correct paths), otherwise see guidelines above.
+
+## References
+
+This is a list of links to materials and sites
+referenced by this file:
+
+- https://github.com/typicode/husky/issues/
+- [Stackoverflow #44829878](https://stackoverflow.com/questions/44829878/)
+- [Stackoverflow #67115897](https://stackoverflow.com/questions/67115897/)
+- https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
