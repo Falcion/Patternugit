@@ -1,3 +1,1 @@
 npx.cmd --no-installcommitlint--edit"$1"
-
-exit 0
