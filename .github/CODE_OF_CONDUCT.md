@@ -28,8 +28,7 @@ This document was adopted/created/inspired by:
 - [NET Foundation - Code of conduct](https://dotnetfoundation.org/about/policies/code-of-conduct)
 - https://docs.github.com/en/site-policy/github-terms/github-community-code-of-conduct/
 
-Commitment
-==========
+## Commitment
 
 As members, contributors, and leaders, we pledge to make participation
 in this community a harassment-free experience for everyone, we are
@@ -99,8 +98,7 @@ In case of conflicts, we offer a mediation process to help resolve disputes
 amicably, if you feel that a decision made was unfair, you should appeal by
 contacting the maintainers.
 
-Enforcement responsibilities
-============================
+## Enforcement responsibilities
 
 Community leaders are responsible for clarifying and enforcing our standards
 of acceptable behavior and will take appropriate and fair corrective actions
@@ -115,40 +113,37 @@ reject comments, commits, code, wiki edits, issues, and other
 contributions that are not aligned to this document, and will
 communicate reasons for moderation decisions when appropriate.
 
-Enforcement
-===========
+## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may
 be reported to the community leaders responsible for enforcement in two
 ways:
 
-- contact via default methods, e-mail or issues page, but for privacy
+- contact via default methods, email or issues page, but for privacy
   purposes, it's recommended to use the first method;
 - if the behavior breaks the “github-ian” code-doc, you can
-  also report him via a support service of the website;
+  also report him via a support service of this service;
 
 All complaints will be reviewed and investigated promptly and fairly, all
 community leaders are obligated to respect the privacy (if it was
 reported in private ways) and the security of the reporter of any incident.
 
-Code-doc scope
-==============
+## Code-doc scope
 
 This document applies within all community spaces, and also applies when
 an individual is officially representing the community in public spaces;
-examples of representing our community include using an official e-mail
+examples of representing our community include using the official email
 address, posting via an official social media accounts, or acting as an
 appointed representative at an online or offline event.
 
-Attribution
-===========
+## Attribution
 
 Community impact guidelines were inspired by:\
 https://github.com/mozilla/diversity/
 
 For answers to common questions about this code of conduct, please
 refer to the FAQ and the translations, which are available on the
-“contributor covenant's” website.
+“contributor covenant's” page.
 
 - https://www.contributor-covenant.org/faq
 - https://www.contributor-covenant.org/translations

@@ -1,4 +1,3 @@
-
 Before you jump into contributing code, documentation, bug reports, or any other form of participation, we'd like to provide you with some guidelines to ensure a smooth and productive collaboration, these guidelines aim to create a welcoming and inclusive environment for everyone, regardless of their experience level or background.
 
 This document outlines our expectations for contributors and offers information on how to get started, what to work on, and how to interact with the community, please take a moment to familiarize yourself with these guidelines to help the team maintain a positive and productive atmosphere for all.
@@ -9,7 +8,7 @@ This document outlines our expectations for contributors and offers information 
 Contribution guidelines
 =======================
 
-The project greatly appreciates the contributions from our diverse community of developers who have come together from around the world to build the amazing contributor world we know today. 
+The project greatly appreciates the contributions from our diverse community of developers who have come together from around the world to build the amazing contributor world we know today.
 
 The project is fortunate to be part of such a beautiful community, to ensure a smooth experience for everyone involved, we have established some conventions and guidelines that all foreign developers must adhere to before making any changes; these guidelines will help us maintain a collaborative and welcoming environment.
 
@@ -48,7 +47,7 @@ Before submitting a pull request, please consider the following guidelines:
 2. make sure the issue you are fixing is described or that the feature you want to add is documented in an issue: discussing the design upfront helps ensure that we are ready to accept your work;
 3. if it's asked, sign the CLA before sending PRs: the organization cannot accept code without a signed CLA, make sure your commits are associated with the email address used in your CLA signature.
 4. fork the repository;
-5. in your forked repository, create a new GIT branch for your changes;
+5. in your forked repository, create a new branch for your changes;
 6. make your changes, including appropriate checks and testing;
 7. follow the coding conventions or adhere to the existing conventions;
 8. commit your changes using a descriptive commit message that follows “commits convention”[^1]: adhering to this convention is necessary because release notes are automatically generated from these messages;
@@ -74,7 +73,7 @@ Via working with PRs (aka pull requests), there are some cases which may occur a
    2. re-run the CLI tests and build with no-traverse your version to ensure tests are still passing;
    3. create a fixup commit and push it to your forked repository, this will update your pull request;
     <br/>
-    
+
     ```powershell
     git commit --all --fixup HEAD
     git push
@@ -100,11 +99,11 @@ For more information on working with fixup commits, refer to the “angular's”
 
 > [!Note]
 > If you need to update the commit message of an earlier commit, you can use interactive mode with “git rebase”.
->  
-> Refer to the GIT's documentation for more details on this procedure:\
+>
+> Refer to the Git's documentation for more details on this procedure:\
 > https://git-scm.com/docs/git-rebase#_interactive_mode
 
-3. **After your PR is merged:**
+1. **After your PR is merged:**
    If your pull request is merged, you can safely delete your branch and pull the changes from the main upstream repository, the same applies within your forked repository:
 
    1. delete the remote branch either through the web client UI or the local shell;
