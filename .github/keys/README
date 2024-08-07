@@ -1,1 +1,5 @@
-This is PGP key for this project, replace it with your own PUBLIC PGP key.
+This folder is created to contain PGP keys, environment keys or etc. for your project, you MUST NOT publish your
+private PGP key, you can publish your public PGP key unless it's authorized within GIT, in this case, also DON'T.
+
+For working with PGP keys:
+- https://pgptool.org/

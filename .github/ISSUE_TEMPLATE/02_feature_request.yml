@@ -1,18 +1,18 @@
 # yaml-language-server: $schema='none'
 
-name: Bug report
-description: Create a bug report to help to improve the project
-title: "[BUG]: "
-labels: ["bug", "priority/medium"]
+name: Feature request
+description: Suggest a new feature or enhancement
+title: "[FEATURE]: "
+labels: ["feature request", "enhancement", "priority/low"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report, your contribution is invaluable in helping us improve the quality and reliability of repository.
+        Thanks for taking the time to fill out this feature request, your contribution is invaluable in helping us improve the quality and reliability of repository.
   - type: markdown
     attributes:
       value: |
-        > Before you begin, please make sure you've checked if the bug has already been reported, if you find a similar issue, feel free to add any additional information or context that may help us resolve it more effectively.
+        Before you begin, please make sure you've checked if the feature has already been asked, if you find a similar request, feel free to add any additional information or context that may help us resolve it more effectively.
   - type: input
     id: contact
     attributes:
@@ -22,29 +22,18 @@ body:
     validations:
       required: false
   - type: textarea
-    id: what-happened
+    id: what-wanted
     attributes:
-      label: What the essence of the bug
-      description: And tell the maintainers, what did you expect to happen.
-      placeholder: Write this box, tell us where is the issue.
+      label: What the essence of your feature request
+      description: And tell the maintainers, what can you provide for a solution for this request.
+      placeholder: Write that form, tell us what you want!
       value: ...
-    validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version of an project's essence
-      description: What version of an project's essence are you running.
-      options:
-        - "2.0.0"
-        - "Another or unknown"
-      default: 1
     validations:
       required: true
   - type: dropdown
     id: OS
     attributes:
-      label: On what OS you have encountered the bug.
+      label: On what OS you want to maintain your request.
       multiple: true
       options:
         - Windows
