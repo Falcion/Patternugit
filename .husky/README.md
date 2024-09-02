@@ -1,4 +1,4 @@
-This file contains instuctions and useful references to materials that can help in correcting errors when using HUSKY hooks system, as well as some other secondary materials and instructions for working with HUSKY system.
+This file contains instructions and useful references to materials that can help in correcting errors when using HUSKY hooks system, as well as some other secondary materials and instructions for working with HUSKY system.
 
 > [!Note]
 > If OS of your machine is not UNIX-like (for example, any distributive of Linux), it is highly recommended to install the WSL and some distributives on your system, this documentation references debian-system as standard:\
