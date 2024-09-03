@@ -163,7 +163,7 @@
     "husky": "^9.1.1",
     "lint": "^1.1.2",
     "lint-staged": "^15.2.7",
-    "markdownlint": "^0.34.0",
+    "markdownlint": "^0.35.0",
     "markdownlint-cli2": "^0.13.0",
     "minimist": "^1.2.8",
     "pre-flight": "^1.1.1",
