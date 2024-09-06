@@ -2,7 +2,7 @@ Scripts provided in this directory are legacy, you can use them at your own risk
 - https://cli.github.com/
 
 > [!Note]
-> This repository uses a special GitHub app [`Settings`](https://github.com/apps/settings) which not only clones labels, but also a description, tags, links etc.
+> This repository uses a special GitHub app [`Settings`](https://probot.github.io/apps/settings/) which not only clones labels, but also a description, tags, links etc.
 
 ## How to "copy" labels from one repository to other?
 
