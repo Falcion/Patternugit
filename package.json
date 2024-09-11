@@ -180,7 +180,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
-    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/config-conventional": "^19.5.0",
     "@electron/lint-roller": "^2.2.0",
     "@npmcli/package-json": "^5.2.0",
     "@types/fs-extra": "^11.0.4",
