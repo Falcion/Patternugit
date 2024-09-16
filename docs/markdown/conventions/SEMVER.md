@@ -1,6 +1,8 @@
 # Semantic Versioning 2.0.0
 
-**In this article:**
+> **This is a Markdown fork of: <https://semver.org/>**
+
+**Table of Contents:**
 
 - [Semantic Versioning 2.0.0](#semantic-versioning-200)
   - [Summary](#summary)
