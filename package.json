@@ -34,7 +34,7 @@
     "prepare": "husky .husky/ && cd scripts/python && py -m venv venv",
     "update-analytics": "ts-node scripts/js/analytics-workflow.ts",
     "test": "node ./script/spec-runner.js",
-    "start": "node .prepare-template.js",
+    "start": "node .prepare-template.mjs",
     "buildtsc": "tsc",
     "build": "tsc -noEmit -skipLibCheck environment.ts && node esbuild.config.mjs production",
     "install": "npm run start",
