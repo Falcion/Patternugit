@@ -1,0 +1,30 @@
+{
+    "*.{js,jsx}": [
+        "node scripts/lint.js --js --fix --only --",
+        "prettier --list-different"
+    ],
+    "*.{ts,tsx}": [
+        "eslint --fix",
+        "prettier --list-different"
+    ],
+    "*.{js,ts,d.ts}": [
+        "ts-node scripts/gen-filenames.ts"
+    ],
+    "*.md": [
+        "prettier --list-different",
+        "npm run lint:docs"
+    ],
+    "*.{gn,gni}": [
+        "npm run gn-check",
+        "npm run gn-format"
+    ],
+    "*.{png,jpeg,jpg,gif,svg}": "imagemin-lint-staged",
+    "*.css": [
+        "stylelint --fix",
+        "prettier --write"
+    ],
+    "{*.patch,.patches}": [
+        "node scripts/lint.js --patches --only --",
+        "ts-node scripts/js/check-patch-diff.ts"
+    ]
+}
