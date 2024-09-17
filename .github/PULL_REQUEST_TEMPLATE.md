@@ -1,49 +1,42 @@
-<!-- 
- This is an example template for PRs of any repository, in case of need, it could be 
- changed for other direct purposes or project's and organization's infrastructure.
- -->
+Before writing anything about your changes in this pull request, checklist these items:
 
-PRs: [TITLE OF PULL REQUEST]
-============================
+- [ ] Agreed with the current version of the code of conduct.\
+      [Read document here.](https://github.com/Falcion/Patternugit/blob/main/.github/CODE_OF_CONDUCT.md)
+- [ ] Read and follow the current version of issue policy.\
+      [Read document here.](https://github.com/Falcion/Patternugit/blob/main/.github/ISSUE_POLICY.md)
+- [ ] Read and follow the current version of pull request policy.\
+      [Read document here.](https://github.com/Falcion/Patternugit/blob/main/.github/PULL_REQUEST_POLICY.md)
 
-Before writing anything about your changes in this PR, checklist this items:
+Keep in mind security issues:
 
-- [ ] Agreed with current version of [code of conduct](./../CODE_OF_CONDUCT.md).
-- [ ] Read and followed current version of [“issue policy”](./../../docs/github/ISSUES/ISSUE_POLICY.md).
-- [ ] Read and followed current version of [“commit convention”](./../../docs/github/COMMIT_CONVENTION.md).
+- [ ] Read and accept the privacy and confidentiality agreements regarding security issues and personal data in accordance with the security policy.\
+      [Read security policy here.](https://github.com/Falcion/Patternugit/blob/main/.github/SECURITY.md)
 
-By agreeding and following this project's documentation, you are reminded that your's commit and styling of changes must follow this project's documentation, in case of “de-followization”, there are two ways before you make sure to publishing your PR:
+By agreeing and following this project's documentation, you are reminded that your's commit and styling of changes must follow this project's documentation, in case of “de-followization”, there are two ways before you make sure to publish your pull request:
 
-1. In case of “de-followization” of commit's styling convention, you can amend them (change their message and description signatures):
+1. In the case of “de-followization” of commit's styling convention, you can amend them (change their message and description signatures):
 
-```powershell
-git commit --amend -m "MESSAGE" -m "DESCRIPTION"
-```
+    ```powershell
+    git commit --amend -m "MESSAGE" -m "DESCRIPTION"
+    ```
 
-For amending old commit, see the stackoverflow question[^1], more about changing commits in official docs for github: \
+For amending old commit, see the stackoverflow question, more about changing commits in official docs for github:\
 https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message/
 
-[^1]: https://stackoverflow.com/questions/17338792/amending-old-commit/
+2. In the case of “de-followization” of coding, documentation etc. files, you can just refactor everything you need by following the styling guidelines of for a project.
 
-2. In case of “de-followization” of coding, documentation and etc. files, you can just refactor everything you need by following styling guidelines of project.
+### Changes made with that pull request
 
-### Changes with that PR
-<!-- CHANGES BLOCK: 
- -->
-
-Please, write below every changes you made:
-
+Please, write below every changes you made:\
 ...
 
-### Process of testing for that PR
-<!-- TESTING BLOCK: 
- -->
+### Process of testing for that pull request
 
 - Was testing process initiated via this PR?\
   answer (y/n): (n);
 - If testing was done, type below the procedures you make: \
   ...
 
-### Additional context for that PR
+### Additional context for that pull request
 
 ...

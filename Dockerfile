@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 3000
 
 # Command to start your application
-CMD ["npm", "run", "prepare:main"]
+CMD ["npm", "run", "prepare:template"]

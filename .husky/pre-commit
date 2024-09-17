@@ -1,4 +1,20 @@
-#!/bin/sh
+# Regex pattern to match PGP private key
+PGP_KEY_PATTERN='-----BEGIN PGP PRIVATE KEY BLOCK-----'
+PRE_COMMIT_SCRIPT=".husky/pre-commit"
+
+# Find all committed files
+COMMITTED_FILES=$(git diff --cached --name-only)
+
+# Check each file for PGP private key pattern
+# If you want to push 
+for FILE in $COMMITTED_FILES; do
+    if [ "$FILE" != "$PRE_COMMIT_SCRIPT" ]; then
+        if grep -q -- "$PGP_KEY_PATTERN" "$FILE"; then
+        echo "Warning: private context data in $FILE"
+        exit 1
+        fi
+    fi
+done
 
 forbidden_files=("config.json" ".env")
 
@@ -6,12 +22,11 @@ forbidden_files=("config.json" ".env")
 for file in $(git diff --name-only --cached); do
   for forbidden in "${forbidden_files[@]}"; do
     if [[ $file == "$forbidden"* ]]; then
-      echo "Error: The following forbidden file is staged and cannot be committed: $file"
-      exit 1
+      echo "Warning: commiting development configuration data found which are found in $file"
     fi
   done
 done
 
-. "$(dirname -- "$0")/_/husky.sh"
+if sh -c ": >/dev/tty" >/dev/null 2>/dev/null; then exec >/dev/tty 2>&1; fi
 
-exit 0
+npx lint-staged

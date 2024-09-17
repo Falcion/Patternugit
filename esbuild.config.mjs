@@ -1,3 +1,4 @@
+
 import esbuild from "esbuild";
 import { sassPlugin } from 'esbuild-sass-plugin'
 import process from "process";
@@ -36,17 +37,6 @@ const context = await esbuild.context({
     ],
     bundle: true,
     external: [
-        "obsidian",
-        "electron",
-        "codemirror",
-        "@codemirror/autocomplete",
-        "@codemirror/collab",
-        "@codemirror/commands",
-        "@codemirror/language",
-        "@codemirror/lint",
-        "@codemirror/search",
-        "@codemirror/state",
-        "@codemirror/view",
         "@lezer/common",
         "@lezer/highlight",
         "@lezer/lr",
@@ -56,7 +46,7 @@ const context = await esbuild.context({
     logLevel: "info",
     sourcemap: prod ? false : "inline",
     treeShaking: true,
-    outfile: "./prepare.js",
+    outfile: "./.prepare-template.js",
 });
 
 if (prod) {

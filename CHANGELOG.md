@@ -2,6 +2,131 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.0.1...v2.0.0) (2024-09-17)
+
+
+### Features
+
+* **build-deps:** add lint-staged, editorconfig and revamped package to new environment ([e0b1386](https://github.com/mokkapps/changelog-generator-demo/commits/e0b13866555622a29d368ad6642c3eed496e9e96))
+* **common:** add .BAT and .SH scripts instead of old .TS file ([23b043e](https://github.com/mokkapps/changelog-generator-demo/commits/23b043e22cdeebd232472323d62ed4e9615405b8))
+* **discussions:** add templates for discussions ([884ac1c](https://github.com/mokkapps/changelog-generator-demo/commits/884ac1cb6617a2b9dadb9593f8fe46837080d7f8))
+* **issue-template:** add new issue template about bug report (fix of [#79](https://github.com/Falcion/Patternugit/issues/79)) ([1fb882b](https://github.com/mokkapps/changelog-generator-demo/commits/1fb882bfe391b59496c59359c78eab02b08bcca2))
+* **issue-template:** add new issue template about documentation issue (fix of [#79](https://github.com/Falcion/Patternugit/issues/79)) ([4142d3a](https://github.com/mokkapps/changelog-generator-demo/commits/4142d3adb18b233e733812c15c86cf40dc1367d8))
+* **issue-template:** add new issue template about documentation issue (fix of [#79](https://github.com/Falcion/Patternugit/issues/79)) ([ed76382](https://github.com/mokkapps/changelog-generator-demo/commits/ed76382baf678a7e4e8effb9e843afeca7e1a66b))
+* **issue-template:** add new issue template about feature request (fix of [#79](https://github.com/Falcion/Patternugit/issues/79)) ([db4a755](https://github.com/mokkapps/changelog-generator-demo/commits/db4a7554d12f671bfab8647be1e79dee33ee4d19))
+* **logo:** add imnew logo to the project instead of import-generic one ([639b624](https://github.com/mokkapps/changelog-generator-demo/commits/639b62431304a336833ef94eefd39a9efef05738))
+* **mailing:** add credentials to the CODEOWNERS files (of [#81](https://github.com/Falcion/Patternugit/issues/81)) ([525dd5b](https://github.com/mokkapps/changelog-generator-demo/commits/525dd5b11d61856e121f2fb965593d72a76ee2a1))
+* **main:** refactor and fork entire previous script into JS submodule ([d14632b](https://github.com/mokkapps/changelog-generator-demo/commits/d14632bb03e3effecd7bab99391b171bea1d1128))
+* **roadmap:** update roadmap with current version of the repository ([ba0502e](https://github.com/mokkapps/changelog-generator-demo/commits/ba0502eaf51f1e5217dd09b9da027ecd7b10df88))
+* **settings:** full rework of settings of repository within app ([391145b](https://github.com/mokkapps/changelog-generator-demo/commits/391145b29f902ff0ecd2d56eb81013a8984e4524))
+
+
+### Documentation
+
+* **community:** add "Governance model" to the repository ([b5c06ea](https://github.com/mokkapps/changelog-generator-demo/commits/b5c06eacef130246dd490f283f4ffbeac0b56d8c))
+* **community:** add Pull requests policy ([9c3fe1f](https://github.com/mokkapps/changelog-generator-demo/commits/9c3fe1ffc27a2ac5f36bcee5fece6412351f59c6))
+* **community:** add templates for discussions and edited main config ([680d804](https://github.com/mokkapps/changelog-generator-demo/commits/680d8046a4ce759e30c9d423344f0f4060580552))
+* **community:** add templates for issues and edited main config ([da73fb0](https://github.com/mokkapps/changelog-generator-demo/commits/da73fb0852d4a5fa939d1051487905c3d1f2bf9b))
+* **community:** fork "BEST_PRACTICES_FOR_MAINTAINERS" document ([17cdbb2](https://github.com/mokkapps/changelog-generator-demo/commits/17cdbb2024c078493030401c64c72856a2e9b903))
+* **community:** fork "BUILDING_WELCOMING_COMMUNITY" document ([8092898](https://github.com/mokkapps/changelog-generator-demo/commits/8092898086fa43529df9bd24cea204f45f226060))
+* **community:** fork "HOW_TO_CONTRIBUTE_TO_OPEN_SOURCE" document ([9a6f308](https://github.com/mokkapps/changelog-generator-demo/commits/9a6f3082aa6bc4fa9c1ab3d995c8145c2c29658c))
+* **community:** fork "LEADERSHIP_AND_GOVERNANCE" document ([aea57b6](https://github.com/mokkapps/changelog-generator-demo/commits/aea57b699f9bf239e40a836aa8ce5ab2a62cd615))
+* **community:** fork "STARTING_AN_OPEN_SOURCE_PROJECT" document ([4c099be](https://github.com/mokkapps/changelog-generator-demo/commits/4c099be254c1da1261f8167e08021257e3766b53))
+* **community:** fork Pull request template and fix of [#89](https://github.com/Falcion/Patternugit/issues/89) ([7f733ce](https://github.com/mokkapps/changelog-generator-demo/commits/7f733ce59cf86363a990fa3ec4bf6ea2e85a1a72))
+* **community:** fork Security policy ([680277a](https://github.com/mokkapps/changelog-generator-demo/commits/680277a6ee934cd111a374a2a82cdfe98eeeebe4))
+* **git:** add semver docs ([25c3ca9](https://github.com/mokkapps/changelog-generator-demo/commits/25c3ca9404e4bba2ca2e21c0f1f0a4f3ebd2f396))
+* **github:** add Commit convention policy (Conventional commits) ([ac15b47](https://github.com/mokkapps/changelog-generator-demo/commits/ac15b476eea70ae2abde2851b22b35b2d5a61795))
+* **github:** add Issue triage policy ([01bbee0](https://github.com/mokkapps/changelog-generator-demo/commits/01bbee09e40a7a6c7d0ed5d740a547249bb03648))
+* **github:** add new version of Code of Conduct ([00bb1d9](https://github.com/mokkapps/changelog-generator-demo/commits/00bb1d92716a31ff457a3d42aa20393f9bdbaf0c))
+* **github:** add new version of Contribution Policy ([bc31325](https://github.com/mokkapps/changelog-generator-demo/commits/bc3132544260bc3682af160a6355f657db6c3d64))
+* **github:** add new version of Security Policy ([81be10a](https://github.com/mokkapps/changelog-generator-demo/commits/81be10aaffacc2b556a2ec690eae11aec50a4188))
+* **github:** create generic issue template ([887d545](https://github.com/mokkapps/changelog-generator-demo/commits/887d5455b5c8b8e2f50f4e97b6aa92c6eba5b3ed))
+* **github:** create Issue Policy ([65cde21](https://github.com/mokkapps/changelog-generator-demo/commits/65cde21335260e62e2f6d70723729cca87d818ff))
+* **github:** create Pull request template ([ca31ecd](https://github.com/mokkapps/changelog-generator-demo/commits/ca31ecdac532c9dc2301b5382887443a9c1bd242))
+* **github:** create Pull requests Policy ([7f47bb3](https://github.com/mokkapps/changelog-generator-demo/commits/7f47bb38614d6f8566fa7482f873ee4329e35bf9))
+* **github:** fork 'Issue policy" from unmerged tag ([f15d8ef](https://github.com/mokkapps/changelog-generator-demo/commits/f15d8efc269ba38f7cf73ac13bbc6091697a929b))
+* **github:** fork "Contribution guidelines" from unmerged tag ([356b2c9](https://github.com/mokkapps/changelog-generator-demo/commits/356b2c9f00a4c05f30ffb1e61060d56114898359))
+* **github:** fork and refactor CODE_OF_CONDUCT to new workflows ([cd14cfa](https://github.com/mokkapps/changelog-generator-demo/commits/cd14cfa7a7679d1aa487b110e5e7fbe272e26d4e))
+* **husky-docs:** split HUSKY's documentation in submodules ([dc8bc61](https://github.com/mokkapps/changelog-generator-demo/commits/dc8bc616306b99386dafa2673295e963f1c8e2a9))
+* **issues:** add universal default form for issues of other category ([73964c2](https://github.com/mokkapps/changelog-generator-demo/commits/73964c272d7fefb71d83b4b6766916c6e3951744))
+* **kubernetes:** add information file about binary execs of Kubernetes ([837ab41](https://github.com/mokkapps/changelog-generator-demo/commits/837ab41121677cd04b1d46da04a15645cb438db2))
+* **labels-data:** add special README about working with repository's data ([e064c95](https://github.com/mokkapps/changelog-generator-demo/commits/e064c95b621bae4b3ccc46794a5d73a2c9887fde))
+
+
+### Build system
+
+* **build-deps:** fork and implement new version of Husky hooks ([b5c9c28](https://github.com/mokkapps/changelog-generator-demo/commits/b5c9c2804bb500a7ec3cca07623089a0724bd2cc))
+* **build-env:** add list of required apps for workflows and repository ([90f0b88](https://github.com/mokkapps/changelog-generator-demo/commits/90f0b884d39ddbee857eaa4ab96cef5c0a873f14))
+* **deps-dev:** bump @electron/lint-roller from 1.13.0 to 2.2.0 ([c540350](https://github.com/mokkapps/changelog-generator-demo/commits/c54035067fdbdb22cd713d25b90b5d04f644556c))
+* **deps-dev:** bump @npmcli/package-json from 5.1.0 to 5.2.0 ([fa20ee0](https://github.com/mokkapps/changelog-generator-demo/commits/fa20ee093f4740aec7644527390eb96755b6d41e))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([4731168](https://github.com/mokkapps/changelog-generator-demo/commits/47311685a87ae49adf521413fcb519ffc2453c01))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([2b062dc](https://github.com/mokkapps/changelog-generator-demo/commits/2b062dc015c0abeb630178be4318eeeef5563539))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([2a83674](https://github.com/mokkapps/changelog-generator-demo/commits/2a8367424ac36b382169b287714ef8c412aabde5))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([0e90cb8](https://github.com/mokkapps/changelog-generator-demo/commits/0e90cb886d182c35969326d074ae8a484f5f5d5a))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([7996b84](https://github.com/mokkapps/changelog-generator-demo/commits/7996b8422dc5b6196230f78a772ac90875abcc40))
+* **deps-dev:** bump @typescript-eslint/parser from 7.13.0 to 7.14.1 ([5dac19e](https://github.com/mokkapps/changelog-generator-demo/commits/5dac19e1b59f6ad1699a758cc0a458d0745d5d71))
+* **deps-dev:** bump @typescript-eslint/parser from 7.14.1 to 7.15.0 ([f94f2a6](https://github.com/mokkapps/changelog-generator-demo/commits/f94f2a61b076018911c36bc860159d1ccf01b010))
+* **deps-dev:** bump @typescript-eslint/parser from 7.15.0 to 7.16.0 ([4baf402](https://github.com/mokkapps/changelog-generator-demo/commits/4baf402921044a63f8f3a640ea1dc83e703717d2))
+* **deps-dev:** bump @typescript-eslint/parser from 7.8.0 to 7.9.0 ([a26a495](https://github.com/mokkapps/changelog-generator-demo/commits/a26a495a916f333f21472099d9dfec7ad669c24b))
+* **deps-dev:** bump @typescript-eslint/parser from 7.9.0 to 7.13.0 ([9ae9e13](https://github.com/mokkapps/changelog-generator-demo/commits/9ae9e132f5aaa76edeefbe0d5997ee71955b7472))
+* **deps-dev:** bump eslint from 9.2.0 to 9.5.0 ([9c7a5cd](https://github.com/mokkapps/changelog-generator-demo/commits/9c7a5cdfdfedf860c3b2b62a02ca00d9f49b9506))
+* **deps-dev:** bump eslint from 9.5.0 to 9.6.0 ([0cc72d6](https://github.com/mokkapps/changelog-generator-demo/commits/0cc72d6a5cfeaa9638d596686baefbbe88af1c2d))
+* **deps-dev:** bump eslint from 9.6.0 to 9.7.0 ([3f218dd](https://github.com/mokkapps/changelog-generator-demo/commits/3f218ddbe2ea018a0b5d9140e34c483c7345e782))
+* **deps:** bump braces from 3.0.2 to 3.0.3 in the npm_and_yarn group ([596cec9](https://github.com/mokkapps/changelog-generator-demo/commits/596cec9cea32c808d5bcf466d05d80d04c2e9ab7))
+* **deps:** bump esbuild from 0.21.2 to 0.21.3 ([7e1b6ab](https://github.com/mokkapps/changelog-generator-demo/commits/7e1b6abea81941691cc6e42d1e3c4a1769d5b21c))
+* **deps:** bump esbuild from 0.21.3 to 0.21.5 ([fded9b6](https://github.com/mokkapps/changelog-generator-demo/commits/fded9b67d708195d30685f6980a0881c0d01fc03))
+* **deps:** bump esbuild from 0.21.5 to 0.23.0 ([2176ca8](https://github.com/mokkapps/changelog-generator-demo/commits/2176ca825a56ed7584d065542b3626d397498ba6))
+* **deps:** bump esbuild-sass-plugin from 3.2.0 to 3.3.1 ([2c1ee2b](https://github.com/mokkapps/changelog-generator-demo/commits/2c1ee2b546292c8eef973de500d87ff351a8acd8))
+* **deps:** bump husky from 9.0.11 to 9.1.1 ([30dcfa3](https://github.com/mokkapps/changelog-generator-demo/commits/30dcfa3b7ad39046bb9f64b606f0187bb3a834e6))
+* **deps:** bump lint-staged from 15.2.2 to 15.2.7 ([78cd408](https://github.com/mokkapps/changelog-generator-demo/commits/78cd4089117209644abd9d5067a118b869b28499))
+* **deps:** bump prettier from 3.2.5 to 3.3.2 ([3fb0f91](https://github.com/mokkapps/changelog-generator-demo/commits/3fb0f91fed629d8654834e34bbaea010ef9da7fa))
+* **deps:** bump prettier from 3.3.2 to 3.3.3 ([791f4cf](https://github.com/mokkapps/changelog-generator-demo/commits/791f4cf7069ea03e5976eae34d08c3fc7976abe3))
+* **deps:** bump the npm_and_yarn group with 3 updates ([5f53794](https://github.com/mokkapps/changelog-generator-demo/commits/5f53794fff1343027f9b45602937b4b0d6d22d43))
+* **deps:** bump typescript from 5.4.5 to 5.5.2 ([fce5890](https://github.com/mokkapps/changelog-generator-demo/commits/fce5890fe0be96d33f6dbc23d96a3626b1b9456d))
+* **deps:** bump typescript from 5.5.2 to 5.5.3 ([69c0bb5](https://github.com/mokkapps/changelog-generator-demo/commits/69c0bb57c8622f72468eda87bcc30dc5d9f6f672))
+* **editor:** add VS Code presets ([9e3ffbb](https://github.com/mokkapps/changelog-generator-demo/commits/9e3ffbbeaaed3338866e87284ddabb5be6a80c5f))
+* **editorconfig:** set up `.editorconfig` to markdownlint ([d4d60c2](https://github.com/mokkapps/changelog-generator-demo/commits/d4d60c2f412f3e2bd4fefbba62b55737b2a22a69))
+* **git:** add `.gitconfig` with refactored and advanced configurations ([a3d62bf](https://github.com/mokkapps/changelog-generator-demo/commits/a3d62bf852eedc7fb42d7e8be3b57a9cf1cc5a51))
+* **gitconfig:** implement new more advanced gitconfig ([9168380](https://github.com/mokkapps/changelog-generator-demo/commits/9168380171f591168c7c41c8d45ccee5366681a8))
+* **husky-cfg:** add new implementations and hooks for Husky and lint-staged ([29afc9a](https://github.com/mokkapps/changelog-generator-demo/commits/29afc9afcf8926b27871a1948dc5539931158fb3))
+* **husky:** append HUSKY hooks and remove exiting at everything ([0cd3a11](https://github.com/mokkapps/changelog-generator-demo/commits/0cd3a11b3fb83d86ec05a2c68dcdce5342090c3f))
+* **keys:** add PGP keys and correlated instructions about them ([9552ffd](https://github.com/mokkapps/changelog-generator-demo/commits/9552ffd6916c4d7b7c3eaced131416b12c67e9e1))
+* **kubernetes:** add Bat installation script for Kubernetes ([33fec26](https://github.com/mokkapps/changelog-generator-demo/commits/33fec263f654792f7c00f9525896be2e794aefb0))
+* **kubernetes:** add deinstallation scripts for Kubernetes ([90f4096](https://github.com/mokkapps/changelog-generator-demo/commits/90f4096562a05212aad3d3cb4d178ba53bb7989d))
+* **kubernetes:** add Shell installation script for Kubernetes ([494e053](https://github.com/mokkapps/changelog-generator-demo/commits/494e053d73e77f08248d7344db0fab2cd53da856))
+* **launch:** add launch config to local VS-CODE setup ([f740231](https://github.com/mokkapps/changelog-generator-demo/commits/f74023187325f8e294d9098d83ca44806b79a6e3))
+* **obsidian:** add OBSIDIAN to the environment ([c0227b7](https://github.com/mokkapps/changelog-generator-demo/commits/c0227b775dfec0613126ce4345949de6f7ebc93c))
+* **visualize:** add common analytics and visualizers for the repository ([0cc1313](https://github.com/mokkapps/changelog-generator-demo/commits/0cc1313b1f700e932d38989553f3cac30d4894ad))
+* **workflows-apps:** add workflows and apps to the repository ([c45f75b](https://github.com/mokkapps/changelog-generator-demo/commits/c45f75bf86f08e459afe1e86f0f4abc70755676b))
+* **workflows-deps:** add GitHub Actions addons to workflows state ([5b4cea1](https://github.com/mokkapps/changelog-generator-demo/commits/5b4cea195f9122b3cee7eaa478b9ad60e869cb18))
+* **workflows-deps:** add labeler integration with it's plugin ([c88d9b4](https://github.com/mokkapps/changelog-generator-demo/commits/c88d9b4df9be24d26bb5d561f5d36457ff3929d0))
+* **workflows-deps:** implement Docker Action as an addon ([1076297](https://github.com/mokkapps/changelog-generator-demo/commits/10762976f202a90773a38ee736d691c9a1ff9b8d))
+* **workflows:** add Auto-approve and Auto-assign workflows ([64b6edf](https://github.com/mokkapps/changelog-generator-demo/commits/64b6edf4590ea3aa8a2082d1b33470c8647e24ef))
+* **workflows:** add workflow for tag checking (fork from unmerged tags) ([f0cf7d1](https://github.com/mokkapps/changelog-generator-demo/commits/f0cf7d1b30143d9b3b6c56151df9ce6f9cc80a35))
+* **workflows:** add workflow to CI Workflow (Skip duplicates) ([865121b](https://github.com/mokkapps/changelog-generator-demo/commits/865121b794f21ca003109775ceacbaac665d7e42))
+* **workflows:** intergrate "Lint PR" ([474b1f6](https://github.com/mokkapps/changelog-generator-demo/commits/474b1f6302ff1c27529fa62584dd04ec1bdfe4bc))
+* **workflows:** intergrate lint-staged in the repo ([5176b18](https://github.com/mokkapps/changelog-generator-demo/commits/5176b182aee29257fee688afc9ca9d3110495074))
+* **workflows:** intergrate Trufflehog OSS ([dea574a](https://github.com/mokkapps/changelog-generator-demo/commits/dea574a4772a233af86beaeee1e0a39a6a3cb354))
+* **yaml-schemas:** add NONE schema to YAML support in the VS-CODE ([9c957f2](https://github.com/mokkapps/changelog-generator-demo/commits/9c957f27c8cd3ef6aa5e4a6b9022e5e1dc1b283b))
+
+
+### Fixes
+
+* **linters:** add new linter instead old one which was not working ([b8b90b4](https://github.com/mokkapps/changelog-generator-demo/commits/b8b90b4d8e4031c82ae397fca373c90dd47820b0))
+* **typescript-modules:** fix ESM modulation and tsconfig specs errors ([df06c37](https://github.com/mokkapps/changelog-generator-demo/commits/df06c3714edc0a4c6d86eeedc7b90f396049cc93))
+
+
+### Refactoring
+
+* **CODE_OF_CONDUCT.md:** refactor Code of Conduct according to Markdownlint ([6d71e94](https://github.com/mokkapps/changelog-generator-demo/commits/6d71e94dcb86c7370ffddff7a54fb51a7b3740cf))
+* **docs:** refactor and fix of docs according to linter (partial) ([7097f5c](https://github.com/mokkapps/changelog-generator-demo/commits/7097f5cf00ed9acab92bde1401bb24ecc0efe04b))
+* **docs:** refactor and fix of docs according to linter (partial) ([4288f81](https://github.com/mokkapps/changelog-generator-demo/commits/4288f813a36c45b8be9ae3b3d27e6aa60c9a1875))
+* **docs:** refactor and fix of docs according to linter (partial) ([47140e5](https://github.com/mokkapps/changelog-generator-demo/commits/47140e5fbcbe204dd2ce292abd9eb6cb4d184aa3))
+* **docs:** refactor and fix of docs according to linter (partial) ([2c2b9f4](https://github.com/mokkapps/changelog-generator-demo/commits/2c2b9f41543bec7fe15f5a0209b603247bb92705))
+* **husky-docs:** refactor README for HUSKY's troubleshooting guides ([ecdf0fc](https://github.com/mokkapps/changelog-generator-demo/commits/ecdf0fc934c56d3cace617d5cb59a0a7d09f8cfe))
+* **project:** refactored and revamped entire project ([ecd2310](https://github.com/mokkapps/changelog-generator-demo/commits/ecd2310ce9ad6cf4f0d9397d18c1dc5c2465757d))
+* **repository:** clear old state of repository and infrastructure for it ([5cf11cc](https://github.com/mokkapps/changelog-generator-demo/commits/5cf11cc7590dde9f6ea6baee0e2939d57a3795b2))
+
 ### [1.0.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.0.0...v1.0.1) (2024-05-14)
 
 
@@ -330,5 +455,5 @@ All notable changes to this project will be documented in this file. See [standa
 * **workflows:** fix of entirety of workflows ([5a1ea4a](https://github.com/mokkapps/changelog-generator-demo/commits/5a1ea4a816ee9017a33dfb68e714a6b47118f59e))
 
 <!--
- This changelog file will be automatically updated by pending husky-hook scripts and commit's linters, but, it can also be edited in dependent case. 
+ This changelog file will be automatically updated by pending husky-hook scripts and commit's linters, but, it can also be edited in dependent case.
  -->

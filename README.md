@@ -1,3 +1,4 @@
+
 <!--
  BLOCK OF SHIELDS AND LOGO:
  -->
@@ -130,7 +131,7 @@ After setting up project's template within custom provided script, it is recomme
     REMOVE any related file either to DOCKER or KUBERNETES;
 4. It is RECOMMENDED to set up custom workflows for your code;
 5. It is RECOMMENDED to set up custom attributes for .GITCONFIG of your project (check GITHUB subdirectory);
-6. It is RECOMMENDED to read applied in this template documentation, you may disagree or want to edit it up; 
+6. It is RECOMMENDED to read applied in this template documentation, you may disagree or want to edit it up;
 7. It is RECOMMENDED to update LICENSE and README according to your project (image is from README template, for references see links below).
 
 <p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
@@ -141,27 +142,23 @@ After setting up project's template within custom provided script, it is recomme
 Roadmap
 -------
 
-<!-- 
+<!--
   This roadmap is general and initial,
-  meaning it is created only at the start 
-  of project development and discontinued 
-  after completion of it.  
+  meaning it is created only at the start
+  of project development and discontinued
+  after completion of it.
  -->
 
-- [x] Create basic repository infrastructure for this project, including:
-  - [x] basic .MD documentations and dealings stuff (like README, LICENSE and etc.);
-  - [x] scripts and actions within CI/CD for supporting high-quality of this project;
-- [x] Write and publish the demo (pre-release) version of project, including the most basic logic of this one.
-- [x] Write the documentation for this demo-project and:
-  - [x] make it one as archive for technical docs purposes (hyperlinking directive);
-- [x] Refactor and prepare for “advancing” the project's logic and write an entire functionality of it.
-  - [x] Write an advanced .TS script for managing core of this project's functionality (being a template);
-  - [x] Write an advanced infrastructure for project's surroundings and etc.;
-- [x] Refactor and prepare for “advancing” the project's documentation and publish it via the archive.
+- [x] Upgrade and update project to the second version generation;
+- [ ] Refactor to project according to integrated linters and pass the checks within future;
+- [ ] Write small pages website which contains philosophy and common ideology of project and how to use it;
+  - [ ] Format and style it;
+- [ ] Write a markdown file which contains a pattern for philosohpies or ideologies for projects;
+  - [ ] And write down a specified philosophy for this exact project;
 
 <p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
 
-<!-- CONTRIBUTING: 
+<!-- CONTRIBUTING:
  -->
 
 Contributing
@@ -186,7 +183,7 @@ More about it in this article:
 License
 -------
 
-Project thanks the [Electron.js](https://github.com/electron/electron/) and [Angular.js](https://github.com/angular/angular/) for their amazing repository scripts and entire infrastructure, which partially were imported to this repository. 
+Project thanks the [Electron.js](https://github.com/electron/electron/) and [Angular.js](https://github.com/angular/angular/) for their amazing repository scripts and entire infrastructure, which partially were imported to this repository.
 
 > For individual licensing and credits information, seek correspondive files and/or sources.
 

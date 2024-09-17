@@ -1,29 +1,47 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Launch Chrome",
-            "request": "launch",
-            "type": "chrome",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
-            "name": "ts-node",
-            "type": "node",
-            "request": "launch",
-            "args": [
-                "${relativeFile}"
-            ],
-            "runtimeArgs": [
-                "-r",
-                "ts-node/register"
-            ],
-            "cwd": "${workspaceRoot}",
-            "internalConsoleOptions": "openOnSessionStart"
-        }
-    ]
+  "__comment": "https://go.microsoft.com/fwlink/?linkid=830387",
+  "configurations": [
+    {
+      "type": "bashdb",
+      "request": "launch",
+      "name": "Debug custom BASH script",
+      "cwd": "${workspaceFolder}",
+      "program": "${command:${file}}",
+      "args": []
+    },
+    {
+      "name": "Debug with TS-NODE",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/${file}",
+      "runtimeArgs": [
+        "-r",
+        "ts-node/register"
+      ],
+      "sourceMaps": true,
+      "cwd": "${workspaceFolder}",
+      "outFiles": [
+        "${workspaceFolder}/dist/**/*.js"
+      ]
+    },
+    {
+      "name": "Debug with TSC",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/dist/${fileBasenameNoExtension}.js",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "sourceMaps": true,
+      "cwd": "${workspaceFolder}",
+      "outFiles": [
+        "${workspaceFolder}/dist/**/*.js"
+      ]
+    },
+    {
+      "name": "Launch .PY script",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    },
+  ]
 }
