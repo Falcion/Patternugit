@@ -1,0 +1,20 @@
+{
+  "default": true,
+  "MD034": false,
+  "MD041": false,
+  "MD003": false,
+  "no-angle-brackets": true,
+  "no-inline-html": {
+    "allowed_elements": [
+      "br",
+      "details",
+      "img",
+      "li",
+      "summary",
+      "ul",
+      "unknown",
+      "Tabs",
+      "TabItem"
+    ]
+  }
+}
