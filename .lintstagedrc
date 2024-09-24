@@ -11,8 +11,7 @@
         "prettier --list-different"
     ],
     "*.md": [
-        "prettier --list-different",
-        "npm run lint:docs"
+        "prettier --list-different"
     ],
     "*.{gn,gni}": [
         "npm run gn-check",
