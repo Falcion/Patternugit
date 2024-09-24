@@ -34,7 +34,7 @@
     "prepare": "husky .husky/ && cd scripts/python && py -m venv venv",
     "update-analytics": "ts-node scripts/js/analytics-workflow.ts",
     "test": "node ./script/spec-runner.js",
-    "start": "node .prepare-template.mjs",
+    "start": "ts-node prepare-template.ts",
     "buildtsc": "tsc",
     "build": "tsc -noEmit -skipLibCheck environment.ts && node esbuild.config.mjs production",
     "install": "npm run start",
@@ -140,7 +140,7 @@
   },
   "engines": {
     "npm": ">=10.0.0",
-    "node": ">=16.0.0"
+    "node": ">=21.1.0"
   },
   "prettier": {
     "tabWidth": 2,
@@ -205,7 +205,8 @@
       "node scripts/lint.js --js --fix --only --"
     ],
     "*.{js,ts,d.ts}": [
-      "ts-node scripts/gen-filenames.ts"
+      "prettier --list-different",
+      "eslint"
     ],
     "*.{cc,mm,c,h}": [
       "python3 scripts/run-clang-format.py -r -c --fix"
