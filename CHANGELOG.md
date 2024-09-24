@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.0...v2.1.1) (2024-09-24)
+
+
+### Build system
+
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([2e4c907](https://github.com/mokkapps/changelog-generator-demo/commits/2e4c907bf0fc9656e221a8e953e035cdd4afddca))
+* **deps-dev:** bump @typescript-eslint/parser from 7.18.0 to 8.7.0 ([4d1fa62](https://github.com/mokkapps/changelog-generator-demo/commits/4d1fa6240b4f6325a6d36d70d59a0bab917ec317))
+* **linting:** appended some linting and fix linters behaviour ([f1a5294](https://github.com/mokkapps/changelog-generator-demo/commits/f1a5294e2ab44099d0ca27ab61c5a682ed48876b))
+
+
+### Fixes
+
+* **common:** fix calling errors in main script and add definitions ([ecd139a](https://github.com/mokkapps/changelog-generator-demo/commits/ecd139af12452236bc1eb5a908dfe8179dfd090c))
+* **definitions:** fix definitions check of linters causing errors ([ef56ef0](https://github.com/mokkapps/changelog-generator-demo/commits/ef56ef07726ad9a097be0d29cd546cedde37f14b))
+* **package:** append node and npm requirements and append to latest linters ([b70d3f3](https://github.com/mokkapps/changelog-generator-demo/commits/b70d3f3434522aea8bbec87fe3b6fb5cdcfbd04c))
+* **workflows:** fix auto-assign workflow of [#170](https://github.com/Falcion/Patternugit/issues/170) ([2207136](https://github.com/mokkapps/changelog-generator-demo/commits/220713610720d98c64271ff9e78a1d02d11211ef))
+
+
+### Refactoring
+
+* **docs:** refactored docs accordingly to linters ([4cf5036](https://github.com/mokkapps/changelog-generator-demo/commits/4cf5036dec818b2d0fa9437531297b149fe1863f))
+
 ## [2.1.0](https://github.com/mokkapps/changelog-generator-demo/compare/v2.0.0...v2.1.0) (2024-09-24)
 
 ### Build system
