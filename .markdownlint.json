@@ -16,5 +16,6 @@
       "Tabs",
       "TabItem"
     ]
-  }
+  },
+  "extends": "@electron/lint-roller/configs/markdownlint.json"
 }

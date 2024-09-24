@@ -8,11 +8,10 @@
         "prettier --list-different"
     ],
     "*.{js,ts,d.ts}": [
-        "ts-node scripts/gen-filenames.ts"
+        "prettier --list-different"
     ],
     "*.md": [
-        "prettier --list-different",
-        "npm run lint:docs"
+        "prettier --list-different"
     ],
     "*.{gn,gni}": [
         "npm run gn-check",

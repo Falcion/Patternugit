@@ -1,7 +1,7 @@
 {
   "name": "patternugit",
   "displayName": "Patternugit",
-  "version": "2.0.0",
+  "version": "2.1.1",
   "description": "Preconfigured pattern for your repository with universal cases for markdown files of documentations and other actions/scripts",
   "main": "environment.ts",
   "private": true,
@@ -34,14 +34,14 @@
     "prepare": "husky .husky/ && cd scripts/python && py -m venv venv",
     "update-analytics": "ts-node scripts/js/analytics-workflow.ts",
     "test": "node ./script/spec-runner.js",
-    "start": "node .prepare-template.mjs",
+    "start": "ts-node prepare-template.ts",
     "buildtsc": "tsc",
     "build": "tsc -noEmit -skipLibCheck environment.ts && node esbuild.config.mjs production",
     "install": "npm run start",
     "pack": "python scripts/python/pack.py",
     "release": "standard-version",
-    "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
+    "release:minor": "standard-version --release-as minor",
     "release:major": "standard-version --release-as major",
     "generate-version-json": "node scripts/js/generate-version-json.js"
   },
@@ -140,7 +140,7 @@
   },
   "engines": {
     "npm": ">=10.0.0",
-    "node": ">=16.0.0"
+    "node": ">=21.1.0"
   },
   "prettier": {
     "tabWidth": 2,
@@ -154,7 +154,7 @@
   "dependencies": {
     "check-for-leaks": "^1.2.1",
     "colors": "^1.4.0",
-    "esbuild": "^0.23.1",
+    "esbuild": "^0.24.0",
     "esbuild-plugin-glsl": "^1.2.2",
     "esbuild-plugin-node-externals": "^1.0.1",
     "esbuild-sass-plugin": "^3.3.1",
@@ -183,8 +183,8 @@
     "@types/fs-extra": "^11.0.4",
     "@types/minimist": "^1.2.5",
     "@types/semver": "^7.5.8",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
     "editorconfig": "^2.0.0",
     "eslint": "^8.57.1",
     "eslint-config-standard": "^17.1.0",
@@ -205,7 +205,8 @@
       "node scripts/lint.js --js --fix --only --"
     ],
     "*.{js,ts,d.ts}": [
-      "ts-node scripts/gen-filenames.ts"
+      "prettier --list-different",
+      "eslint"
     ],
     "*.{cc,mm,c,h}": [
       "python3 scripts/run-clang-format.py -r -c --fix"
