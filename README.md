@@ -1,4 +1,3 @@
-
 <!--
  BLOCK OF SHIELDS AND LOGO:
  -->
@@ -32,8 +31,7 @@
 <!-- ABOUT THE PROJECT:
  -->
 
-About the project
------------------
+## About the project
 
 Many projects lack sufficient development and preparation in the area of their environment and sometimes are not intended as such at all due to the overall complexity, time-consuming and non-adaptive nature of such a process[^1].
 
@@ -53,8 +51,7 @@ Project is created and “written” with help of:
 <!-- GETTING STARTED
  -->
 
-Getting started
----------------
+## Getting started
 
 Before asking questions, read this block because here is all the primary information on the project, which can answer your future not-yet asked questions.
 
@@ -80,7 +77,7 @@ But, for contributing to this project, we highly recommending following those pr
 
 > Permission is granted for free use in any of your products.
 >
-If you want to use this project, there are two ways to download-and-use this project: “official” and direct, so, let's start from official path:
+> If you want to use this project, there are two ways to download-and-use this project: “official” and direct, so, let's start from official path:
 
 1. Go up to the “main position” of page of this repository and seek for the "Use this template" button;
 2. Click on this button and seek for the specified variants "Use this template → Create a new repository", or option with codespaces;
@@ -105,8 +102,7 @@ Guidelines for installation of source code of this project:
 <!-- USAGE:
  -->
 
-Usage
------
+## Usage
 
 Usage of this project is very easy and comfortable for common user, its not provided with any advanced code or anything, it just the "data" which user must interpretate as it wants.
 
@@ -125,10 +121,11 @@ npm run prepare:main
 ```
 
 After setting up project's template within custom provided script, it is recommended to follow this algorithm:
+
 1. You MUST update .GITIGNORE file, for more information and sources, check .GITIGNORE-README;
 2. You MUST update .GITATTRIBUTES file, for more information and sources, check .GITATTRIBUTES-README;
 3. If you don't use DOCKER/KUBERNETES, do this:\
-    REMOVE any related file either to DOCKER or KUBERNETES;
+   REMOVE any related file either to DOCKER or KUBERNETES;
 4. It is RECOMMENDED to set up custom workflows for your code;
 5. It is RECOMMENDED to set up custom attributes for .GITCONFIG of your project (check GITHUB subdirectory);
 6. It is RECOMMENDED to read applied in this template documentation, you may disagree or want to edit it up;
@@ -139,8 +136,7 @@ After setting up project's template within custom provided script, it is recomme
 <!-- ROADMAP:
  -->
 
-Roadmap
--------
+## Roadmap
 
 <!--
   This roadmap is general and initial,
@@ -161,8 +157,7 @@ Roadmap
 <!-- CONTRIBUTING:
  -->
 
-Contributing
-------------
+## Contributing
 
 Contributions are what make open source community such an interest place to be in, so any form of contribution are greatly appreciated.
 
@@ -173,6 +168,7 @@ If you want to contribute to this project, please, read contributioning policy a
 > For one-single file contributioning, use a more quicker way without forking the repository through website.
 
 More about it in this article:
+
 - [“Working with forks”](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork/) about syncing one-file fork;
 
 <p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
@@ -180,8 +176,7 @@ More about it in this article:
 <!-- LICENSE:
  -->
 
-License
--------
+## License
 
 Project thanks the [Electron.js](https://github.com/electron/electron/) and [Angular.js](https://github.com/angular/angular/) for their amazing repository scripts and entire infrastructure, which partially were imported to this repository.
 
@@ -194,8 +189,7 @@ Project itself is being distributed under the [MIT License](https://choosealicen
 <!-- CONTACT:
  -->
 
-Contact
--------
+## Contact
 
 For any legal purposes, you can contact developer/maintainer through its e-mail:
 
@@ -211,8 +205,7 @@ If the developer/maintainer didn't answered, or you have other questions in natu
 <!-- ACKNOWLEDGEMENTS:
  -->
 
-Acknowledgments
----------------
+## Acknowledgments
 
 - https://shields.io/
 - https://simpleicons.org/
@@ -228,6 +221,9 @@ Acknowledgments
  -->
 
 [^1]: For this, please, read [README](./main/README) and keep in mind, that this is a template and if you want to, you could redefine entire structure of this file or entire repository.
+
 [^2]: for contributing policy, see — [CONTRIBUTING.md](./main/.github/CONTRIBUTING.md)
+
 [^3]: [.../#installation](#installation)
+
 [^4]: read the files of [commiting convention policy](./main/docs/github/COMMIT_CONVENTION.md) and [contributioning policy](./main/.github/CONTRIBUTING.md)

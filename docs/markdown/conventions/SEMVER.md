@@ -184,7 +184,7 @@ No, but use good judgment. A 255 character version string is probably overkill, 
 
 **Is “v1.2.3” a semantic version?**
 
-No, “v1.2.3” is not a semantic version. However, prefixing a semantic version with a “v” is a common way (in English) to indicate it is a version number. Abbreviating “version” as “v” is often seen with version control. 
+No, “v1.2.3” is not a semantic version. However, prefixing a semantic version with a “v” is a common way (in English) to indicate it is a version number. Abbreviating “version” as “v” is often seen with version control.
 Example:` git tag v1.2.3 -m "Release version 1.2.3"`, in which case “v1.2.3” is a tag name and the semantic version is “1.2.3”.
 
 **Is there a suggested regular expression (RegEx) to check a SemVer string?**
@@ -193,7 +193,7 @@ There are two. One with named groups for those systems that support them (PCRE [
 
 See: https://regex101.com/r/Ly7O1x/3/
 
-```
+```ruby
 ^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
 ```
 
@@ -201,7 +201,7 @@ And one with numbered capture groups instead (so cg1 = major, cg2 = minor, cg3 =
 
 See: https://regex101.com/r/vkijKf/1/
 
-```
+```ruby
 ^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
 ```
 
