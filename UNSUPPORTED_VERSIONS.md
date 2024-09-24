@@ -63,7 +63,11 @@ Before publishing issue, PRs to any version of plugin check, is this version sup
         <td style="text-align: center" align="center">❎</td>
       </tr>
       <tr>
-        <td style="text-align: center"><a href="https://github.com/Falcion/Patternugit/tree/1.0.1">2.0.0</a></td>
+        <td style="text-align: center"><a href="https://github.com/Falcion/Patternugit/tree/2.0.0">2.0.0</a></td>
+        <td style="text-align: center" align="center">❎</td>
+      </tr>
+      <tr>
+        <td style="text-align: center"><a href="https://github.com/Falcion/Patternugit/tree/2.1.0">2.1.0</a></td>
         <td style="text-align: center" align="center">✅</td>
       </tr>
     </table>
