@@ -147,10 +147,10 @@ export default class LOCALE_MODULE {
     ];
 
     /**
-     * Values to be excluded from file content search.
+     * Values to be included from file content search.
      * @type {string[]}
      */
-    private EXCLUDING_VALUES: string[] = [
+    private INCLUDING_VALUES: string[] = [
         'FALCION',
         'PATTERNU',
         'PATTERNUGIT',
@@ -166,12 +166,14 @@ export default class LOCALE_MODULE {
         entries: string[],
         actions: string): void {
         if (actions.length > 1) {
-            throw new RangeError('Action input must be a char.');
+            throw new RangeError('Action input must be a char.', {
+                cause: actions
+            });
         }
 
         if (actions === 'Y') {
             for (const entry of entries) {
-                this.EXCLUDING_VALUES.push(entry);
+                this.INCLUDING_VALUES.push(entry);
             }
         }
 
@@ -220,7 +222,7 @@ export default class LOCALE_MODULE {
                     if (!this.EXCLUDING_FOLDERS.includes(item))
                         await this.traverse(itempath);
                 } else if (itemstats.isFile()) {
-                    await this.search(itempath, this.EXCLUDING_VALUES);
+                    await this.search(itempath, this.INCLUDING_VALUES);
                 } else {
                     continue;
                 }
