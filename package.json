@@ -1,7 +1,7 @@
 {
   "name": "patternugit",
   "displayName": "Patternugit",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Preconfigured pattern for your repository with universal cases for markdown files of documentations and other actions/scripts",
   "main": "environment.ts",
   "private": true,
@@ -40,8 +40,8 @@
     "install": "npm run start",
     "pack": "python scripts/python/pack.py",
     "release": "standard-version",
-    "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
+    "release:minor": "standard-version --release-as minor",
     "release:major": "standard-version --release-as major",
     "generate-version-json": "node scripts/js/generate-version-json.js"
   },
