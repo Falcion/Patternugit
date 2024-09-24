@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/mokkapps/changelog-generator-demo/compare/v2.0.0...v2.1.0) (2024-09-24)
+
+
+### Build system
+
+* **scripts:** fork scripts folder and implement them in the infrastructure ([101dec9](https://github.com/mokkapps/changelog-generator-demo/commits/101dec94b4d12cf060b4644ba6d84fb4f7c95c06)), closes [#162](https://github.com/Falcion/Patternugit/issues/162) [#163](https://github.com/Falcion/Patternugit/issues/163)
+
+
+### Fixes
+
+* **docs:** fix unsupported versions file, fix of [#164](https://github.com/Falcion/Patternugit/issues/164) ([270b08e](https://github.com/mokkapps/changelog-generator-demo/commits/270b08e1c85557647a608566a6fe9cada712ce67))
+* **workflows:** fix of [#168](https://github.com/Falcion/Patternugit/issues/168) ([0f42b3d](https://github.com/mokkapps/changelog-generator-demo/commits/0f42b3de8205e5b0f47b834847a7c96d829fe864))
+
 ## [2.0.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.0.1...v2.0.0) (2024-09-17)
 
 
