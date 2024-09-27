@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.2](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.1...v2.1.2) (2024-09-27)
+
+
+### Build system
+
+* **dependency-tests:** add dependency tests and build for Node.js env of project ([6cf3319](https://github.com/mokkapps/changelog-generator-demo/commits/6cf3319ce28b936cd786e20a2e3a90537be599ff))
+* **deps:** bump esbuild from 0.23.1 to 0.24.0 ([581160a](https://github.com/mokkapps/changelog-generator-demo/commits/581160aac35eea8b3aaf49bf8528f67ce88a9505))
+
 ### [2.1.1](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.0...v2.1.1) (2024-09-24)
 
 
