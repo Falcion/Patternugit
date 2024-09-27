@@ -36,7 +36,7 @@
     "test": "node ./script/spec-runner.js",
     "start": "ts-node prepare-template.ts",
     "buildtsc": "tsc",
-    "build": "tsc -noEmit -skipLibCheck environment.ts && node esbuild.config.mjs production",
+    "build": "tsc -noEmit -skipLibCheck prepare-template.ts && node esbuild.config.mjs production",
     "install": "npm run start",
     "pack": "python scripts/python/pack.py",
     "release": "standard-version",
@@ -154,6 +154,7 @@
   "dependencies": {
     "check-for-leaks": "^1.2.1",
     "colors": "^1.4.0",
+    "dotenv": "^16.4.5",
     "esbuild": "^0.24.0",
     "esbuild-plugin-glsl": "^1.2.2",
     "esbuild-plugin-node-externals": "^1.0.1",
