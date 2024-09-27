@@ -3,7 +3,7 @@
   "displayName": "Patternugit",
   "version": "2.1.2",
   "description": "Preconfigured pattern for your repository with universal cases for markdown files of documentations and other actions/scripts",
-  "main": "environment.ts",
+  "main": "prepare-template.ts",
   "private": true,
   "scripts": {
     "lint": "node ./script/lint.js && npm run lint:docs",
@@ -22,7 +22,7 @@
     "lint:js-in-markdown": "electron-lint-markdown-standard --root docs \"**/*.md\"",
     "create-api-json": "node script/js/create-api-json.js",
     "ct-typescript-definitions": "npm run create-api-json && electron-typescript-definitions",
-    "gn-typescript-definitions": "npm run ct-typescript-definitions && shx cp environment.d.ts",
+    "gn-typescript-definitions": "npm run ct-typescript-definitions && shx cp prepare-template.d.ts",
     "pre-flight": "pre-flight",
     "gn-check": "node ./script/js/gn-check.js",
     "gn-format": "python3 script/python/run-gn-format.py",

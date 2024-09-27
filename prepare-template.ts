@@ -18,7 +18,7 @@ import * as dotenv from 'dotenv';
 
 import * as readline from 'readline';
 
-import * as colors from 'colors/safe';
+import { green, yellow, cyan, red, bgRed, bgGreen, white, bgBlue, bold } from 'colors/safe';
 
 
 /**
@@ -62,7 +62,7 @@ class PREPARE_MODULE {
 
             for (const target of data)
                 if (line.includes(target))
-                    console.info(colors.green(`Found "${target}" in L#${i} of:\n` + colors.cyan(filepath)))
+                    console.info(green(`Found "${target}" in L#${i} of:\n` + cyan(filepath)))
         }
     }
 
@@ -86,14 +86,14 @@ class PREPARE_MODULE {
                 } else if (filestat.isFile()) {
                     await this.search(filepath, this.INCLUDING_VALUES);
                 } else {
-                    throw new Error(colors.red('No correct data was found, exception attribute is:') + colors.bgRed(` ${filepath}`));
+                    throw new Error(red('No correct data was found, exception attribute is:') + bgRed(` ${filepath}`));
                 }
             }
         } catch (err: any) {
             if (err.code === 'ENOENT') {
-                console.error(colors.red(`File or directory not found: ${err.path}`));
+                console.error(red(`File or directory not found: ${err.path}`));
             } else {
-                console.error(colors.red('Error via reading given directory: ' + `${err}`));
+                console.error(red('Error via reading given directory: ' + `${err}`));
             }
         }
     }
@@ -121,10 +121,10 @@ if (PACKAGE_JSON.name === MANIFEST.id &&
     PACKAGE_JSON.author.url === MANIFEST.authorUrl &&
     PACKAGE_JSON.license === MANIFEST.license &&
     PACKAGE_JSON.version === MANIFEST.version) {
-    console.warn(colors.bgGreen(colors.white('Manifest is synced with package, keep everything as it was.')));
+    console.warn(bgGreen(white('Manifest is synced with package, keep everything as it was.')));
 }
 else {
-    console.warn(colors.bgBlue(colors.yellow('Manifest is not synced with package\'s information, rewriting it.')));
+    console.warn(bgBlue(yellow('Manifest is not synced with package\'s information, rewriting it.')));
 
     fs.copyFileSync('manifest.json', 'manifest-backup.json');
 
@@ -143,9 +143,9 @@ else {
 
 const RL = readline.createInterface({ input: process.stdin, output: process.stdout });
 
-RL.question(colors.bold('Change finding signatures (words) for the finder script? [Y/N]: '), (ASW1) => {
+RL.question(bold('Change finding signatures (words) for the finder script? [Y/N]: '), (ASW1) => {
     if (ASW1.toUpperCase() == 'Y') {
-        RL.question(colors.bold('Enter your custom signatures (words) separatedly by commas: '), (ASW2) => {
+        RL.question(bold('Enter your custom signatures (words) separatedly by commas: '), (ASW2) => {
             const input: string[] = ASW2.split(',');
 
             new PREPARE_MODULE(input).traverse(__dirname);
