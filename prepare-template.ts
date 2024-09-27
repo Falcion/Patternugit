@@ -20,22 +20,39 @@ import readline from 'readline';
 
 import colors from 'colors/safe';
 
+
+/**
+ * Represents the PREPARE_MODULE for searching through files and updating the manifest.
+ */
 class PREPARE_MODULE {
+    /** The root directory of the module. */
     ROOT_DIRECTORY: string = __dirname;
 
+    /** An array of folder names to exclude from traversal. */
     EXCLUDING_FOLDER: string[] = ['node_modules', 'venv', '.git', 'out'];
-    EXCLUDING_VALUES: string[] = ['FALCION',
+    /** An array of values to include in the search. */
+    INCLUDING_VALUES: string[] = ['FALCION',
         'PATTERNU',
         'PATTERNUGIT'];
 
+    /**
+     * Creates an instance of the PREPARE_MODULE.
+     * @param {string[]} entries - An array of custom entries to include for searching.
+     */
     constructor(entries: string[]) {
         if (entries[0] != 'NO')
             for (const item in entries)
-                this.EXCLUDING_VALUES.push(item);
+                this.INCLUDING_VALUES.push(item);
         else
-            this.EXCLUDING_VALUES = this.EXCLUDING_VALUES;
+            this.INCLUDING_VALUES = this.INCLUDING_VALUES;
     }
 
+    /**
+     * Searches for specified data within a file.
+     * @param {string} filepath - The path of the file to search.
+     * @param {string[]} data - An array of strings to search for within the file.
+     * @returns {Promise<void>} - A promise that resolves when the search is complete.
+     */
     async search(filepath: string,
         data: string[]) {
         const content = (await fs.readFile(filepath, 'utf-8')).split('\n');
@@ -49,6 +66,11 @@ class PREPARE_MODULE {
         }
     }
 
+    /**
+     * Recursively traverses a directory and searches for files.
+     * @param {string} directory - The directory path to traverse.
+     * @returns {Promise<void>} - A promise that resolves when the traversal is complete.
+     */
     async traverse(directory: string) {
         try {
             const files: string[] = await fs.readdir(directory);
@@ -62,7 +84,7 @@ class PREPARE_MODULE {
                         await this.traverse(filepath);
                     }
                 } else if (filestat.isFile()) {
-                    await this.search(filepath, this.EXCLUDING_VALUES);
+                    await this.search(filepath, this.INCLUDING_VALUES);
                 } else {
                     throw new Error(colors.red('No correct data was found, exception attribute is:') + colors.bgRed(` ${filepath}`));
                 }
