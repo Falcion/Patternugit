@@ -1,257 +1,139 @@
-/*
- * MIT License
+/**
+ * The MIT License (MIT)
  *
- * Copyright (c) 2023-2024 Falcion
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- * 
- * Any code and/or API associated with OBSIDIAN behaves as stated in their distribution policy.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * @license MIT
+ * @author Falcion
+ * @year 2023-2024
  */
 
-import * as ndos from 'node:os';
-import * as path from 'node:path';
+import * as fs from 'fs-extra';
+import * as path from 'path';
+import * as dotenv from 'dotenv';
 
-import * as fsxt from 'fs-extra';
-import * as rcli from 'readline';
+import readline from 'readline';
 
 import colors from 'colors/safe';
 
-const PROMPTS: string[] =
-    [
-        'DO YOU WANT TO UPDATE AND CHECK YOUR MANIFEST FOR THE SYNC',
-        'DO YOU WANT TO ADD WORDS TO SEARCH FOR THEM IN THE PROJECT',
-        'WRITE THE WORDS SEPARATED BY COMMA',
-    ]
+class PREPARE_MODULE {
+    ROOT_DIRECTORY: string = __dirname;
 
-/* 
- * Declaring unsupport for macOS, iOS and any related types of platforms.
- */
-if (ndos.type() === 'Darwin') process.abort();
-
-/**
- * @class
- * Represents a logger utility for logging messages with different severity levels and colors.
- */
-export class LOCALE_LOGGER {
-    /**
-     * A process ID which represents session of localized logger instance.
-     * @type {number}
-     */
-    private static session_id: number = process.ppid;
-
-    /**
-     * Logs the info message.
-     * @param {...any} data - The data to be logged.
-     */
-    public static info(...data: any[]): void {
-        const datetime = new Date().toLocaleString();
-
-        console.info(
-            colors.blue(`[${datetime}] <${this.session_id}> \t - ${data.join(' ')}`));
-    }
-
-    /**
-     * Logs the warn message.
-     * @param {...any} data - The data to be logged.
-     */
-    public static warn(...data: any[]): void {
-        const datetime = new Date().toLocaleString();
-
-        console.warn(
-            colors.yellow(`[${datetime}] <${this.session_id}> \t - ${data.join(' ')}`));
-    }
-
-    /**
-     * Logs the error message.
-     * @param {...any} data - The data to be logged.
-     */
-    public static error(...data: any[]): void {
-        const datetime = Date.now().toLocaleString();
-
-        console.error(
-            colors.bgRed(colors.white(`[${datetime}] <${this.session_id}> \t - ${data}`)));
-    }
-
-    /**
-     * Logs the success message.
-     * @param {...any} data - The data to be logged.
-     */
-    public static success(...data: any[]): void {
-        const datetime = Date.now().toLocaleString();
-
-        console.log(
-            colors.green(`[${datetime}] <${this.session_id}> \t - ${data}`));
-    }
-
-    /**
-     * Logs the message with custom color.
-     * @param {(str: string) => string} color - The color function.
-     * @param {...any} data - The data to be logged.
-     */
-    public static raw(color: (str: string) => string, ...data: any[]): void {
-        console.debug(
-            color(data.join(' ')));
-    }
-
-    /**
-    * Formats a message with custom color.
-    * @param {(str: string) => string} color - The color function.
-    * @param {string} message - The message to be formatted.
-    * @returns {string} The formatted message.
-    */
-    public static msg(color: (str: string) => string, message: string): string {
-        return color(message);
-    }
-}
-
-/**
- * @class
- * Represents a module for searching and updating files.
- */
-export default class LOCALE_MODULE {
-    /**
-    * The root directory of the module.
-    * @type {string}
-    */
-    public ROOT_DIRECTORY: string = __dirname;
-
-    /**
-     * Directories to be excluded from traversal.
-     * @type {string[]}
-     */
-    private EXCLUDING_FOLDERS: string[] = [
-        'node_modules',
-        'dist',
-        'venv',
-        '.git',
-        '$git',
-        '$',
-        'out',
-        'bin',
-    ];
-
-    /**
-     * Values to be included from file content search.
-     * @type {string[]}
-     */
-    private INCLUDING_VALUES: string[] = [
-        'FALCION',
+    EXCLUDING_FOLDER: string[] = ['node_modules', 'venv', '.git', 'out'];
+    EXCLUDING_VALUES: string[] = ['FALCION',
         'PATTERNU',
-        'PATTERNUGIT',
-        'PATTERNUGIT.NET'
-    ];
+        'PATTERNUGIT'];
 
-    /**
-     * Updates the exclusion settings based on user input.
-     * @param {string[]} entries - Entries to be added to the exclusion list.
-     * @param {string} actions - User action (Y or N).
-     */
-    public update(
-        entries: string[],
-        actions: string): void {
-        if (actions.length > 1) {
-            throw new RangeError('Action input must be a char.', {
-                cause: actions
-            });
-        }
-
-        if (actions === 'Y') {
-            for (const entry of entries) {
-                this.INCLUDING_VALUES.push(entry);
-            }
-        }
-
-        if (actions === 'N') {
-            this.EXCLUDING_FOLDERS = entries;
-        }
+    constructor(entries: string[]) {
+        if (entries[0] != 'NO')
+            for (const item in entries)
+                this.EXCLUDING_VALUES.push(item);
+        else
+            this.EXCLUDING_VALUES = this.EXCLUDING_VALUES;
     }
 
-    /**
-     * Searches for specified words in file contents.
-     * @param {string} filepath - The path of the file to search.
-     * @param {string[]} data - Words to search for.
-     * @returns {Promise<void>} A promise representing the search operation.
-     */
-    public async search(filepath: string, data: string[]): Promise<void> {
-        const buffer: string = await fsxt.readFile(filepath, { 'encoding': 'utf-8' });
+    async search(filepath: string,
+        data: string[]) {
+        const content = (await fs.readFile(filepath, 'utf-8')).split('\n');
 
-        const contents: string[] = buffer.split(ndos.EOL);
-
-        for (var i = 0; i < contents.length; i++) {
-            const line = contents[i].toUpperCase();
+        for (let i = 0; i < content.length; i++) {
+            const line = content[i].toUpperCase();
 
             for (const target of data)
-                if (line.includes(target)) {
-                    LOCALE_LOGGER.raw(colors.green, `Found "${target}" in L#${i} of:`);
-                    LOCALE_LOGGER.raw(colors.cyan, filepath);
-                }
+                if (line.includes(target))
+                    console.info(colors.green(`Found "${target}" in L#${i} of:\n` + colors.cyan(filepath)))
         }
     }
 
-    /**
-    * Traverses directories and searches files for specified words.
-    * @param {string} directory - The directory to start traversal from.
-    * @returns {Promise<void>} A promise representing the traversal operation.
-    */
-    public async traverse(directory: string = __dirname): Promise<void> {
+    async traverse(directory: string) {
         try {
-            const items: string[] = await fsxt.readdir(directory);
+            const files: string[] = await fs.readdir(directory);
 
-            for (const item of items) {
-                const itempath = path.join(directory, item);
+            for (const file of files) {
+                const filepath = path.join(directory, file);
+                const filestat = await fs.stat(filepath);
 
-                const itemstats = await fsxt.stat(itempath);
-
-                if (itemstats.isDirectory()) {
-                    if (!this.EXCLUDING_FOLDERS.includes(item))
-                        await this.traverse(itempath);
-                } else if (itemstats.isFile()) {
-                    await this.search(itempath, this.INCLUDING_VALUES);
+                if (filestat.isDirectory()) {
+                    if (!this.EXCLUDING_FOLDER.includes(file)) {
+                        await this.traverse(filepath);
+                    }
+                } else if (filestat.isFile()) {
+                    await this.search(filepath, this.EXCLUDING_VALUES);
                 } else {
-                    continue;
+                    throw new Error(colors.red('No correct data was found, exception attribute is:') + colors.bgRed(` ${filepath}`));
                 }
             }
         } catch (err: any) {
-            LOCALE_LOGGER.error(err);
+            if (err.code === 'ENOENT') {
+                console.error(colors.red(`File or directory not found: ${err.path}`));
+            } else {
+                console.error(colors.red('Error via reading given directory: ' + `${err}`));
+            }
         }
     }
 }
 
-(() => {
-    const RL = rcli.createInterface({ input: process.stdin, output: process.stdout });
+fs.ensureFileSync(path.join(__dirname, '.env'));
+fs.ensureFileSync(path.join(__dirname, 'manifest.json'));
 
-    RL.setPrompt(PROMPTS[1]);
-    RL.prompt(false);
+fs.writeFileSync(path.join(__dirname, '.env'), 'EXAMPLE_API_KEY=');
+fs.writeFileSync(path.join(__dirname, 'manifest.json'), JSON.stringify({}, undefined, 4));
 
-    const mod = new LOCALE_MODULE();
+dotenv.config({
+    path: '.env',
+    encoding: 'utf-8'
+});
 
-    RL.question('Y/N/IGNORE:', (mode) => {
-        if (mode.toUpperCase() != 'IGNORE') {
-            RL.question('', (params) => {
-                const diction: string[] = params.split(',').map(str => str.trim());
+const PACKAGE_JSON: any = JSON.parse(fs.readFileSync('package.json', { encoding: 'utf-8' }));
 
-                mod.update(diction, mode);
-            })
-        }
+const MANIFEST: any = JSON.parse(fs.readFileSync('manifest.json', { encoding: 'utf-8' }));
 
-        mod.traverse();
-    });
+if (PACKAGE_JSON.name === MANIFEST.id &&
+    PACKAGE_JSON.displayName === MANIFEST.name &&
+    PACKAGE_JSON.description === MANIFEST.description &&
+    PACKAGE_JSON.author.name === MANIFEST.author &&
+    PACKAGE_JSON.author.url === MANIFEST.authorUrl &&
+    PACKAGE_JSON.license === MANIFEST.license &&
+    PACKAGE_JSON.version === MANIFEST.version) {
+    console.warn(colors.bgGreen(colors.white('Manifest is synced with package, keep everything as it was.')));
+}
+else {
+    console.warn(colors.bgBlue(colors.yellow('Manifest is not synced with package\'s information, rewriting it.')));
 
-    RL.close();
-})();
+    fs.copyFileSync('manifest.json', 'manifest-backup.json');
+
+    const input_json: any = {
+        id: PACKAGE_JSON.name,
+        name: PACKAGE_JSON.displayName,
+        description: PACKAGE_JSON.description,
+        author: PACKAGE_JSON.author.name,
+        authorUrl: PACKAGE_JSON.author.url,
+        license: PACKAGE_JSON.license,
+        version: PACKAGE_JSON.version,
+    };
+
+    fs.writeFileSync('manifest.json', JSON.stringify(input_json, undefined, 4));
+}
+
+const RL = readline.createInterface({ input: process.stdin, output: process.stdout });
+
+RL.question(colors.bold('Change finding signatures (words) for the finder script? [Y/N]: '), (ASW1) => {
+    if (ASW1.toUpperCase() == 'Y') {
+        RL.question(colors.bold('Enter your custom signatures (words) separatedly by commas: '), (ASW2) => {
+            const input: string[] = ASW2.split(',');
+
+            new PREPARE_MODULE(input).traverse(__dirname);
+
+            RL.close();
+        })
+    }
+    else {
+        new PREPARE_MODULE(['NO']).traverse(__dirname);
+
+        RL.close();
+    }
+});
