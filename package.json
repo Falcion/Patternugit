@@ -179,7 +179,7 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@electron/lint-roller": "^2.4.0",
-    "@npmcli/package-json": "^5.2.0",
+    "@npmcli/package-json": "^6.0.0",
     "@types/fs-extra": "^11.0.4",
     "@types/minimist": "^1.2.5",
     "@types/semver": "^7.5.8",
