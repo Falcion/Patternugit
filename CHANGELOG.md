@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.3](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.2...v2.1.3) (2024-09-27)
+
+
+### Features
+
+* **prepare:** rewrite prepare script to semiold style of work process ([746dd4d](https://github.com/mokkapps/changelog-generator-demo/commits/746dd4df7e642af50339cdc3f4ac703f47292d05))
+* **script:** add JS version of main preparation script ([f978853](https://github.com/mokkapps/changelog-generator-demo/commits/f978853d8b396b8488b1a99faa92019ae345aa04))
+
+
+### Refactoring
+
+* **package:** change prepare script to support .SH environments ([9949c03](https://github.com/mokkapps/changelog-generator-demo/commits/9949c0395a418a80bc3faf15d4999ebfe92c6754))
+
+
+### Documentation
+
+* **jsdocs:** add documentatin in the code ([370efa8](https://github.com/mokkapps/changelog-generator-demo/commits/370efa84463672f20f5734353efda3dac3999839))
+
+
+### Fixes
+
+* **build-env:** fix build environment to new file typings and names ([76421b4](https://github.com/mokkapps/changelog-generator-demo/commits/76421b4209667abccf855a3270f364049453c854))
+* **build-tests:** add early Python setup for prepare scripts ([21afefa](https://github.com/mokkapps/changelog-generator-demo/commits/21afefa8f7d75a03e0b854f408090a3d785c0f4a))
+* **imports:** fix imports in main script ([7efa56b](https://github.com/mokkapps/changelog-generator-demo/commits/7efa56b5603180e82b24cca47871afbe3dfa96cf))
+* **imports:** semantic fix imports in main script and package ([f23885b](https://github.com/mokkapps/changelog-generator-demo/commits/f23885b1efcd9849b98290ac27374373c4555b8b))
+* **node:** try to fix setup@node in the workflow ([382cdb3](https://github.com/mokkapps/changelog-generator-demo/commits/382cdb34dc3f534d1ac8d8b2fc217ebf55596c6f))
+
 ### [2.1.2](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.1...v2.1.2) (2024-09-27)
 
 

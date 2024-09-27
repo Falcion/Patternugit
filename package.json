@@ -1,7 +1,7 @@
 {
   "name": "patternugit",
   "displayName": "Patternugit",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Preconfigured pattern for your repository with universal cases for markdown files of documentations and other actions/scripts",
   "main": "prepare-template.ts",
   "private": true,
