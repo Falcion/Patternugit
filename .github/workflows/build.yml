@@ -2,6 +2,8 @@ name: Node.js CI
 
 on:
   push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
@@ -20,13 +22,10 @@ jobs:
         with:
           node-version: '21.1.0'
 
-      - name: Cache node modules
-        uses: actions/cache@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          path: node_modules
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-
+          python-version: '3.x'
 
       - name: Install dependencies
         run: npm install
@@ -45,13 +44,10 @@ jobs:
         with:
           node-version: '21.1.0'
 
-      - name: Restore node modules cache
-        uses: actions/cache@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          path: node_modules
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-
+          python-version: '3.x'
 
       - name: Build project
         run: npm run build
