@@ -16,9 +16,9 @@ import * as fs from 'fs-extra';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
 
-import readline from 'readline';
+import * as readline from 'readline';
 
-import colors from 'colors/safe';
+import * as colors from 'colors/safe';
 
 
 /**
