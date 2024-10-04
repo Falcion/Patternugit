@@ -27,8 +27,10 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Generate LOCK file for dependencies
+        run: npm i --package-lock-only
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
   build:
     name: Build Project
@@ -49,8 +51,10 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Generate LOCK file for dependencies
+        run: npm i --package-lock-only
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build project
         run: npm run build
