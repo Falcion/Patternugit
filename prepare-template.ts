@@ -43,8 +43,6 @@ class PREPARE_MODULE {
         if (entries[0] != 'NO')
             for (const item in entries)
                 this.INCLUDING_VALUES.push(item);
-        else
-            this.INCLUDING_VALUES = this.INCLUDING_VALUES;
     }
 
     /**

@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.4](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.3...v2.1.4) (2024-10-04)
+
+
+### Build system
+
+* **build-deps:** add github-wiki-sidebar package for wiki's development ([f49e29d](https://github.com/mokkapps/changelog-generator-demo/commits/f49e29da276552927a752414a3fa5cf34a22b9d3))
+* **deps-dev:** bump @npmcli/package-json from 5.2.1 to 6.0.0 ([a217700](https://github.com/mokkapps/changelog-generator-demo/commits/a217700631a4def6d58cdbf5893fbe78ea47316b))
+* **deps:** bump actions/checkout from 3 to 4 ([c0fb0fe](https://github.com/mokkapps/changelog-generator-demo/commits/c0fb0fed03a4a4b6710ce79ba9e030f876a6b373))
+* **deps:** bump actions/setup-node from 3 to 4 ([cc61eab](https://github.com/mokkapps/changelog-generator-demo/commits/cc61eab7cd1333cb7aa5bfbcd29a0f53736417fd))
+* **deps:** bump actions/setup-python from 4 to 5 ([eab0aa4](https://github.com/mokkapps/changelog-generator-demo/commits/eab0aa49d8821c8048e76ddfd74571f6bbd441a6))
+
+
+### Fixes
+
+* **script:** fix ESLINT (self-assign) in preparation script ([432a225](https://github.com/mokkapps/changelog-generator-demo/commits/432a2258ddfd2f865337960471d78f08297e5931))
+* **yaml:** fix yaml language server problem in templates ([e39be90](https://github.com/mokkapps/changelog-generator-demo/commits/e39be9006ec0db9f31f5b0b9db76eccb629ad049))
+
 ### [2.1.3](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.2...v2.1.3) (2024-09-27)
 
 
