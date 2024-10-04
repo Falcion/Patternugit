@@ -26,11 +26,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-
-      - name: Generate LOCK file for dependencies
-        run: npm i --package-lock-only
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
   build:
     name: Build Project
@@ -51,10 +48,8 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Generate LOCK file for dependencies
-        run: npm i --package-lock-only
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build project
         run: npm run build
