@@ -1,7 +1,7 @@
 {
   "name": "patternugit",
   "displayName": "Patternugit",
-  "version": "2.1.4",
+  "version": "2.1.6",
   "description": "Preconfigured pattern for your repository with universal cases for markdown files of documentations and other actions/scripts",
   "main": "prepare-template.ts",
   "private": true,
@@ -32,12 +32,11 @@
     "pretest": "npm run ct-typescript-definitions",
     "prepack": "check-for-leaks",
     "prepare": "husky .husky/ && cd scripts/python && python3 -m venv venv",
+    "prepare:template": "ts-node prepare-template.ts",
     "update-analytics": "ts-node scripts/js/analytics-workflow.ts",
     "test": "node ./script/spec-runner.js",
-    "start": "ts-node prepare-template.ts",
     "buildtsc": "tsc",
     "build": "tsc -noEmit -skipLibCheck prepare-template.ts && node esbuild.config.mjs production",
-    "install": "npm run start",
     "pack": "python scripts/python/pack.py",
     "release": "standard-version",
     "release:patch": "standard-version --release-as patch",
@@ -178,6 +177,7 @@
     "typescript": "^5.6.2"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.9",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@electron/lint-roller": "^2.4.0",
