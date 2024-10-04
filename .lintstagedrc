@@ -10,7 +10,7 @@
     "*.{js,ts,d.ts}": [
         "prettier --list-different"
     ],
-    "*.md": [
+    "{!CHANGELOG.md, *.md}": [
         "prettier --list-different"
     ],
     "*.{gn,gni}": [
