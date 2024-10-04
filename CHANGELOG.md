@@ -2,79 +2,79 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [2.1.4](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.3...v2.1.4) (2024-10-04)
-
-
-### Build system
-
-* **build-deps:** add github-wiki-sidebar package for wiki's development ([f49e29d](https://github.com/mokkapps/changelog-generator-demo/commits/f49e29da276552927a752414a3fa5cf34a22b9d3))
-* **deps-dev:** bump @npmcli/package-json from 5.2.1 to 6.0.0 ([a217700](https://github.com/mokkapps/changelog-generator-demo/commits/a217700631a4def6d58cdbf5893fbe78ea47316b))
-* **deps:** bump actions/checkout from 3 to 4 ([c0fb0fe](https://github.com/mokkapps/changelog-generator-demo/commits/c0fb0fed03a4a4b6710ce79ba9e030f876a6b373))
-* **deps:** bump actions/setup-node from 3 to 4 ([cc61eab](https://github.com/mokkapps/changelog-generator-demo/commits/cc61eab7cd1333cb7aa5bfbcd29a0f53736417fd))
-* **deps:** bump actions/setup-python from 4 to 5 ([eab0aa4](https://github.com/mokkapps/changelog-generator-demo/commits/eab0aa49d8821c8048e76ddfd74571f6bbd441a6))
-
-
-### Fixes
-
-* **script:** fix ESLINT (self-assign) in preparation script ([432a225](https://github.com/mokkapps/changelog-generator-demo/commits/432a2258ddfd2f865337960471d78f08297e5931))
-* **yaml:** fix yaml language server problem in templates ([e39be90](https://github.com/mokkapps/changelog-generator-demo/commits/e39be9006ec0db9f31f5b0b9db76eccb629ad049))
-
-### [2.1.3](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.2...v2.1.3) (2024-09-27)
-
+### [2.1.5](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.4...v2.1.5) (2024-10-04)
 
 ### Features
 
-* **prepare:** rewrite prepare script to semiold style of work process ([746dd4d](https://github.com/mokkapps/changelog-generator-demo/commits/746dd4df7e642af50339cdc3f4ac703f47292d05))
-* **script:** add JS version of main preparation script ([f978853](https://github.com/mokkapps/changelog-generator-demo/commits/f978853d8b396b8488b1a99faa92019ae345aa04))
+- **changesets:** integrate changesets into repository's infrastructure ([5f6ca5a](https://github.com/mokkapps/changelog-generator-demo/commits/5f6ca5a1d6d090ec246f219a0e06d2b8bea3c09c))
 
+### Fixes
+
+- **optimization:** add optimization to the build-check within package-lock and CI command ([d299084](https://github.com/mokkapps/changelog-generator-demo/commits/d299084850353d30e27edc0999d8a6de54916aa7))
+
+### [2.1.4](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.3...v2.1.4) (2024-10-04)
+
+### Build system
+
+- **build-deps:** add github-wiki-sidebar package for wiki's development ([f49e29d](https://github.com/mokkapps/changelog-generator-demo/commits/f49e29da276552927a752414a3fa5cf34a22b9d3))
+- **deps-dev:** bump @npmcli/package-json from 5.2.1 to 6.0.0 ([a217700](https://github.com/mokkapps/changelog-generator-demo/commits/a217700631a4def6d58cdbf5893fbe78ea47316b))
+- **deps:** bump actions/checkout from 3 to 4 ([c0fb0fe](https://github.com/mokkapps/changelog-generator-demo/commits/c0fb0fed03a4a4b6710ce79ba9e030f876a6b373))
+- **deps:** bump actions/setup-node from 3 to 4 ([cc61eab](https://github.com/mokkapps/changelog-generator-demo/commits/cc61eab7cd1333cb7aa5bfbcd29a0f53736417fd))
+- **deps:** bump actions/setup-python from 4 to 5 ([eab0aa4](https://github.com/mokkapps/changelog-generator-demo/commits/eab0aa49d8821c8048e76ddfd74571f6bbd441a6))
+
+### Fixes
+
+- **script:** fix ESLINT (self-assign) in preparation script ([432a225](https://github.com/mokkapps/changelog-generator-demo/commits/432a2258ddfd2f865337960471d78f08297e5931))
+- **yaml:** fix yaml language server problem in templates ([e39be90](https://github.com/mokkapps/changelog-generator-demo/commits/e39be9006ec0db9f31f5b0b9db76eccb629ad049))
+
+### [2.1.3](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.2...v2.1.3) (2024-09-27)
+
+### Features
+
+- **prepare:** rewrite prepare script to semiold style of work process ([746dd4d](https://github.com/mokkapps/changelog-generator-demo/commits/746dd4df7e642af50339cdc3f4ac703f47292d05))
+- **script:** add JS version of main preparation script ([f978853](https://github.com/mokkapps/changelog-generator-demo/commits/f978853d8b396b8488b1a99faa92019ae345aa04))
 
 ### Refactoring
 
-* **package:** change prepare script to support .SH environments ([9949c03](https://github.com/mokkapps/changelog-generator-demo/commits/9949c0395a418a80bc3faf15d4999ebfe92c6754))
-
+- **package:** change prepare script to support .SH environments ([9949c03](https://github.com/mokkapps/changelog-generator-demo/commits/9949c0395a418a80bc3faf15d4999ebfe92c6754))
 
 ### Documentation
 
-* **jsdocs:** add documentatin in the code ([370efa8](https://github.com/mokkapps/changelog-generator-demo/commits/370efa84463672f20f5734353efda3dac3999839))
-
+- **jsdocs:** add documentatin in the code ([370efa8](https://github.com/mokkapps/changelog-generator-demo/commits/370efa84463672f20f5734353efda3dac3999839))
 
 ### Fixes
 
-* **build-env:** fix build environment to new file typings and names ([76421b4](https://github.com/mokkapps/changelog-generator-demo/commits/76421b4209667abccf855a3270f364049453c854))
-* **build-tests:** add early Python setup for prepare scripts ([21afefa](https://github.com/mokkapps/changelog-generator-demo/commits/21afefa8f7d75a03e0b854f408090a3d785c0f4a))
-* **imports:** fix imports in main script ([7efa56b](https://github.com/mokkapps/changelog-generator-demo/commits/7efa56b5603180e82b24cca47871afbe3dfa96cf))
-* **imports:** semantic fix imports in main script and package ([f23885b](https://github.com/mokkapps/changelog-generator-demo/commits/f23885b1efcd9849b98290ac27374373c4555b8b))
-* **node:** try to fix setup@node in the workflow ([382cdb3](https://github.com/mokkapps/changelog-generator-demo/commits/382cdb34dc3f534d1ac8d8b2fc217ebf55596c6f))
+- **build-env:** fix build environment to new file typings and names ([76421b4](https://github.com/mokkapps/changelog-generator-demo/commits/76421b4209667abccf855a3270f364049453c854))
+- **build-tests:** add early Python setup for prepare scripts ([21afefa](https://github.com/mokkapps/changelog-generator-demo/commits/21afefa8f7d75a03e0b854f408090a3d785c0f4a))
+- **imports:** fix imports in main script ([7efa56b](https://github.com/mokkapps/changelog-generator-demo/commits/7efa56b5603180e82b24cca47871afbe3dfa96cf))
+- **imports:** semantic fix imports in main script and package ([f23885b](https://github.com/mokkapps/changelog-generator-demo/commits/f23885b1efcd9849b98290ac27374373c4555b8b))
+- **node:** try to fix setup@node in the workflow ([382cdb3](https://github.com/mokkapps/changelog-generator-demo/commits/382cdb34dc3f534d1ac8d8b2fc217ebf55596c6f))
 
 ### [2.1.2](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.1...v2.1.2) (2024-09-27)
 
-
 ### Build system
 
-* **dependency-tests:** add dependency tests and build for Node.js env of project ([6cf3319](https://github.com/mokkapps/changelog-generator-demo/commits/6cf3319ce28b936cd786e20a2e3a90537be599ff))
-* **deps:** bump esbuild from 0.23.1 to 0.24.0 ([581160a](https://github.com/mokkapps/changelog-generator-demo/commits/581160aac35eea8b3aaf49bf8528f67ce88a9505))
+- **dependency-tests:** add dependency tests and build for Node.js env of project ([6cf3319](https://github.com/mokkapps/changelog-generator-demo/commits/6cf3319ce28b936cd786e20a2e3a90537be599ff))
+- **deps:** bump esbuild from 0.23.1 to 0.24.0 ([581160a](https://github.com/mokkapps/changelog-generator-demo/commits/581160aac35eea8b3aaf49bf8528f67ce88a9505))
 
 ### [2.1.1](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.0...v2.1.1) (2024-09-24)
 
-
 ### Build system
 
-* **deps-dev:** bump @typescript-eslint/eslint-plugin ([2e4c907](https://github.com/mokkapps/changelog-generator-demo/commits/2e4c907bf0fc9656e221a8e953e035cdd4afddca))
-* **deps-dev:** bump @typescript-eslint/parser from 7.18.0 to 8.7.0 ([4d1fa62](https://github.com/mokkapps/changelog-generator-demo/commits/4d1fa6240b4f6325a6d36d70d59a0bab917ec317))
-* **linting:** appended some linting and fix linters behaviour ([f1a5294](https://github.com/mokkapps/changelog-generator-demo/commits/f1a5294e2ab44099d0ca27ab61c5a682ed48876b))
-
+- **deps-dev:** bump @typescript-eslint/eslint-plugin ([2e4c907](https://github.com/mokkapps/changelog-generator-demo/commits/2e4c907bf0fc9656e221a8e953e035cdd4afddca))
+- **deps-dev:** bump @typescript-eslint/parser from 7.18.0 to 8.7.0 ([4d1fa62](https://github.com/mokkapps/changelog-generator-demo/commits/4d1fa6240b4f6325a6d36d70d59a0bab917ec317))
+- **linting:** appended some linting and fix linters behaviour ([f1a5294](https://github.com/mokkapps/changelog-generator-demo/commits/f1a5294e2ab44099d0ca27ab61c5a682ed48876b))
 
 ### Fixes
 
-* **common:** fix calling errors in main script and add definitions ([ecd139a](https://github.com/mokkapps/changelog-generator-demo/commits/ecd139af12452236bc1eb5a908dfe8179dfd090c))
-* **definitions:** fix definitions check of linters causing errors ([ef56ef0](https://github.com/mokkapps/changelog-generator-demo/commits/ef56ef07726ad9a097be0d29cd546cedde37f14b))
-* **package:** append node and npm requirements and append to latest linters ([b70d3f3](https://github.com/mokkapps/changelog-generator-demo/commits/b70d3f3434522aea8bbec87fe3b6fb5cdcfbd04c))
-* **workflows:** fix auto-assign workflow of [#170](https://github.com/Falcion/Patternugit/issues/170) ([2207136](https://github.com/mokkapps/changelog-generator-demo/commits/220713610720d98c64271ff9e78a1d02d11211ef))
-
+- **common:** fix calling errors in main script and add definitions ([ecd139a](https://github.com/mokkapps/changelog-generator-demo/commits/ecd139af12452236bc1eb5a908dfe8179dfd090c))
+- **definitions:** fix definitions check of linters causing errors ([ef56ef0](https://github.com/mokkapps/changelog-generator-demo/commits/ef56ef07726ad9a097be0d29cd546cedde37f14b))
+- **package:** append node and npm requirements and append to latest linters ([b70d3f3](https://github.com/mokkapps/changelog-generator-demo/commits/b70d3f3434522aea8bbec87fe3b6fb5cdcfbd04c))
+- **workflows:** fix auto-assign workflow of [#170](https://github.com/Falcion/Patternugit/issues/170) ([2207136](https://github.com/mokkapps/changelog-generator-demo/commits/220713610720d98c64271ff9e78a1d02d11211ef))
 
 ### Refactoring
 
-* **docs:** refactored docs accordingly to linters ([4cf5036](https://github.com/mokkapps/changelog-generator-demo/commits/4cf5036dec818b2d0fa9437531297b149fe1863f))
+- **docs:** refactored docs accordingly to linters ([4cf5036](https://github.com/mokkapps/changelog-generator-demo/commits/4cf5036dec818b2d0fa9437531297b149fe1863f))
 
 ## [2.1.0](https://github.com/mokkapps/changelog-generator-demo/compare/v2.0.0...v2.1.0) (2024-09-24)
 
