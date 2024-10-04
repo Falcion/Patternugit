@@ -160,7 +160,7 @@
     "esbuild-plugin-node-externals": "^1.0.1",
     "esbuild-sass-plugin": "^3.3.1",
     "fs-extra": "^11.2.0",
-    "github-wiki-sidebar": "^1.1.1",
+    "github-wiki-sidebar": "^2.0.1",
     "husky": "^9.1.6",
     "lint": "^1.1.2",
     "markdownlint-cli2": "^0.14.0",
