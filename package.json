@@ -180,7 +180,7 @@
     "@changesets/cli": "^2.27.9",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
-    "@electron/lint-roller": "^2.4.0",
+    "@electron/lint-roller": "^3.0.0",
     "@npmcli/package-json": "^6.0.0",
     "@types/fs-extra": "^11.0.4",
     "@types/minimist": "^1.2.5",
