@@ -38,10 +38,11 @@
     "buildtsc": "tsc",
     "build": "tsc -noEmit -skipLibCheck prepare-template.ts && node esbuild.config.mjs production",
     "pack": "python scripts/python/pack.py",
-    "release": "standard-version",
-    "release:patch": "standard-version --release-as patch",
-    "release:minor": "standard-version --release-as minor",
-    "release:major": "standard-version --release-as major",
+    "sync-release-table": "cd scripts/python && python3 -m venv venv && python update_versions_table.py",
+    "release": "standard-version && npm run sync-release-table",
+    "release:patch": "standard-version --release-as patch && npm run sync-release-table",
+    "release:minor": "standard-version --release-as minor && npm run sync-release-table",
+    "release:major": "standard-version --release-as major && npm run sync-release-table",
     "generate-version-json": "node scripts/js/generate-version-json.js"
   },
   "repository": {

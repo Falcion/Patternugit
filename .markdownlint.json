@@ -7,15 +7,11 @@
   "no-inline-html": {
     "allowed_elements": [
       "br",
-      "details",
-      "img",
-      "li",
-      "summary",
-      "ul",
-      "unknown",
-      "Tabs",
-      "TabItem"
+      "div"
     ]
   },
-  "extends": "@electron/lint-roller/configs/markdownlint.json"
+  "extends": "@electron/lint-roller/configs/markdownlint.json",
+  "MD024": {
+    "siblings_only": true
+  }
 }
