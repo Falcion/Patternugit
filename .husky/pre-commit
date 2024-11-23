@@ -29,5 +29,5 @@ done
 
 if sh -c ": >/dev/tty" >/dev/null 2>/dev/null; then exec >/dev/tty 2>&1; fi
 
-find . -type f -name "*.sh" -exec chmod +x {} \;
+node chmod-scripts.js
 npx lint-staged
