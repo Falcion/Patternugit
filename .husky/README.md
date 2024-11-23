@@ -15,11 +15,12 @@ Problems can be separated in three categories: ones with WSL, ones with HUSKY it
   https://github.com/microsoft/WSL/issues/4249/
 - If NPM/NPX not found message appears:\
   https://github.com/desktop/desktop/issues/12562
+
 > [!Tip]
 > Also, check your "%PATH% → Node.js/bin/" paths in environment variables context:\
+>
 > - Windows users, if you have everything set up and installed, check this comment from same issue:\
 >   https://github.com/desktop/desktop/issues/12562#issuecomment-1007154382
-
 
 ## Error codes within usage
 
@@ -53,8 +54,8 @@ Code of this exception contains multiple subtypes:
 
 - **"NVM" not found:**\
   download NVM on your computer and make ref in "%PATH%" (for win-system) variable, otherwise, set up WSL system:
-    - https://learn.microsoft.com/en-us/windows/wsl/install
-    - https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+  - https://learn.microsoft.com/en-us/windows/wsl/install
+  - https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
 
 - **Node not found:**\
   check "%PATH%" (for NODE correct paths), otherwise see guidelines above.
