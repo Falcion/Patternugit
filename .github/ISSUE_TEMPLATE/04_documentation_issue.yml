@@ -1,5 +1,3 @@
-# yaml-language-server: $schema='none'
-
 name: Issue about the documentation
 description: Use this form to report any issues or inconsistencies you encounter in the project's documentation
 title: "[DOCS]: "

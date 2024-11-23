@@ -1,5 +1,3 @@
-# yaml-language-server: $schema='none'
-
 name: Question
 description: Ask the question or seek for clarification
 title: "[QUESTION]: "

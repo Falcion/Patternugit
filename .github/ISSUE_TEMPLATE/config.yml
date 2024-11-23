@@ -1,5 +1,3 @@
-# yaml-language-server: $schema='none'
-
 mentions_enabled: true
 auto_assign_enabled: true
 
