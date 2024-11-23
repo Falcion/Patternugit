@@ -1,17 +1,17 @@
 {
     "*.{js,jsx}": [
-        "node scripts/lint.js --js --fix --only --",
-        "prettier --list-different"
+        "npx prettier --write '*.{js,jsx}'",
+        "node scripts/lint.js --js --fix --only --"
     ],
     "*.{ts,tsx}": [
-        "eslint --fix",
-        "prettier --list-different"
+        "npx eslint --fix",
+        "npx prettier --write '*.{ts,tsx}'"
     ],
     "*.{js,ts,d.ts}": [
-        "prettier --list-different"
+        "npx prettier --write '*.{js,ts,d.ts}'"
     ],
     "{!CHANGELOG.md, *.md}": [
-        "prettier --list-different"
+        "npx prettier --write '{!CHANGELOG.md, *.md}'"
     ],
     "*.{gn,gni}": [
         "npm run gn-check",
@@ -20,7 +20,7 @@
     "*.{png,jpeg,jpg,gif,svg}": "imagemin-lint-staged",
     "*.css": [
         "stylelint --fix",
-        "prettier --write"
+        "prettier --write '*.css'"
     ],
     "{*.patch,.patches}": [
         "node scripts/lint.js --patches --only --",
