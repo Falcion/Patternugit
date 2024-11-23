@@ -48,9 +48,9 @@ sudo kubeadm init --pod-network-cidr=192.168.0.0/16
 
 # Step 8: Set up kubeconfig for the root user
 echo "Setting up kubeconfig for the root user..."
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
+mkdir -p "$HOME"/.kube
+sudo cp -i /etc/kubernetes/admin.conf "$HOME"/.kube/config
+sudo chown "$(id -u)":$(id -g) "$HOME"/.kube/config
 
 # Step 9: Install a pod network (using Calico as an example)
 echo "Installing Calico network..."
