@@ -30,7 +30,11 @@ export default [{
     languageOptions: {
         parser: tsParser,
     },
-
+    env: {
+        browser: false,
+        node: true,
+        es6: true
+    },
     rules: {
         "@typescript-eslint/interface-name-prefix": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
