@@ -1,12 +1,14 @@
 import os
 import json
 import subprocess
+import yaml
 
 MARKDOWN_FILE = './../../UNSUPPORTED_VERSIONS.md'
 GITHUB_URL = 'https://github.com/Falcion/Patternugit/tree/'
 MAINTENANCE_STATUS_UNSUPPORTED = '❎'
 MAINTENANCE_STATUS_SUPPORTED = '✅'
 AUTO_GENERATED_NOTICE = "# THIS FILE IS AUTO-GENERATED. DO NOT EDIT MANUALLY.\n"
+ISSUE_TEMPLATE_DIR = './../../.github/ISSUE_TEMPLATE/'
 
 def get_git_tags():
     """Get the list of tags from the current local Git repository."""
@@ -56,14 +58,41 @@ def write_markdown_file(content):
     with open(MARKDOWN_FILE, 'w', encoding='utf-8') as f:
         f.write(content)
 
+def update_issue_templates(tags):
+    """Update dropdown options for versions in issue templates."""
+    if not os.path.exists(ISSUE_TEMPLATE_DIR):
+        print(f"Warning: Issue template directory {ISSUE_TEMPLATE_DIR} not found.")
+        return
+
+    for filename in os.listdir(ISSUE_TEMPLATE_DIR):
+        filepath = os.path.join(ISSUE_TEMPLATE_DIR, filename)
+        if not filename.endswith('.yaml') and not filename.endswith('.yml'):
+            continue
+        
+        with open(filepath, 'r', encoding='utf-8') as f:
+            template = yaml.safe_load(f)
+        
+        updated = False
+
+        # Search for dropdown block with "version" id
+        for block in template.get('body', []):
+            if block.get('type') == 'dropdown' and block.get('id') == 'version':
+                block['attributes']['options'] = tags + ["Another or unknown"]
+                updated = True
+                break
+        
+        if updated:
+            with open(filepath, 'w', encoding='utf-8') as f:
+                yaml.dump(template, f, sort_keys=False)
+            print(f"Updated {filepath} with new version tags.")
 
 def main():
     tags = get_git_tags()
     versions_mapping = load_versions_mapping()
     markdown_content = create_markdown_table(tags, versions_mapping)
     write_markdown_file(markdown_content)
+    update_issue_templates(tags)
     print(f"Updated {MARKDOWN_FILE} with version information.")
-
 
 if __name__ == "__main__":
     main()
