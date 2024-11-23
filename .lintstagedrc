@@ -11,7 +11,8 @@
         "npx prettier --write '*.{js,ts,d.ts}'"
     ],
     "{!CHANGELOG.md, *.md}": [
-        "npx prettier --write '{!CHANGELOG.md, *.md}'"
+        "npx prettier --write '{!CHANGELOG.md, *.md}'",
+        "markdownlint '{!CHANGELOG.md, *.md}'"
     ],
     "*.{gn,gni}": [
         "npm run gn-check",
