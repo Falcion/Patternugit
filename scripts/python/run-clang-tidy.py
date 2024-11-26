@@ -86,7 +86,7 @@ def main() -> int:
 
         if not os.path.exists(out_dir):
             raise ErrorWithExitCode("Output directory doesn't exist", 1)
-        
+
         # Make sure the compile_commands.json file is up-to-date
         env = get_depot_tools_env()
 

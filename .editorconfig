@@ -6,11 +6,11 @@ root = true
 # Unix-style newlines with a newline ending every file
 [*]
 end_of_line = crlf
-insert_final_newline = false
+insert_final_newline = true
+trim_trailing_whitespace = true
 
 [*.json]
 indent_size = 2
-end_of_line = crlf
 
 [*.yml,*.yaml]
 indent_style = space
@@ -18,4 +18,7 @@ indent_size = 2
 
 [*.md*]
 trim_trailing_whitespace = true
-insert_final_newline = true
+max_line_length = 80
+
+[*.rc*, *.json]
+trailing_comma = none

@@ -1,7 +1,6 @@
-Apache License
-==============
+## Apache License
 
-_Version 2.0, January 2004_  
+_Version 2.0, January 2004_
 _&lt;<http://www.apache.org/licenses/>&gt;_
 
 ### Terms and Conditions for use, reproduction, and distribution
@@ -89,16 +88,16 @@ You may reproduce and distribute copies of the Work or Derivative Works thereof
 in any medium, with or without modifications, and in Source or Object form,
 provided that You meet the following conditions:
 
-* **(a)** You must give any other recipients of the Work or Derivative Works a copy of
-this License; and
-* **(b)** You must cause any modified files to carry prominent notices stating that You
-changed the files; and
+* **(a)** You must give any other recipients of the Work or Derivative Works a
+copy of this License; and
+* **(b)** You must cause any modified files to carry prominent notices stating
+that You changed the files; and
 * **(c)** You must retain, in the Source form of any Derivative Works that You distribute,
 all copyright, patent, trademark, and attribution notices from the Source form
 of the Work, excluding those notices that do not pertain to any part of the
 Derivative Works; and
-* **(d)** If the Work includes a “NOTICE” text file as part of its distribution, then any
-Derivative Works that You distribute must include a readable copy of the
+* **(d)** If the Work includes a “NOTICE” text file as part of its distribution,
+then any Derivative Works that You distribute must include a readable copy of the
 attribution notices contained within such NOTICE file, excluding those notices
 that do not pertain to any part of the Derivative Works, in at least one of the
 following places: within a NOTICE text file distributed as part of the
@@ -167,6 +166,7 @@ agree to indemnify, defend, and hold each Contributor harmless for any liability
 incurred by, or claims asserted against, such Contributor by reason of your
 accepting any such warranty or additional liability.
 
+<!-- markdownlint-disable -->
 _END OF TERMS AND CONDITIONS_
 
 ### APPENDIX: How to apply the Apache License to your work
@@ -180,13 +180,13 @@ the same “printed page” as the copyright notice for easier identification wi
 third-party archives.
 
     Copyright [yyyy] [name of copyright owner]
-    
+
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
-    
+
       http://www.apache.org/licenses/LICENSE-2.0
-    
+
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.

@@ -10,7 +10,7 @@ notification_settings:
     comments: true
     status_changes: true
     assignee_changes: true
-    
+
 branch_protection:
   main:
     enforce_admins: true

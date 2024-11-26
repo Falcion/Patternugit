@@ -1,29 +1,46 @@
 
-At PATTERNU, the project takes the security of its code, data, and the broader community seriously, this security policy (thereafter as “policy”) outlines the measures and expectations we have in place to safeguard our repository and its users from potential security threats.
+At PATTERNU, the project takes the security of its code, data, and the broader
+community seriously, this security policy (thereafter as “policy”) outlines the
+measures and expectations we have in place to safeguard our repository and its
+users from potential security threats.
 
-The project's commitment to security encompasses not only the codebase itself but also the interactions, discussions, and contributions that occur within this repository; it is believed that a collective effort towards security enhances the overall experience of everyone involved.
+The project's commitment to security encompasses not only the codebase itself but
+also the interactions, discussions, and contributions that occur within this repository;
+it is believed that a collective effort towards security enhances the overall experience
+of everyone involved.
 
-Policy is intended to provide clear guidelines and procedures for addressing security-related issues, reporting vulnerabilities, and maintaining a safe and productive environment for all contributors and users, PATTERNU wants to encourage you to read and adhere to these guidelines as you engage with this repository.
+Policy is intended to provide clear guidelines and procedures for addressing security-related
+issues, reporting vulnerabilities, and maintaining a safe and productive environment
+for all contributors and users, PATTERNU wants to encourage you to read and adhere
+to these guidelines as you engage with this repository.
 
-By working together to prioritize security, we can maintain the integrity of our codebase and protect the interests of our community.
+By working together to prioritize security, we can maintain the integrity of our
+codebase and protect the interests of our community.
 
-Guidelines for security-issue reporting
-=========================================
+## Guidelines for security-issue reporting
 
-Creators and maintainers teams take the security of their software, products, and services seriously, this commitment extends to all source code repositories managed under their control, including those belonging to organizations.
+Creators and maintainers teams take the security of their software, products, and
+services seriously, this commitment extends to all source code repositories managed
+under their control, including those belonging to organizations.
 
-If you believe you have discovered a security vulnerability in any of their products or software, as defined by the MIT, please follow the guidelines below to report it.
+If you believe you have discovered a security vulnerability in any of their products
+or software, as defined by the MIT, please follow the guidelines below to report
+it.
 
 ### Reporting security-issues
 
-If you prefer to submit the report without logging in, you can email the address specified in the code of conduct or the one provided below, if possible, you could try to crypt your message using the “PGP” keys provided in repository.
+If you prefer to submit the report without logging in, you can email the address
+specified in the code of conduct or the one provided below, if possible, you could
+try to crypt your message using the “PGP” keys provided in repository.
 
 - <a href="mailto: io.falcion@outlook.com">Email MAILTO</a>
 
 > [!Warning]
-> Please, refrain from reporting security vulnerabilities through public “github's” issues or pull requests.
+> Please, refrain from reporting security vulnerabilities through public “github's”
+issues or pull requests.
 
-When reporting a security vulnerability, please include the following as much information as you can provide to help us better understand the nature and scope of the issue:
+When reporting a security vulnerability, please include the following as much information
+as you can provide to help us better understand the nature and scope of the issue:
 
 - type of issue (e.g., buffer overflow, SQL injection, cross-site scripting, etc.);
 - full paths of the source files related to the manifestation of the issue;
@@ -38,20 +55,36 @@ Providing this information will enable us to triage your report more efficiently
 Security policy
 ===============
 
-Following the principle of “Coordinated vulnerability disclosure” (thereafter as “CDV”), researchers are encouraged to disclose newly discovered vulnerabilities in hardware, software, and services directly to the vendors of the affected product, alternatively, researchers can report the vulnerabilities to a national CERT or other coordinator, who will then report them to the vendor privately.
+Following the principle of “Coordinated vulnerability disclosure” (thereafter as
+“CDV”), researchers are encouraged to disclose newly discovered vulnerabilities
+in hardware, software, and services directly to the vendors of the affected product,
+alternatively, researchers can report the vulnerabilities to a national CERT or
+other coordinator, who will then report them to the vendor privately.
 
-Another option is to use a private service that will also report the vulnerabilities to the vendor privately.
+Another option is to use a private service that will also report the vulnerabilities
+to the vendor privately.
 
-By adhering to “CDV”, researchers allow the vendor the opportunity to diagnose and provide fully tested updates, workarounds, or other corrective measures before any party discloses detailed vulnerability or exploit information to the public, throughout the vulnerability investigation, the vendor maintains coordination with the researcher and provides updates on the progress of the case.
+By adhering to “CDV”, researchers allow the vendor the opportunity to diagnose and
+provide fully tested updates, workarounds, or other corrective measures before any
+party discloses detailed vulnerability or exploit information to the public, throughout
+the vulnerability investigation, the vendor maintains coordination with the researcher
+and provides updates on the progress of the case.
 
-<!-- 
- Write here reference to security and support for media you are creating project, example:
- Any security-issue NOT related to this plugin directly, but to the Obsidian™ app itself, contact the developers of the app, not the team of this project:
+<!--
+ Write here reference to security and support for media you are creating project,
+ example:
+ Any security-issue NOT related to this plugin directly, but to the Obsidian™ app
+ itself, contact the developers of the app, not the team of this project:
 
 - https://help.obsidian.md/help+and+support/
  -->
 
-Once an update is released, the vendor may recognize the researcher for their research and privately report the issue; in cases where attacks are already underway in the wild, and the vendor is still working on the update, the researcher and vendor collaborate as closely as possible to provide early public vulnerability disclosure to protect customers: the objective is to offer timely and consistent guidance to customers in order to help them protect themselves.
+Once an update is released, the vendor may recognize the researcher for their
+research and privately report the issue; in cases where attacks are already underway
+in the wild, and the vendor is still working on the update, the researcher and vendor
+collaborate as closely as possible to provide early public vulnerability disclosure
+to protect customers: the objective is to offer timely and consistent guidance to
+customers in order to help them protect themselves.
 
 For more information on “CDV”, please refer to the following resources:
 

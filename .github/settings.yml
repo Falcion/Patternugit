@@ -9,7 +9,7 @@ repository:
   description: Preconfigured pattern for your repository with universal cases for markdown files of documentations and other actions/scripts
 
   # A URL with more information about the repository
-  homepage: 
+  homepage:
 
   # A comma-separated list of topics to set on the repository
   topics: github,template,documentation,repository,template-project,documentations,repository-template,github-template,template-repository,workflows-to-access,workflows-reusable

@@ -35,10 +35,10 @@ def create_markdown_table(tags, versions_mapping):
     for tag in tags:
         maintenance_status = MAINTENANCE_STATUS_UNSUPPORTED  # Default to unsupported
         version_info = versions_mapping.get(tag, {})
-        
+
         if version_info:
             status = version_info.get("status", "")
-            
+
             if status == 'supported':
                 maintenance_status = MAINTENANCE_STATUS_SUPPORTED
             elif status == 'beta':
@@ -68,10 +68,10 @@ def update_issue_templates(tags):
         filepath = os.path.join(ISSUE_TEMPLATE_DIR, filename)
         if not filename.endswith('.yaml') and not filename.endswith('.yml'):
             continue
-        
+
         with open(filepath, 'r', encoding='utf-8') as f:
             template = yaml.safe_load(f)
-        
+
         updated = False
 
         # Search for dropdown block with "version" id
@@ -80,7 +80,7 @@ def update_issue_templates(tags):
                 block['attributes']['options'] = tags + ["Another or unknown"]
                 updated = True
                 break
-        
+
         if updated:
             with open(filepath, 'w', encoding='utf-8') as f:
                 yaml.dump(template, f, sort_keys=False)

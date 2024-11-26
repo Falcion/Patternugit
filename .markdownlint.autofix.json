@@ -1,6 +1,6 @@
 {
-  "default": false,
-  "no-trailing-spaces": {
-    "br_spaces": 0
-  }
+	"default": false,
+	"no-trailing-spaces": {
+		"br_spaces": 0
+	}
 }

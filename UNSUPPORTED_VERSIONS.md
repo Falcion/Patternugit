@@ -1,4 +1,4 @@
-# THIS FILE IS AUTO-GENERATED. DO NOT EDIT MANUALLY.
+# THIS FILE IS AUTO-GENERATED. DO NOT EDIT MANUALLY
 
 | Version                                                      | Maintenance |
 | ------------------------------------------------------------ | ----------- |

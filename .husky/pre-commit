@@ -6,7 +6,7 @@ PRE_COMMIT_SCRIPT=".husky/pre-commit"
 COMMITTED_FILES=$(git diff --cached --name-only)
 
 # Check each file for PGP private key pattern
-# If you want to push 
+# If you want to push
 for FILE in $COMMITTED_FILES; do
     if [ "$FILE" != "$PRE_COMMIT_SCRIPT" ]; then
         if grep -q -- "$PGP_KEY_PATTERN" "$FILE"; then

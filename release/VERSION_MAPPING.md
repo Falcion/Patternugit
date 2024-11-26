@@ -1,10 +1,12 @@
 # Version Mapping Schema
 
-This document describes the schema for the versions-mapping.json file used in the project.
+This document describes the schema for the versions-mapping.json file used in the
+project.
 
 ## Structure
 
-The versions-mapping.json file is a JSON object where each key is a version string, and the value is an object containing the status and type of that version.
+The versions-mapping.json file is a JSON object where each key is a version string,
+and the value is an object containing the status and type of that version.
 
 ### Example
 
@@ -19,7 +21,8 @@ The versions-mapping.json file is a JSON object where each key is a version stri
 
 ### Fields
 
-- `<version>` (string): The version number, following semantic versioning (e.g., 1.0.0, 2.1.0, etc.).
+- `<version>` (string): The version number, following semantic versioning (e.g.,
+1.0.0, 2.1.0, etc.).
 
 #### Status
 
