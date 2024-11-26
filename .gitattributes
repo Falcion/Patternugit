@@ -107,8 +107,8 @@ TODO              text
 *.config          text
 .editorconfig     text
 .env              text
-.gitattributes    text
-.gitconfig        text
+.gitattributes    text eol=crlf
+.gitconfig        text eol=crlf
 .htaccess         text
 *.lock            text -diff
 package.json      text eol=lf
