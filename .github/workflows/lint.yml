@@ -39,8 +39,10 @@ jobs:
           # it does not provide advanced settings and etc.
           VALIDATE_JAVASCRIPT_PRETTIER: false
           VALIDATE_TYPESCRIPT_PRETTIER: false
-          # super-linter doesn't support v9 ESLint
-          VALIDATE_JSON: false
           VALIDATE_JSON_PRETTIER: false
           VALIDATE_MARKDOWN_PRETTIER: false
           VALIDATE_YAML_PRETTIER: false
+          # super-linter doesn't support v9 ESLint
+          # VALIDATE_JSON: false
+          FIX_JAVASCRIPT_STANDARD: true
+          FIX_TYPESCRIPT_STANDARD: true

@@ -1,7 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "tsconfig.json",
+    "project": "./tsconfig.json",
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint/eslint-plugin"],
@@ -9,6 +9,7 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:markdownlint/recommended",
+    "plugin:jsonc/recommended-with-jsonc",
     "prettier",
     "prettier/@typescript-eslint",
     "eslint:recommended"
