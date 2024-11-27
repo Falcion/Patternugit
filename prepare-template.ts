@@ -16,9 +16,7 @@ import * as fs from 'fs-extra'
 import * as path from 'path'
 import * as dotenv from 'dotenv'
 
-import * as readline from 'readline'
-
-import { green, yellow, cyan, red, bgRed, bgGreen, white, bgBlue, bold } from 'colors/safe'
+import { green, yellow, cyan, red, bgRed, bgGreen, white, bgBlue } from 'colors/safe'
 
 /**
  * Represents the PREPARE_MODULE for searching through files and updating the manifest.
@@ -83,10 +81,17 @@ class PREPARE_MODULE {
         }
       }
     } catch (err) {
-      if ((err as Error).cause === 'ENOENT') {
-        console.error(red(`File or directory not found: ${(err as Error).message}`))
+      const error = err instanceof Error ? err : new Error('Unknown error.')
+
+      if (error.cause === 'ENOENT') {
+        console.error(red(`File or directory not found: ${error.message}`))
       } else {
-        console.error(red('Error reading directory: ' + `${err}`))
+        console.error(
+          red(
+            'Error reading directory: ' +
+              `${error.message}: ${error.stack !== undefined ? error.stack : ''}`
+          )
+        )
       }
     }
   }
@@ -135,29 +140,6 @@ if (
   fs.writeFileSync('manifest.json', JSON.stringify(inputJson, undefined, 4))
 }
 
-const RL = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
+void new PREPARE_MODULE(['NO']).traverse(PREPARE_MODULE.prototype.ROOT_DIRECTORY).then(() => {
+  console.log(green('Traverse is finished.'))
 })
-
-RL.question(
-  bold('Change finding signatures (words) for the finder script? [Y/N]: '),
-  async (ASW1) => {
-    if (ASW1.toUpperCase() === 'Y') {
-      RL.question(
-        bold('Enter your custom signatures (words) separatedly by commas: '),
-        async (ASW2) => {
-          const input: string[] = ASW2.split(',')
-
-          void (await new PREPARE_MODULE(input).traverse(__dirname))
-
-          RL.close()
-        }
-      )
-    } else {
-      void (await new PREPARE_MODULE(['NO']).traverse(__dirname))
-
-      RL.close()
-    }
-  }
-)
