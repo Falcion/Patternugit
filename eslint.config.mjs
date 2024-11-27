@@ -4,6 +4,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import js from '@eslint/js'
 import { FlatCompat } from '@eslint/eslintrc'
+import globals from 'globals'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -15,6 +16,7 @@ const compat = new FlatCompat({
 
 export default [
   {
+    // Global ignore patterns
     ignores: [
       '**/.eslintrc.cjs',
       '**/database/**/*.js',
@@ -32,22 +34,39 @@ export default [
     'plugin:@typescript-eslint/recommended'
   ),
   {
+    // Linting for JavaScript files
+    files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
+    languageOptions: {
+      ecmaVersion: 2020,
+      sourceType: 'module',
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+        ...globals.es2016
+      }
+    },
+    rules: {
+      ...js.configs.recommended.rules // Default ESLint rules for JS
+    }
+  },
+  {
+    // Linting for TypeScript files
+    files: ['!*.d.ts', '**/*.ts', '**/*.tsx'],
     plugins: {
       '@typescript-eslint': typescriptEslint
     },
-
     languageOptions: {
       parser: tsParser,
-      ecmaVersion: 5,
-      sourceType: 'script',
-
       parserOptions: {
-        parser: '@typescript-eslint/parser',
-        project: './tsconfig.json',
+        project: './tsconfig.json', // Use your project's tsconfig.json for parsing
         tsconfigRootDir: __dirname
+      },
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+        ...globals.es2016
       }
     },
-
     rules: {
       '@typescript-eslint/interface-name-prefix': 'off',
       '@typescript-eslint/explicit-function-return-type': 'off',
@@ -57,8 +76,5 @@ export default [
       'no-case-declarations': 'off',
       '@typescript-eslint/no-var-requires': 'off'
     }
-  },
-  {
-    files: ['**/*.ts']
   }
 ]

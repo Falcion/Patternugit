@@ -16,6 +16,6 @@ Everything that is not specified in the further file, but should have been in th
 order of its content, should be taken from these instances (with the exception of
 specific labels, etc.):
 
--   <https://about.gitlab.com/handbook/engineering/quality/issue-triage/>
+- <https://about.gitlab.com/handbook/engineering/quality/issue-triage/>
 
 [^1]: <https://github.com/>

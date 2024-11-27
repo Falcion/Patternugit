@@ -32,7 +32,6 @@ const typingFiles = fs
     .readdirSync(path.resolve(__dirname, '../typings'))
     .map((child) => `typings/${child}`);
 
-// eslint-disable-next-line
 const main = async () => {
     const webpackTargets = [
         {
