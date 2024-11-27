@@ -1,7 +1,7 @@
-import * as cp from 'node:child_process';
-import * as fs from 'node:fs';
-import * as os from 'node:os';
-import * as path from 'node:path';
+import * as cp from 'node:child_process'
+import * as fs from 'node:fs'
+import * as os from 'node:os'
+import * as path from 'node:path'
 
 /*
  * Script was made by: @electron
@@ -16,8 +16,8 @@ import * as path from 'node:path';
  * Copyright (c) 2013-2020 GitHub Inc.
  */
 
-const rootPath = path.resolve(__dirname, '..');
-const gniPath = path.resolve(__dirname, '../filenames.auto.gni');
+const rootPath = path.resolve(__dirname, '..')
+const gniPath = path.resolve(__dirname, '../filenames.auto.gni')
 
 const allDocs = fs
     .readdirSync(path.resolve(__dirname, '../docs/api'))
@@ -25,50 +25,50 @@ const allDocs = fs
     .concat(
         fs
             .readdirSync(path.resolve(__dirname, '../docs/api/structures'))
-            .map((doc) => `docs/api/structures/${doc}`),
-    );
+            .map((doc) => `docs/api/structures/${doc}`)
+    )
 
 const typingFiles = fs
     .readdirSync(path.resolve(__dirname, '../typings'))
-    .map((child) => `typings/${child}`);
+    .map((child) => `typings/${child}`)
 
 const main = async () => {
     const webpackTargets = [
         {
             name: 'sandbox_bundle_deps',
-            config: 'webpack.config.sandboxed_renderer.js',
+            config: 'webpack.config.sandboxed_renderer.js'
         },
         {
             name: 'isolated_bundle_deps',
-            config: 'webpack.config.isolated_renderer.js',
+            config: 'webpack.config.isolated_renderer.js'
         },
         {
             name: 'browser_bundle_deps',
-            config: 'webpack.config.browser.js',
+            config: 'webpack.config.browser.js'
         },
         {
             name: 'renderer_bundle_deps',
-            config: 'webpack.config.renderer.js',
+            config: 'webpack.config.renderer.js'
         },
         {
             name: 'worker_bundle_deps',
-            config: 'webpack.config.worker.js',
+            config: 'webpack.config.worker.js'
         },
         {
             name: 'node_bundle_deps',
-            config: 'webpack.config.node.js',
+            config: 'webpack.config.node.js'
         },
         {
             name: 'utility_bundle_deps',
-            config: 'webpack.config.utility.js',
-        },
-    ];
+            config: 'webpack.config.utility.js'
+        }
+    ]
 
     const webpackTargetsWithDeps = await Promise.all(
         webpackTargets.map(async (webpackTarget) => {
             const tmpDir = await fs.promises.mkdtemp(
-                path.resolve(os.tmpdir(), 'electron-filenames-'),
-            );
+                path.resolve(os.tmpdir(), 'electron-filenames-')
+            )
             const child = cp.spawn(
                 'node',
                 [
@@ -82,31 +82,31 @@ const main = async () => {
                     '--output-filename',
                     `${webpackTarget.name}.measure.js`,
                     '--env',
-                    'PRINT_WEBPACK_GRAPH',
+                    'PRINT_WEBPACK_GRAPH'
                 ],
                 {
-                    cwd: path.resolve(__dirname, '..'),
-                },
-            );
-            let output = '';
+                    cwd: path.resolve(__dirname, '..')
+                }
+            )
+            let output = ''
             child.stdout.on('data', (chunk) => {
-                output += chunk.toString() as string;
-            });
-            child.stderr.on('data', (chunk) => console.error(chunk.toString()));
+                output += chunk.toString() as string
+            })
+            child.stderr.on('data', (chunk) => console.error(chunk.toString()))
             await new Promise<void>((resolve, reject) =>
                 child.on('exit', (code) => {
                     if (code !== 0) {
-                        console.error(output);
+                        console.error(output)
                         return reject(
                             new Error(
-                                `Failed to list webpack dependencies for entry: ${webpackTarget.name}`,
-                            ),
-                        );
+                                `Failed to list webpack dependencies for entry: ${webpackTarget.name}`
+                            )
+                        )
                     }
 
-                    resolve();
-                }),
-            );
+                    resolve()
+                })
+            )
 
             const webpackTargetWithDeps = {
                 ...webpackTarget,
@@ -115,7 +115,7 @@ const main = async () => {
                     .map((line) => line.trim())
                     // Get the relative path
                     .map((line) =>
-                        path.relative(rootPath, line).replace(/\\/g, '/'),
+                        path.relative(rootPath, line).replace(/\\/g, '/')
                     )
                     // Only care about files in //electron
                     .filter((line) => !line.startsWith('..'))
@@ -126,15 +126,15 @@ const main = async () => {
                         'tsconfig.json',
                         'tsconfig.electron.json',
                         'package.json',
-                        ...typingFiles,
+                        ...typingFiles
                     ])
                     // Make the generated list easier to read
-                    .sort(),
-            };
-            await fs.promises.rm(tmpDir, { force: true, recursive: true });
-            return webpackTargetWithDeps;
-        }),
-    );
+                    .sort()
+            }
+            await fs.promises.rm(tmpDir, { force: true, recursive: true })
+            return webpackTargetWithDeps
+        })
+    )
 
     fs.writeFileSync(
         gniPath,
@@ -148,17 +148,17 @@ ${webpackTargetsWithDeps
     .map(
         (target) => `  ${target.name} = [
 ${target.dependencies.map((dep) => `    "${dep}",`).join('\n')}
-  ]`,
+  ]`
     )
     .join('\n\n')}
 }
-`,
-    );
-};
+`
+    )
+}
 
 if (require.main === module) {
     main().catch((err) => {
-        console.error(err);
-        process.exit(1);
-    });
+        console.error(err)
+        process.exit(1)
+    })
 }

@@ -4,8 +4,8 @@
     "bracketSpacing": true,
     "singleQuote": true,
     "endOfLine": "crlf",
-    "trailingComma": "all",
-    "semi": true,
+    "trailingComma": "none",
+    "semi": false,
     "overrides": [
         {
             "files": "*.md",

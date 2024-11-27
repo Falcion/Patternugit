@@ -69,9 +69,7 @@ function maybeExtractReleaseVersion (commit) {
 
 // Checks whether commit message matches any patterns in ignore list.
 function shouldIgnoreCommit (commitMessage, ignorePatterns) {
-  return ignorePatterns.some(
-    (pattern) => commitMessage.indexOf(pattern) > -1
-  )
+  return ignorePatterns.some((pattern) => commitMessage.indexOf(pattern) > -1)
 }
 
 /**

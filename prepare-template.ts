@@ -12,11 +12,11 @@
  * @year 2023-2024
  */
 
-import * as fs from 'fs-extra';
-import * as path from 'path';
-import * as dotenv from 'dotenv';
+import * as fs from 'fs-extra'
+import * as path from 'path'
+import * as dotenv from 'dotenv'
 
-import * as readline from 'readline';
+import * as readline from 'readline'
 
 import {
     green,
@@ -27,19 +27,19 @@ import {
     bgGreen,
     white,
     bgBlue,
-    bold,
-} from 'colors/safe';
+    bold
+} from 'colors/safe'
 
 /**
  * Represents the PREPARE_MODULE for searching through files and updating the manifest.
  */
 class PREPARE_MODULE {
     /** The root directory of the module. */
-    ROOT_DIRECTORY: string = __dirname;
+    ROOT_DIRECTORY: string = __dirname
     /** An array of folder names to exclude from traversal. */
-    EXCLUDING_FOLDER: string[] = ['node_modules', 'venv', '.git', 'out'];
+    EXCLUDING_FOLDER: string[] = ['node_modules', 'venv', '.git', 'out']
     /** An array of values to include in the search. */
-    INCLUDING_VALUES: string[] = ['FALCION', 'PATTERNU', 'PATTERNUGIT'];
+    INCLUDING_VALUES: string[] = ['FALCION', 'PATTERNU', 'PATTERNUGIT']
 
     /**
      * Creates an instance of the PREPARE_MODULE.
@@ -47,7 +47,7 @@ class PREPARE_MODULE {
      */
     constructor(entries: string[]) {
         if (entries[0] !== 'NO') {
-            for (const item of entries) this.INCLUDING_VALUES.push(item);
+            for (const item of entries) this.INCLUDING_VALUES.push(item)
         }
     }
 
@@ -58,18 +58,17 @@ class PREPARE_MODULE {
      * @returns {Promise<void>} - A promise that resolves when the search is complete.
      */
     async search(filepath: string, data: string[]): Promise<void> {
-        const content = (await fs.readFile(filepath, 'utf-8')).split('\n');
+        const content = (await fs.readFile(filepath, 'utf-8')).split('\n')
 
         for (let i = 0; i < content.length; i++) {
-            const line = content[i].toUpperCase();
+            const line = content[i].toUpperCase()
             for (const target of data) {
                 if (line.includes(target)) {
                     console.info(
                         green(
-                            `Found "${target}" in L#${i} of:\n` +
-                                cyan(filepath),
-                        ),
-                    );
+                            `Found "${target}" in L#${i} of:\n` + cyan(filepath)
+                        )
+                    )
                 }
             }
         }
@@ -82,54 +81,54 @@ class PREPARE_MODULE {
      */
     async traverse(directory: string): Promise<void> {
         try {
-            const files: string[] = await fs.readdir(directory);
+            const files: string[] = await fs.readdir(directory)
             for (const file of files) {
-                const filepath = path.join(directory, file);
-                const filestat = await fs.stat(filepath);
+                const filepath = path.join(directory, file)
+                const filestat = await fs.stat(filepath)
 
                 if (filestat.isDirectory()) {
                     if (!this.EXCLUDING_FOLDER.includes(file)) {
-                        await this.traverse(filepath);
+                        await this.traverse(filepath)
                     }
                 } else if (filestat.isFile()) {
-                    await this.search(filepath, this.INCLUDING_VALUES);
+                    await this.search(filepath, this.INCLUDING_VALUES)
                 } else {
                     throw new Error(
-                        red('Invalid data format:') + bgRed(` ${filepath}`),
-                    );
+                        red('Invalid data format:') + bgRed(` ${filepath}`)
+                    )
                 }
             }
         } catch (err: any) {
             if (err.code === 'ENOENT') {
-                console.error(red(`File or directory not found: ${err.path}`));
+                console.error(red(`File or directory not found: ${err.path}`))
             } else {
-                console.error(red('Error reading directory: ' + `${err}`));
+                console.error(red('Error reading directory: ' + `${err}`))
             }
         }
     }
 }
 
-fs.ensureFileSync(path.join(__dirname, '.env'));
-fs.ensureFileSync(path.join(__dirname, 'manifest.json'));
+fs.ensureFileSync(path.join(__dirname, '.env'))
+fs.ensureFileSync(path.join(__dirname, 'manifest.json'))
 
-fs.writeFileSync(path.join(__dirname, '.env'), 'EXAMPLE_API_KEY=');
+fs.writeFileSync(path.join(__dirname, '.env'), 'EXAMPLE_API_KEY=')
 fs.writeFileSync(
     path.join(__dirname, 'manifest.json'),
-    JSON.stringify({}, undefined, 4),
-);
+    JSON.stringify({}, undefined, 4)
+)
 
 dotenv.config({
     path: '.env',
-    encoding: 'utf-8',
-});
+    encoding: 'utf-8'
+})
 
 const PACKAGE_JSON: any = JSON.parse(
-    fs.readFileSync('package.json', { encoding: 'utf-8' }),
-);
+    fs.readFileSync('package.json', { encoding: 'utf-8' })
+)
 
 const MANIFEST: any = JSON.parse(
-    fs.readFileSync('manifest.json', { encoding: 'utf-8' }),
-);
+    fs.readFileSync('manifest.json', { encoding: 'utf-8' })
+)
 
 if (
     PACKAGE_JSON.name === MANIFEST.id &&
@@ -142,21 +141,19 @@ if (
 ) {
     console.warn(
         bgGreen(
-            white(
-                'Manifest is synced with package, keep everything as it was.',
-            ),
-        ),
-    );
+            white('Manifest is synced with package, keep everything as it was.')
+        )
+    )
 } else {
     console.warn(
         bgBlue(
             yellow(
-                "Manifest is not synced with package's information, rewriting it.",
-            ),
-        ),
-    );
+                "Manifest is not synced with package's information, rewriting it."
+            )
+        )
+    )
 
-    fs.copyFileSync('manifest.json', 'manifest-backup.json');
+    fs.copyFileSync('manifest.json', 'manifest-backup.json')
 
     const inputJson: Record<string, unknown> = {
         id: PACKAGE_JSON.name,
@@ -165,16 +162,16 @@ if (
         author: PACKAGE_JSON.author.name,
         authorUrl: PACKAGE_JSON.author.url,
         license: PACKAGE_JSON.license,
-        version: PACKAGE_JSON.version,
-    };
+        version: PACKAGE_JSON.version
+    }
 
-    fs.writeFileSync('manifest.json', JSON.stringify(inputJson, undefined, 4));
+    fs.writeFileSync('manifest.json', JSON.stringify(inputJson, undefined, 4))
 }
 
 const RL = readline.createInterface({
     input: process.stdin,
-    output: process.stdout,
-});
+    output: process.stdout
+})
 
 RL.question(
     bold('Change finding signatures (words) for the finder script? [Y/N]: '),
@@ -182,20 +179,20 @@ RL.question(
         if (ASW1.toUpperCase() === 'Y') {
             RL.question(
                 bold(
-                    'Enter your custom signatures (words) separatedly by commas: ',
+                    'Enter your custom signatures (words) separatedly by commas: '
                 ),
                 async (ASW2) => {
-                    const input: string[] = ASW2.split(',');
+                    const input: string[] = ASW2.split(',')
 
-                    void (await new PREPARE_MODULE(input).traverse(__dirname));
+                    void (await new PREPARE_MODULE(input).traverse(__dirname))
 
-                    RL.close();
-                },
-            );
+                    RL.close()
+                }
+            )
         } else {
-            void (await new PREPARE_MODULE(['NO']).traverse(__dirname));
+            void (await new PREPARE_MODULE(['NO']).traverse(__dirname))
 
-            RL.close();
+            RL.close()
         }
-    },
-);
+    }
+)

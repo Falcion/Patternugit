@@ -19,7 +19,4 @@ const archive = process.argv[2]
 const hashFile = process.argv[3]
 
 const { headerString } = getRawHeader(archive)
-writeFileSync(
-  hashFile,
-  createHash('SHA256').update(headerString).digest('hex')
-)
+writeFileSync(hashFile, createHash('SHA256').update(headerString).digest('hex'))

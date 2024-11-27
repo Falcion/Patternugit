@@ -12,14 +12,14 @@
 // Taken from discussion of: https://gist.github.com/MoOx/93c2853fee760f42d97f
 
 function isValidGitHubURL(url) {
-    const parsedURL = new URL(url);
-    const allowedHosts = ['github.com'];
+    const parsedURL = new URL(url)
+    const allowedHosts = ['github.com']
 
-    return allowedHosts.includes(parsedURL.host);
+    return allowedHosts.includes(parsedURL.host)
 }
 
-(function (undefined) {
-    let reposlug;
+;(function (undefined) {
+    let reposlug
     try {
         // Incomplete URL substring sanitization
         // window.location.hostname.indexOf("github.com")
@@ -27,7 +27,7 @@ function isValidGitHubURL(url) {
         reposlug = window.location.pathname
             .match(/([^/]+\/[^/]+)\/labels/i)[1]
             .toLowerCase()
-            .replace(/\//gi, '__');
+            .replace(/\//gi, '__')
     } catch (e) {
         /* empty */
     }
@@ -35,16 +35,16 @@ function isValidGitHubURL(url) {
         throw (
             'It seems that you are not in a github.com repo labels page: ' +
             window.location
-        );
+        )
     }
 
     const labels = [].slice
         .call(document.querySelectorAll('.js-label-link'))
         .map(function (el) {
-            const styles = window.getComputedStyle(el);
+            const styles = window.getComputedStyle(el)
             const form = el
                 .closest('.js-labels-list-item')
-                .querySelector('.js-label-form');
+                .querySelector('.js-label-form')
             return {
                 name: (el.textContent || el.innerText).trim() /* required */,
                 description:
@@ -53,48 +53,48 @@ function isValidGitHubURL(url) {
                     form['label[description]'].value ||
                     null /* optional */,
                 color: rgba2hex(
-                    styles.getPropertyValue('background-color'),
-                ) /* required */,
-            };
-        });
-    const json = JSON.stringify(labels, null, 2);
-    const yaml = labels2yml(labels);
+                    styles.getPropertyValue('background-color')
+                ) /* required */
+            }
+        })
+    const json = JSON.stringify(labels, null, 2)
+    const yaml = labels2yml(labels)
 
     const exts = (
         window.prompt(
             'Choice download formats to save ' +
                 labels.length +
                 ' labels.\n\n Options: json,yml,yaml\n\nCancel or leave empty to ignore.',
-            'json,yml',
+            'json,yml'
         ) || ''
-    ).split(/\s*,\s*/);
+    ).split(/\s*,\s*/)
     exts.includes('json') &&
-        save(reposlug + '__labels.json', 'application/json', json);
-    (exts.includes('yaml') || exts.includes('yml')) &&
-        save(reposlug + '__labels.yml', 'application/yaml', yaml);
+        save(reposlug + '__labels.json', 'application/json', json)
+    ;(exts.includes('yaml') || exts.includes('yml')) &&
+        save(reposlug + '__labels.yml', 'application/yaml', yaml)
 
     return {
         labels,
         jsonText: json,
-        yamlText: yaml,
-    };
+        yamlText: yaml
+    }
 
     function hex(x) {
-        return ('0' + parseInt(x).toString(16)).slice(-2);
+        return ('0' + parseInt(x).toString(16)).slice(-2)
     }
     function rgba2hex(rgba) {
-        rgba = rgba.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(,\s*\d+\.*\d+)?\)$/);
+        rgba = rgba.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(,\s*\d+\.*\d+)?\)$/)
         return rgba.slice(1, 4).reduce(function (s, x) {
-            return s + hex(x);
-        }, '');
+            return s + hex(x)
+        }, '')
     }
     function save(filename, type, content) {
-        const blob = new Blob([content], { type });
-        const e = document.createEvent('MouseEvents');
-        const a = document.createElement('a');
-        a.download = filename;
-        a.href = window.URL.createObjectURL(blob);
-        a.dataset.downloadurl = [type, a.download, a.href].join(':');
+        const blob = new Blob([content], { type })
+        const e = document.createEvent('MouseEvents')
+        const a = document.createElement('a')
+        a.download = filename
+        a.href = window.URL.createObjectURL(blob)
+        a.dataset.downloadurl = [type, a.download, a.href].join(':')
         e.initMouseEvent(
             'click',
             true,
@@ -110,9 +110,9 @@ function isValidGitHubURL(url) {
             false,
             false,
             0,
-            null,
-        );
-        a.dispatchEvent(e);
+            null
+        )
+        a.dispatchEvent(e)
     }
     function labels2yml(labels) {
         return labels.reduce(function (s, l) {
@@ -125,7 +125,7 @@ function isValidGitHubURL(url) {
                 '"\n    color: "' +
                 l.color +
                 '"\n'
-            );
-        }, 'labels:\n');
+            )
+        }, 'labels:\n')
     }
-})();
+})()

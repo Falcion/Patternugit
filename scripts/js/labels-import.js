@@ -65,9 +65,9 @@ const labels = [
 
 // Function to update an existing label
 function updateLabel (label) {
-  let flag = false;
+  let flag = false
 
-  [].slice
+    ;[].slice
     .call(document.querySelectorAll('.labels-list-item'))
     .forEach((element) => {
       if (
@@ -98,8 +98,7 @@ function addNewLabel (label) {
         label.description
   document.querySelector('.js-new-label-color-input').value =
         `#${label.color}`
-  document.querySelector('.js-details-target ~ .btn-primary').disabled =
-        false
+  document.querySelector('.js-details-target ~ .btn-primary').disabled = false
   document.querySelector('.js-details-target ~ .btn-primary').click()
 }
 
