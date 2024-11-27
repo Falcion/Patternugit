@@ -8,9 +8,9 @@ on how to get started, what to work on, and how to interact with the community,
 please take a moment to familiarize yourself with these guidelines to help the
 team maintain a positive and productive atmosphere for all.
 
-- Before making any contributions or reading this document, make yourself familiar
-  with the code of conduct of this project:\
-[“Code-doc” of PATTERNU's community](./CODE_OF_CONDUCT.md)
+-   Before making any contributions or reading this document, make yourself familiar
+    with the code of conduct of this project:\
+    [“Code-doc” of PATTERNU's community](./CODE_OF_CONDUCT.md)
 
 ## Contribution guidelines
 
@@ -28,15 +28,15 @@ these guidelines will help us maintain a collaborative and welcoming environment
 When contributing to software or documentation for this project, please keep the
 following guidelines in mind:
 
-- **Don't surprise with large pull requests.**\
-  Instead, start a discussion by filing an issue so we can agree on the direction
-  before investing a significant amount of time.
-- **Avoid including sample code inline in your push.**\
-  Instead, use a snippet project with code that can be embedded in the article.
-- follow the terms of “flow”:\
-  <https://guides.github.com/introduction/flow/>
-- use the forked repository as the starting point for your work;
-- create a separate branch on your fork before working on the project;
+-   **Don't surprise with large pull requests.**\
+    Instead, start a discussion by filing an issue so we can agree on the direction
+    before investing a significant amount of time.
+-   **Avoid including sample code inline in your push.**\
+    Instead, use a snippet project with code that can be embedded in the article.
+-   follow the terms of “flow”:\
+    <https://guides.github.com/introduction/flow/>
+-   use the forked repository as the starting point for your work;
+-   create a separate branch on your fork before working on the project;
 
 Following these guidelines will ensure a better experience for you and for us.
 
@@ -102,12 +102,12 @@ and for which we created guidelines:
 1. **Addressing review feedback:**\
    if we ask for changes through code reviews:
 
-   1. make the required updates to the code;
-   2. re-run the CLI tests and build with no-traverse your version to ensure tests
-      are still passing;
-   3. create a fixup commit and push it to your forked repository, this will update
-      your pull request;
-    <br/>
+    1. make the required updates to the code;
+    2. re-run the CLI tests and build with no-traverse your version to ensure tests
+       are still passing;
+    3. create a fixup commit and push it to your forked repository, this will update
+       your pull request;
+       <br/>
 
     ```powershell
     git commit --all --fixup HEAD
@@ -116,18 +116,18 @@ and for which we created guidelines:
 
 For more information on working with fixup commits, refer to the “angular's” article:\
 
-- <https://github.com/angular/angular/blob/main/docs/FIXUP_COMMITS.md/>
-- <https://thoughtbot.com/blog/autosquashing-git-commits/>
+-   <https://github.com/angular/angular/blob/main/docs/FIXUP_COMMITS.md/>
+-   <https://thoughtbot.com/blog/autosquashing-git-commits/>
 
 1. **Updating the commit's message:**\
    Reviewers may suggest changes to a commit message, such as adding more context
    or adhering to commit message guidelines, to update the commit message of the
    last commit on your branch:
 
-   1. checkout your branch;
-   2. amend the last commit and modify the commit message;
-   3. push to your forked repository;
-    <br/>
+    1. checkout your branch;
+    2. amend the last commit and modify the commit message;
+    3. push to your forked repository;
+       <br/>
 
     ```powershell
     git checkout <BRANCH>
@@ -147,12 +147,12 @@ For more information on working with fixup commits, refer to the “angular's”
    changes from the main upstream repository, the same applies within your forked
    repository:
 
-   1. delete the remote branch either through the web client UI or the local shell;
-   2. checkout the main branch;
-   3. delete your local branch;
-   4. update your local branch of the upstream repository with the latest version
-      from origin;
-    <br/>
+    1. delete the remote branch either through the web client UI or the local shell;
+    2. checkout the main branch;
+    3. delete your local branch;
+    4. update your local branch of the upstream repository with the latest version
+       from origin;
+       <br/>
 
     ```powershell
     git push origin <BRANCH>
@@ -166,12 +166,11 @@ For more information on working with fixup commits, refer to the “angular's”
 For ensuring consistency throughout the source code, please keep the following
 rules in mind when working with our open-source project:
 
-- Every feature or bugfix must be tested (if possible);
-- Every public API method, function, field etc. must be documented by means of code;
+-   Every feature or bugfix must be tested (if possible);
+-   Every public API method, function, field etc. must be documented by means of code;
 
 > Last term is optional because of some temporal cases, for example, code that
 > is directly in-built with other APIs, like plugins, extensions etc.
->
 
 For advanced committing convention, refer to custom speficied documentation file[^1].
 
@@ -181,10 +180,10 @@ Sometimes, you may be asked to sign the “Contributor license agreement” (CLA
 before sending a pull request, signing the CLA is a quick and easy process, and
 it is required for any code changes to be accepted.
 
-- For individuals:\
-  <https://cla.developers.google.com/about/google-individual/>
-- For corporations: print, sign, scan, and email the provided form:\
-  <https://cla.developers.google.com/about/google-corporate/>
+-   For individuals:\
+    <https://cla.developers.google.com/about/google-individual/>
+-   For corporations: print, sign, scan, and email the provided form:\
+    <https://cla.developers.google.com/about/google-corporate/>
 
 If you have multiple accounts or multiple email addresses associated with a single
 account, you must sign the CLA using the primary email address of the “github.com”
@@ -193,9 +192,9 @@ account used to author Git commits and send pull requests.
 The following documents can help you sort out issues with accounts and multiple
 email addresses:
 
-- <https://help.github.com/articles/setting-your-commit-email-address-in-git/>
-- <https://help.github.com/articles/about-commit-email-addresses/>
-- <https://help.github.com/articles/blocking-command-line-pushes-that-expose-your-personal-email-address/>
+-   <https://help.github.com/articles/setting-your-commit-email-address-in-git/>
+-   <https://help.github.com/articles/about-commit-email-addresses/>
+-   <https://help.github.com/articles/blocking-command-line-pushes-that-expose-your-personal-email-address/>
 
 ### Signing the “Developer certificate of origin” (DCO)
 

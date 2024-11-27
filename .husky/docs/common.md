@@ -1,17 +1,19 @@
 Problems can be separated in three categories: ones with WSL, ones with HUSKY
 itself and ones with OS and desktop client of Git.
 
-- if npm/Node does not work in the WSL on your machine:\
-  <https://github.com/microsoft/WSL/issues/4249/>
-- If npm/npx not found message appears:\
-  <https://github.com/desktop/desktop/issues/12562>
+-   if npm/Node does not work in the WSL on your machine:\
+    <https://github.com/microsoft/WSL/issues/4249/>
+-   If npm/npx not found message appears:\
+    <https://github.com/desktop/desktop/issues/12562>
 
 > [!Tip]
-> Also check your "%PATH%  → Node.js/bin/" paths in environment variables context:\
+> Also check your "%PATH% → Node.js/bin/" paths in environment variables context:\
 >
-> - Windows users, if you have everything set up and installed, check this comment
+> -   Windows users, if you have everything set up and installed, check this comment
+
     from same issue:\
->   <https://github.com/desktop/desktop/issues/12562#issuecomment-1007154382>
+
+> <https://github.com/desktop/desktop/issues/12562#issuecomment-1007154382>
 
 If you encounter this error:
 
@@ -24,9 +26,9 @@ husky - pre-commit script failed (code 1)
 It means that you don't have correct WSL distributive chosen or even installed on
 your system, if you have "Docker Desktop" on your machine, it is because of him.
 
-- Before anything, check by `wsl --list --verbose`, and if "Docker Desktop" marked
-  with asterisk ("`*`") it indicates docker is
-  default WSL distribution.
+-   Before anything, check by `wsl --list --verbose`, and if "Docker Desktop" marked
+    with asterisk ("`*`") it indicates docker is
+    default WSL distribution.
 
 #### Why this matters
 

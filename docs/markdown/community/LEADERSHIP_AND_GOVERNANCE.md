@@ -1,38 +1,38 @@
 # Leadership and Governance
 
-*Growing open source projects can benefit from formal rules for making decisions.*
+_Growing open source projects can benefit from formal rules for making decisions._
 
 > **This is a Markdown fork of: <https://opensource.guide/leadership-and-governance/>**
 
 **Table of Contents:**
 
-- [Leadership and Governance](#leadership-and-governance)
-  - [Section 1: Understanding governance for your growing project](#section-1-understanding-governance-for-your-growing-project)
-  - [Section 2: What are examples of formal roles used in open source projects?](#section-2-what-are-examples-of-formal-roles-used-in-open-source-projects)
-  - [Section 3: How do I formalize these leadership roles?](#section-3-how-do-i-formalize-these-leadership-roles)
-  - [Section 4: When should I give someone commit access?](#section-4-when-should-i-give-someone-commit-access)
-  - [Section 5: What are some of the common governance structures for open source projects?](#section-5-what-are-some-of-the-common-governance-structures-for-open-source-projects)
-  - [Section 6: Do I need governance docs when I launch my project?](#section-6-do-i-need-governance-docs-when-i-launch-my-project)
-  - [Section 7: What happens if corporate employees start submitting contributions?](#section-7-what-happens-if-corporate-employees-start-submitting-contributions)
-  - [Section 8: Do I need a legal entity to support my project?](#section-8-do-i-need-a-legal-entity-to-support-my-project)
+-   [Leadership and Governance](#leadership-and-governance)
+    -   [Section 1: Understanding governance for your growing project](#section-1-understanding-governance-for-your-growing-project)
+    -   [Section 2: What are examples of formal roles used in open source projects?](#section-2-what-are-examples-of-formal-roles-used-in-open-source-projects)
+    -   [Section 3: How do I formalize these leadership roles?](#section-3-how-do-i-formalize-these-leadership-roles)
+    -   [Section 4: When should I give someone commit access?](#section-4-when-should-i-give-someone-commit-access)
+    -   [Section 5: What are some of the common governance structures for open source projects?](#section-5-what-are-some-of-the-common-governance-structures-for-open-source-projects)
+    -   [Section 6: Do I need governance docs when I launch my project?](#section-6-do-i-need-governance-docs-when-i-launch-my-project)
+    -   [Section 7: What happens if corporate employees start submitting contributions?](#section-7-what-happens-if-corporate-employees-start-submitting-contributions)
+    -   [Section 8: Do I need a legal entity to support my project?](#section-8-do-i-need-a-legal-entity-to-support-my-project)
 
 ## Section 1: Understanding governance for your growing project
 
-*Your project is growing, people are engaged, and you're committed to keeping this
+_Your project is growing, people are engaged, and you're committed to keeping this
 thing going. At this stage, you may be wondering how to incorporate regular project
 contributors into your workflow, whether it's giving someone commit access or resolving
-community debates. If you have questions, we've got answers.*
+community debates. If you have questions, we've got answers._
 
 ## Section 2: What are examples of formal roles used in open source projects?
 
-*Many projects follow a similar structure for contributor roles and recognition.*
+_Many projects follow a similar structure for contributor roles and recognition._
 
 What these roles actually mean, though, is entirely up to you. Here are a few types
 of roles you may recognize:
 
-- **Maintainer**
-- **Contributor**
-- **Committer**
+-   **Maintainer**
+-   **Contributor**
+-   **Committer**
 
 **For some projects, "maintainers"** are the only people in a project with commit
 access. In other projects, they're simply the people who are listed in the readme
@@ -50,8 +50,8 @@ events), or anybody with a merged pull request (perhaps the narrowest definition
 of a contributor).
 
 > [For Node.js,] every person who shows up to comment on an issue or submit code
-  is a member of a project's community. Just being able to see them means that they
-  have crossed the line from being a user to being a contributor.
+> is a member of a project's community. Just being able to see them means that they
+> have crossed the line from being a user to being a contributor.
 > — \@mikeal, ["Healthy Open Source"](https://medium.com/the-javascript-collection/healthy-open-source-967fa8be7951)
 
 **The term "committer"** might be used to distinguish commit access, which is a specific
@@ -64,14 +64,14 @@ recognize people who have made outstanding contributions to your project, regard
 of their technical skill.
 
 > You might know me as the "inventor" of Django…but really I'm the guy who got hired
-  to work on a thing a year after it was already made. (…) People suspect that I'm
-  successful because of my programming skill…but I'm at best an average programmer.
+> to work on a thing a year after it was already made. (…) People suspect that I'm
+> successful because of my programming skill…but I'm at best an average programmer.
 > — \@jacobian, ["PyCon 2015 Keynote" (video)](https://www.youtube.com/watch?v=hIJdFxYlEKE#t=5m0s)
 
 ## Section 3: How do I formalize these leadership roles?
 
-*Formalizing your leadership roles helps people feel ownership and tells other community
-members who to look to for help.*
+_Formalizing your leadership roles helps people feel ownership and tells other community
+members who to look to for help._
 
 For a smaller project, designating leaders can be as simple as adding their names
 to your readme or a CONTRIBUTORS text file.
@@ -88,9 +88,9 @@ self-organize and volunteer for the roles they're most excited about, rather tha
 assigning them.
 
 > [We] supplement the core team with several "subteams". Each subteam is focused
-  on a specific area, e.g., language design or libraries. (…) To ensure global
-  coordination and a strong, coherent vision for the project as a whole, each subteam
-  is led by a member of the core team.
+> on a specific area, e.g., language design or libraries. (…) To ensure global
+> coordination and a strong, coherent vision for the project as a whole, each subteam
+> is led by a member of the core team.
 > — ["Rust Governance RFC"](https://github.com/rust-lang/rfcs/blob/HEAD/text/1068-rust-governance.md)
 
 Leadership teams may want to create a designated channel (like on IRC) or meet regularly
@@ -115,8 +115,8 @@ legacy through [shared ownership](https://opensource.guide/building-community/#s
 
 ## Section 4: When should I give someone commit access?
 
-*Some people think you should give commit access to everybody who makes a contribution.
-Doing so could encourage more people to feel ownership of your project.*
+_Some people think you should give commit access to everybody who makes a contribution.
+Doing so could encourage more people to feel ownership of your project._
 
 On the other hand, especially for bigger, more complex projects, you may want to
 only give commit access to people who have demonstrated their commitment. There's
@@ -126,46 +126,46 @@ If your project is on GitHub, you can use [protected branches](https://help.gith
 to manage who can push to a particular branch, and under which circumstances.
 
 > Whenever somebody sends you a pull request, give them commit access to your project.
-  While it may sound incredibly stupid at first, using this strategy will allow you
-  to unleash the true power of GitHub. (…) Once people have commit access, they are
-  no longer worried that their patch might go unmerged…causing them to put much more
-  work into it.
+> While it may sound incredibly stupid at first, using this strategy will allow you
+> to unleash the true power of GitHub. (…) Once people have commit access, they are
+> no longer worried that their patch might go unmerged…causing them to put much more
+> work into it.
 > — \@felixge, ["The Pull Request Hack"](https://felixge.de/2013/03/11/the-pull-request-hack.html)
 
 ## Section 5: What are some of the common governance structures for open source projects?
 
-*There are three common governance structures associated with open source projects.*
+_There are three common governance structures associated with open source projects._
 
-- **BDFL:** BDFL stands for "Benevolent Dictator for Life". Under this structure,
-  one person (usually the initial author of the project) has final say on all major
-  project decisions. [Python](https://github.com/python) is a classic example. Smaller
-  projects are probably BDFL by default, because there are only one or two maintainers.
-  A project that originated at a company might also fall into the BDFL category.
-- **Meritocracy: (Note: the term "meritocracy" carries negative connotations for
-  some communities and has a [complex social and political history](http://geekfeminism.wikia.com/wiki/Meritocracy).)**
-  Under a meritocracy, active project contributors (those who demonstrate "merit")
-  are given a formal decision making role. Decisions are usually made based on pure
-  voting consensus. The meritocracy concept was pioneered by the [Apache Foundation](https://www.apache.org/);
-  [all Apache projects](https://www.apache.org/index.html#projects-list) are meritocracies.
-  Contributions can only be made by individuals representing themselves, not by a
-  company.
-- **Liberal contribution:** Under a liberal contribution model, the people who do
-  the most work are recognized as most influential, but this is based on current
-  work and not historic contributions. Major project decisions are made based on
-  a consensus seeking process (discuss major grievances) rather than pure vote, and
-  strive to include as many community perspectives as possible. Popular examples
-  of projects that use a liberal contribution model include [Node.js](https://foundation.nodejs.org/)
-  and [Rust](https://www.rust-lang.org/).
+-   **BDFL:** BDFL stands for "Benevolent Dictator for Life". Under this structure,
+    one person (usually the initial author of the project) has final say on all major
+    project decisions. [Python](https://github.com/python) is a classic example. Smaller
+    projects are probably BDFL by default, because there are only one or two maintainers.
+    A project that originated at a company might also fall into the BDFL category.
+-   **Meritocracy: (Note: the term "meritocracy" carries negative connotations for
+    some communities and has a [complex social and political history](http://geekfeminism.wikia.com/wiki/Meritocracy).)**
+    Under a meritocracy, active project contributors (those who demonstrate "merit")
+    are given a formal decision making role. Decisions are usually made based on pure
+    voting consensus. The meritocracy concept was pioneered by the [Apache Foundation](https://www.apache.org/);
+    [all Apache projects](https://www.apache.org/index.html#projects-list) are meritocracies.
+    Contributions can only be made by individuals representing themselves, not by a
+    company.
+-   **Liberal contribution:** Under a liberal contribution model, the people who do
+    the most work are recognized as most influential, but this is based on current
+    work and not historic contributions. Major project decisions are made based on
+    a consensus seeking process (discuss major grievances) rather than pure vote, and
+    strive to include as many community perspectives as possible. Popular examples
+    of projects that use a liberal contribution model include [Node.js](https://foundation.nodejs.org/)
+    and [Rust](https://www.rust-lang.org/).
 
-- [BDFL model template](http://oss-watch.ac.uk/resources/benevolentdictatorgovernancemodel)
-- [Meritocracy model template](http://oss-watch.ac.uk/resources/meritocraticgovernancemodel)
-- [Node.js's liberal contribution policy](https://medium.com/the-node-js-collection/healthy-open-source-967fa8be7951)
+-   [BDFL model template](http://oss-watch.ac.uk/resources/benevolentdictatorgovernancemodel)
+-   [Meritocracy model template](http://oss-watch.ac.uk/resources/meritocraticgovernancemodel)
+-   [Node.js's liberal contribution policy](https://medium.com/the-node-js-collection/healthy-open-source-967fa8be7951)
 
 ## Section 6: Do I need governance docs when I launch my project?
 
-*There is no right time to write down your project's governance, but it's much
+_There is no right time to write down your project's governance, but it's much
 easier to define once you've seen your community dynamics play out. The best (and
-hardest) part about open source governance is that it is shaped by the community!*
+hardest) part about open source governance is that it is shaped by the community!_
 
 Some early documentation will inevitably contribute to your project's governance,
 however, so start writing down what you can. For example, you can define clear
@@ -179,15 +179,15 @@ explain anything particular to how your company will (or won't!) be involved wit
 the project.
 
 > We assign small teams to manage projects on GitHub who are actually working on
-  these at Facebook. For example, React is run by a React engineer.
+> these at Facebook. For example, React is run by a React engineer.
 > — \@caabernathy, ["An inside look at open source at Facebook"](https://opensource.com/life/15/10/ato-interview-christine-abernathy-facebook)
 
 ## Section 7: What happens if corporate employees start submitting contributions?
 
-*Successful open source projects get used by many people and companies, and some
+_Successful open source projects get used by many people and companies, and some
 companies may eventually have revenue streams eventually tied to the project. For
 example, a company may use the project's code as one component in a commercial service
-offering.*
+offering._
 
 As the project gets more widely used, people who have expertise in it become more
 in-demand - you may be one of them! - and will sometimes get paid for work they do
@@ -215,8 +215,8 @@ the external factors that enable people to make those contributions.
 
 ## Section 8: Do I need a legal entity to support my project?
 
-*You don't need a legal entity to support your open source project unless you're
-handling money.*
+_You don't need a legal entity to support your open source project unless you're
+handling money._
 
 For example, if you want to create a commercial business, you'll want to set up a
 C Corp or LLC (if you're based in the US). If you're just doing contract work related
@@ -236,8 +236,8 @@ and [Open Collective](https://opencollective.com/opensource)
 are examples of organizations that serve as fiscal sponsors for open source projects.
 
 > Our goal is to provide an infrastructure that communities can use to be self
-  sustainable, thus creating an environment where everyone — contributors, backers,
-  sponsors — get concrete benefits out of it.
+> sustainable, thus creating an environment where everyone — contributors, backers,
+> sponsors — get concrete benefits out of it.
 > — \@piamancini, ["Moving beyond the charity framework"](https://medium.com/open-collective/moving-beyond-the-charity-framework-b1191c33141)
 
 If your project is closely associated with a certain language or ecosystem, there

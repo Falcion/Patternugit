@@ -71,15 +71,15 @@ to the project.
 Some contributors will already be engaging with the project as users, but will also
 find themselves doing one or more of the following:
 
-- supporting new users (current users often provide the most effective new user support)
-- reporting bugs
-- identifying requirements
-- supplying graphics and web design
-- programming
-- assisting with project infrastructure
-- writing documentation
-- fixing bugs
-- adding features
+-   supporting new users (current users often provide the most effective new user support)
+-   reporting bugs
+-   identifying requirements
+-   supplying graphics and web design
+-   programming
+-   assisting with project infrastructure
+-   writing documentation
+-   fixing bugs
+-   adding features
 
 As contributors gain experience and familiarity with the project, they may find
 that the project lead starts relying on them more and more. When this begins to
@@ -96,10 +96,10 @@ as much as possible. User contributions enable the project team to ensure that t
 are satisfying the needs of those users. Common user activities include (but are
 not limited to):
 
-- evangelising about the project
-- informing developers of project strengths and weaknesses from a new user’s perspective
-- providing moral support (a ‘thank you’ goes a long way)
-- providing financial support
+-   evangelising about the project
+-   informing developers of project strengths and weaknesses from a new user’s perspective
+-   providing moral support (a ‘thank you’ goes a long way)
+-   providing financial support
 
 Users who continue to engage with the project and its community will often find
 themselves becoming more and more involved. Such users may then go on to become
@@ -150,10 +150,10 @@ can contribute and how their contributions will be recognised.
 
 ## Further reading
 
-- [Can I be a good benevolent dictator?](http://producingoss.com/html-chunk/social-infrastructure.html#benevolent-dictator-qualifications)
-- [Governance models](http://oss-watch.ac.uk/resources/governanceModels)
-- [Meritocratic governance model](http://oss-watch.ac.uk/resources/meritocraticGovernanceModel)
-- [http://oss-watch.ac.uk/resources/howtobuildcommunity](http://oss-watch.ac.uk/resources/howtobuildcommunity)
-- [What is a software patch?](http://oss-watch.ac.uk/resources/softwarepatch)
-- [Roles in open source projects](http://oss-watch.ac.uk/resources/rolesinopensource)
-- [Essential tools for running a community-led project](http://oss-watch.ac.uk/resources/communitytools)
+-   [Can I be a good benevolent dictator?](http://producingoss.com/html-chunk/social-infrastructure.html#benevolent-dictator-qualifications)
+-   [Governance models](http://oss-watch.ac.uk/resources/governanceModels)
+-   [Meritocratic governance model](http://oss-watch.ac.uk/resources/meritocraticGovernanceModel)
+-   [http://oss-watch.ac.uk/resources/howtobuildcommunity](http://oss-watch.ac.uk/resources/howtobuildcommunity)
+-   [What is a software patch?](http://oss-watch.ac.uk/resources/softwarepatch)
+-   [Roles in open source projects](http://oss-watch.ac.uk/resources/rolesinopensource)
+-   [Essential tools for running a community-led project](http://oss-watch.ac.uk/resources/communitytools)

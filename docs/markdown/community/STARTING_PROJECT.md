@@ -1,39 +1,39 @@
 # Starting an Open Source project
 
-*Learn more about the world of open source and get ready to launch your own project.*
+_Learn more about the world of open source and get ready to launch your own project._
 
 > **This is a Markdown fork of: <https://opensource.guide/starting-a-project/>**
 
 **Table of Contents:**
 
-- [Starting an Open Source project](#starting-an-open-source-project)
-  - [Section 1: The "what" and "why" of open source](#section-1-the-what-and-why-of-open-source)
-    - [What does "open source" mean?](#what-does-open-source-mean)
-    - [Why do people open source their work?](#why-do-people-open-source-their-work)
-    - [Does open source mean "free of charge"?](#does-open-source-mean-free-of-charge)
-  - [Section 2: Should I launch my own open source project?](#section-2-should-i-launch-my-own-open-source-project)
-    - [Setting your goals](#setting-your-goals)
-    - [Contributing to other projects](#contributing-to-other-projects)
-  - [Section 3: Launching your own open source project](#section-3-launching-your-own-open-source-project)
-    - [Choosing a license](#choosing-a-license)
-    - [Writing a readme](#writing-a-readme)
-    - [Writing your contributing guidelines](#writing-your-contributing-guidelines)
-    - [Establishing a code of conduct](#establishing-a-code-of-conduct)
-  - [Section 4: Naming and branding your project](#section-4-naming-and-branding-your-project)
-    - [Choosing the right name](#choosing-the-right-name)
-    - [Avoiding name conflicts](#avoiding-name-conflicts)
-    - [How you write (and code) affects your brand, too](#how-you-write-and-code-affects-your-brand-too)
-  - [Section 5: Your pre-launch checklist](#section-5-your-pre-launch-checklist)
-    - [Documentation](#documentation)
-    - [Code](#code)
-    - [People](#people)
-  - [Section 6: You did it](#section-6-you-did-it)
+-   [Starting an Open Source project](#starting-an-open-source-project)
+    -   [Section 1: The "what" and "why" of open source](#section-1-the-what-and-why-of-open-source)
+        -   [What does "open source" mean?](#what-does-open-source-mean)
+        -   [Why do people open source their work?](#why-do-people-open-source-their-work)
+        -   [Does open source mean "free of charge"?](#does-open-source-mean-free-of-charge)
+    -   [Section 2: Should I launch my own open source project?](#section-2-should-i-launch-my-own-open-source-project)
+        -   [Setting your goals](#setting-your-goals)
+        -   [Contributing to other projects](#contributing-to-other-projects)
+    -   [Section 3: Launching your own open source project](#section-3-launching-your-own-open-source-project)
+        -   [Choosing a license](#choosing-a-license)
+        -   [Writing a readme](#writing-a-readme)
+        -   [Writing your contributing guidelines](#writing-your-contributing-guidelines)
+        -   [Establishing a code of conduct](#establishing-a-code-of-conduct)
+    -   [Section 4: Naming and branding your project](#section-4-naming-and-branding-your-project)
+        -   [Choosing the right name](#choosing-the-right-name)
+        -   [Avoiding name conflicts](#avoiding-name-conflicts)
+        -   [How you write (and code) affects your brand, too](#how-you-write-and-code-affects-your-brand-too)
+    -   [Section 5: Your pre-launch checklist](#section-5-your-pre-launch-checklist)
+        -   [Documentation](#documentation)
+        -   [Code](#code)
+        -   [People](#people)
+    -   [Section 6: You did it](#section-6-you-did-it)
 
 ## Section 1: The "what" and "why" of open source
 
-*So you're thinking about getting started with open source? Congratulations! The
+_So you're thinking about getting started with open source? Congratulations! The
 world appreciates your contribution. Let's talk about what open source is and why
-people do it.*
+people do it._
 
 ### What does "open source" mean?
 
@@ -48,31 +48,31 @@ a business using open source software has the option to hire someone to make cus
 improvements to the software, rather than relying exclusively on a closed source
 vendor's product decisions.
 
-*Free software* refers to the same set of projects as open source. Sometimes you'll
+_Free software_ refers to the same set of projects as open source. Sometimes you'll
 also see [these terms](https://en.wikipedia.org/wiki/Free_and_open-source_software)
 combined as "free and open source software" (FOSS) or "free, libre, and open source
-software" (FLOSS). *Free* and *libre* refer to freedom, not [price](https://opensource.guide/starting-a-project/#does-open-source-mean-free-of-charge).
+software" (FLOSS). _Free_ and _libre_ refer to freedom, not [price](https://opensource.guide/starting-a-project/#does-open-source-mean-free-of-charge).
 
 ### Why do people open source their work?
 
 > One of the most rewarding experiences I get out of using and collaborating on
-  open source comes from the relationships that I build with other developers
-  facing many of the same problems I am.
+> open source comes from the relationships that I build with other developers
+> facing many of the same problems I am.
 > — \@kentcdodds, ["How getting into Open Source has been awesome for me"](https://kentcdodds.com/blog/how-getting-into-open-source-has-been-awesome-for-me)
 
 [There are many reasons](https://ben.balter.com/2015/11/23/why-open-source/) why
 a person or organization would want to open source a project. Some examples include:
 
-- **Collaboration:** Open source projects can accept changes from anybody in the
-  world. [Exercism](https://github.com/exercism/), for example, is a programming
-  exercise platform with over 350 contributors.
-- **Adoption and remixing:** Open source projects can be used by anyone for nearly
-  any purpose. People can even use it to build other things. [WordPress](https://github.com/WordPress),
-  for example, started as a fork of an existing project called [b2](https://github.com/WordPress/book/blob/HEAD/Content/Part%201/2-b2-cafelog.md).
-- **Transparency:** Anyone can inspect an open source project for errors or inconsistencies.
-  Transparency matters to governments like [Bulgaria](https://medium.com/@bozhobg/bulgaria-got-a-law-requiring-open-source-98bf626cf70a)
-  or the [United States](https://www.cio.gov/2016/08/11/peoples-code.html), regulated
-  industries like banking or healthcare, and security software like [Let's Encrypt](https://github.com/letsencrypt).
+-   **Collaboration:** Open source projects can accept changes from anybody in the
+    world. [Exercism](https://github.com/exercism/), for example, is a programming
+    exercise platform with over 350 contributors.
+-   **Adoption and remixing:** Open source projects can be used by anyone for nearly
+    any purpose. People can even use it to build other things. [WordPress](https://github.com/WordPress),
+    for example, started as a fork of an existing project called [b2](https://github.com/WordPress/book/blob/HEAD/Content/Part%201/2-b2-cafelog.md).
+-   **Transparency:** Anyone can inspect an open source project for errors or inconsistencies.
+    Transparency matters to governments like [Bulgaria](https://medium.com/@bozhobg/bulgaria-got-a-law-requiring-open-source-98bf626cf70a)
+    or the [United States](https://www.cio.gov/2016/08/11/peoples-code.html), regulated
+    industries like banking or healthcare, and security software like [Let's Encrypt](https://github.com/letsencrypt).
 
 Open source isn't just for software, either. You can open source everything from
 data sets to books. Check out [GitHub Explore](https://github.com/explore) for ideas
@@ -95,8 +95,8 @@ the official definition of open source.
 
 ## Section 2: Should I launch my own open source project?
 
-*The short answer is yes, because no matter the outcome, launching your own project
-is a great way to learn how open source works.*
+_The short answer is yes, because no matter the outcome, launching your own project
+is a great way to learn how open source works._
 
 If you've never open sourced a project before, you might be nervous about what people
 will say, or whether anyone will notice at all. If this sounds like you, you're not
@@ -111,7 +111,7 @@ If you're not yet convinced, take a moment to think about what your goals might 
 ### Setting your goals
 
 Goals can help you figure out what to work on, what to say no to, and where you need
-help from others. Start by asking yourself, *why am I open sourcing this project?*
+help from others. Start by asking yourself, _why am I open sourcing this project?_
 
 There is no one right answer to this question. You may have multiple goals for a
 single project, or different projects with different goals.
@@ -121,12 +121,12 @@ and even say so in your readme. On the other hand, if you do want contributors,
 you'll invest time into clear documentation and making newcomers feel welcome.
 
 > At some point I created a custom UIAlertView that I was using…and I decided to
-  make it open source. So I modified it to be more dynamic and uploaded it to GitHub.
-  I also wrote my first documentation explaining to other developers how to use it
-  on their projects. Probably nobody ever used it because it was a simple project
-  but I was feeling good about my contribution.
+> make it open source. So I modified it to be more dynamic and uploaded it to GitHub.
+> I also wrote my first documentation explaining to other developers how to use it
+> on their projects. Probably nobody ever used it because it was a simple project
+> but I was feeling good about my contribution.
 > — \@mavris, ["Self-taught Software Developers: Why Open Source is important to
-  us"](https://medium.com/rocknnull/self-taught-software-engineers-why-open-source-is-important-to-us-fe2a3473a576)
+> us"](https://medium.com/rocknnull/self-taught-software-engineers-why-open-source-is-important-to-us-fe2a3473a576)
 
 As your project grows, your community may need more than just code from you. Responding
 to issues, reviewing code, and evangelizing your project are all important tasks
@@ -145,10 +145,10 @@ If you need a dedicated budget or staffing for promotion, operations and maintai
 the project, start those conversations early.
 
 > As you begin to open source the project, it's important to make sure that your
-  management processes take into consideration the contributions and abilities of
-  the community around your project. Don't be afraid to involve contributors who
-  are not employed in your business in key aspects of the project — especially if
-  they are frequent contributors.
+> management processes take into consideration the contributions and abilities of
+> the community around your project. Don't be afraid to involve contributors who
+> are not employed in your business in key aspects of the project — especially if
+> they are frequent contributors.
 > — \@captainsafia, ["So you wanna open source a project, eh?"](https://dev.to/captainsafia/so-you-wanna-open-source-a-project-eh-5779)
 
 ### Contributing to other projects
@@ -163,8 +163,8 @@ to Open Source guide](https://opensource.guide/how-to-contribute/).
 
 ## Section 3: Launching your own open source project
 
-*There is no perfect time to open source your work. You can open source an idea,
-a work in progress, or after years of being closed source.*
+_There is no perfect time to open source your work. You can open source an idea,
+a work in progress, or after years of being closed source._
 
 Generally speaking, you should open source your project when you feel comfortable
 having others view, and give feedback on, your work.
@@ -172,10 +172,10 @@ having others view, and give feedback on, your work.
 No matter which stage you decide to open source your project, every project should
 include the following documentation:
 
-- [Open source license](https://help.github.com/articles/open-source-licensing/#where-does-the-license-live-on-my-repository)
-- [Readme](https://help.github.com/articles/create-a-repo/#commit-your-first-change)
-- [Contributing guidelines](https://help.github.com/articles/setting-guidelines-for-repository-contributors/)
-- [Code of conduct](https://opensource.guide/code-of-conduct/)
+-   [Open source license](https://help.github.com/articles/open-source-licensing/#where-does-the-license-live-on-my-repository)
+-   [Readme](https://help.github.com/articles/create-a-repo/#commit-your-first-change)
+-   [Contributing guidelines](https://help.github.com/articles/setting-guidelines-for-repository-contributors/)
+-   [Code of conduct](https://opensource.guide/code-of-conduct/)
 
 As a maintainer, these components will help you communicate expectations, manage
 contributions, and protect everyone's legal rights (including your own). They significantly
@@ -214,10 +214,10 @@ project matters, and what your users can do with it.
 
 In your readme, try to answer the following questions:
 
-- What does this project do?
-- Why is this project useful?
-- How do I get started?
-- Where can I get more help, if I need it?
+-   What does this project do?
+-   Why is this project useful?
+-   How do I get started?
+-   Where can I get more help, if I need it?
 
 You can use your readme to answer other questions, like how you handle contributions,
 what the goals of the project are, and information about licenses and attribution.
@@ -225,8 +225,8 @@ If you don't want to accept contributions, or your project is not yet ready for
 production, write this information down.
 
 > Better documentation means more users, less support requests, and more contributors.
-  (…) Remember that your readers aren't you. There are people who might come to a
-  project who have completely different experiences.
+> (…) Remember that your readers aren't you. There are people who might come to a
+> project who have completely different experiences.
 > — \@tracymakes, ["Writing So Your Words Are Read (video)"](https://www.youtube.com/watch?v=8LiV759Bje0&list=PLmV2D6sIiX3U03qc-FPXgLFGFkccCEtfv&index=10)
 
 Sometimes, people avoid writing a readme because they feel like the project is
@@ -245,16 +245,16 @@ it on the repository homepage.
 A CONTRIBUTING file tells your audience how to participate in your project. For example,
 you might include information on:
 
-- How to file a bug report (try using [issue and pull request templates](https://github.com/blog/2111-issue-and-pull-request-templates))
-- How to suggest a new feature
-- How to set up your environment and run tests
+-   How to file a bug report (try using [issue and pull request templates](https://github.com/blog/2111-issue-and-pull-request-templates))
+-   How to suggest a new feature
+-   How to set up your environment and run tests
 
 In addition to technical details, a CONTRIBUTING file is an opportunity to communicate
 your expectations for contributions, such as:
 
-- The types of contributions you're looking for
-- Your roadmap or vision for the project
-- How contributors should (or should not) get in touch with you
+-   The types of contributions you're looking for
+-   Your roadmap or vision for the project
+-   How contributors should (or should not) get in touch with you
 
 Using a warm, friendly tone and offering specific suggestions for contributions (such
 as writing documentation, or making a site) can go a long way in making newcomers
@@ -265,7 +265,7 @@ contributing guide](https://github.com/activeadmin/activeadmin/blob/HEAD/CONTRIB
 with:
 
 > First off, thank you for considering contributing to Active Admin. It's people
-  like you that make Active Admin such a great tool.
+> like you that make Active Admin such a great tool.
 
 In the earliest stages of your project, your CONTRIBUTING file can be simple. You
 should always explain how to report bugs or file issues, and any technical requirements
@@ -289,10 +289,10 @@ opens a pull request.
 ### Establishing a code of conduct
 
 > We've all had experiences where we faced what was probably abuse either as a
-  maintainer trying to explain why something had to be a certain way, or as a user…
-  asking a simple question. (…) A code of conduct becomes an easily referenced and
-  linkable document that indicates that your team takes constructive discourse very
-  seriously.
+> maintainer trying to explain why something had to be a certain way, or as a user…
+> asking a simple question. (…) A code of conduct becomes an easily referenced and
+> linkable document that indicates that your team takes constructive discourse very
+> seriously.
 > — \@mlynch, ["Making Open Source a Happier Place"](https://medium.com/ionic-and-the-mobile-web/making-open-source-a-happier-place-3b90d254f5f)
 
 Finally, a code of conduct helps set ground rules for behavior for your project's
@@ -302,7 +302,7 @@ constructive community behavior, which will reduce your stress as a maintainer.
 
 For more information, check out our [Code of Conduct guide](https://opensource.guide/code-of-conduct/).
 
-In addition to communicating *how* you expect participants to behave, a code of
+In addition to communicating _how_ you expect participants to behave, a code of
 conduct also tends to describe who these expectations apply to, when they apply,
 and what to do if a violation occurs.
 
@@ -318,16 +318,16 @@ your readme.
 
 ## Section 4: Naming and branding your project
 
-*Branding is more than a flashy logo or catchy project name. It's about how you
-talk about your project, and who you reach with your message.*
+_Branding is more than a flashy logo or catchy project name. It's about how you
+talk about your project, and who you reach with your message._
 
 ### Choosing the right name
 
 Pick a name that is easy to remember and, ideally, gives some idea of what the
 project does. For example:
 
-- [Sentry](https://github.com/getsentry/sentry) monitors apps for crash reporting
-- [Thin](https://github.com/macournoyer/thin) is a fast and simple Ruby web server
+-   [Sentry](https://github.com/getsentry/sentry) monitors apps for crash reporting
+-   [Thin](https://github.com/macournoyer/thin) is a fast and simple Ruby web server
 
 If you're building upon an existing project, using their name as a prefix can help
 clarify what your project does (for example, [node-fetch](https://github.com/bitinn/node-fetch)
@@ -370,10 +370,10 @@ of your project's brand. Consider how you might come across to your audience and
 whether that is the tone you wish to convey.
 
 > I tried to be involved with every thread on the mailing list, and showing exemplary
-  behaviour, being nice to people, taking their issues seriously and trying to be
-  helpful overall. After a while, people stuck around not to only ask questions,
-  but to help with the answering as well, and to my complete delight, they mimicked
-  my style.
+> behaviour, being nice to people, taking their issues seriously and trying to be
+> helpful overall. After a while, people stuck around not to only ask questions,
+> but to help with the answering as well, and to my complete delight, they mimicked
+> my style.
 > — \@janl on [CouchDB](https://github.com/apache/couchdb), ["Sustainable Open Source"](https://web.archive.org/web/20200723213552/https://writing.jan.io/2015/11/20/sustainable-open-source.html)
 
 Using warm, inclusive language (such as "them", even when referring to the single
@@ -398,37 +398,37 @@ and pat yourself on the back.
 
 ### Documentation
 
-- [ ] Project has a LICENSE file with an open source license
-- [ ] Project has basic documentation (readme, CONTRIBUTING, CODE_OF_CONDUCT)
-- [ ] The name is easy to remember, gives some idea of what the project does, and
-  does not conflict with an existing project or infringe on trademarks
-- [ ] The issue queue is up-to-date, with issues clearly organized and labeled
+-   [ ] Project has a LICENSE file with an open source license
+-   [ ] Project has basic documentation (readme, CONTRIBUTING, CODE_OF_CONDUCT)
+-   [ ] The name is easy to remember, gives some idea of what the project does, and
+        does not conflict with an existing project or infringe on trademarks
+-   [ ] The issue queue is up-to-date, with issues clearly organized and labeled
 
 ### Code
 
-- [ ] Project uses consistent code conventions and clear function/method/variable
-  names
-- [ ] The code is clearly commented, documenting intentions and edge cases
-- [ ] There are no sensitive materials in the revision history, issues, or pull
-  requests (for example, passwords or other non-public information)
+-   [ ] Project uses consistent code conventions and clear function/method/variable
+        names
+-   [ ] The code is clearly commented, documenting intentions and edge cases
+-   [ ] There are no sensitive materials in the revision history, issues, or pull
+        requests (for example, passwords or other non-public information)
 
 ### People
 
 If you're an individual:
 
-- [ ] You've talked to the legal department and/or understand the IP and open source
-  policies of your company (if you're an employee somewhere)
+-   [ ] You've talked to the legal department and/or understand the IP and open source
+        policies of your company (if you're an employee somewhere)
 
 If you're a company or organization:
 
-- [ ] You've talked to your legal department
-- [ ] You have a marketing plan for announcing and promoting the project
-- [ ] Someone is committed to managing community interactions (responding to issues,
-  reviewing and merging pull requests)
-- [ ] At least two people have administrative access to the project
+-   [ ] You've talked to your legal department
+-   [ ] You have a marketing plan for announcing and promoting the project
+-   [ ] Someone is committed to managing community interactions (responding to issues,
+        reviewing and merging pull requests)
+-   [ ] At least two people have administrative access to the project
 
 ## Section 6: You did it
 
-*Congratulations on open sourcing your first project. No matter the outcome, working
+_Congratulations on open sourcing your first project. No matter the outcome, working
 in public is a gift to the community. With every commit, comment, and pull request,
-you're creating opportunities for yourself and for others to learn and grow.*
+you're creating opportunities for yourself and for others to learn and grow._

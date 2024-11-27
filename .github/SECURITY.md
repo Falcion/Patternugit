@@ -1,4 +1,3 @@
-
 At PATTERNU, the project takes the security of its code, data, and the broader
 community seriously, this security policy (thereafter as “policy”) outlines the
 measures and expectations we have in place to safeguard our repository and its
@@ -33,27 +32,26 @@ If you prefer to submit the report without logging in, you can email the address
 specified in the code of conduct or the one provided below, if possible, you could
 try to crypt your message using the “PGP” keys provided in repository.
 
-- <a href="mailto: io.falcion@outlook.com">Email MAILTO</a>
+-   <a href="mailto: io.falcion@outlook.com">Email MAILTO</a>
 
 > [!Warning]
 > Please, refrain from reporting security vulnerabilities through public “github's”
-issues or pull requests.
+> issues or pull requests.
 
 When reporting a security vulnerability, please include the following as much information
 as you can provide to help us better understand the nature and scope of the issue:
 
-- type of issue (e.g., buffer overflow, SQL injection, cross-site scripting, etc.);
-- full paths of the source files related to the manifestation of the issue;
-- location of the affected source code (tag, branch, commit or direct URL);
-- any special configuration required to reproduce the issue;
-- step-by-step instructions to reproduce the issue;
-- proof-of-concept or exploit code, if it's possible;
-- impact of the issue, including how an attacker might exploit it;
+-   type of issue (e.g., buffer overflow, SQL injection, cross-site scripting, etc.);
+-   full paths of the source files related to the manifestation of the issue;
+-   location of the affected source code (tag, branch, commit or direct URL);
+-   any special configuration required to reproduce the issue;
+-   step-by-step instructions to reproduce the issue;
+-   proof-of-concept or exploit code, if it's possible;
+-   impact of the issue, including how an attacker might exploit it;
 
 Providing this information will enable us to triage your report more efficiently.
 
-Security policy
-===============
+# Security policy
 
 Following the principle of “Coordinated vulnerability disclosure” (thereafter as
 “CDV”), researchers are encouraged to disclose newly discovered vulnerabilities
@@ -88,5 +86,5 @@ customers in order to help them protect themselves.
 
 For more information on “CDV”, please refer to the following resources:
 
-- [ISO/IEC 29147:2018 on “Vulnerability Disclosure”](https://www.iso.org/standard/72311.html)
-- [The CERT Guide to “CVD”](https://resources.sei.cmu.edu/asset_files/SpecialReport/2017_003_001_503340.pdf)
+-   [ISO/IEC 29147:2018 on “Vulnerability Disclosure”](https://www.iso.org/standard/72311.html)
+-   [The CERT Guide to “CVD”](https://resources.sei.cmu.edu/asset_files/SpecialReport/2017_003_001_503340.pdf)

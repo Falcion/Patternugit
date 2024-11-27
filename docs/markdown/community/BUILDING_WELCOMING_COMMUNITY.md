@@ -1,20 +1,20 @@
 # Building Welcoming Communities
 
-*Building a community that encourages people to use, contribute to, and evangelize
-your project.*
+_Building a community that encourages people to use, contribute to, and evangelize
+your project._
 
 > **This is a Markdown fork of: <https://opensource.guide/building-community/>**
 
 **Table of Contents:**
 
-- [Building Welcoming Communities](#building-welcoming-communities)
-  - [Section 1: Setting your project up for success](#section-1-setting-your-project-up-for-success)
-    - [Make people feel welcome](#make-people-feel-welcome)
+-   [Building Welcoming Communities](#building-welcoming-communities)
+    -   [Section 1: Setting your project up for success](#section-1-setting-your-project-up-for-success)
+        -   [Make people feel welcome](#make-people-feel-welcome)
 
 ## Section 1: Setting your project up for success
 
-*You've launched your project, you're spreading the word, and people are checking
-it out. Awesome! Now, how do you get them to stick around?*
+_You've launched your project, you're spreading the word, and people are checking
+it out. Awesome! Now, how do you get them to stick around?_
 
 A welcoming community is an investment into your project's future and reputation.
 If your project is just starting to see its first contributions, start by giving
