@@ -11,15 +11,15 @@
  * Copyright (c) 2013-2020 GitHub Inc.
  */
 
-import { getRawHeader } from '@electron/asar';
-import { createHash } from 'node:crypto';
-import { writeFileSync } from 'node:fs';
+import { getRawHeader } from '@electron/asar'
+import { createHash } from 'node:crypto'
+import { writeFileSync } from 'node:fs'
 
-const archive = process.argv[2];
-const hashFile = process.argv[3];
+const archive = process.argv[2]
+const hashFile = process.argv[3]
 
-const { headerString } = getRawHeader(archive);
+const { headerString } = getRawHeader(archive)
 writeFileSync(
-    hashFile,
-    createHash('SHA256').update(headerString).digest('hex'),
-);
+  hashFile,
+  createHash('SHA256').update(headerString).digest('hex')
+)
