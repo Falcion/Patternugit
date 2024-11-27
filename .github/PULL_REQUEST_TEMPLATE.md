@@ -26,8 +26,8 @@ your pull request:
     git commit --amend -m "MESSAGE" -m "DESCRIPTION"
     ```
 
-    For amending old commit, see the stackoverflow question, more about changing
-    commits in official docs for github:\
+    For amending old commit, see the Stack Overflow question, more about changing
+    commits in official docs for GitHub:\
     <https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message/>
 
 2. In the case of “de-followization” of coding, documentation etc. files, you can

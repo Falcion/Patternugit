@@ -15,11 +15,11 @@ distributives, it also fixes some errors within WSL:\
 ## Problems within setup or usage
 
 Problems can be separated in three categories: ones with WSL, ones with HUSKY itself
-and ones with OS/desktop clients of GIT.
+and ones with OS/desktop clients of Git.
 
-- If NPM/NODE does not work in the WSL on your machine:\
+- If npm/Node does not work in the WSL on your machine:\
   <https://github.com/microsoft/WSL/issues/4249/>
-- If NPM/NPX not found message appears:\
+- If npx/npx not found message appears:\
   <https://github.com/desktop/desktop/issues/12562>
 
 > [!Tip]
@@ -76,6 +76,6 @@ This is a list of links to materials and sites
 referenced by this file:
 
 - <https://github.com/typicode/husky/issues/>
-- [Stackoverflow #44829878](https://stackoverflow.com/questions/44829878/)
-- [Stackoverflow #67115897](https://stackoverflow.com/questions/67115897/)
+- [Stack Overflow #44829878](https://stackoverflow.com/questions/44829878/)
+- [Stack Overflow #67115897](https://stackoverflow.com/questions/67115897/)
 - <https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating>

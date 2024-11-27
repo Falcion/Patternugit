@@ -40,7 +40,7 @@ and the value is an object containing the status and type of that version.
 - "`stable`"\
     Indicates a stable release that is ready for production use.
 - "`beta`"\
-    Indicates a pre-release version that may still have bugs.
+    Indicates a prerelease version that may still have bugs.
 - "`skipped`"\
     Indicates a version that was planned but not released.
 

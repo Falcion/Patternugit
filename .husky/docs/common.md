@@ -1,9 +1,9 @@
 Problems can be separated in three categories: ones with WSL, ones with HUSKY
-itself and ones with OS and desktop client of GIT.
+itself and ones with OS and desktop client of Git.
 
-- if NPM/NODE does not work in the WSL on your machine:\
+- if npm/Node does not work in the WSL on your machine:\
   <https://github.com/microsoft/WSL/issues/4249/>
-- If NPM/NPX not found message appears:\
+- If npm/npx not found message appears:\
   <https://github.com/desktop/desktop/issues/12562>
 
 > [!Tip]

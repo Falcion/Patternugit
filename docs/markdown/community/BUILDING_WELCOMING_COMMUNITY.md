@@ -13,17 +13,17 @@ your project.*
 
 ## Section 1: Setting your project up for success
 
-*You’ve launched your project, you’re spreading the word, and people are checking
+*You've launched your project, you're spreading the word, and people are checking
 it out. Awesome! Now, how do you get them to stick around?*
 
-A welcoming community is an investment into your project’s future and reputation.
+A welcoming community is an investment into your project's future and reputation.
 If your project is just starting to see its first contributions, start by giving
 early contributors a positive experience, and make it easy for them to keep coming
 back.
 
 ### Make people feel welcome
 
-One way to think about your project’s community is through what \@MikeMcQuaid calls
+One way to think about your project's community is through what \@MikeMcQuaid calls
 the [contributor funnel](https://mikemcquaid.com/2018/08/14/the-open-source-contributor-funnel-why-people-dont-contribute-to-your-open-source-project/):
 
 ![alt text](image-3.png)

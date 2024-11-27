@@ -97,7 +97,7 @@ such as resolving conflicts, organizing teams of people, and prioritizing work.
 ### It's empowering to be able to make changes, even small ones
 
 You don't have to become a lifelong contributor to enjoy participating in open source.
-Have you ever seen a typo on a website, and wished someone would fix it? On an open
+Have you ever seen a typo on a site, and wished someone would fix it? On an open
 source project, you can do just that. Open source helps people feel agency over
 their lives and how they experience the world, and that in itself is gratifying.
 
@@ -117,8 +117,8 @@ code. In fact, it's often the other parts of a project that are [most neglected 
 overlooked](https://github.com/blog/2195-the-shape-of-open-source). You'll do the
 project a *huge* favor by offering to pitch in with these types of contributions!
 
-> I’ve been renowned for my work on CocoaPods, but most people don’t know that I
-  actually don’t do any real work on the CocoaPods tool itself. My time on the project
+> I've been renowned for my work on CocoaPods, but most people don't know that I
+  actually don't do any real work on the CocoaPods tool itself. My time on the project
   is mostly spent doing things like documentation and working on branding.
 > — [\@orta](https://github.com/orta), ["Moving to OSS by default"](https://academy.realm.io/posts/orta-therox-moving-to-oss-by-default/)
 
@@ -193,7 +193,7 @@ For example:
 
 - \@sindresorhus curates a [list of "awesome" lists](https://github.com/sindresorhus/awesome)
 - \@h5bp maintains a [list of potential interview questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions)
-  for front-end developer candidates
+  for frontend developer candidates
 - \@stuartlynn and \@nicole-a-tesla made a [collection of fun facts about puffins](https://github.com/stuartlynn/puffin_facts)
 
 Even if you're a software developer, working on a documentation project can help
@@ -241,7 +241,7 @@ A typical open source project has the following types of people:
 
 Bigger projects may also have subcommittees or working groups focused on different
 tasks, such as tooling, triage, community moderation, and event organizing. Look
-on a project's website for a "team" page, or in the repository for governance
+on a project's site for a "team" page, or in the repository for governance
 documentation, to find this information.
 
 A project also has documentation. These files are usually listed in the top level
@@ -250,9 +250,9 @@ of a repository.
 - **LICENSE:** By definition, every open source project must have an [open source
   license](https://choosealicense.com). If the project does not have a license,
   it is not open source.
-- **README:** The README is the instruction manual that welcomes new community
+- **Readme:** The readme is the instruction manual that welcomes new community
   members to the project. It explains why the project is useful and how to get started.
-- **CONTRIBUTING:** Whereas READMEs help people *use* the project, contributing
+- **CONTRIBUTING:** Whereas readmes help people *use* the project, contributing
   docs help people *contribute* to the project. It explains what types of contributions
   are needed and how the process works. While not every project has a CONTRIBUTING
   file, its presence signals that this is a welcoming project to contribute to.
@@ -308,7 +308,7 @@ be better or different, act on your instinct.
 Open source isn't an exclusive club; it's made by people just like you. "Open
 source" is just a fancy term for treating the world's problems as fixable.
 
-You might scan a README and find a broken link or a typo. Or you're a new user and
+You might scan a readme and find a broken link or a typo. Or you're a new user and
 you noticed something is broken, or an issue that you think should really be in
 the documentation. Instead of ignoring it and moving on, or asking someone else
 to fix it, see whether you can help out by pitching in. That's what open source
@@ -360,7 +360,7 @@ in the Insights tab of a repository's homepage, such as [Virtual-Coffee](https:/
 - [ ] How often do people commit? (On GitHub, you can find this by clicking "Commits"
   in the top bar.)
 
-Next, look at the project’s issues.
+Next, look at the project's issues.
 
 - [ ] How many open issues are there?
 - [ ] Do maintainers respond quickly to issues when they are opened?
@@ -392,7 +392,7 @@ new contributors.
 > Whenever you see a long thread, spot check responses from core developers coming
   late in the thread. Are they summarizing constructively, and taking steps to bring
   the thread to a decision while remaining polite? If you see a lot of flame wars
-  going on, that’s often a sign that energy is going into argument instead of into
+  going on, that's often a sign that energy is going into argument instead of into
   development.
 > — \@kfogel, [*Producing OSS*](https://producingoss.com/en/evaluating-oss-projects.html)
 
@@ -407,7 +407,7 @@ Whether you're a one-time contributor or trying to join a community, working wit
 others is one of the most important skills you'll develop in open source.
 
 > [As a new contributor,] I quickly realized I had to ask questions if I wanted
-  to be able to close the issue. I skimmed through the code base. Once I had some
+  to be able to close the issue. I skimmed through the codebase. Once I had some
   sense of what was going on, I asked for more direction. And voilà! I was able to
   solve the issue after getting all the relevant details I needed.
 > — \@shubheksha, [A Beginner's Very Bumpy Journey Through The World of Open Source](https://www.freecodecamp.org/news/a-beginners-very-bumpy-journey-through-the-world-of-open-source-4d108d540b39/)
@@ -421,17 +421,17 @@ a new idea, explain why you think it'd be useful to the project (not just to you
 
 > 😇 *"X doesn't happen when I do Y"*
 >
-> 😢 *“X is broken! Please fix it.”*
+> 😢 *"X is broken! Please fix it."*
 
 **Do your homework beforehand.** It's OK not to know things, but show that you tried.
-Before asking for help, be sure to check a project's README, documentation, issues
+Before asking for help, be sure to check a project's readme, documentation, issues
 (open or closed), mailing list, and search the internet for an answer. People will
 appreciate it when you demonstrate that you're trying to learn.
 
-> 😇 *“I’m not sure how to implement X. I checked the help docs and didn’t find
-  any mentions.”*
+> 😇 *"I'm not sure how to implement X. I checked the help docs and didn't find
+  any mentions."*
 >
-> 😢 *“How do I X?”*
+> 😢 *"How do I X?"*
 
 **Keep requests short and direct.** Much like sending an email, every contribution,
 no matter how simple or helpful, requires someone else's review. Many projects have
@@ -487,7 +487,7 @@ the internet a better place than when you found it.
 ### Gathering context
 
 Before doing anything, do a quick check to make sure your idea hasn't been discussed
-elsewhere. Skim the project's README, issues (open and closed), mailing list, and
+elsewhere. Skim the project's readme, issues (open and closed), mailing list, and
 Stack Overflow. You don't have to spend hours going through everything, but a quick
 search for a few key terms goes a long way.
 
@@ -501,7 +501,7 @@ is on GitHub, you'll likely communicate by doing the following:
   contribution.
 
 Before you open an issue or pull request, check the project's contributing docs
-(usually a file called CONTRIBUTING, or in the README), to see whether you need
+(usually a file called CONTRIBUTING, or in the readme), to see whether you need
 to include anything specific. For example, they may ask that you follow a template,
 or require that you use tests.
 

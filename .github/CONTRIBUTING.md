@@ -188,7 +188,7 @@ it is required for any code changes to be accepted.
 
 If you have multiple accounts or multiple email addresses associated with a single
 account, you must sign the CLA using the primary email address of the “github.com”
-account used to author GIT commits and send pull requests.
+account used to author Git commits and send pull requests.
 
 The following documents can help you sort out issues with accounts and multiple
 email addresses:
