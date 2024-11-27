@@ -10,7 +10,11 @@ const __dirname = path.dirname(__filename)
 
 export default {
   // Global ignore patterns
-  ignores: ['**/node_modules/', '**/dist/', '**/out/', '**/prepare_template.js', '*.d.ts'],
+  /*
+     * Putting ESLint config so it wouldn't put itself on checks:
+     * Config is not very stable for checks of linters because of it's "dynamics",
+     */
+  ignores: ['.eslintrc.*js*', '**/node_modules/', '**/dist/', '**/out/', '**/prepare_template.js', '*.d.ts'],
 
   // JavaScript-specific configuration
   overrides: [
