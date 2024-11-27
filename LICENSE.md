@@ -9,8 +9,8 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
 of the software, and to permit persons to whom the software is furnished to do so,
 subject to the following conditions:
 
-- the above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the software;
+-   the above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the software;
 
 **As-is paragraph.**
 
@@ -25,5 +25,5 @@ the software.
 
 For source-versions of this license, check the followed links:
 
-- <https://choosealicense.com/licenses/mit>
-- <https://spdx.org/licenses/MIT>
+-   <https://choosealicense.com/licenses/mit>
+-   <https://spdx.org/licenses/MIT>
