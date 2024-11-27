@@ -6,6 +6,7 @@ import js from '@eslint/js'
 import { FlatCompat } from '@eslint/eslintrc'
 import globals from 'globals'
 import eslintPluginJsonc from 'eslint-plugin-jsonc'
+import eslintConfigPrettier from 'eslint-config-prettier'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -17,6 +18,7 @@ const compat = new FlatCompat({
 
 export default [
   ...eslintPluginJsonc.configs['flat/recommended-with-jsonc'],
+  eslintConfigPrettier,
   {
     // Global ignore patterns
     ignores: [
@@ -38,6 +40,17 @@ export default [
   {
     // Linting for JavaScript files
     files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
+    ignores: [
+      '**/.eslintrc.cjs',
+      '**/database/**/*.js',
+      '**/database/**/*.ts',
+      '**/*.cjs',
+      '**/node_modules/',
+      '**/dist/',
+      '**/prepare_template.js',
+      '**/out/*',
+      '**/*.d.ts'
+    ],
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
@@ -54,6 +67,17 @@ export default [
   {
     // Linting for TypeScript files
     files: ['!*.d.ts', '**/*.ts', '**/*.tsx'],
+    ignores: [
+      '**/.eslintrc.cjs',
+      '**/database/**/*.js',
+      '**/database/**/*.ts',
+      '**/*.cjs',
+      '**/node_modules/',
+      '**/dist/',
+      '**/prepare_template.js',
+      '**/out/*',
+      '**/*.d.ts'
+    ],
     plugins: {
       '@typescript-eslint': typescriptEslint
     },
