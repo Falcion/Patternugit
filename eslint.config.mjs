@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url'
 import js from '@eslint/js'
 import { FlatCompat } from '@eslint/eslintrc'
 import globals from 'globals'
+import eslintPluginJsonc from 'eslint-plugin-jsonc'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -15,6 +16,7 @@ const compat = new FlatCompat({
 })
 
 export default [
+  ...eslintPluginJsonc.configs['flat/recommended-with-jsonc'],
   {
     // Global ignore patterns
     ignores: [

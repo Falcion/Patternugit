@@ -30,3 +30,4 @@ jobs:
                   IGNORE_GITIGNORED_FILES: true
                   JAVASCRIPT_ES_CONFIG_FILE: 'eslint.config.mjs'
                   TYPESCRIPT_ES_CONFIG_FILE: 'eslint.config.mjs'
+                  NATURAL_LANGUAGE_CONFIG_FILE: '.textlintrc.json'
