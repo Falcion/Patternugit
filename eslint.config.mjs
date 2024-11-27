@@ -6,7 +6,6 @@ import js from '@eslint/js'
 import { FlatCompat } from '@eslint/eslintrc'
 import globals from 'globals'
 import eslintPluginJsonc from 'eslint-plugin-jsonc'
-import eslintConfigPrettier from 'eslint-config-prettier'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -18,7 +17,6 @@ const compat = new FlatCompat({
 
 export default [
   ...eslintPluginJsonc.configs['flat/recommended-with-jsonc'],
-  eslintConfigPrettier,
   {
     // Global ignore patterns
     ignores: [
@@ -33,24 +31,9 @@ export default [
       '**/*.d.ts'
     ]
   },
-  ...compat.extends(
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended'
-  ),
   {
-    // Linting for JavaScript files
+    // JavaScript-specific configuration
     files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
-    ignores: [
-      '**/.eslintrc.cjs',
-      '**/database/**/*.js',
-      '**/database/**/*.ts',
-      '**/*.cjs',
-      '**/node_modules/',
-      '**/dist/',
-      '**/prepare_template.js',
-      '**/out/*',
-      '**/*.d.ts'
-    ],
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
@@ -59,48 +42,31 @@ export default [
         ...globals.browser,
         ...globals.es2016
       }
-    },
-    rules: {
-      ...js.configs.recommended.rules // Default ESLint rules for JS
     }
   },
   {
-    // Linting for TypeScript files
-    files: ['!*.d.ts', '**/*.ts', '**/*.tsx'],
-    ignores: [
-      '**/.eslintrc.cjs',
-      '**/database/**/*.js',
-      '**/database/**/*.ts',
-      '**/*.cjs',
-      '**/node_modules/',
-      '**/dist/',
-      '**/prepare_template.js',
-      '**/out/*',
-      '**/*.d.ts'
-    ],
+    // TypeScript-specific configuration
+    files: ['**/*.ts', '**/*.tsx'],
     plugins: {
       '@typescript-eslint': typescriptEslint
     },
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        project: './tsconfig.json', // Use your project's tsconfig.json for parsing
+        parser: '@typescript-eslint/parser',
+        project: './tsconfig.json',
         tsconfigRootDir: __dirname
-      },
-      globals: {
-        ...globals.node,
-        ...globals.browser,
-        ...globals.es2016
       }
     },
     rules: {
+      ...typescriptEslint.configs.recommended.rules, // Use recommended TypeScript rules
       '@typescript-eslint/interface-name-prefix': 'off',
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
-      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-non-null-assertion': 'off',
-      'no-case-declarations': 'off',
       '@typescript-eslint/no-var-requires': 'off'
     }
-  }
+  },
+  ...compat.extends('eslint:recommended', 'plugin:@typescript-eslint/recommended')
 ]

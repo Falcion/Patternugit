@@ -18,18 +18,18 @@ import { resolve } from 'node:path'
 import { getElectronVersion } from './lib/get-version'
 
 parseDocs({
-    baseDirectory: resolve(__dirname, '..'),
-    packageMode: 'single',
-    useReadme: false,
-    moduleVersion: getElectronVersion()
+  baseDirectory: resolve(__dirname, '..'),
+  packageMode: 'single',
+  useReadme: false,
+  moduleVersion: getElectronVersion()
 })
-    .then((api) => {
-        return promises.writeFile(
-            resolve(__dirname, '..', 'electron-api.json'),
-            JSON.stringify(api, null, 2)
-        )
-    })
-    .catch((err) => {
-        console.error(err)
-        process.exit(1)
-    })
+  .then((api) => {
+    return promises.writeFile(
+      resolve(__dirname, '..', 'electron-api.json'),
+      JSON.stringify(api, null, 2)
+    )
+  })
+  .catch((err) => {
+    console.error(err)
+    process.exit(1)
+  })

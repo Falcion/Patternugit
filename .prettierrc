@@ -1,17 +1,19 @@
 {
-    "tabWidth": 4,
-    "useTabs": false,
-    "bracketSpacing": true,
-    "singleQuote": true,
-    "endOfLine": "crlf",
-    "trailingComma": "none",
-    "semi": false,
-    "overrides": [
-        {
-            "files": "*.md",
-            "options": {
-                "parser": "markdown"
-            }
-        }
-    ]
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSpacing": true,
+  "singleQuote": true,
+  "endOfLine": "crlf",
+  "trailingComma": "none",
+  "arrowParens": "always",
+  "semi": false,
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "parser": "markdown"
+      }
+    }
+  ],
+  "printWidth": 100
 }
