@@ -1,16 +1,16 @@
 {
-	"files.exclude": {
-		"**/.git": true,
-		"**/.DS_Store": true
-	},
-	"yaml.schemas": {
-		"yamllint": ["https://json.schemastore.org/yamllint.json"],
-		"https://json.schemastore.org/yamllint.json": "/.github/ISSUE_TEMPLATE/config.yml"
-	},
-	"files.autoSave": "onFocusChange",
-	"editor.formatOnSave": true,
-	"[markdown]": {
-		"editor.rulers": [80]
-	},
-	"prettier.trailingComma": "all"
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true
+    },
+    "yaml.schemas": {
+        "yamllint": ["https://json.schemastore.org/yamllint.json"],
+        "https://json.schemastore.org/yamllint.json": "/.github/ISSUE_TEMPLATE/config.yml"
+    },
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnSave": true,
+    "[markdown]": {
+        "editor.rulers": [80]
+    },
+    "prettier.trailingComma": "all"
 }
