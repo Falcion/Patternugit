@@ -33,7 +33,7 @@ class PREPARE_MODULE {
    * Creates an instance of the PREPARE_MODULE.
    * @param {string[]} entries - An array of custom entries to include for searching.
    */
-  constructor(entries: string[]) {
+  constructor (entries: string[]) {
     if (entries[0] !== 'NO') {
       for (const item of entries) this.INCLUDING_VALUES.push(item)
     }
@@ -45,7 +45,7 @@ class PREPARE_MODULE {
    * @param {string[]} data - An array of strings to search for within the file.
    * @returns {Promise<void>} - A promise that resolves when the search is complete.
    */
-  async search(filepath: string, data: string[]): Promise<void> {
+  async search (filepath: string, data: string[]): Promise<void> {
     const content = (await fs.readFile(filepath, 'utf-8')).split('\n')
 
     for (let i = 0; i < content.length; i++) {
@@ -63,7 +63,7 @@ class PREPARE_MODULE {
    * @param {string} directory - The directory path to traverse.
    * @returns {Promise<void>} - A promise that resolves when the traversal is complete.
    */
-  async traverse(directory: string): Promise<void> {
+  async traverse (directory: string): Promise<void> {
     try {
       const files: string[] = await fs.readdir(directory)
       for (const file of files) {
