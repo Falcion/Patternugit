@@ -14,28 +14,28 @@
 import { createPackageWithOptions } from '@electron/asar'
 import assert from 'node:assert'
 import {
-  mkdtempSync,
-  mkdirsSync,
-  writeFileSync,
-  readFileSync,
-  remove
+    mkdtempSync,
+    mkdirsSync,
+    writeFileSync,
+    readFileSync,
+    remove
 } from 'fs-extra'
 import { tmpdir } from 'node:os'
 import { resolve, relative, dirname } from 'node:path'
 
 const getArgGroup = (name) => {
-  const group = []
-  let inGroup = false
-  for (const arg of process.argv) {
-    // At the next flag we stop being in the current group
-    if (arg.startsWith('--')) inGroup = false
-    // Push all args in the group
-    if (inGroup) group.push(arg)
-    // If we find the start flag, start pushing
-    if (arg === `--${name}`) inGroup = true
-  }
+    const group = []
+    let inGroup = false
+    for (const arg of process.argv) {
+        // At the next flag we stop being in the current group
+        if (arg.startsWith('--')) inGroup = false
+        // Push all args in the group
+        if (inGroup) group.push(arg)
+        // If we find the start flag, start pushing
+        if (arg === `--${name}`) inGroup = true
+    }
 
-  return group
+    return group
 }
 
 const base = getArgGroup('base')
@@ -48,37 +48,37 @@ assert(out.length === 1, 'should have a single out path')
 
 // Ensure all files are inside the base dir
 for (const file of files) {
-  if (!file.startsWith(base[0])) {
-    console.error(
+    if (!file.startsWith(base[0])) {
+        console.error(
             `Expected all files to be inside the base dir but "${file}" was not in "${base[0]}"`
-    )
-    process.exit(1)
-  }
+        )
+        process.exit(1)
+    }
 }
 
 const tmpPath = mkdtempSync(resolve(tmpdir(), 'electron-gn-asar-'))
 
 try {
-  // Copy all files to a tmp dir to avoid including scrap files in the ASAR
-  for (const file of files) {
-    const newLocation = resolve(tmpPath, relative(base[0], file))
-    mkdirsSync(dirname(newLocation))
-    writeFileSync(newLocation, readFileSync(file))
-  }
+    // Copy all files to a tmp dir to avoid including scrap files in the ASAR
+    for (const file of files) {
+        const newLocation = resolve(tmpPath, relative(base[0], file))
+        mkdirsSync(dirname(newLocation))
+        writeFileSync(newLocation, readFileSync(file))
+    }
 } catch (err) {
-  console.error('Unexpected error while generating ASAR', err)
-  remove(tmpPath)
-    .then(() => process.exit(1))
-    .catch(() => process.exit(1))
+    console.error('Unexpected error while generating ASAR', err)
+    remove(tmpPath)
+        .then(() => process.exit(1))
+        .catch(() => process.exit(1))
 }
 
 // Create the ASAR archive
 createPackageWithOptions(tmpPath, out[0], {})
-  .catch((err) => {
-    const exit = () => {
-      console.error('Unexpected error while generating ASAR', err)
-      process.exit(1)
-    }
-    remove(tmpPath).then(exit).catch(exit)
-  })
-  .then(() => remove(tmpPath))
+    .catch((err) => {
+        const exit = () => {
+            console.error('Unexpected error while generating ASAR', err)
+            process.exit(1)
+        }
+        remove(tmpPath).then(exit).catch(exit)
+    })
+    .then(() => remove(tmpPath))
