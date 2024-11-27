@@ -10,16 +10,13 @@ itself and ones with OS and desktop client of Git.
 > Also check your "%PATH% → Node.js/bin/" paths in environment variables context:\
 >
 > - Windows users, if you have everything set up and installed, check this comment
-
     from same issue:\
-
 > <https://github.com/desktop/desktop/issues/12562#issuecomment-1007154382>
 
 If you encounter this error:
 
 ```powershell
-<3>WSL (10) ERROR: CreateProcessCommon:559: execvpe(/bin/bash) failed: No such file
-or directory
+<3>WSL (10) ERROR: CreateProcessCommon:559: execvpe(/bin/bash) failed: No such file or directory
 husky - pre-commit script failed (code 1)
 ```
 
@@ -38,13 +35,13 @@ could cause errors like the missing "`/bin/bash/`".
 
 1. Check your current WSL distributions run:
 
-   ```bash
-   wsl --list --verbose
-   # Example output:
-   # NAME                   STATE           VERSION
-   # * Docker Desktop       Running         2
-   #   Ubuntu               Stopped         2
-   ```
+    ```bash
+    wsl --list --verbose
+    # Example output
+    # NAME                   STATE           VERSION
+    # * Docker Desktop       Running         2
+    # Ubuntu               Stopped         2
+    ```
 
 2. Set your distributive (in example - "Ubuntu" is choice, WSL's default distribution)
    as the default distribution:

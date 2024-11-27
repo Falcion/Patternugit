@@ -290,8 +290,8 @@ documenting the vision for his project, [Dokku](https://github.com/dokku/dokku),
 helped those goals live on even after he stepped away from the project:
 
 > I wrote a wiki page describing what I wanted and why I wanted it. For some reason
-> it came as a surprise to me that the maintainers started moving the project in that
-> direction! Did it happen exactly how I'd do it? Not always. But it still brought
+> it came as a surprise to me that the maintainers started moving the project in
+> that direction! Did it happen exactly how I'd do it? Not always. But it still brought
 > the project closer to what I wrote down.
 
 ### Let others build the solutions they need

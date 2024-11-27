@@ -37,8 +37,8 @@ about a commit, it has a specific format:\
    it helps in categorizing the changes: in other case, write the sector which you
    affect or use an empty string for tests and/or refactor changes.
 3. The "\<SUMMARY>" string-value defines the succinct description of changes, for
-   this parameter, use the imperative, present tense and avoid capitalizing ONLY the
-   first letter or adding the period at the end, for practical example:\
+   this parameter, use the imperative, present tense and avoid capitalizing ONLY
+   the first letter or adding the period at the end, for practical example:\
    "update the SQLITE integration into the code and implement data"
 
 > Keep in mind, that the headers are the most valued part of commit's data, because
@@ -103,8 +103,8 @@ as described in RFC 2119[^3]:
 5. A description MUST immediately follow the colon and space after the type/scope
    prefix, description is a short summary of the code changes;
 6. Longer commit body MAY be provided after the short description, providing additional
-   contextual information about the code changes, body MUST begin one empty line after
-   the description;
+   contextual information about the code changes, body MUST begin one empty line
+   after the description;
 7. Commit body is free-form and MAY consist of any number of newline separated paragraphs;
 8. One or more footers MAY be provided one empty line after the body, each footer
    MUST consist of a word token, followed by either a ":" or "#" separator, followed

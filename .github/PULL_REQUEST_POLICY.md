@@ -16,14 +16,14 @@ and the content in the target branch.
 > When working with pull requests, keep the following in mind:
 >
 > - If you're working in the shared repository model, we recommend that you use a
->   topic branch for your pull request: while you can send pull requests from any branch
->   or commit, with a topic branch you can push follow-up commits if you need to update
->   your proposed changes.\
->    <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/about-collaborative-development-models/>
+>   topic branch for your pull request: while you can send pull requests from any
+>   branch or commit, with a topic branch you can push follow-up commits if you
+>   need to update your proposed changes.\
+>   <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/about-collaborative-development-models/>
 > - Be very careful when force pushing commits to a pull request, force pushing
 >   changes the repository history and can corrupt your pull request, if other collaborators
->   branch the project before a force push, the force push may overwrite commits that
->   collaborators based their work on.
+>   branch the project before a force push, the force push may overwrite commits
+    that collaborators based their work on.
 
 For more information about PRs check:
 <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests/>

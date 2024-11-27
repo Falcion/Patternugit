@@ -63,8 +63,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
 1. Software using Semantic Versioning MUST declare a public API. This API could be
-   declared in the code itself or exist strictly in documentation. However it is done,
-   it SHOULD be precise and comprehensive.
+   declared in the code itself or exist strictly in documentation. However it is
+   done, it SHOULD be precise and comprehensive.
 2. A normal version number MUST take the form X.Y.Z where X, Y, and Z are non-negative
    integers, and MUST NOT contain leading zeroes. X is the major version, Y is the
    minor version, and Z is the patch version. Each element MUST increase numerically.
@@ -85,8 +85,9 @@ as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
    include patch level changes. Patch version MUST be reset to 0 when minor version
    is incremented.
 8. Major version X (X.y.z | X > 0) MUST be incremented if any backward incompatible
-   changes are introduced to the public API. It MAY also include minor and patch level
-   changes. Patch and minor versions MUST be reset to 0 when major version is incremented.
+   changes are introduced to the public API. It MAY also include minor and patch
+   level changes. Patch and minor versions MUST be reset to 0 when major version
+   is incremented.
 9. A prerelease version MAY be denoted by appending a hyphen and a series of dot
    separated identifiers immediately following the patch version. Identifiers MUST
    comprise only ASCII alphanumerics and hyphens [0-9A-Za-z-]. Identifiers MUST NOT
@@ -97,17 +98,18 @@ as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
    1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92, 1.0.0-x-y-z.--.
 10. Build metadata MAY be denoted by appending a plus sign and a series of dot separated
     identifiers immediately following the patch or prerelease version. Identifiers
-    MUST comprise only ASCII alphanumerics and hyphens [0-9A-Za-z-]. Identifiers MUST|
-    NOT be empty. Build metadata MUST be ignored when determining version precedence.
+    MUST comprise only ASCII alphanumerics and hyphens [0-9A-Za-z-]. Identifiers
+    MUST NOT be empty. Build metadata MUST be ignored when determining version precedence.
     Thus two versions that differ only in the build metadata, have the same precedence.
-    Examples: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85, 1.0.0+21AF26D3----117B344092BD.
+    Examples: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85,
+    1.0.0+21AF26D3----117B344092BD.
 11. Precedence refers to how versions are compared to each other when ordered.
     1. Precedence MUST be calculated by separating the version into major, minor,
        patch and prerelease identifiers in that order (Build metadata does not figure
        into precedence).
     2. Precedence is determined by the first difference when comparing each of these
-       identifiers from left to right as follows: Major, minor, and patch versions are
-       always compared numerically.\
+       identifiers from left to right as follows: Major, minor, and patch versions
+       are always compared numerically.\
        \
        Example: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.
     3. When major, minor, and patch are equal, a prerelease version has lower
@@ -116,8 +118,12 @@ as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
        Example: 1.0.0-alpha < 1.0.0.
     4. Precedence for two prerelease versions with the same major, minor, and
        patch version MUST be determined by comparing each dot separated identifier
-       from left to right until a difference is found as follows: 1. Identifiers consisting of only digits are compared numerically. 2. Identifiers with letters or hyphens are compared lexically in ASCII
-       sort order. 3. Numeric identifiers always have lower precedence than non-numeric identifiers. 4. A larger set of prerelease fields has a higher precedence than a smaller
+       from left to right until a difference is found as follows:
+       1. Identifiers consisting of only digits are compared numerically.
+       2. Identifiers with letters or hyphens are compared lexically in ASCII
+       sort order.
+       3. Numeric identifiers always have lower precedence than non-numeric identifiers.
+       4. A larger set of prerelease fields has a higher precedence than a smaller
        set, if all of the preceding identifiers are equal.\
        \
        Example: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2
@@ -313,7 +319,8 @@ a "v" is a common way (in English) to indicate it is a version number. Abbreviat
 Example:`git tag v1.2.3 -m "Release version 1.2.3"`, in which case "v1.2.3" is a
 tag name and the semantic version is "1.2.3".
 
-**Is there a suggested regular expression (regular expression) to check a SemVer string?**
+**Is there a suggested regular expression (regular expression) to check a SemVer
+string?**
 
 There are two. One with named groups for those systems that support them (PCRE
 [Perl Compatible Regular Expressions, i.e. Perl, PHP and R], Python and Go).
