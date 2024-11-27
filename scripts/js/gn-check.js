@@ -22,7 +22,7 @@ import { normalize, dirname, resolve, delimiter } from 'node:path'
 
 import { getOutDir } from './lib/utils'
 // This is "magic code"
-
+// eslint-disable-next-line
 const args = require('minimist')(process.argv.slice(2), { string: ['outDir'] })
 
 const SOURCE_ROOT = normalize(dirname(__dirname))

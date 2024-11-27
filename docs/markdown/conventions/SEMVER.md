@@ -4,15 +4,15 @@
 
 **Table of Contents:**
 
--   [Semantic Versioning 2.0.0](#semantic-versioning-200)
-    -   [Summary](#summary)
-    -   [Introduction](#introduction)
-    -   [Semantic Versioning Specification (SemVer)](#semantic-versioning-specification-semver)
-    -   [Backus–Naur Form Grammar for Valid SemVer Versions](#backusnaur-form-grammar-for-valid-semver-versions)
-    -   [Why Use Semantic Versioning?](#why-use-semantic-versioning)
-    -   [FAQ](#faq)
-    -   [About](#about)
-    -   [License](#license)
+- [Semantic Versioning 2.0.0](#semantic-versioning-200)
+  - [Summary](#summary)
+  - [Introduction](#introduction)
+  - [Semantic Versioning Specification (SemVer)](#semantic-versioning-specification-semver)
+  - [Backus–Naur Form Grammar for Valid SemVer Versions](#backusnaur-form-grammar-for-valid-semver-versions)
+  - [Why Use Semantic Versioning?](#why-use-semantic-versioning)
+  - [FAQ](#faq)
+  - [About](#about)
+  - [License](#license)
 
 ## Summary
 

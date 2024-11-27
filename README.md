@@ -72,13 +72,13 @@ prerequisites besides [Node.js](https://dotnet.microsoft.com/en-us/download/).
 
 But, for contributing to this project, we highly recommending following those prerequisites:
 
--   Installed [Node.js](https://dotnet.microsoft.com/en-us/download/) on your desktop
-    on which you will edit/setup this project;
--   Installed [Python](https://www.python.org/) if you want to contribute to the
-    scripts of this project (in terms of .PY scripts);
--   It is recommended to use [GitHub CLI](https://cli.github.com/) on your machine
-    for better experience via working not only within this project, but this the
-    .GIT in entirety;
+- Installed [Node.js](https://dotnet.microsoft.com/en-us/download/) on your desktop
+  on which you will edit/setup this project;
+- Installed [Python](https://www.python.org/) if you want to contribute to the
+  scripts of this project (in terms of .PY scripts);
+- It is recommended to use [GitHub CLI](https://cli.github.com/) on your machine
+  for better experience via working not only within this project, but this the
+  .GIT in entirety;
 
 <p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
 
@@ -103,8 +103,8 @@ Guidelines for direct-installation way:
 1. Download last tag on project's repository, for the last ZIP-tarball link provided
    below:\
     [download latest release](https://github.com/Falcion/Patternugit/releases/latest/)
-    - or just download the source-code through "Code → Download ZIP (or any option
-      that you want)", and proceed to the next step;
+   - or just download the source-code through "Code → Download ZIP (or any option
+     that you want)", and proceed to the next step;
 2. Within downloaded ZIP (or project), clone everything and paste to the directory
    of your project via "copy+paste" procedure;
 3. Now, you can use project just as if you installed it from other algorithms.
@@ -174,15 +174,15 @@ to follow this algorithm:
   after completion of it.
  -->
 
--   [x] Upgrade and update project to the second version generation;
--   [x] Refactor to project according to integrated linters and pass the checks
-        within future;
--   [ ] Write small pages site which contains philosophy and common ideology of
-        project and how to use it;
-    -   [ ] Format and style it;
--   [ ] Write a Markdown file which contains a pattern for philosohpies or ideologies
-        for projects;
-    -   [ ] And write down a specified philosophy for this exact project;
+- [x] Upgrade and update project to the second version generation;
+- [x] Refactor to project according to integrated linters and pass the checks
+      within future;
+- [ ] Write small pages site which contains philosophy and common ideology of
+      project and how to use it;
+  - [ ] Format and style it;
+- [ ] Write a Markdown file which contains a pattern for philosohpies or ideologies
+      for projects;
+  - [ ] And write down a specified philosophy for this exact project;
 
 <p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
 
@@ -207,8 +207,8 @@ deployment system[^4].
 
 More about it in this article:
 
--   ["Working with forks"](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork/)
-    about syncing one-file fork;
+- ["Working with forks"](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork/)
+  about syncing one-file fork;
 
 <p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
 
@@ -238,9 +238,9 @@ For any legal purposes, you can contact developer/maintainer through its email:
 
 <!-- Using "MAILTO" for better view of README -->
 
--   <a href="mailto: io.falcion@outlook.com">Outlook email</a>\
-    You can also check contact information in [CODEOWNERS](./.github/CODEOWNERS)
-    file within referencing our contacts.
+- <a href="mailto: io.falcion@outlook.com">Outlook email</a>\
+  You can also check contact information in [CODEOWNERS](./.github/CODEOWNERS)
+  file within referencing our contacts.
 
 If the developer/maintainer didn't answered, or you have other questions in nature,
 you can use issues page on this repository via specified templates or indirect
@@ -253,13 +253,13 @@ self-written issue.
 
 ## Acknowledgments
 
--   <https://shields.io/>
--   <https://simpleicons.org/>
--   <https://gitignore.io/>
--   <https://gitattributes.io/>
-    -   this generator is discontinued, use:\
-        <https://richienb.github.io/gitattributes-generator/>
--   [Best readme template](https://github.com/othneildrew/Best-README-Template)
+- <https://shields.io/>
+- <https://simpleicons.org/>
+- <https://gitignore.io/>
+- <https://gitattributes.io/>
+  - this generator is discontinued, use:\
+    <https://richienb.github.io/gitattributes-generator/>
+- [Best readme template](https://github.com/othneildrew/Best-README-Template)
 
 <p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
 

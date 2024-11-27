@@ -23,10 +23,10 @@ project, to clarify expected behavior in the community.
 
 This document was adopted/created/inspired by:
 
--   <https://www.contributor-covenant.org/>
--   [.JS Conference - Code of conduct](https://javascript-conference.com/code-of-conduct/)
--   [NET Foundation - Code of conduct](https://dotnetfoundation.org/about/policies/code-of-conduct)
--   <https://docs.github.com/en/site-policy/github-terms/github-community-code-of-conduct/>
+- <https://www.contributor-covenant.org/>
+- [.JS Conference - Code of conduct](https://javascript-conference.com/code-of-conduct/)
+- [NET Foundation - Code of conduct](https://dotnetfoundation.org/about/policies/code-of-conduct)
+- <https://docs.github.com/en/site-policy/github-terms/github-community-code-of-conduct/>
 
 ## Commitment
 
@@ -55,20 +55,20 @@ allowing space for open contribution.
 To foster a safe and productive environment, the project encourages community
 members to adhere to the following guidelines:
 
--   **Be welcoming and open-minded.**\
-    Embrace other ideas and experience levels, welcome new collaborators, and
-    respect diverse perspectives.
--   **Be respectful and empathetic.**\
-    Engage in thoughtful and constructive criticism, criticize ideas rather
-    than people, and treat others with courtesy; understand and respect the
-    feelings and experiences of others, and create a community where everyone
-    feels safe to contribute and share ideas.
--   **Improve the discussion.**\
-    Contribute to productive discussions, stay on topic, and provide relevant
-    and valuable context when sharing links.
--   **Share mindfully.**\
-    Only share valuable and relevant resources, avoid unsolicited links, and
-    refrain from sharing sensitive information.
+- **Be welcoming and open-minded.**\
+  Embrace other ideas and experience levels, welcome new collaborators, and
+  respect diverse perspectives.
+- **Be respectful and empathetic.**\
+  Engage in thoughtful and constructive criticism, criticize ideas rather
+  than people, and treat others with courtesy; understand and respect the
+  feelings and experiences of others, and create a community where everyone
+  feels safe to contribute and share ideas.
+- **Improve the discussion.**\
+  Contribute to productive discussions, stay on topic, and provide relevant
+  and valuable context when sharing links.
+- **Share mindfully.**\
+  Only share valuable and relevant resources, avoid unsolicited links, and
+  refrain from sharing sensitive information.
 
 These are examples of behavior that contributes to a positive environment for
 our community.
@@ -77,17 +77,17 @@ our community.
 
 Following behaviors are considered unacceptable within this community:
 
--   trolling, insulting/derogatory comments, or public/private harassment;
--   publishing others' private information without explicit permission;
--   not respecting reasonable communication boundaries;
--   using sexualized language or imagery, unwelcome sexual attention or advances;
--   swearing or using strong or disturbing language;
--   demonstrating graphics or content that may be considered disturbing;
--   promoting or assuming any kind of inequality or discrimination;
--   promoting drug use and/or any other illegal activities;
--   attacking personal tastes or preferences;
--   engaging in any conduct that could reasonably be considered
-    inappropriate in a professional setting;
+- trolling, insulting/derogatory comments, or public/private harassment;
+- publishing others' private information without explicit permission;
+- not respecting reasonable communication boundaries;
+- using sexualized language or imagery, unwelcome sexual attention or advances;
+- swearing or using strong or disturbing language;
+- demonstrating graphics or content that may be considered disturbing;
+- promoting or assuming any kind of inequality or discrimination;
+- promoting drug use and/or any other illegal activities;
+- attacking personal tastes or preferences;
+- engaging in any conduct that could reasonably be considered
+  inappropriate in a professional setting;
 
 These are examples of behavior that contributes to a
 negative environment and prohibited in this community.
@@ -105,8 +105,8 @@ of acceptable behavior and will take appropriate and fair corrective actions
 in response to any behavior that they deem inappropriate, threatening,
 offensive, or harmful.
 
--   For enforcement guidelines seek the “contributor covenant's” version of this document:\
-    <https://www.contributor-covenant.org/>
+- For enforcement guidelines seek the “contributor covenant's” version of this document:\
+  <https://www.contributor-covenant.org/>
 
 Community leaders have the right and responsibility to remove, edit, or
 reject comments, commits, code, wiki edits, issues, and other
@@ -119,10 +119,10 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may
 be reported to the community leaders responsible for enforcement in two
 ways:
 
--   contact via default methods, email or issues page, but for privacy
-    purposes, it's recommended to use the first method;
--   if the behavior breaks the “github-ian” code-doc, you can
-    also report him via a support service of this service;
+- contact via default methods, email or issues page, but for privacy
+  purposes, it's recommended to use the first method;
+- if the behavior breaks the “github-ian” code-doc, you can
+  also report him via a support service of this service;
 
 All complaints will be reviewed and investigated promptly and fairly, all
 community leaders are obligated to respect the privacy (if it was
@@ -145,5 +145,5 @@ For answers to common questions about this code of conduct, please
 refer to the FAQ and the translations, which are available on the
 “contributor covenant's” page.
 
--   <https://www.contributor-covenant.org/faq>
--   <https://www.contributor-covenant.org/translations>
+- <https://www.contributor-covenant.org/faq>
+- <https://www.contributor-covenant.org/translations>

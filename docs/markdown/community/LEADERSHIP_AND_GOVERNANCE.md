@@ -6,15 +6,15 @@ _Growing open source projects can benefit from formal rules for making decisions
 
 **Table of Contents:**
 
--   [Leadership and Governance](#leadership-and-governance)
-    -   [Section 1: Understanding governance for your growing project](#section-1-understanding-governance-for-your-growing-project)
-    -   [Section 2: What are examples of formal roles used in open source projects?](#section-2-what-are-examples-of-formal-roles-used-in-open-source-projects)
-    -   [Section 3: How do I formalize these leadership roles?](#section-3-how-do-i-formalize-these-leadership-roles)
-    -   [Section 4: When should I give someone commit access?](#section-4-when-should-i-give-someone-commit-access)
-    -   [Section 5: What are some of the common governance structures for open source projects?](#section-5-what-are-some-of-the-common-governance-structures-for-open-source-projects)
-    -   [Section 6: Do I need governance docs when I launch my project?](#section-6-do-i-need-governance-docs-when-i-launch-my-project)
-    -   [Section 7: What happens if corporate employees start submitting contributions?](#section-7-what-happens-if-corporate-employees-start-submitting-contributions)
-    -   [Section 8: Do I need a legal entity to support my project?](#section-8-do-i-need-a-legal-entity-to-support-my-project)
+- [Leadership and Governance](#leadership-and-governance)
+  - [Section 1: Understanding governance for your growing project](#section-1-understanding-governance-for-your-growing-project)
+  - [Section 2: What are examples of formal roles used in open source projects?](#section-2-what-are-examples-of-formal-roles-used-in-open-source-projects)
+  - [Section 3: How do I formalize these leadership roles?](#section-3-how-do-i-formalize-these-leadership-roles)
+  - [Section 4: When should I give someone commit access?](#section-4-when-should-i-give-someone-commit-access)
+  - [Section 5: What are some of the common governance structures for open source projects?](#section-5-what-are-some-of-the-common-governance-structures-for-open-source-projects)
+  - [Section 6: Do I need governance docs when I launch my project?](#section-6-do-i-need-governance-docs-when-i-launch-my-project)
+  - [Section 7: What happens if corporate employees start submitting contributions?](#section-7-what-happens-if-corporate-employees-start-submitting-contributions)
+  - [Section 8: Do I need a legal entity to support my project?](#section-8-do-i-need-a-legal-entity-to-support-my-project)
 
 ## Section 1: Understanding governance for your growing project
 
@@ -30,9 +30,9 @@ _Many projects follow a similar structure for contributor roles and recognition.
 What these roles actually mean, though, is entirely up to you. Here are a few types
 of roles you may recognize:
 
--   **Maintainer**
--   **Contributor**
--   **Committer**
+- **Maintainer**
+- **Contributor**
+- **Committer**
 
 **For some projects, "maintainers"** are the only people in a project with commit
 access. In other projects, they're simply the people who are listed in the readme
@@ -136,30 +136,30 @@ to manage who can push to a particular branch, and under which circumstances.
 
 _There are three common governance structures associated with open source projects._
 
--   **BDFL:** BDFL stands for "Benevolent Dictator for Life". Under this structure,
-    one person (usually the initial author of the project) has final say on all major
-    project decisions. [Python](https://github.com/python) is a classic example. Smaller
-    projects are probably BDFL by default, because there are only one or two maintainers.
-    A project that originated at a company might also fall into the BDFL category.
--   **Meritocracy: (Note: the term "meritocracy" carries negative connotations for
-    some communities and has a [complex social and political history](http://geekfeminism.wikia.com/wiki/Meritocracy).)**
-    Under a meritocracy, active project contributors (those who demonstrate "merit")
-    are given a formal decision making role. Decisions are usually made based on pure
-    voting consensus. The meritocracy concept was pioneered by the [Apache Foundation](https://www.apache.org/);
-    [all Apache projects](https://www.apache.org/index.html#projects-list) are meritocracies.
-    Contributions can only be made by individuals representing themselves, not by a
-    company.
--   **Liberal contribution:** Under a liberal contribution model, the people who do
-    the most work are recognized as most influential, but this is based on current
-    work and not historic contributions. Major project decisions are made based on
-    a consensus seeking process (discuss major grievances) rather than pure vote, and
-    strive to include as many community perspectives as possible. Popular examples
-    of projects that use a liberal contribution model include [Node.js](https://foundation.nodejs.org/)
-    and [Rust](https://www.rust-lang.org/).
+- **BDFL:** BDFL stands for "Benevolent Dictator for Life". Under this structure,
+  one person (usually the initial author of the project) has final say on all major
+  project decisions. [Python](https://github.com/python) is a classic example. Smaller
+  projects are probably BDFL by default, because there are only one or two maintainers.
+  A project that originated at a company might also fall into the BDFL category.
+- **Meritocracy: (Note: the term "meritocracy" carries negative connotations for
+  some communities and has a [complex social and political history](http://geekfeminism.wikia.com/wiki/Meritocracy).)**
+  Under a meritocracy, active project contributors (those who demonstrate "merit")
+  are given a formal decision making role. Decisions are usually made based on pure
+  voting consensus. The meritocracy concept was pioneered by the [Apache Foundation](https://www.apache.org/);
+  [all Apache projects](https://www.apache.org/index.html#projects-list) are meritocracies.
+  Contributions can only be made by individuals representing themselves, not by a
+  company.
+- **Liberal contribution:** Under a liberal contribution model, the people who do
+  the most work are recognized as most influential, but this is based on current
+  work and not historic contributions. Major project decisions are made based on
+  a consensus seeking process (discuss major grievances) rather than pure vote, and
+  strive to include as many community perspectives as possible. Popular examples
+  of projects that use a liberal contribution model include [Node.js](https://foundation.nodejs.org/)
+  and [Rust](https://www.rust-lang.org/).
 
--   [BDFL model template](http://oss-watch.ac.uk/resources/benevolentdictatorgovernancemodel)
--   [Meritocracy model template](http://oss-watch.ac.uk/resources/meritocraticgovernancemodel)
--   [Node.js's liberal contribution policy](https://medium.com/the-node-js-collection/healthy-open-source-967fa8be7951)
+- [BDFL model template](http://oss-watch.ac.uk/resources/benevolentdictatorgovernancemodel)
+- [Meritocracy model template](http://oss-watch.ac.uk/resources/meritocraticgovernancemodel)
+- [Node.js's liberal contribution policy](https://medium.com/the-node-js-collection/healthy-open-source-967fa8be7951)
 
 ## Section 6: Do I need governance docs when I launch my project?
 

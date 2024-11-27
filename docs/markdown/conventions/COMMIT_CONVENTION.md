@@ -4,7 +4,7 @@ making it easier to write automated tools on top of it, this convention dovetail
 with semantic versioning[^1] by describing the features, fixes, and breaking changes
 made in commit messages, for origin document seek:
 
--   <https://www.conventionalcommits.org/en/v1.0.0/>
+- <https://www.conventionalcommits.org/en/v1.0.0/>
 
 Keep in mind, this is NOT the original document, for one-true version, seek the link.
 
@@ -16,10 +16,10 @@ for structure of commit's data, see below:
 
 ```html
 <header>
-    -------- (not everytime via “github-ian” case)
-    <body>
-        <footer></footer>
-    </body>
+  -------- (not everytime via “github-ian” case)
+  <body>
+    <footer></footer>
+  </body>
 </header>
 ```
 
@@ -52,20 +52,20 @@ behind the changes and the character (advanced context) of changes that were don
 by default body is mandatory for code-commits, guidelines for body's formattings
 provided:
 
--   it CAN start with capitalized letters;
--   it CAN include periods at the end;
--   it MUST use imperative and custom grammatics to describe the changes;
--   it CAN provide comparison of the previous behavior with the new behavior can be
-    included to illustrate the impact of the change.
+- it CAN start with capitalized letters;
+- it CAN include periods at the end;
+- it MUST use imperative and custom grammatics to describe the changes;
+- it CAN provide comparison of the previous behavior with the new behavior can be
+  included to illustrate the impact of the change.
 
 ### Footer of the message
 
 Footer is the last and an free-optional parameter, they don't have any direct guidelines,
 except:
 
--   footers other than "BREAKING CHANGE" may be provided and follow a convention simillar
-    to:\
-    [git's trailer format](https://git-scm.com/docs/git-interpret-trailers)
+- footers other than "BREAKING CHANGE" may be provided and follow a convention simillar
+  to:\
+  [git's trailer format](https://git-scm.com/docs/git-interpret-trailers)
 
 But, it is recommended to provide the same formatting for text as body.
 
@@ -74,14 +74,14 @@ But, it is recommended to provide the same formatting for text as body.
 Commit contains the following structural elements, to communicate intent to the
 consumers of your library:
 
--   type of commit "FIX" or just "fix" patches a bug in your codebase: this correlates
-    with [PATCH][SEMVER] in semantic versioning;
--   type of commit "FEAT" or just "feat" introduces a new feature to the codebase:
-    this correlates with [MINOR][SEMVER] in semantic versioning;
--   there is a special type of commits, called "BREAKING CHANGES" — they're commits
-    which have footer "BREAKING CHANGES: ," or append special symbol "!" after the
-    type/scope: it introduces a breaking API change correlating with [MAJOR][SEMVER]
-    in semantic versioning.
+- type of commit "FIX" or just "fix" patches a bug in your codebase: this correlates
+  with [PATCH][SEMVER] in semantic versioning;
+- type of commit "FEAT" or just "feat" introduces a new feature to the codebase:
+  this correlates with [MINOR][SEMVER] in semantic versioning;
+- there is a special type of commits, called "BREAKING CHANGES" — they're commits
+  which have footer "BREAKING CHANGES: ," or append special symbol "!" after the
+  type/scope: it introduces a breaking API change correlating with [MAJOR][SEMVER]
+  in semantic versioning.
 
 > Keep in mind, "BREAKING CHANGES" type of commits can be a part of any type-commits.
 
@@ -133,13 +133,13 @@ as described in RFC 2119[^3]:
 
 For examples of any usage of this conventional commits formatting, see the:
 
--   <https://www.conventionalcommits.org/en/v1.0.0/#examples>
+- <https://www.conventionalcommits.org/en/v1.0.0/#examples>
 
 For any questions provided, there is a FAQ and some other questions provided with
 answers:
 
--   <https://www.conventionalcommits.org/en/v1.0.0/#why-use-conventional-commits>
--   <https://www.conventionalcommits.org/en/v1.0.0/#faq>
+- <https://www.conventionalcommits.org/en/v1.0.0/#why-use-conventional-commits>
+- <https://www.conventionalcommits.org/en/v1.0.0/#faq>
 
 [^1]: <https://semver.org/>
 

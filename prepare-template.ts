@@ -18,181 +18,146 @@ import * as dotenv from 'dotenv'
 
 import * as readline from 'readline'
 
-import {
-    green,
-    yellow,
-    cyan,
-    red,
-    bgRed,
-    bgGreen,
-    white,
-    bgBlue,
-    bold
-} from 'colors/safe'
+import { green, yellow, cyan, red, bgRed, bgGreen, white, bgBlue, bold } from 'colors/safe'
 
 /**
  * Represents the PREPARE_MODULE for searching through files and updating the manifest.
  */
 class PREPARE_MODULE {
-    /** The root directory of the module. */
-    ROOT_DIRECTORY: string = __dirname
-    /** An array of folder names to exclude from traversal. */
-    EXCLUDING_FOLDER: string[] = ['node_modules', 'venv', '.git', 'out']
-    /** An array of values to include in the search. */
-    INCLUDING_VALUES: string[] = ['FALCION', 'PATTERNU', 'PATTERNUGIT']
+  /** The root directory of the module. */
+  ROOT_DIRECTORY: string = __dirname
+  /** An array of folder names to exclude from traversal. */
+  EXCLUDING_FOLDER: string[] = ['node_modules', 'venv', '.git', 'out']
+  /** An array of values to include in the search. */
+  INCLUDING_VALUES: string[] = ['FALCION', 'PATTERNU', 'PATTERNUGIT']
 
-    /**
-     * Creates an instance of the PREPARE_MODULE.
-     * @param {string[]} entries - An array of custom entries to include for searching.
-     */
-    constructor(entries: string[]) {
-        if (entries[0] !== 'NO') {
-            for (const item of entries) this.INCLUDING_VALUES.push(item)
-        }
+  /**
+   * Creates an instance of the PREPARE_MODULE.
+   * @param {string[]} entries - An array of custom entries to include for searching.
+   */
+  constructor(entries: string[]) {
+    if (entries[0] !== 'NO') {
+      for (const item of entries) this.INCLUDING_VALUES.push(item)
     }
+  }
 
-    /**
-     * Searches for specified data within a file.
-     * @param {string} filepath - The path of the file to search.
-     * @param {string[]} data - An array of strings to search for within the file.
-     * @returns {Promise<void>} - A promise that resolves when the search is complete.
-     */
-    async search(filepath: string, data: string[]): Promise<void> {
-        const content = (await fs.readFile(filepath, 'utf-8')).split('\n')
+  /**
+   * Searches for specified data within a file.
+   * @param {string} filepath - The path of the file to search.
+   * @param {string[]} data - An array of strings to search for within the file.
+   * @returns {Promise<void>} - A promise that resolves when the search is complete.
+   */
+  async search(filepath: string, data: string[]): Promise<void> {
+    const content = (await fs.readFile(filepath, 'utf-8')).split('\n')
 
-        for (let i = 0; i < content.length; i++) {
-            const line = content[i].toUpperCase()
-            for (const target of data) {
-                if (line.includes(target)) {
-                    console.info(
-                        green(
-                            `Found "${target}" in L#${i} of:\n` + cyan(filepath)
-                        )
-                    )
-                }
-            }
+    for (let i = 0; i < content.length; i++) {
+      const line = content[i].toUpperCase()
+      for (const target of data) {
+        if (line.includes(target)) {
+          console.info(green(`Found "${target}" in L#${i} of:\n` + cyan(filepath)))
         }
+      }
     }
+  }
 
-    /**
-     * Recursively traverses a directory and searches for files.
-     * @param {string} directory - The directory path to traverse.
-     * @returns {Promise<void>} - A promise that resolves when the traversal is complete.
-     */
-    async traverse(directory: string): Promise<void> {
-        try {
-            const files: string[] = await fs.readdir(directory)
-            for (const file of files) {
-                const filepath = path.join(directory, file)
-                const filestat = await fs.stat(filepath)
+  /**
+   * Recursively traverses a directory and searches for files.
+   * @param {string} directory - The directory path to traverse.
+   * @returns {Promise<void>} - A promise that resolves when the traversal is complete.
+   */
+  async traverse(directory: string): Promise<void> {
+    try {
+      const files: string[] = await fs.readdir(directory)
+      for (const file of files) {
+        const filepath = path.join(directory, file)
+        const filestat = await fs.stat(filepath)
 
-                if (filestat.isDirectory()) {
-                    if (!this.EXCLUDING_FOLDER.includes(file)) {
-                        await this.traverse(filepath)
-                    }
-                } else if (filestat.isFile()) {
-                    await this.search(filepath, this.INCLUDING_VALUES)
-                } else {
-                    throw new Error(
-                        red('Invalid data format:') + bgRed(` ${filepath}`)
-                    )
-                }
-            }
-        } catch (err: any) {
-            if (err.code === 'ENOENT') {
-                console.error(red(`File or directory not found: ${err.path}`))
-            } else {
-                console.error(red('Error reading directory: ' + `${err}`))
-            }
+        if (filestat.isDirectory()) {
+          if (!this.EXCLUDING_FOLDER.includes(file)) {
+            await this.traverse(filepath)
+          }
+        } else if (filestat.isFile()) {
+          await this.search(filepath, this.INCLUDING_VALUES)
+        } else {
+          throw new Error(red('Invalid data format:') + bgRed(` ${filepath}`))
         }
+      }
+    } catch (err) {
+      if ((err as Error).cause === 'ENOENT') {
+        console.error(red(`File or directory not found: ${(err as Error).message}`))
+      } else {
+        console.error(red('Error reading directory: ' + `${err}`))
+      }
     }
+  }
 }
 
 fs.ensureFileSync(path.join(__dirname, '.env'))
 fs.ensureFileSync(path.join(__dirname, 'manifest.json'))
 
 fs.writeFileSync(path.join(__dirname, '.env'), 'EXAMPLE_API_KEY=')
-fs.writeFileSync(
-    path.join(__dirname, 'manifest.json'),
-    JSON.stringify({}, undefined, 4)
-)
+fs.writeFileSync(path.join(__dirname, 'manifest.json'), JSON.stringify({}, undefined, 4))
 
 dotenv.config({
-    path: '.env',
-    encoding: 'utf-8'
+  path: '.env',
+  encoding: 'utf-8'
 })
 
-const PACKAGE_JSON: any = JSON.parse(
-    fs.readFileSync('package.json', { encoding: 'utf-8' })
-)
+const PACKAGE_JSON = JSON.parse(fs.readFileSync('package.json', { encoding: 'utf-8' }))
 
-const MANIFEST: any = JSON.parse(
-    fs.readFileSync('manifest.json', { encoding: 'utf-8' })
-)
+const MANIFEST = JSON.parse(fs.readFileSync('manifest.json', { encoding: 'utf-8' }))
 
 if (
-    PACKAGE_JSON.name === MANIFEST.id &&
-    PACKAGE_JSON.displayName === MANIFEST.name &&
-    PACKAGE_JSON.description === MANIFEST.description &&
-    PACKAGE_JSON.author.name === MANIFEST.author &&
-    PACKAGE_JSON.author.url === MANIFEST.authorUrl &&
-    PACKAGE_JSON.license === MANIFEST.license &&
-    PACKAGE_JSON.version === MANIFEST.version
+  PACKAGE_JSON.name === MANIFEST.id &&
+  PACKAGE_JSON.displayName === MANIFEST.name &&
+  PACKAGE_JSON.description === MANIFEST.description &&
+  PACKAGE_JSON.author.name === MANIFEST.author &&
+  PACKAGE_JSON.author.url === MANIFEST.authorUrl &&
+  PACKAGE_JSON.license === MANIFEST.license &&
+  PACKAGE_JSON.version === MANIFEST.version
 ) {
-    console.warn(
-        bgGreen(
-            white('Manifest is synced with package, keep everything as it was.')
-        )
-    )
+  console.warn(bgGreen(white('Manifest is synced with package, keep everything as it was.')))
 } else {
-    console.warn(
-        bgBlue(
-            yellow(
-                "Manifest is not synced with package's information, rewriting it."
-            )
-        )
-    )
+  console.warn(bgBlue(yellow("Manifest is not synced with package's information, rewriting it.")))
 
-    fs.copyFileSync('manifest.json', 'manifest-backup.json')
+  fs.copyFileSync('manifest.json', 'manifest-backup.json')
 
-    const inputJson: Record<string, unknown> = {
-        id: PACKAGE_JSON.name,
-        name: PACKAGE_JSON.displayName,
-        description: PACKAGE_JSON.description,
-        author: PACKAGE_JSON.author.name,
-        authorUrl: PACKAGE_JSON.author.url,
-        license: PACKAGE_JSON.license,
-        version: PACKAGE_JSON.version
-    }
+  const inputJson: Record<string, unknown> = {
+    id: PACKAGE_JSON.name,
+    name: PACKAGE_JSON.displayName,
+    description: PACKAGE_JSON.description,
+    author: PACKAGE_JSON.author.name,
+    authorUrl: PACKAGE_JSON.author.url,
+    license: PACKAGE_JSON.license,
+    version: PACKAGE_JSON.version
+  }
 
-    fs.writeFileSync('manifest.json', JSON.stringify(inputJson, undefined, 4))
+  fs.writeFileSync('manifest.json', JSON.stringify(inputJson, undefined, 4))
 }
 
 const RL = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+  input: process.stdin,
+  output: process.stdout
 })
 
 RL.question(
-    bold('Change finding signatures (words) for the finder script? [Y/N]: '),
-    async (ASW1) => {
-        if (ASW1.toUpperCase() === 'Y') {
-            RL.question(
-                bold(
-                    'Enter your custom signatures (words) separatedly by commas: '
-                ),
-                async (ASW2) => {
-                    const input: string[] = ASW2.split(',')
+  bold('Change finding signatures (words) for the finder script? [Y/N]: '),
+  async (ASW1) => {
+    if (ASW1.toUpperCase() === 'Y') {
+      RL.question(
+        bold('Enter your custom signatures (words) separatedly by commas: '),
+        async (ASW2) => {
+          const input: string[] = ASW2.split(',')
 
-                    void (await new PREPARE_MODULE(input).traverse(__dirname))
+          void (await new PREPARE_MODULE(input).traverse(__dirname))
 
-                    RL.close()
-                }
-            )
-        } else {
-            void (await new PREPARE_MODULE(['NO']).traverse(__dirname))
-
-            RL.close()
+          RL.close()
         }
+      )
+    } else {
+      void (await new PREPARE_MODULE(['NO']).traverse(__dirname))
+
+      RL.close()
     }
+  }
 )

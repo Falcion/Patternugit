@@ -7,9 +7,9 @@ your project._
 
 **Table of Contents:**
 
--   [Building Welcoming Communities](#building-welcoming-communities)
-    -   [Section 1: Setting your project up for success](#section-1-setting-your-project-up-for-success)
-        -   [Make people feel welcome](#make-people-feel-welcome)
+- [Building Welcoming Communities](#building-welcoming-communities)
+  - [Section 1: Setting your project up for success](#section-1-setting-your-project-up-for-success)
+    - [Make people feel welcome](#make-people-feel-welcome)
 
 ## Section 1: Setting your project up for success
 

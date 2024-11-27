@@ -6,6 +6,6 @@
 
 If you are unfamiliar with Kubernetes cluster setup or Docker, read the documentation:
 
--   <https://kubernetes.io/docs/setup/>
--   <https://docs.docker.com/guides/>
--   <https://docs.docker.com/manuals/>
+- <https://kubernetes.io/docs/setup/>
+- <https://docs.docker.com/guides/>
+- <https://docs.docker.com/manuals/>

@@ -7,24 +7,24 @@ to leveraging your community._
 
 **Table of Contents:**
 
--   [Best Practices for Maintainers](#best-practices-for-maintainers)
-    -   [Section 1: What does it mean to be a maintainer?](#section-1-what-does-it-mean-to-be-a-maintainer)
-    -   [Section 2: Documenting your processes](#section-2-documenting-your-processes)
-        -   [Write down your project's vision](#write-down-your-projects-vision)
-        -   [Communicate your expectations](#communicate-your-expectations)
-        -   [Keep communication public](#keep-communication-public)
-    -   [Section 3: Learning to say no](#section-3-learning-to-say-no)
-        -   [Keep the conversation friendly](#keep-the-conversation-friendly)
-        -   [Be proactive](#be-proactive)
-        -   [Embrace mentorship](#embrace-mentorship)
-    -   [Section 4: Leverage your community](#section-4-leverage-your-community)
-        -   [Share the workload](#share-the-workload)
-        -   [Let others build the solutions they need](#let-others-build-the-solutions-they-need)
-    -   [Section 5: Bring in the robots](#section-5-bring-in-the-robots)
-        -   [Require tests and other checks to improve the quality of your code](#require-tests-and-other-checks-to-improve-the-quality-of-your-code)
-        -   [Use tools to automate basic maintenance tasks](#use-tools-to-automate-basic-maintenance-tasks)
-    -   [Section 6: It's okay to hit pause](#section-6-its-okay-to-hit-pause)
-    -   [Section 7: Take care of yourself first](#section-7-take-care-of-yourself-first)
+- [Best Practices for Maintainers](#best-practices-for-maintainers)
+  - [Section 1: What does it mean to be a maintainer?](#section-1-what-does-it-mean-to-be-a-maintainer)
+  - [Section 2: Documenting your processes](#section-2-documenting-your-processes)
+    - [Write down your project's vision](#write-down-your-projects-vision)
+    - [Communicate your expectations](#communicate-your-expectations)
+    - [Keep communication public](#keep-communication-public)
+  - [Section 3: Learning to say no](#section-3-learning-to-say-no)
+    - [Keep the conversation friendly](#keep-the-conversation-friendly)
+    - [Be proactive](#be-proactive)
+    - [Embrace mentorship](#embrace-mentorship)
+  - [Section 4: Leverage your community](#section-4-leverage-your-community)
+    - [Share the workload](#share-the-workload)
+    - [Let others build the solutions they need](#let-others-build-the-solutions-they-need)
+  - [Section 5: Bring in the robots](#section-5-bring-in-the-robots)
+    - [Require tests and other checks to improve the quality of your code](#require-tests-and-other-checks-to-improve-the-quality-of-your-code)
+    - [Use tools to automate basic maintenance tasks](#use-tools-to-automate-basic-maintenance-tasks)
+  - [Section 6: It's okay to hit pause](#section-6-its-okay-to-hit-pause)
+  - [Section 7: Take care of yourself first](#section-7-take-care-of-yourself-first)
 
 ## Section 1: What does it mean to be a maintainer?
 
@@ -97,14 +97,14 @@ requires, or how much time others want you to spend.
 
 Here are a few rules that are worth writing down:
 
--   How a contribution is reviewed and accepted (_Do they need tests? An issue template?_)
--   The types of contributions you'll accept (_Do you only want help with a certain
-    part of your code?_)
--   When it's appropriate to follow up (_for example, "You can expect a response
-    from a maintainer within 7 days. If you haven't heard anything by then, feel
-    free to ping the thread."_)
--   How much time you spend on the project (_for example, "We only spend about 5
-    hours per week on this project"_)
+- How a contribution is reviewed and accepted (_Do they need tests? An issue template?_)
+- The types of contributions you'll accept (_Do you only want help with a certain
+  part of your code?_)
+- When it's appropriate to follow up (_for example, "You can expect a response
+  from a maintainer within 7 days. If you haven't heard anything by then, feel
+  free to ping the thread."_)
+- How much time you spend on the project (_for example, "We only spend about 5
+  hours per week on this project"_)
 
 [Jekyl](https://github.com/jekyll/jekyll/tree/master/docs), [CocoaPods](https://github.com/CocoaPods/CocoaPods/wiki/Communication-&-Design-Rules)
 and [Homebrew](https://github.com/Homebrew/brew/blob/bbed7246bc5c5b7acb8c1d427d10b43e090dfd39/docs/Maintainers-Avoiding-Burnout.md)
@@ -175,13 +175,13 @@ it and thank them for their interest. It's a big compliment!
 
 If you don't want to accept a contribution:
 
--   **Thank them** for their contribution
--   **Explain why it doesn't fit** into the scope of the project, and offer clear
-    suggestions for improvement, if you're able. Be kind, but firm.
--   **Link to relevant documentation**, if you have it. If you notice repeated
-    requests for things you don't want to accept, add them into your documentation
-    to avoid repeating yourself.
--   **Close the request**
+- **Thank them** for their contribution
+- **Explain why it doesn't fit** into the scope of the project, and offer clear
+  suggestions for improvement, if you're able. Be kind, but firm.
+- **Link to relevant documentation**, if you have it. If you notice repeated
+  requests for things you don't want to accept, add them into your documentation
+  to avoid repeating yourself.
+- **Close the request**
 
 You shouldn't need more than 1-2 sentences to respond. For example, when a user of
 [celery](https://github.com/celery/celery/) reported a Windows-related error,
@@ -215,8 +215,8 @@ guide.
 If you're receiving too many low-quality contributions, require that contributors
 do a bit of work beforehand, for example:
 
--   Fill out an issue or PR template/checklist
--   Open an issue before submitting a PR
+- Fill out an issue or PR template/checklist
+- Open an issue before submitting a PR
 
 If they don't follow your rules, close the issue immediately and point to your documentation.
 
@@ -357,15 +357,15 @@ probably faced similar issues and built a solution for them.
 There are a [variety of tools available](https://github.com/showcases/tools-for-open-source)
 to help automate some aspects of maintenance work. A few examples:
 
--   [semantic-release](https://github.com/semantic-release/semantic-release) automates
-    your releases
--   [mention-bot](https://github.com/facebook/mention-bot) mentions potential reviewers
-    for pull requests
--   [Danger](https://github.com/danger/danger) helps automate code review
--   [no-response](https://github.com/probot/no-response) closes issues where the author
-    hasn't responded to a request for more information
--   [dependabot](https://github.com/dependabot) checks your dependency files every
-    day for outdated requirements and opens individual pull requests for any it finds
+- [semantic-release](https://github.com/semantic-release/semantic-release) automates
+  your releases
+- [mention-bot](https://github.com/facebook/mention-bot) mentions potential reviewers
+  for pull requests
+- [Danger](https://github.com/danger/danger) helps automate code review
+- [no-response](https://github.com/probot/no-response) closes issues where the author
+  hasn't responded to a request for more information
+- [dependabot](https://github.com/dependabot) checks your dependency files every
+  day for outdated requirements and opens individual pull requests for any it finds
 
 For bug reports and other common contributions, GitHub has [Issue Templates and
 Pull Request Templates](https://github.com/blog/2111-issue-and-pull-request-templates),

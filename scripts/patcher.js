@@ -46,7 +46,7 @@ const initialVersion = 'initial'
 
 // Helper methods
 
-function execGitCommand(gitCommand) {
+function execGitCommand (gitCommand) {
   const output = exec(gitCommand, { silent: true })
   if (output.code !== 0) {
     console.error(`Error: git command "${gitCommand}" failed: \n\n ${output.stderr}`)
@@ -55,18 +55,18 @@ function execGitCommand(gitCommand) {
   return output
 }
 
-function toArray(rawGitCommandOutput) {
+function toArray (rawGitCommandOutput) {
   return rawGitCommandOutput.trim().split('\n')
 }
 
-function maybeExtractReleaseVersion(commit) {
+function maybeExtractReleaseVersion (commit) {
   const versionRegex = /release: cut the (.*?) release/
   const matches = commit.match(versionRegex)
   return matches ? matches[1] || matches[2] : null
 }
 
 // Checks whether commit message matches any patterns in ignore list.
-function shouldIgnoreCommit(commitMessage, ignorePatterns) {
+function shouldIgnoreCommit (commitMessage, ignorePatterns) {
   return ignorePatterns.some((pattern) => commitMessage.indexOf(pattern) > -1)
 }
 
@@ -74,7 +74,7 @@ function shouldIgnoreCommit(commitMessage, ignorePatterns) {
  * @param rawGitCommits
  * @returns {Map<string, [string, string]>} - Map of commit message to [commit info, version]
  */
-function collectCommitsAsMap(rawGitCommits) {
+function collectCommitsAsMap (rawGitCommits) {
   const commits = toArray(rawGitCommits)
   const commitsMap = new Map()
   let version = initialVersion
@@ -101,7 +101,7 @@ function collectCommitsAsMap(rawGitCommits) {
   return commitsMap
 }
 
-function getCommitInfoAsString(version, commitInfo) {
+function getCommitInfoAsString (version, commitInfo) {
   const formattedVersion = version === initialVersion ? version : `${version}+`
   return `[${formattedVersion}] ${commitInfo}`
 }
@@ -111,7 +111,7 @@ function getCommitInfoAsString(version, commitInfo) {
  * This function is needed to compare 2 sets of commits and return the list of unique commits in the
  * first set.
  */
-function diff(mapA, mapB) {
+function diff (mapA, mapB) {
   const result = []
   mapA.forEach((value, key) => {
     if (!mapB.has(key)) {
@@ -125,7 +125,7 @@ function diff(mapA, mapB) {
  * @param {Map<string, [string, string]>} commitsMap - commit map from collectCommitsAsMap
  * @returns {string[]} List of commits with commit messages that start with 'feat'
  */
-function listFeatures(commitsMap) {
+function listFeatures (commitsMap) {
   return Array.from(commitsMap.keys()).reduce((result, key) => {
     if (key.startsWith('feat') && !shouldIgnoreCommit(key, ignoreFeatureCheckPatterns)) {
       const value = commitsMap.get(key)
@@ -135,19 +135,19 @@ function listFeatures(commitsMap) {
   }, [])
 }
 
-function getBranchByTag(tag) {
+function getBranchByTag (tag) {
   const version = parse(tag)
   return `${version.major}.${version.minor}.x` // e.g. 9.0.x
 }
 
-function getLatestTag(tags) {
+function getLatestTag (tags) {
   // Exclude Next releases, since we cut them from main, so there is nothing to compare.
   const isNotNextVersion = (version) => version.indexOf('-next') === -1
   return tags.filter(valid).filter(isNotNextVersion).map(clean).sort(rcompare)[0]
 }
 
 // Main program
-function main() {
+function main () {
   execGitCommand('git fetch upstream')
 
   // Extract tags information and pick the most recent version

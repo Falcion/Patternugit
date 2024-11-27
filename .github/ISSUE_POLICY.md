@@ -16,9 +16,9 @@ members, regardless of their level of expertise or background.
 Policy outlines the different categories of issues in the project's “github-ian”
 repository and provides guidelines and processes associated with each type of issue.
 
--   For general support inquiries or questions, please ask on special sites for it,
-    for example:
-    <https://stackoverflow.com/questions/>
+- For general support inquiries or questions, please ask on special sites for it,
+  for example:
+  <https://stackoverflow.com/questions/>
 
 Before creating a new issue, please search for related issues and check if they
 address your concern.
@@ -44,30 +44,30 @@ abilities your input and welcome your ideas to help make development even better
 1. **Guidelines.**\
    Feature requests that are more likely to be accepted:
 
-    - are focused and minimal in scope; note, that it's usually easier to add additional
-      functionality later than remove functionality;
-    - are designed with extensibility in mind, e.g., if proposing an integration
-      with a specific framework, consider the potential for similar integrations
-      with other frameworks;
-    - have clear user impact and value that justifies the maintenance effort required
-      to support the feature in the long term, refer to link below for an excellent
-      discussion about this topic:\
-      <https://contribute.jquery.org/open-source/#contributing-something-new/>
+   - are focused and minimal in scope; note, that it's usually easier to add additional
+     functionality later than remove functionality;
+   - are designed with extensibility in mind, e.g., if proposing an integration
+     with a specific framework, consider the potential for similar integrations
+     with other frameworks;
+   - have clear user impact and value that justifies the maintenance effort required
+     to support the feature in the long term, refer to link below for an excellent
+     discussion about this topic:\
+     <https://contribute.jquery.org/open-source/#contributing-something-new/>
 
 1. **Lifecycle.**\
    The lifetime of a feature request typically involves the following steps:
-    1. submit a feature request GitHub issue, providing a high-level description
-       of the proposal and its motivation, if it's possible, include an overview
-       of the feature's implementation;
-    2. the issue is triaged to determine if more information is needed from the author,
-       assign a priority, and route it to the appropriate committers;
-    3. the feature request is discussed with a committer. The committer may provide
-       input on the implementation overview or request a more detailed design, if
-       necessary;
-    4. after discussing and reaching an agreement on the feature request and its
-       implementation, an implementation owner is identified;
-    5. implementation owner starts developing the feature and ultimately submits
-       associated pull requests against the project;
+   1. submit a feature request GitHub issue, providing a high-level description
+      of the proposal and its motivation, if it's possible, include an overview
+      of the feature's implementation;
+   2. the issue is triaged to determine if more information is needed from the author,
+      assign a priority, and route it to the appropriate committers;
+   3. the feature request is discussed with a committer. The committer may provide
+      input on the implementation overview or request a more detailed design, if
+      necessary;
+   4. after discussing and reaching an agreement on the feature request and its
+      implementation, an implementation owner is identified;
+   5. implementation owner starts developing the feature and ultimately submits
+      associated pull requests against the project;
 
 ### Bug reports
 
@@ -81,38 +81,38 @@ with a project.
    To ensure that maintainers can effectively assist with reported bugs, please
    follow these guidelines:
 
-    - fill out the bug report template completely, providing appropriate levels
-      of detail, especially in the “Code to reproduce the issue” section;
-    - verify that the bug meets one of the criterias:
-        - It's a regression, meaning that a recent release of the project no longer
-          supports an operation that an earlier release did;
-        - Documented feature or functionality does not work properly when following
-          the provided examples in the documentation;
-        - Any exceptions raised are directly related to the project and not the result
-          of an underlying package's exception;
-        - make a best effort to diagnose and troubleshoot the issue before filing a
-          report;
-        - ensure that the environment in which you are experiencing the bug is supported
-          as defined in the documentation;
-        - confirm that the project supports the functionality you are having an issue
-          with. Note that the absence of a feature does not necessarily constitute
-          a bug;
-        - read the documentation related to the feature you are reporting on, if you
-          are certain that you are following the documented guidelines, please file
-          a bug report;
+   - fill out the bug report template completely, providing appropriate levels
+     of detail, especially in the “Code to reproduce the issue” section;
+   - verify that the bug meets one of the criterias:
+     - It's a regression, meaning that a recent release of the project no longer
+       supports an operation that an earlier release did;
+     - Documented feature or functionality does not work properly when following
+       the provided examples in the documentation;
+     - Any exceptions raised are directly related to the project and not the result
+       of an underlying package's exception;
+     - make a best effort to diagnose and troubleshoot the issue before filing a
+       report;
+     - ensure that the environment in which you are experiencing the bug is supported
+       as defined in the documentation;
+     - confirm that the project supports the functionality you are having an issue
+       with. Note that the absence of a feature does not necessarily constitute
+       a bug;
+     - read the documentation related to the feature you are reporting on, if you
+       are certain that you are following the documented guidelines, please file
+       a bug report;
 
 1. **Lifecycle.**\
    Lifecycle of a bug report typically involves the following steps:
-    1. submit a bug report issue, providing a high-level description of the bug and
-       all the information required to reproduce it;
-    2. the bug report is triaged to determine if more information is needed from
-       the author, assign a priority, and route it to the appropriate committers;
-    3. project committer reproduces the bug and provides feedback on how to address
-       it;
-    4. once an approach is agreed upon, an owner for the fix is identified. For
-       critical bugs, project committers may take ownership to ensure a timely resolution;
-    5. the fix owner begins implementing the solution and ultimately submits associated
-       pull requests;
+   1. submit a bug report issue, providing a high-level description of the bug and
+      all the information required to reproduce it;
+   2. the bug report is triaged to determine if more information is needed from
+      the author, assign a priority, and route it to the appropriate committers;
+   3. project committer reproduces the bug and provides feedback on how to address
+      it;
+   4. once an approach is agreed upon, an owner for the fix is identified. For
+      critical bugs, project committers may take ownership to ensure a timely resolution;
+   5. the fix owner begins implementing the solution and ultimately submits associated
+      pull requests;
 
 ### Documentation issues
 

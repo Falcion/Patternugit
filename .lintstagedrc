@@ -1,25 +1,26 @@
 {
-    "**/*.{js,jsx}": [
-        "node scripts/lint.js --js --fix --only --",
-        "npx standard \"**/*.{js,jsx}\" --fix",
-        "npx prettier --write '**/*.{js,jsx}'"
-    ],
-    "{!*.d.ts, **/*.{ts,tsx}}": [
-        "npx eslint --fix",
-        "npx ts-standard \"**/*.{ts,tsx}\" --fix",
-        "npx prettier --write '**/*.{ts,tsx}'"
-    ],
-    "*.{js,jsx,ts,tsx,d.ts}": ["npx prettier --write '**/*.{js,ts,d.ts}'"],
-    "{!CHANGELOG.md, **/*.md}": [
-        "npx prettier --write '{!CHANGELOG.md, **/*.md}'",
-        "npx textlint **/*.md --fix",
-        "markdownlint '{!CHANGELOG.md, **/*.md}'"
-    ],
-    "*.{gn,gni}": ["npm run gn-check", "npm run gn-format"],
-    "*.{png,jpeg,jpg,gif,svg}": "imagemin-lint-staged",
-    "*.css": ["stylelint --fix", "prettier --write '**/*.css'"],
-    "{*.patch,.patches}": [
-        "node scripts/lint.js --patches --only --",
-        "ts-node scripts/js/check-patch-diff.ts"
-    ]
+  "**/*.{js,jsx}": [
+    "npx prettier --write '**/*.{js,jsx}'",
+    "npx eslint '**/*.{js,jsx}' --fix",
+    "node scripts/lint.js --js --fix --only --",
+    "npx standard \"**/*.{js,jsx}\" --fix"
+  ],
+  "{!*.d.ts, **/*.{ts,tsx}}": [
+    "npx prettier --write '**/*.{ts,tsx}'",
+    "npx eslint '**/*.{ts,tsx}' --fix",
+    "npx ts-standard \"**/*.{ts,tsx}\" --fix"
+  ],
+  "*.{js,jsx,ts,tsx,d.ts}": ["npx prettier --write '**/*.{js,ts,d.ts}'"],
+  "{!CHANGELOG.md, **/*.md}": [
+    "npx prettier --write '{!CHANGELOG.md, **/*.md}'",
+    "npx textlint **/*.md --fix",
+    "markdownlint '{!CHANGELOG.md, **/*.md}'"
+  ],
+  "*.{gn,gni}": ["npm run gn-check", "npm run gn-format"],
+  "*.{png,jpeg,jpg,gif,svg}": "imagemin-lint-staged",
+  "*.css": ["stylelint --fix", "prettier --write '**/*.css'"],
+  "{*.patch,.patches}": [
+    "node scripts/lint.js --patches --only --",
+    "ts-node scripts/js/check-patch-diff.ts"
+  ]
 }

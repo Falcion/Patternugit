@@ -14,9 +14,9 @@ More about it in [Kubernetes's `kubectl` reference documentation][2].
 Kubernetes's `kubetctl` supports a variety of Linux platforms; macOS and Windows.
 The current kubetctl installed in this repository is for Windows-64x.
 
--   [Install kubectl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
--   [Install kubectl on macOS](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
--   [Install kubectl on Windows](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
+- [Install kubectl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+- [Install kubectl on macOS](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
+- [Install kubectl on Windows](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/)
 
 ## Why Windows?
 
