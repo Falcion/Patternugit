@@ -5,7 +5,6 @@
   "description": "Preconfigured pattern for your repository with universal cases for markdown files of documentations and other actions/scripts",
   "main": "prepare-template.js",
   "private": true,
-  "type": "module",
   "scripts": {
     "linter:monorepo": "npx eslint . && npx ts-standard \"**/*.{ts,tsx}\" && npx standard \"**/*{js,jsx}\" && npx textlint **/*.md && npx stylelint . && npx prettier . -l",
     "linter:monorepo-fix": "npx prettier . --write && npx eslint . --fix && npx ts-standard \"**/*.{ts,tsx}\" --fix && npx standard \"**/*{js,jsx}\" --fix && npx textlint **/*.md --fix && npx stylelint . --fix",

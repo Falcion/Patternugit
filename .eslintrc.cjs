@@ -1,71 +1,16 @@
-import typescriptEslint from '@typescript-eslint/eslint-plugin'
-import tsParser from '@typescript-eslint/parser'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
-import globals from 'globals'
-import eslintPluginJsonc from 'eslint-plugin-jsonc'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-
-export default {
-  // Global ignore patterns
-  /*
-       * Putting ESLint config so it wouldn't put itself on checks:
-       * Config is not very stable for checks of linters because of it's "dynamics",
-       */
-  ignores: ['.eslintrc.*js*', '**/node_modules/', '**/dist/', '**/out/', '**/prepare_template.js', '*.d.ts'],
-
-  // JavaScript-specific configuration
-  overrides: [
-    {
-      files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
-      languageOptions: {
-        ecmaVersion: 2020,
-        sourceType: 'module',
-        globals: {
-          ...globals.node,
-          ...globals.browser,
-          ...globals.es2016
-        }
-      }
-    },
-
-    // TypeScript-specific configuration
-    {
-      files: ['**/*.ts', '**/*.tsx'],
-      ignores: ['**/*.d.ts', '.eslintrc.*js*'],
-      plugins: {
-        '@typescript-eslint': typescriptEslint
-      },
-      languageOptions: {
-        parser: tsParser,
-        parserOptions: {
-          project: './tsconfig.json',
-          tsconfigRootDir: __dirname
-        }
-      },
-      rules: {
-        '@typescript-eslint/interface-name-prefix': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off',
-        '@typescript-eslint/explicit-module-boundary-types': 'off',
-        '@typescript-eslint/no-explicit-any': 'warn',
-        '@typescript-eslint/no-non-null-assertion': 'off',
-        '@typescript-eslint/no-var-requires': 'off'
-      }
-    }
-  ],
-
-  // ESLint recommended and TypeScript recommended configurations
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:jsonc/recommended-with-jsonc'
-  ],
-
-  // Add other rules or plugins as necessary
-  plugins: {
-    '@typescript-eslint': typescriptEslint,
-    jsonc: eslintPluginJsonc
-  }
+module.exports = {
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
+  root: true,
+  rules: {
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    'no-case-declarations': 'off',
+    '@typescript-eslint/no-var-requires': 'off'
+  },
+  ignorePatterns: ['.eslintrc.*js*', '**/node_modules/', '**/out/', '**/venv']
 }
