@@ -23,5 +23,6 @@
     "node scripts/lint.js --patches --only --",
     "ts-node scripts/js/check-patch-diff.ts"
   ],
-  "**/*.{yml,yaml}": "npx prettier '**/*.{yml,yaml}' --write"
+  "**/*.{yml,yaml}": "npx prettier '**/*.{yml,yaml}' --write",
+  "**/*.json": "npx eslint '**/*.json' --fix"
 }
