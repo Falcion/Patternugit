@@ -1,6 +1,4 @@
 {
-  "plugins": {},
-  "filters": {},
   "rules": {
     "date-weekday-mismatch": true,
     "editorconfig": true,
