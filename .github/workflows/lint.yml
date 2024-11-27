@@ -31,11 +31,16 @@ jobs:
           # super-linter doesn't support v9 ESLint
           #JAVASCRIPT_ES_CONFIG_FILE: 'eslint.config.mjs'
           #TYPESCRIPT_ES_CONFIG_FILE: 'eslint.config.mjs'
-          JAVASCRIPT_ES_CONFIG_FILE: '.eslintrc.cjs'
-          TYPESCRIPT_ES_CONFIG_FILE: '.eslintrc.cjs'
+          JAVASCRIPT_ES_CONFIG_FILE: '.eslintrc'
+          TYPESCRIPT_ES_CONFIG_FILE: '.eslintrc'
           NATURAL_LANGUAGE_CONFIG_FILE: '.textlintrc.json'
           # We are choosing ESLint and Standard over Prettier
           # because they are more robust and efficient, while prettier stays as the "primitive" base
           # it does not provide advanced settings and etc.
           VALIDATE_JAVASCRIPT_PRETTIER: false
           VALIDATE_TYPESCRIPT_PRETTIER: false
+          # super-linter doesn't support v9 ESLint
+          VALIDATE_JSON: false
+          VALIDATE_JSON_PRETTIER: false
+          VALIDATE_MARKDOWN_PRETTIER: false
+          VALIDATE_YAML_PRETTIER: false
