@@ -13,20 +13,21 @@ from lib.patches import patch_from_dir
 
 
 def main(argv):
-  parser = argparse.ArgumentParser()
-  parser.add_argument("patch_dir",
-      help="directory containing patches to apply")
-  parser.add_argument("-3", "--3way",
-      action="store_true", dest='threeway',
-      help="use 3-way merge to resolve conflicts")
-  args = parser.parse_args(argv)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("patch_dir", help="directory containing patches to apply")
+    parser.add_argument(
+        "-3",
+        "--3way",
+        action="store_true",
+        dest="threeway",
+        help="use 3-way merge to resolve conflicts",
+    )
+    args = parser.parse_args(argv)
 
-  git.import_patches(
-      repo='.',
-      patch_data=patch_from_dir(args.patch_dir),
-      threeway=args.threeway
-  )
+    git.import_patches(
+        repo=".", patch_data=patch_from_dir(args.patch_dir), threeway=args.threeway
+    )
 
 
-if __name__ == '__main__':
-  main(sys.argv[1:])
+if __name__ == "__main__":
+    main(sys.argv[1:])

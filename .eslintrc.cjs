@@ -17,7 +17,7 @@ module.exports = {
   env: {
     node: true
   },
-  ignorePatterns: ['.eslintrc.*js*', '**/node_modules/', '**/out/', '**/venv'],
+  ignorePatterns: ['.eslintrc.*js*', '**/node_modules/', '**/out/', '**/venv/'],
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',

@@ -18,11 +18,12 @@ const compat = new FlatCompat({
 export default [
   {
     // Global ignore patterns
-    ignores: ['**/node_modules/', '**/dist/', '**/out/', '**/prepare_template.js', '*.d.ts']
+    ignores: ['**/node_modules/', '**/dist/', '**/out/', '**/prepare_template.js', '*.d.ts', '**/venv/']
   },
   {
     // JavaScript-specific configuration
     files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
+    ignores: ['**/venv/'],
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
@@ -36,7 +37,7 @@ export default [
   {
     // TypeScript-specific configuration
     files: ['**/*.ts', '**/*.tsx'],
-    ignores: ['**/*.d.ts'],
+    ignores: ['**/*.d.ts', '**/venv/'],
     plugins: {
       '@typescript-eslint': typescriptEslint
     },
