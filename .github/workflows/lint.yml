@@ -31,10 +31,6 @@ jobs:
           JAVASCRIPT_ES_CONFIG_FILE: 'eslint.config.mjs'
           TYPESCRIPT_ES_CONFIG_FILE: 'eslint.config.mjs'
           NATURAL_LANGUAGE_CONFIG_FILE: '.textlintrc.json'
-          VALIDATE_JAVASCRIPT_PRETTIER: false
-          VALIDATE_TYPESCRIPT_PRETTIER: false
-          VALIDATE_JSON_PRETTIER: false
-          VALIDATE_MARKDOWN_PRETTIER: false
           VALIDATE_YAML_PRETTIER: true
           VALIDATE_JSON: true
           FIX_JAVASCRIPT_STANDARD: true
