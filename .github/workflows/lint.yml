@@ -36,3 +36,5 @@ jobs:
           PYTHON_ISORT_CONFIG_FILE: 'pyproject.toml'
           PYTHON_MYPY_CONFIG_FILE: 'mypy.ini'
           PYTHON_PYLINT_CONFIG_FILE: '.pylintrc'
+          PYTHON_RUFF_CONFIG_FILE: 'pyproject.toml'
+          PYTHON_PYINK_CONFIG_FILE: 'pyproject.toml'
