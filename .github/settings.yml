@@ -401,3 +401,67 @@ labels:
   - name: discussions/accessibility
     color: '#5f0262'
     description:
+  # New labels:
+  - name: status/in-progress
+    color: '#f39c12'
+    description:
+  - name: status/needs-review
+    color: '#3498db'
+    description:
+  - name: status/needs-approval
+    color: '#9b59b6'
+    description:
+  - name: testing/passed
+    color: '#2ecc71'
+    description:
+  - name: testing/failed
+    color: '#e74c3c'
+    description:
+  - name: testing/required
+    color: '#34495e'
+    description: 'Requires additional testing or QA'
+  - name: testing/manual
+    color: '#e67e22'
+    description: 'Requires manual testing or validation'
+  - name: ui/bug
+    color: '#d35400'
+    description:
+  - name: ui/enhancement
+    color: '#9b59b6'
+    description: 'Proposed improvement to UI/UX'
+  - name: ui/feedback
+    color: '#8e44ad'
+    description: 'Feedback related to UI/UX'
+  - name: dependencies/critical
+    color: '#e74c3c'
+    description: 'Critical dependency requiring immediate update'
+  - name: dependencies/non-critical
+    color: '#2ecc71'
+    description: 'Non-urgent dependency updates'
+  - name: automation/ci-cd
+    color: '#2980b9'
+    description:
+  - name: automation/tooling
+    color: '#16a085'
+    description:
+  - name: refactor/code-cleanup
+    color: '#27ae60'
+    description:
+  - name: refactor/performance
+    color: '#f1c40f'
+    description:
+  - name: meta/documentation
+    color: '#e8e8e8'
+    description: 'Meta issues related to documentation or guidelines.'
+  - name: meta/policy
+    color: '#95a5a6'
+    description: 'Policy or governance discussions for the repository.'
+  - name: platform/ios
+    color: '#87ceeb'
+    description:
+  - name: platform/android
+    color: '#a4c639'
+    description:
+  - name: localisation/translation
+    color: '#ffcc00'
+    description:
