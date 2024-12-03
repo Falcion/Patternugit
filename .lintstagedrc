@@ -10,7 +10,7 @@
     "npx eslint '*.{ts,tsx}' --fix",
     "npx ts-standard \"*.{ts,tsx}\" --fix"
   ],
-  "*.{d.ts}": ["npx prettier --write '*.d.ts'"],
+  "*.{d.ts}": ["npx prettier --write '**/*.d.ts'"],
   "{!CHANGELOG.md, *.md}": [
     "npx textlint *.md --fix",
     "npx markdownlint-cli2 '!{CHANGELOG.md,node_modules/**,out/**}' '*.{md,mdown,markdown}' --fix"
