@@ -41,7 +41,7 @@ jobs:
           # PRETTIER is already configured and integrated in repository, moreover
           # it generates "empty" phantom-errors in the summary of lint checking and
           # this is the reason why it is turned off in the repository: implemented.
-          JAVASCRIPT_PRETTIER: false
-          TYPESCRIPT_PRETTIER: false
-          JSON_PRETTIER: false
-          YAML_PRETTIER: false
+          VALIDATE_JAVASCRIPT_PRETTIER: false
+          VALIDATE_TYPESCRIPT_PRETTIER: false
+          VALIDATE_JSON_PRETTIER: false
+          VALIDATE_YAML_PRETTIER: false
