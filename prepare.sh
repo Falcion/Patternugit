@@ -29,8 +29,17 @@ traverse() {
     info "Traversing directory: $directory"
     for item in "$directory"/*; do
         if [ -d "$item" ]; then
-            local dirname=$(basename "$item")
-            if [[ ! " ${EXCLUDING_FOLDERS[@]} " =~ " ${dirname} " ]]; then
+            local dirname
+            dirname=$(basename "$item")  # Declare and assign separately
+            # Use a loop to check against the EXCLUDING_FOLDERS array
+            local exclude=false
+            for excluded in "${EXCLUDING_FOLDERS[@]}"; do
+                if [[ "$dirname" == "$excluded" ]]; then
+                    exclude=true
+                    break
+                fi
+            done
+            if [ "$exclude" = false ]; then
                 traverse "$item"
             fi
         elif [ -f "$item" ]; then

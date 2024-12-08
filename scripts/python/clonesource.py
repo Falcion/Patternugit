@@ -4,8 +4,8 @@
 # Copyright (c) Falcion 2023-2024
 # Free to share, use or change.
 
-import shutil
 import os
+import shutil
 
 ROOT, TARGET = "./../../", "source"
 
@@ -33,11 +33,9 @@ if confirm_copy():
         try:
             shutil.copy(filepath, copypath)
 
-            print(
-                f"Entity \"{file}\" was copied to \"{TARGET}\" successfully.")
+            print(f'Entity "{file}" was copied to "{TARGET}" successfully.')
         except Exception:
-            print(
-                f"Entity {file} not found in the root directory, thrown error.")
+            print(f"Entity {file} not found in the root directory, thrown error.")
 
     print("Copy process completed.")
 else:

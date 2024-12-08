@@ -14,15 +14,10 @@
       "type": "node",
       "request": "launch",
       "program": "${workspaceFolder}/${file}",
-      "runtimeArgs": [
-        "-r",
-        "ts-node/register"
-      ],
+      "runtimeArgs": ["-r", "ts-node/register"],
       "sourceMaps": true,
       "cwd": "${workspaceFolder}",
-      "outFiles": [
-        "${workspaceFolder}/dist/**/*.js"
-      ]
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
     },
     {
       "name": "Debug with TSC",
@@ -32,9 +27,7 @@
       "preLaunchTask": "tsc: build - tsconfig.json",
       "sourceMaps": true,
       "cwd": "${workspaceFolder}",
-      "outFiles": [
-        "${workspaceFolder}/dist/**/*.js"
-      ]
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
     },
     {
       "name": "Launch .PY script",
@@ -42,6 +35,6 @@
       "request": "launch",
       "program": "${file}",
       "console": "integratedTerminal"
-    },
+    }
   ]
 }

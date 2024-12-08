@@ -10,19 +10,25 @@ import sys
 
 from lib import git
 
+
 def main(argv):
-  parser = argparse.ArgumentParser()
-  parser.add_argument("-o", "--output",
-      help="directory into which exported patches will be written",
-      required=True)
-  parser.add_argument("patch_range",
-      nargs='?',
-      help="range of patches to export. Defaults to all commits since the "
-           "most recent tag or remote branch.")
-  args = parser.parse_args(argv)
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-o",
+        "--output",
+        help="directory into which exported patches will be written",
+        required=True,
+    )
+    parser.add_argument(
+        "patch_range",
+        nargs="?",
+        help="range of patches to export. Defaults to all commits since the "
+        "most recent tag or remote branch.",
+    )
+    args = parser.parse_args(argv)
 
-  git.export_patches('.', args.output, patch_range=args.patch_range)
+    git.export_patches(".", args.output, patch_range=args.patch_range)
 
 
-if __name__ == '__main__':
-  main(sys.argv[1:])
+if __name__ == "__main__":
+    main(sys.argv[1:])
