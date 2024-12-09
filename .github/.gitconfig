@@ -41,10 +41,10 @@
     #
     # Out of luck: on Windows w/o msysGit? You may have Notepad++…
     # editor = 'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
-    # 
+    #
     # If you want to use Sublime Text 2's subl wrapper:
     # editor = subl -w
-    # 
+    #
     # Sublime Text 3 on Windows:
     # editor = 'c:/Program Files/Sublime Text 3/subl.exe' -w
     editor = code --wait
@@ -217,7 +217,7 @@
     delete-branch = branch -D
     # Display every branch in current repository
     display-branch = !git branch
-    display-branches = !git branch -a 
+    display-branches = !git branch -a
     # Display list of files
     ls = ls-files
     # Checkout repository

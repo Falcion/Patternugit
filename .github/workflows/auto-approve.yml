@@ -2,7 +2,7 @@ name: Auto approve
 
 on:
   workflow_dispatch:
-    inputs: 
+    inputs:
       pullRequestNumber:
         description: Pull request number to auto-approve
         required: false
@@ -13,6 +13,6 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-    - uses: hmarr/auto-approve-action@v4
-      with:
-        pull-request-number: ${{ github.event.inputs.pullRequestNumber }}
+      - uses: hmarr/auto-approve-action@v4
+        with:
+          pull-request-number: ${{ github.event.inputs.pullRequestNumber }}

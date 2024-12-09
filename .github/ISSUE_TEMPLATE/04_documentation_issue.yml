@@ -1,9 +1,7 @@
-# yaml-language-server: $schema='none'
-
 name: Issue about the documentation
 description: Use this form to report any issues or inconsistencies you encounter in the project's documentation
-title: "[DOCS]: "
-labels: ["documentation"]
+title: '[DOCS]: '
+labels: ['documentation']
 body:
   - type: markdown
     attributes:
@@ -26,7 +24,7 @@ body:
     attributes:
       label: Where is the essence of the bug
       description: Write the file name and the line of the bugs you've encountered, like “README:L#53”, or link to the lines within service.
-      placeholder: "README:L#1 or https://github.com/Falcion/Patternugit/blob/019e50dec512bb1c735c5842a5ca5e458998c058/README.md?plain=1#L1"
+      placeholder: 'README:L#1 or https://github.com/Falcion/Patternugit/blob/019e50dec512bb1c735c5842a5ca5e458998c058/README.md?plain=1#L1'
     validations:
       required: true
   - type: textarea

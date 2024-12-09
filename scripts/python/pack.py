@@ -21,4 +21,4 @@ for root, dirs, files in os.walk(ROOT):
 
 ZIP.close()
 
-print("Repository compressed into \"BACKUP.zip\" successfully.")
+print('Repository compressed into "BACKUP.zip" successfully.')

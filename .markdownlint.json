@@ -1,21 +1,15 @@
 {
   "default": true,
-  "MD034": false,
   "MD041": false,
   "MD003": false,
   "no-angle-brackets": true,
   "no-inline-html": {
-    "allowed_elements": [
-      "br",
-      "details",
-      "img",
-      "li",
-      "summary",
-      "ul",
-      "unknown",
-      "Tabs",
-      "TabItem"
-    ]
+    "allowed_elements": ["br", "div", "a", "img", "p"]
   },
-  "extends": "@electron/lint-roller/configs/markdownlint.json"
+  "MD024": {
+    "siblings_only": true
+  },
+  "MD013": {
+    "code_blocks": false
+  }
 }
