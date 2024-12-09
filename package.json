@@ -195,7 +195,7 @@
     "eslint-plugin-markdownlint": "^0.6.0",
     "eslint-plugin-node": "^11.1.0",
     "lint-staged": "^15.2.10",
-    "markdownlint": "^0.36.1"
+    "markdownlint": "^0.37.0"
   },
   "config": {
     "commitizen": {
