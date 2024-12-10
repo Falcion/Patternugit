@@ -10,8 +10,8 @@ skip_glob = ['venv/*', '.venv/*', '**venvs/*', '**/lib/*', 'env/*', 'build/*', '
 [mypy]
 disallow_untyped_calls = true
 # Enforces type annotations
-exclude = ^(venv|.venv|venvs|env|build|dist)/
 disallow_untyped_defines = true
+exclude = '^(venv|.venv|venvs|env|build|dist)/'
 [tool.ruff]
 exclude = ['venv', '.venv', 'venvs', 'env', 'build', 'dist']
 [tool.pyink]

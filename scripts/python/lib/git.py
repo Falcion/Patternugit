@@ -70,8 +70,8 @@ def am(
         for path_pattern in exclude:
             args += ["--exclude", path_pattern]
     if keep_cr is True:
-        # Keep the CR of CRLF in case any patches target files with Windows line
-        # endings.
+        # Keep the CR of CRLF in case any patches target files with Windows
+        # line endings.
         args += ["--keep-cr"]
 
     root_args = ["-C", repo]
@@ -84,12 +84,13 @@ def am(
     proc = subprocess.Popen(command, stdin=subprocess.PIPE)
     proc.communicate(patch_data.encode("utf-8"))
     if proc.returncode != 0:
-        raise RuntimeError("Command {} returned {}".format(command, proc.returncode))
+        raise RuntimeError("Command {} returned {}"
+                           .format(command, proc.returncode))
 
 
 def import_patches(repo, **kwargs):
-    """same as am(), but we save the upstream HEAD so we can refer to it when we
-    later export patches"""
+    """same as am(), but we save the upstream HEAD so we can refer to it when
+    we later export patches"""
     update_ref(repo=repo, ref="refs/patches/upstream-head", newvalue="HEAD")
     am(repo=repo, **kwargs)
 
@@ -131,7 +132,8 @@ def guess_base_commit(repo):
             "describe",
             "--tags",
         ]
-        return subprocess.check_output(args).decode("utf-8").rsplit("-", 2)[0:2]
+        res = subprocess.check_output(args).decode("utf-8").rsplit("-", 2)[0:2]
+        return res
 
 
 def format_patch(repo, since):
@@ -154,8 +156,8 @@ def format_patch(repo, since):
         "--no-stat",
         "--stdout",
         # Per RFC 3676 the signature is separated from the body by a line with
-        # '-- ' on it. If the signature option is omitted the signature defaults
-        # to the Git version number.
+        # '-- ' on it. If the signature option is omitted the signature
+        # defaults to the Git version number.
         "--no-signature",
         # The name of the parent commit object isn't useful information in this
         # context, so zero it out to avoid needless patch-file churn.
@@ -186,7 +188,10 @@ def munge_subject_to_filename(subject):
     """Derive a suitable filename from a commit's subject"""
     if subject.endswith(".patch"):
         subject = subject[:-6]
-    return re.sub(r"[^A-Za-z0-9-]+", "_", subject).strip("_").lower() + ".patch"
+
+    data = re.sub(r"[^A-Za-z0-9-]+", "_", subject).strip("_").lower()
+    data = data + ".patch"
+    return data
 
 
 def get_file_name(patch):
@@ -194,13 +199,13 @@ def get_file_name(patch):
     file_name = None
     for line in patch:
         if line.startswith("Patch-Filename: "):
-            file_name = line[len("Patch-Filename: ") :]
+            file_name = line[len("Patch-Filename: "):]
             break
     # If no patch-filename header, munge the subject.
     if not file_name:
         for line in patch:
             if line.startswith("Subject: "):
-                file_name = munge_subject_to_filename(line[len("Subject: ") :])
+                file_name = munge_subject_to_filename(line[len("Subject: "):])
                 break
     return file_name.rstrip("\n")
 
@@ -213,13 +218,14 @@ def join_patch(patch):
 def remove_patch_filename(patch):
     """Strip out the Patch-Filename trailer from a patch's message body"""
     force_keep_next_line = False
-    for i, l in enumerate(patch):
+    for i, l in enumerate(patch):  # noqa: E741
         is_patchfilename = l.startswith("Patch-Filename: ")
         next_is_patchfilename = i < len(patch) - 1 and patch[i + 1].startswith(
             "Patch-Filename: "
         )
         if not force_keep_next_line and (
-            is_patchfilename or (next_is_patchfilename and len(l.rstrip()) == 0)
+            is_patchfilename or (next_is_patchfilename
+                                 and len(l.rstrip()) == 0)
         ):
             pass  # drop this line
         else:
@@ -232,7 +238,7 @@ def to_utf8(patch):
     if sys.version_info[0] >= 3:
         return str(patch, "utf-8")
 
-    return unicode(patch, "utf-8")
+    return unicode(patch, "utf-8")  # noqa: F821
 
 
 def export_patches(repo, out_dir, patch_range=None, dry_run=False):
@@ -257,9 +263,9 @@ def export_patches(repo, out_dir, patch_range=None, dry_run=False):
         pass
 
     if dry_run:
-        # If we're doing a dry run, iterate through each patch and see if the newly
-        # exported patch differs from what exists. Report number of mismatched
-        # patches and fail if there's more than one.
+        # If we're doing a dry run, iterate through each patch and see if the
+        # newly exported patch differs from what exists. Report number of
+        # mismatched patches and fail if there's more than one.
         bad_patches = []
         for patch in patches:
             filename = get_file_name(patch)
@@ -270,14 +276,13 @@ def export_patches(repo, out_dir, patch_range=None, dry_run=False):
                 bad_patches.append(filename)
         if len(bad_patches) > 0:
             sys.stderr.write(
-                "Patches in {} not up to date: {} patches need update\n-- {}\n".format(
-                    out_dir, len(bad_patches), "\n-- ".join(bad_patches)
-                )
+                "Patches in {} not up to date: {} patches need update\n-- {}\n"
+                .format(out_dir, len(bad_patches), "\n-- ".join(bad_patches))
             )
             sys.exit(1)
     else:
-        # Remove old patches so that deleted commits are correctly reflected in the
-        # patch files (as a removed file)
+        # Remove old patches so that deleted commits are correctly reflected
+        # in the patch files (as a removed file)
         for p in os.listdir(out_dir):
             if p.endswith(".patch"):
                 os.remove(posixpath.join(out_dir, p))

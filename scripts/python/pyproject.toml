@@ -1,10 +1,18 @@
 [tool.black]
-line-length = 79  # Adjust to flake8
+exclude = '^(venv|.venv|venvs|env|build|dist)/'
+line-length = 79
+# Adjust to flake8
 [tool.isort]
-profile = "black"  # Ensures compatibility with Black formatting
 line_length = 79
-known_third_party = [yaml]  # Add external libraries here
+profile = "black"
+# Ensures compatibility with Black formatting
+skip_glob = ['venv/*', '.venv/*', '**venvs/*', '**/lib/*', 'env/*', 'build/*', 'dist/*']
 [mypy]
-disallow_untyped_calls = True  # Enforces type annotations
-disallow_untyped_defines = True
-exclude = ^(venv|.venv|env|build|dist)/
+disallow_untyped_calls = true
+# Enforces type annotations
+disallow_untyped_defines = true
+exclude = '^(venv|.venv|venvs|env|build|dist)/'
+[tool.ruff]
+exclude = ['venv', '.venv', 'venvs', 'env', 'build', 'dist']
+[tool.pyink]
+exclude = '^(venv|.venv|venvs|env|build|dist)/'
