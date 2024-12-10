@@ -50,10 +50,10 @@ jobs:
           # https://github.com/Falcion/Patternugit/issues/195
           VALIDATE_NATURAL_LANGUAGE: false
           VALIDATE_JAVASCRIPT_ES: false
-          VALIDATE_TAVASCRIPT_ES: false
+          VALIDATE_TYPESCRIPT_ES: false
           # As the issue above, STANDARD linter bases it's config and function
           # at the stake of ESLINT, which is not supported
           VALIDATE_JAVASCRIPT_STANDARD: false
-          VALIDATE_TAVASCRIPT_STANDARD: false
+          VALIDATE_TYPESCRIPT_STANDARD: false
           # Same as STANDARD but worse: this is just subcommand only for JSON format of ESLINT
           VALIDATE_JSON: false
