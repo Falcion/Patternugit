@@ -214,7 +214,7 @@
     "husky": "^9.1.7",
     "lint": "^1.1.2",
     "lint-staged": "^15.2.10",
-    "markdownlint": "^0.37.0"
+    "markdownlint": "^0.37.0",
     "markdownlint-cli": "^0.43.0",
     "markdownlint-cli2": "^0.15.0",
     "minimist": "^1.2.8",
@@ -241,42 +241,5 @@
     "ts-node": "^10.9.2",
     "ts-standard": "^12.0.2",
     "typescript": "^5.7.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    }
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "node scripts/lint.js --js --fix --only --"
-    ],
-    "*.{js,ts,d.ts}": [
-      "prettier --list-different",
-      "eslint"
-    ],
-    "*.{cc,mm,c,h}": [
-      "python3 scripts/run-clang-format.py -r -c --fix"
-    ],
-    "*.md": [
-      "npm run lint:docs"
-    ],
-    "*.{gn,gni}": [
-      "npm run gn-check",
-      "npm run gn-format"
-    ],
-    "*.py": [
-      "node scripts/lint.js --py --fix --only --"
-    ],
-    "{*.patch,.patches}": [
-      "node scripts/lint.js --patches --only --",
-      "ts-node scripts/js/check-patch-diff.ts"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "sh .husky/pre-commit",
-      "commit-msg": "sh .husky/commit-msg"
-    }
   }
 }
