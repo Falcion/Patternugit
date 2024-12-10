@@ -3,7 +3,7 @@
 # Remove kubectl
 if command -v kubectl &>/dev/null; then
 	echo "Removing kubectl..."
-    sudo rm "$(which kubectl)" # Quote the command substitution to prevent word splitting
+	sudo rm "$(which kubectl)" # Quote the command substitution to prevent word splitting
 else
 	echo "kubectl not found. Skipping..."
 fi
