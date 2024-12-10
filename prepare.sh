@@ -7,7 +7,7 @@ ROOT_DIRECTORY=$(pwd)
 
 # Logging functions
 info() {
-    echo "[INFO] $1"
+	echo "[INFO] $1"
 }
 
 # Search function
