@@ -194,9 +194,11 @@ Procfile          text
 **/.yarn/releases/**   binary
 **/.yarn/plugins/**    binary
 # RC files (like .babelrc or .eslintrc)
-*.*rc*             text
-*.*rc*             working-tree-encoding=UTF8
+*.*rc*             text working-tree-encoding=UTF8
 # Ignore files (like .npmignore or .gitignore)
 *.*ignore         text
 # Prevents massive diffs from built files
 dist/*            binary
+
+# Requirements UTF force-fix
+**/requirements*  text working-tree-encoding=UTF8
