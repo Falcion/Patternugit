@@ -1,9 +1,7 @@
-# yaml-language-server: $schema='none'
-
 name: Question
 description: Ask the question or seek for clarification
-title: "[QUESTION]: "
-labels: ["question"]
+title: '[QUESTION]: '
+labels: ['question']
 body:
   - type: markdown
     attributes:

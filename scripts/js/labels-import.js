@@ -1,3 +1,4 @@
+/* eslint-reason: browser code */
 /*
 
 Purpose: Import settings for GitHub Labels.
@@ -23,79 +24,79 @@ const labels = [
   {
     name: 'bug',
     description: "Something isn't working",
-    color: 'ee0701',
+    color: 'ee0701'
   },
   {
     name: 'duplicate',
     description: 'This issue or pull request already exists',
-    color: 'cccccc',
+    color: 'cccccc'
   },
   {
     name: 'enhancement',
     description: 'New feature or request',
-    color: '84b6eb',
+    color: '84b6eb'
   },
   {
     name: 'good first issue',
     description: 'Good for newcomers',
-    color: '7057ff',
+    color: '7057ff'
   },
   {
     name: 'help wanted',
     description: 'Extra attention is needed',
-    color: '33aa3f',
+    color: '33aa3f'
   },
   {
     name: 'invalid :notebook:',
     description: "This doesn't seem right",
-    color: 'e6e6e6',
+    color: 'e6e6e6'
   },
   {
     name: 'question',
     description: 'Further information is requested',
-    color: 'cc317c',
+    color: 'cc317c'
   },
   {
     name: 'wontfix',
     description: 'This will not be worked on',
-    color: 'ffffff',
-  },
-];
+    color: 'ffffff'
+  }
+]
 
 // Function to update an existing label
-function updateLabel(label) {
-  let flag = false;
+function updateLabel (label) {
+  let flag = false
 
-  [].slice.call(document.querySelectorAll('.labels-list-item')).forEach((element) => {
+  ;[].slice.call(document.querySelectorAll('.labels-list-item')).forEach((element) => {
     if (element.querySelector('.label-link').textContent.trim() === label.name) {
-      flag = true;
-      element.querySelector('.js-edit-label').click();
-      element.querySelector('.js-new-label-name-input').value = label.name;
-      element.querySelector('.js-new-label-description-input').value = label.description;
-      element.querySelector('.js-new-label-color-input').value = `#${label.color}`;
-      element.querySelector('.js-edit-label-cancel ~ .btn-primary').click();
+      flag = true
+      element.querySelector('.js-edit-label').click()
+      element.querySelector('.js-new-label-name-input').value = label.name
+      element.querySelector('.js-new-label-description-input').value = label.description
+      element.querySelector('.js-new-label-color-input').value = `#${label.color}`
+      element.querySelector('.js-edit-label-cancel ~ .btn-primary').click()
     }
-  });
+  })
 
-  return flag;
+  return flag
 }
 
 // Function to add a new label
-function addNewLabel(label) {
-  document.querySelector('.js-new-label-name-input').value = label.name;
-  document.querySelector('.js-new-label-description-input').value = label.description;
-  document.querySelector('.js-new-label-color-input').value = `#${label.color}`;
-  document.querySelector('.js-details-target ~ .btn-primary').disabled = false;
-  document.querySelector('.js-details-target ~ .btn-primary').click();
+function addNewLabel (label) {
+  document.querySelector('.js-new-label-name-input').value = label.name
+  document.querySelector('.js-new-label-description-input').value = label.description
+  document.querySelector('.js-new-label-color-input').value = `#${label.color}`
+  document.querySelector('.js-details-target ~ .btn-primary').disabled = false
+  document.querySelector('.js-details-target ~ .btn-primary').click()
 }
 
 // Function to update or add a new label
-function addLabel(label) {
+function addLabel (label) {
   if (!updateLabel(label)) {
-    addNewLabel(label);
+    addNewLabel(label)
   }
 }
 
-labels.map((label) => {
-  addLabel(label);
-});
+labels.forEach((label) => {
+  addLabel(label)
+})

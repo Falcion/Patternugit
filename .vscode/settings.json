@@ -4,10 +4,18 @@
     "**/.DS_Store": true
   },
   "yaml.schemas": {
-    "none": [
-      "site.yaml",
-    ]
+    "yamllint": ["https://json.schemastore.org/yamllint.json"],
+    "https://json.schemastore.org/yamllint.json": "/.github/ISSUE_TEMPLATE/config.yml"
   },
   "files.autoSave": "onFocusChange",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "[markdown]": {
+    "editor.rulers": [80]
+  },
+  "prettier.trailingComma": "all",
+  "files.associations": {
+    "*ignore*": "ignore",
+    "README": "plaintext",
+    "*-{comments, readme}*": "markdown"
+  }
 }

@@ -1,5 +1,6 @@
 > [!Important]
-> Don't use this issue template unless other ways of publishing issues or templates do not satisfy your needs.
+> Don't use this issue template unless other ways of publishing issues or templates
+> do not satisfy your needs.
 >
 > **This category of issues will be lower in priority, instead, use:**\
 > [Default forms for issues.](https://github.com/Falcion/Patternugit/issues/new/choose/)
