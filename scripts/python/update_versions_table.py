@@ -8,7 +8,9 @@ MARKDOWN_FILE = "./../../UNSUPPORTED_VERSIONS.md"
 GITHUB_URL = "https://github.com/Falcion/Patternugit/tree/"
 MAINTENANCE_STATUS_UNSUPPORTED = "❎"
 MAINTENANCE_STATUS_SUPPORTED = "✅"
-AUTO_GENERATED_NOTICE = "# THIS FILE IS AUTO-GENERATED. DO NOT EDIT MANUALLY.\n"
+AUTO_GENERATED_NOTICE = (
+    "# THIS FILE IS AUTO-GENERATED. DO NOT EDIT MANUALLY.\n"
+)
 ISSUE_TEMPLATE_DIR = "./../../.github/ISSUE_TEMPLATE/"
 
 
@@ -16,7 +18,10 @@ def get_git_tags():
     """Get the list of tags from the current local Git repository."""
     try:
         tags = (
-            subprocess.check_output(["git", "tag"]).decode("utf-8").strip().split("\n")
+            subprocess.check_output(["git", "tag"])
+            .decode("utf-8")
+            .strip()
+            .split("\n")
         )
         return sorted(tags)
     except subprocess.CalledProcessError:
@@ -43,7 +48,9 @@ def create_markdown_table(tags, versions_mapping):
     )
 
     for tag in tags:
-        maintenance_status = MAINTENANCE_STATUS_UNSUPPORTED  # Default to unsupported
+        maintenance_status = (
+            MAINTENANCE_STATUS_UNSUPPORTED  # Default to unsupported
+        )
         version_info = versions_mapping.get(tag, {})
 
         if version_info:
@@ -56,9 +63,7 @@ def create_markdown_table(tags, versions_mapping):
             elif status == "skipped":
                 maintenance_status = "⏭️"
 
-        line = (
-            f"| [{tag}]({GITHUB_URL}{tag})            | {maintenance_status}          |"
-        )
+        line = f"| [{tag}]({GITHUB_URL}{tag})            | {maintenance_status}          |"
         table_lines.append(line)
 
     table_lines.append("")
@@ -75,7 +80,9 @@ def write_markdown_file(content):
 def update_issue_templates(tags):
     """Update dropdown options for versions in issue templates."""
     if not os.path.exists(ISSUE_TEMPLATE_DIR):
-        print(f"Warning: Issue template directory {ISSUE_TEMPLATE_DIR} not found.")
+        print(
+            f"Warning: Issue template directory {ISSUE_TEMPLATE_DIR} not found."
+        )
         return
 
     for filename in os.listdir(ISSUE_TEMPLATE_DIR):
@@ -90,7 +97,10 @@ def update_issue_templates(tags):
 
         # Search for dropdown block with "version" id
         for block in template.get("body", []):
-            if block.get("type") == "dropdown" and block.get("id") == "version":
+            if (
+                block.get("type") == "dropdown"
+                and block.get("id") == "version"
+            ):
                 block["attributes"]["options"] = tags + ["Another or unknown"]
                 updated = True
                 break

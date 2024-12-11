@@ -84,8 +84,9 @@ def am(
     proc = subprocess.Popen(command, stdin=subprocess.PIPE)
     proc.communicate(patch_data.encode("utf-8"))
     if proc.returncode != 0:
-        raise RuntimeError("Command {} returned {}"
-                           .format(command, proc.returncode))
+        raise RuntimeError(
+            "Command {} returned {}".format(command, proc.returncode)
+        )
 
 
 def import_patches(repo, **kwargs):
@@ -199,13 +200,13 @@ def get_file_name(patch):
     file_name = None
     for line in patch:
         if line.startswith("Patch-Filename: "):
-            file_name = line[len("Patch-Filename: "):]
+            file_name = line[len("Patch-Filename: ") :]
             break
     # If no patch-filename header, munge the subject.
     if not file_name:
         for line in patch:
             if line.startswith("Subject: "):
-                file_name = munge_subject_to_filename(line[len("Subject: "):])
+                file_name = munge_subject_to_filename(line[len("Subject: ") :])
                 break
     return file_name.rstrip("\n")
 
@@ -224,8 +225,8 @@ def remove_patch_filename(patch):
             "Patch-Filename: "
         )
         if not force_keep_next_line and (
-            is_patchfilename or (next_is_patchfilename
-                                 and len(l.rstrip()) == 0)
+            is_patchfilename
+            or (next_is_patchfilename and len(l.rstrip()) == 0)
         ):
             pass  # drop this line
         else:
@@ -276,8 +277,9 @@ def export_patches(repo, out_dir, patch_range=None, dry_run=False):
                 bad_patches.append(filename)
         if len(bad_patches) > 0:
             sys.stderr.write(
-                "Patches in {} not up to date: {} patches need update\n-- {}\n"
-                .format(out_dir, len(bad_patches), "\n-- ".join(bad_patches))
+                "Patches in {} not up to date: {} patches need update\n-- {}\n".format(
+                    out_dir, len(bad_patches), "\n-- ".join(bad_patches)
+                )
             )
             sys.exit(1)
     else:

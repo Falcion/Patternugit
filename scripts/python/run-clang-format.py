@@ -73,9 +73,13 @@ def list_files(files, recursive=False, extensions=None, exclude=None):
                     dnames[:] = [
                         x
                         for x in dnames
-                        if not fnmatch.fnmatch(os.path.join(dirpath, x), pattern)
+                        if not fnmatch.fnmatch(
+                            os.path.join(dirpath, x), pattern
+                        )
                     ]
-                    fpaths = [x for x in fpaths if not fnmatch.fnmatch(x, pattern)]
+                    fpaths = [
+                        x for x in fpaths if not fnmatch.fnmatch(x, pattern)
+                    ]
                 for fp in fpaths:
                     ext = os.path.splitext(fp)[1][1:]
                     if ext in extensions:
@@ -225,7 +229,9 @@ def main():
         default=DEFAULT_EXTENSIONS,
     )
     parser.add_argument(
-        "--fix", help="if specified, reformat files in-place", action="store_true"
+        "--fix",
+        help="if specified, reformat files in-place",
+        action="store_true",
     )
     parser.add_argument(
         "-r",
@@ -234,19 +240,26 @@ def main():
         help="run recursively over directories",
     )
     parser.add_argument(
-        "-d", "--dry-run", action="store_true", help="just print the list of files"
+        "-d",
+        "--dry-run",
+        action="store_true",
+        help="just print the list of files",
     )
     parser.add_argument("files", metavar="file", nargs="+")
     parser.add_argument("-q", "--quiet", action="store_true")
     parser.add_argument(
-        "-c", "--changed", action="store_true", help="only run on changed files"
+        "-c",
+        "--changed",
+        action="store_true",
+        help="only run on changed files",
     )
     parser.add_argument(
         "-j",
         metavar="N",
         type=int,
         default=0,
-        help="run N clang-format jobs in parallel" " (default number of cpus + 1)",
+        help="run N clang-format jobs in parallel"
+        " (default number of cpus + 1)",
     )
     parser.add_argument(
         "--color",
@@ -265,7 +278,8 @@ def main():
     )
     parser.add_argument(
         "--style",
-        help="formatting style to apply " "(LLVM/Google/Chromium/Mozilla/WebKit)",
+        help="formatting style to apply "
+        "(LLVM/Google/Chromium/Mozilla/WebKit)",
     )
 
     args = parser.parse_args()
@@ -342,7 +356,9 @@ def main():
     else:
         # pylint: disable=consider-using-with
         pool = multiprocessing.Pool(njobs)
-        it = pool.imap_unordered(partial(run_clang_format_diff_wrapper, args), files)
+        it = pool.imap_unordered(
+            partial(run_clang_format_diff_wrapper, args), files
+        )
     while True:
         try:
             outs, errs = next(it)
@@ -381,7 +397,9 @@ def main():
             os.unlink(patch_file.name)
         else:
             print(
-                "To patch these files, run:", f"$ git apply {patch_file.name}", sep="\n"
+                "To patch these files, run:",
+                f"$ git apply {patch_file.name}",
+                sep="\n",
             )
             filename = patch_file.name
             print(f"\nTo patch these files, run:\n$ git apply {filename}\n")

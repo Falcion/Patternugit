@@ -14,7 +14,9 @@ from lib.patches import patch_from_dir
 
 def main(argv):
     parser = argparse.ArgumentParser()
-    parser.add_argument("patch_dir", help="directory containing patches to apply")
+    parser.add_argument(
+        "patch_dir", help="directory containing patches to apply"
+    )
     parser.add_argument(
         "-3",
         "--3way",
@@ -25,7 +27,9 @@ def main(argv):
     args = parser.parse_args(argv)
 
     git.import_patches(
-        repo=".", patch_data=patch_from_dir(args.patch_dir), threeway=args.threeway
+        repo=".",
+        patch_data=patch_from_dir(args.patch_dir),
+        threeway=args.threeway,
     )
 
 

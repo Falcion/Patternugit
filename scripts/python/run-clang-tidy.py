@@ -13,7 +13,12 @@ from typing import List
 SOURCE_ROOT = os.path.dirname(os.path.abspath(__file__))
 LLVM_BIN = os.path.abspath(
     os.path.join(
-        SOURCE_ROOT, "..", "third_party", "llvm-build", "Release+Asserts", "bin"
+        SOURCE_ROOT,
+        "..",
+        "third_party",
+        "llvm-build",
+        "Release+Asserts",
+        "bin",
     )
 )
 PLATFORM = sys.platform
@@ -32,7 +37,11 @@ def spawn_async(command: List[str], options: dict = {}) -> dict:
         )
         stdout, stderr = process.communicate()
         status = process.returncode
-        return {"stdout": stdout.decode(), "stderr": stderr.decode(), "status": status}
+        return {
+            "stdout": stdout.decode(),
+            "stderr": stderr.decode(),
+            "status": status,
+        }
     except Exception as e:
         raise e
 
@@ -59,7 +68,10 @@ def get_depot_tools_env() -> dict:
                 shell=True,
             )
             if result.returncode == 0:
-                return {**os.environ, **json.loads(result.stdout.decode().strip())}
+                return {
+                    **os.environ,
+                    **json.loads(result.stdout.decode().strip()),
+                }
         except:
             pass
 
@@ -101,7 +113,9 @@ def parse_command_line() -> argparse.Namespace:
         "-j", "--jobs", type=int, default=1, help="Number of parallel jobs"
     )
     parser.add_argument("--checks", type=str, default="", help="Checks to run")
-    parser.add_argument("--out-dir", type=str, required=True, help="Output directory")
+    parser.add_argument(
+        "--out-dir", type=str, required=True, help="Output directory"
+    )
     parser.add_argument("files", nargs="*", help="Files to run clang-tidy on")
     return parser.parse_args()
 
@@ -138,7 +152,11 @@ def main() -> int:
             # Implement findMatchingFiles logic here...
             pass
 
-        return 0 if run_clang_tidy(out_dir, filenames, args.checks, args.jobs) else 1
+        return (
+            0
+            if run_clang_tidy(out_dir, filenames, args.checks, args.jobs)
+            else 1
+        )
     except ErrorWithExitCode as e:
         print(f"ERROR: {e}")
         return e.exit_code

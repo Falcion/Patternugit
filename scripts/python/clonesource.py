@@ -12,7 +12,9 @@ ROOT, TARGET = "./../../", "source"
 
 def confirm_copy():
     while True:
-        response = input("Do you want to copy the files? (Y/N): ").strip().upper()
+        response = (
+            input("Do you want to copy the files? (Y/N): ").strip().upper()
+        )
 
         if response in ("Y", "N"):
             return response == "Y"
@@ -35,7 +37,9 @@ if confirm_copy():
 
             print(f'Entity "{file}" was copied to "{TARGET}" successfully.')
         except Exception:
-            print(f"Entity {file} not found in the root directory, thrown error.")
+            print(
+                f"Entity {file} not found in the root directory, thrown error."
+            )
 
     print("Copy process completed.")
 else:
