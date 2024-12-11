@@ -1,4 +1,4 @@
-﻿astroid==3.3.5
+astroid==3.3.5
 asttokens==2.4.1
 attrs==24.2.0
 backcall==0.2.0
@@ -54,7 +54,7 @@ pyink==24.10.0
 pylint==3.3.1
 pyproject_hooks==1.2.0
 python-dateutil==2.9.0.post0
-pywin32==308
+pywin32==308; platform_system == "Windows"
 PyYAML==6.0.2
 pyzmq==26.2.0
 referencing==0.35.1
