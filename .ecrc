@@ -4,9 +4,10 @@
   "IgnoreDefaults": false,
   "SpacesAfterTabs": false,
   "NoColor": false,
-  // Ignoring SH scripts towards configurations of
-  // SHFMT and other linters, in this case: EDITORCONFIG may be considered, but not required.
-  "Exclude": ["\\.asc$", "*.sh"],
+  "Exclude": [
+    "\\.asc$",
+    "*.sh"
+  ],
   "AllowedContentTypes": [],
   "PassedFiles": [],
   "Disable": {

@@ -12,5 +12,10 @@
   "[markdown]": {
     "editor.rulers": [80]
   },
-  "prettier.trailingComma": "all"
+  "prettier.trailingComma": "all",
+  "files.associations": {
+    "*ignore*": "ignore",
+    "README": "plaintext",
+    "*-{comments, readme}*": "markdown"
+  }
 }
