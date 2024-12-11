@@ -11,7 +11,7 @@ import sys
 from lib import git
 
 
-def main(argv):
+def main(argv) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "-o",
@@ -28,6 +28,8 @@ def main(argv):
     args = parser.parse_args(argv)
 
     git.export_patches(".", args.output, patch_range=args.patch_range)
+
+    return 0
 
 
 if __name__ == "__main__":

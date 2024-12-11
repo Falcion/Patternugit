@@ -36,6 +36,7 @@
     "prepack": "check-for-leaks",
     "prepare": "husky .husky/ && cd scripts/python && python3 -m venv venv && pip install -r requirements.txt",
     "prepare:python": "cd scripts/python && python3 -m venv venv && pip install -r requirements.txt",
+    "prepare:python-root": "python3 scripts/python/clonevenv.py",
     "prepare:template": "ts-node prepare-template.ts",
     "update-analytics": "ts-node scripts/js/analytics-workflow.ts",
     "test": "npm run linter:monorepo && node ./script/spec-runner.js",

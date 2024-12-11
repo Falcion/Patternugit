@@ -21,15 +21,12 @@ import subprocess
 import sys
 
 
-def is_repo_root(path):
+def is_repo_root(path) -> bool:
     path_exists = os.path.exists(path)
     if not path_exists:
         return False
-
     git_folder_path = os.path.join(path, ".git")
-    git_folder_exists = os.path.exists(git_folder_path)
-
-    return git_folder_exists
+    return os.path.exists(git_folder_path)
 
 
 def get_repo_root(path):
@@ -60,7 +57,7 @@ def am(
     committer_name=None,
     committer_email=None,
     keep_cr=True,
-):
+) -> None:
     args = []
     if threeway:
         args += ["--3way"]
@@ -89,20 +86,20 @@ def am(
         )
 
 
-def import_patches(repo, **kwargs):
+def import_patches(repo, **kwargs) -> None:
     """same as am(), but we save the upstream HEAD so we can refer to it when
     we later export patches"""
     update_ref(repo=repo, ref="refs/patches/upstream-head", newvalue="HEAD")
     am(repo=repo, **kwargs)
 
 
-def update_ref(repo, ref, newvalue):
+def update_ref(repo, ref, newvalue) -> object:
     args = ["git", "-C", repo, "update-ref", ref, newvalue]
 
     return subprocess.check_call(args)
 
 
-def get_upstream_head(repo):
+def get_upstream_head(repo) -> str:
     args = [
         "git",
         "-C",
@@ -114,7 +111,7 @@ def get_upstream_head(repo):
     return subprocess.check_output(args).decode("utf-8").strip()
 
 
-def get_commit_count(repo, commit_range):
+def get_commit_count(repo, commit_range) -> int:
     args = ["git", "-C", repo, "rev-list", "--count", commit_range]
     return int(subprocess.check_output(args).decode("utf-8").strip())
 
@@ -242,7 +239,7 @@ def to_utf8(patch):
     return unicode(patch, "utf-8")  # noqa: F821
 
 
-def export_patches(repo, out_dir, patch_range=None, dry_run=False):
+def export_patches(repo, out_dir, patch_range=None, dry_run=False) -> None:
     if not os.path.exists(repo):
         sys.stderr.write(
             "Skipping patches in {} because it does not exist.\n".format(repo)

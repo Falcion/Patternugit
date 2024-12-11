@@ -8,11 +8,13 @@ profile = "black"
 # Ensures compatibility with Black formatting
 skip_glob = ['venv/*', '.venv/*', '**venvs/*', '**/lib/*', 'env/*', 'build/*', 'dist/*']
 [mypy]
+allow_untyped_calls = true
 disallow_untyped_calls = true
-# Enforces type annotations
-disallow_untyped_defines = true
 exclude = '^(venv|.venv|venvs|env|build|dist)/'
+ignore_missing_imports = true
 [tool.ruff]
 exclude = ['venv', '.venv', 'venvs', 'env', 'build', 'dist']
 [tool.pyink]
 exclude = '^(venv|.venv|venvs|env|build|dist)/'
+[tool.pylint.MASTER]
+ignore-paths = './venv/'

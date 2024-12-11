@@ -1,8 +1,12 @@
+from typing import List, Dict
 import json
 import os
 import subprocess
-
 import yaml
+
+# MIT License
+# Copyright (c) Falcion 2023-2024
+# Free to share, use or change.
 
 MARKDOWN_FILE = "./../../UNSUPPORTED_VERSIONS.md"
 GITHUB_URL = "https://github.com/Falcion/Patternugit/tree/"
@@ -14,8 +18,7 @@ AUTO_GENERATED_NOTICE = (
 ISSUE_TEMPLATE_DIR = "./../../.github/ISSUE_TEMPLATE/"
 
 
-def get_git_tags():
-    """Get the list of tags from the current local Git repository."""
+def get_git_tags() -> List[str]:
     try:
         tags = (
             subprocess.check_output(["git", "tag"])
@@ -29,16 +32,16 @@ def get_git_tags():
         return []
 
 
-def load_versions_mapping():
-    """Load the versions mapping from versions-mapping.json if it exists."""
+def load_versions_mapping() -> Dict[str, dict]:
     if os.path.exists("./../../versions-mapping.json"):
         with open("./../../versions-mapping.json", "r") as f:
             return json.load(f)
     return {}
 
 
-def create_markdown_table(tags, versions_mapping):
-    """Create the Markdown table for the versions."""
+def create_markdown_table(
+    tags: List[str], versions_mapping: Dict[str, dict]
+) -> str:
     table_lines = [AUTO_GENERATED_NOTICE]
     table_lines.append(
         "| Version                                                                 | Maintenance |"
@@ -48,14 +51,11 @@ def create_markdown_table(tags, versions_mapping):
     )
 
     for tag in tags:
-        maintenance_status = (
-            MAINTENANCE_STATUS_UNSUPPORTED  # Default to unsupported
-        )
+        maintenance_status = MAINTENANCE_STATUS_UNSUPPORTED
         version_info = versions_mapping.get(tag, {})
 
         if version_info:
             status = version_info.get("status", "")
-
             if status == "supported":
                 maintenance_status = MAINTENANCE_STATUS_SUPPORTED
             elif status == "beta":
@@ -66,19 +66,15 @@ def create_markdown_table(tags, versions_mapping):
         line = f"| [{tag}]({GITHUB_URL}{tag})            | {maintenance_status}          |"
         table_lines.append(line)
 
-    table_lines.append("")
-
     return "\n".join(table_lines)
 
 
-def write_markdown_file(content):
-    """Write the generated Markdown content to the file."""
+def write_markdown_file(content: str) -> None:
     with open(MARKDOWN_FILE, "w", encoding="utf-8") as f:
         f.write(content)
 
 
-def update_issue_templates(tags):
-    """Update dropdown options for versions in issue templates."""
+def update_issue_templates(tags: List[str]) -> None:
     if not os.path.exists(ISSUE_TEMPLATE_DIR):
         print(
             f"Warning: Issue template directory {ISSUE_TEMPLATE_DIR} not found."
@@ -91,11 +87,10 @@ def update_issue_templates(tags):
             continue
 
         with open(filepath, "r", encoding="utf-8") as f:
-            template = yaml.safe_load(f)
+            template: dict = yaml.safe_load(f)
 
         updated = False
 
-        # Search for dropdown block with "version" id
         for block in template.get("body", []):
             if (
                 block.get("type") == "dropdown"
@@ -111,13 +106,15 @@ def update_issue_templates(tags):
             print(f"Updated {filepath} with new version tags.")
 
 
-def main():
+def main() -> int:
     tags = get_git_tags()
     versions_mapping = load_versions_mapping()
     markdown_content = create_markdown_table(tags, versions_mapping)
     write_markdown_file(markdown_content)
     update_issue_templates(tags)
     print(f"Updated {MARKDOWN_FILE} with version information.")
+
+    return 0
 
 
 if __name__ == "__main__":

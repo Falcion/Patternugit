@@ -12,7 +12,7 @@ from lib import git
 from lib.patches import patch_from_dir
 
 
-def main(argv):
+def main(argv) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "patch_dir", help="directory containing patches to apply"
@@ -31,6 +31,8 @@ def main(argv):
         patch_data=patch_from_dir(args.patch_dir),
         threeway=args.threeway,
     )
+
+    return 0
 
 
 if __name__ == "__main__":

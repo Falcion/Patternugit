@@ -3,7 +3,7 @@ import json
 import os
 import subprocess
 import sys
-from typing import List
+from typing import List, Optional, Dict
 
 # MIT License.
 #
@@ -30,7 +30,7 @@ class ErrorWithExitCode(Exception):
         self.exit_code = exit_code
 
 
-def spawn_async(command: List[str], options: dict = {}) -> dict:
+def spawn_async(command: List[str], options: dict = {}) -> Dict[str, str]:
     try:
         process = subprocess.Popen(
             command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, **options
@@ -40,27 +40,26 @@ def spawn_async(command: List[str], options: dict = {}) -> dict:
         return {
             "stdout": stdout.decode(),
             "stderr": stderr.decode(),
-            "status": status,
+            "status": str(status),
         }
     except Exception as e:
         raise e
 
 
-def get_depot_tools_env() -> dict:
-    depot_tools_env = None
-
-    def find_depot_tools_on_path() -> dict:
+def get_depot_tools_env() -> Dict[str, str]:
+    def find_depot_tools_on_path() -> Optional[dict]:
         try:
             result = subprocess.run(
                 ["where" if PLATFORM == "win32" else "which", "gclient"],
                 capture_output=True,
             )
             if result.returncode == 0:
-                return os.environ
-        except:
+                return dict(os.environ)
+        except Exception:
             pass
+        return None
 
-    def check_for_build_tools() -> dict:
+    def check_for_build_tools() -> Optional[dict]:
         try:
             result = subprocess.run(
                 ["electron-build-tools", "show", "env", "--json"],
@@ -72,16 +71,11 @@ def get_depot_tools_env() -> dict:
                     **os.environ,
                     **json.loads(result.stdout.decode().strip()),
                 }
-        except:
+        except Exception:
             pass
+        return None
 
-    try:
-        depot_tools_env = find_depot_tools_on_path()
-        if not depot_tools_env:
-            depot_tools_env = check_for_build_tools()
-    except:
-        pass
-
+    depot_tools_env = find_depot_tools_on_path() or check_for_build_tools()
     if not depot_tools_env:
         raise ErrorWithExitCode(
             "Couldn't find depot_tools, ensure it's on your PATH", 1
@@ -104,7 +98,12 @@ def run_clang_tidy(
     if checks:
         args.append(f"--checks={checks}")
 
-    # Implement filterCompilationDatabase and other logic here...
+    try:
+        for file in filenames:
+            subprocess.run([cmd, *args, file], check=True)
+        return True
+    except subprocess.CalledProcessError:
+        return False
 
 
 def parse_command_line() -> argparse.Namespace:
@@ -128,7 +127,6 @@ def main() -> int:
         if not os.path.exists(out_dir):
             raise ErrorWithExitCode("Output directory doesn't exist", 1)
 
-        # Make sure the compile_commands.json file is up-to-date
         env = get_depot_tools_env()
 
         result = subprocess.run(
@@ -146,11 +144,10 @@ def main() -> int:
                 2,
             )
 
-        # Get filenames from args or find files
         filenames = args.files
         if not filenames:
-            # Implement findMatchingFiles logic here...
-            pass
+            print("No files specified. Please provide file paths.")
+            return 1
 
         return (
             0
