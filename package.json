@@ -50,7 +50,8 @@
     "release:first": "standard-version --first-release && npm run sync-release-table",
     "prerelease": "npm run release -- --prerelease",
     "prerelease:alpha": "npm run release -- --prerelease alpha",
-    "generate-version-json": "node scripts/js/generate-version-json.js"
+    "generate-version-json": "node scripts/js/generate-version-json.js",
+    "push-lfs": "git lfs push --all origin"
   },
   "repository": {
     "type": "git",
