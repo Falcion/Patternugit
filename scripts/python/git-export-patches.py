@@ -8,7 +8,7 @@
 import argparse
 import sys
 
-from lib import git
+from lib import git  # type: ignore
 
 
 def main(argv) -> int:

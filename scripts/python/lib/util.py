@@ -16,7 +16,7 @@ import zipfile
 # Copyright (c) Electron contributors
 # Copyright (c) 2013-2020 GitHub Inc.
 
-from lib.config import verbose_mode_print
+from lib.config import verbose_mode_print  # type: ignore
 
 ELECTRON_DIR = os.path.abspath(
     os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
@@ -130,9 +130,7 @@ def execute(argv, env=None, cwd=None):
 
 def get_electron_branding():
     SOURCE_ROOT = os.path.abspath(os.path.join(__file__, "..", "..", ".."))
-    branding_file_path = os.path.join(
-        SOURCE_ROOT, "shell", "app", "BRANDING.json"
-    )
+    branding_file_path = os.path.join(SOURCE_ROOT, "shell", "app", "BRANDING.json")
     with open(branding_file_path, encoding="utf-8") as file_in:
         return json.load(file_in)
 
@@ -206,14 +204,10 @@ def get_electron_exec():
 
 
 def get_buildtools_executable(name):
-    buildtools = os.path.realpath(
-        os.path.join(ELECTRON_DIR, "..", "buildtools")
-    )
+    buildtools = os.path.realpath(os.path.join(ELECTRON_DIR, "..", "buildtools"))
 
     if sys.platform == "darwin":
-        chromium_platform = (
-            "mac_arm64" if platform.machine() == "arm64" else "mac"
-        )
+        chromium_platform = "mac_arm64" if platform.machine() == "arm64" else "mac"
     elif sys.platform in ["win32", "cygwin"]:
         chromium_platform = "win"
     elif sys.platform in ["linux", "linux2"]:

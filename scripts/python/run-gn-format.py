@@ -2,7 +2,7 @@ import os
 import subprocess
 import sys
 
-from lib.utils import get_buildtools_executable
+from lib.utils import get_buildtools_executable  # type: ignore
 
 # MIT License.
 #

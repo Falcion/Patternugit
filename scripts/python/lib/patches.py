@@ -17,9 +17,7 @@ def read_patch(patch_dir, patch_filename) -> str:
     patch_path = os.path.join(patch_dir, patch_filename)
     with codecs.open(patch_path, encoding="utf-8") as file:
         for line in file.readlines():
-            line_has_correct_start = line.startswith(
-                "diff -"
-            ) or line.startswith("---")
+            line_has_correct_start = line.startswith("diff -") or line.startswith("---")
             if not added_filename_line and line_has_correct_start:
                 ret.append("Patch-Filename: {}\n".format(patch_filename))
                 added_filename_line = True
@@ -34,8 +32,5 @@ def patch_from_dir(patch_dir) -> str:
         patch_list = [line.rstrip("\n") for line in file.readlines()]
 
     return "".join(
-        [
-            read_patch(patch_dir, patch_filename)
-            for patch_filename in patch_list
-        ]
+        [read_patch(patch_dir, patch_filename) for patch_filename in patch_list]
     )
