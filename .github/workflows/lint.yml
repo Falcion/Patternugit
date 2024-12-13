@@ -57,3 +57,8 @@ jobs:
           VALIDATE_TYPESCRIPT_STANDARD: false
           # Same as STANDARD but worse: this is just subcommand only for JSON format of ESLINT
           VALIDATE_JSON: false
+          # PYINK is an extension (or either "fork") of BLACK linter and formatter:
+          # https://github.com/google/pyink?tab=readme-ov-file#why-pyink
+          #
+          # (If you want, you can disable/enable it on your own:)
+          # VALIDATE_PYTHON_PYINK: false
