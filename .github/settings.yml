@@ -465,3 +465,6 @@ labels:
   - name: localisation/translation
     color: '#ffcc00'
     description:
+  - name: backlog
+    color: '#9b59b6'
+    description: "Backlogged: this item won't be marked as stale."
