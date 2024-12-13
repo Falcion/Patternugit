@@ -12,7 +12,9 @@ ROOT, TARGET = "./../../", "source"
 
 def confirm_copy():
     while True:
-        response = input("Do you want to copy the files? (Y/N): ").strip().upper()
+        response = (
+            input("Do you want to copy the files? (Y/N): ").strip().upper()
+        )
 
         if response in ("Y", "N"):
             return response == "Y"

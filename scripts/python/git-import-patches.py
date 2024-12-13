@@ -14,7 +14,9 @@ from lib.patches import patch_from_dir
 
 def main(argv) -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("patch_dir", help="directory containing patches to apply")
+    parser.add_argument(
+        "patch_dir", help="directory containing patches to apply"
+    )
     parser.add_argument(
         "-3",
         "--3way",

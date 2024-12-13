@@ -113,7 +113,9 @@ def parse_command_line() -> argparse.Namespace:
         "-j", "--jobs", type=int, default=1, help="Number of parallel jobs"
     )
     parser.add_argument("--checks", type=str, default="", help="Checks to run")
-    parser.add_argument("--out-dir", type=str, required=True, help="Output directory")
+    parser.add_argument(
+        "--out-dir", type=str, required=True, help="Output directory"
+    )
     parser.add_argument("files", nargs="*", help="Files to run clang-tidy on")
     return parser.parse_args()
 
@@ -148,7 +150,11 @@ def main() -> int:
             print("No files specified. Please provide file paths.")
             return 1
 
-        return 0 if run_clang_tidy(out_dir, filenames, args.checks, args.jobs) else 1
+        return (
+            0
+            if run_clang_tidy(out_dir, filenames, args.checks, args.jobs)
+            else 1
+        )
     except ErrorWithExitCode as e:
         print(f"ERROR: {e}")
         return e.exit_code

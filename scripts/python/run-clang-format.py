@@ -41,9 +41,9 @@ def list_files(
             for root, _, files in os.walk(path):
                 for file in files:
                     full_path = os.path.join(root, file)
-                    if any(full_path.endswith(ext) for ext in extensions) and not any(
-                        ex in full_path for ex in exclude
-                    ):
+                    if any(
+                        full_path.endswith(ext) for ext in extensions
+                    ) and not any(ex in full_path for ex in exclude):
                         matched_files.append(full_path)
                 if not recursive:
                     break
@@ -65,7 +65,9 @@ def make_diff(file_path: str, style: str = "file") -> Optional[str]:
         formatted_content = process.stdout
 
         if original_content != formatted_content:
-            original_lines = original_content.decode("utf-8").splitlines(keepends=True)
+            original_lines = original_content.decode("utf-8").splitlines(
+                keepends=True
+            )
             formatted_lines = formatted_content.decode("utf-8").splitlines(
                 keepends=True
             )
@@ -79,7 +81,9 @@ def make_diff(file_path: str, style: str = "file") -> Optional[str]:
             )
             return diff
     except subprocess.CalledProcessError as e:
-        raise DiffError(f"Error formatting {file_path}: {e.stderr.decode('utf-8')}")
+        raise DiffError(
+            f"Error formatting {file_path}: {e.stderr.decode('utf-8')}"
+        )
     except Exception as e:
         raise UnexpectedError(f"Unexpected error for {file_path}: {str(e)}")
     return None
@@ -109,28 +113,38 @@ def process_file(file_path: str, args) -> Tuple[str, Optional[str]]:
             )
             return file_path, None
         except subprocess.CalledProcessError as e:
-            raise DiffError(f"Error fixing {file_path}: {e.stderr.decode('utf-8')}")
+            raise DiffError(
+                f"Error fixing {file_path}: {e.stderr.decode('utf-8')}"
+            )
     else:
         return file_path, make_diff(file_path, args.style)
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Wrapper for clang-format.")
-    parser.add_argument("paths", nargs="+", help="Paths to files or directories.")
+    parser.add_argument(
+        "paths", nargs="+", help="Paths to files or directories."
+    )
     parser.add_argument(
         "--extensions",
         nargs="+",
         default=[".c", ".cpp", ".h"],
         help="File extensions to format.",
     )
-    parser.add_argument("--exclude", nargs="*", default=[], help="Paths to exclude.")
-    parser.add_argument("--style", default="file", help="Formatting style to use.")
+    parser.add_argument(
+        "--exclude", nargs="*", default=[], help="Paths to exclude."
+    )
+    parser.add_argument(
+        "--style", default="file", help="Formatting style to use."
+    )
     parser.add_argument(
         "--recursive",
         action="store_true",
         help="Recursively search directories.",
     )
-    parser.add_argument("--fix", action="store_true", help="Fix files in place.")
+    parser.add_argument(
+        "--fix", action="store_true", help="Fix files in place."
+    )
     parser.add_argument(
         "--color",
         choices=["always", "never", "auto"],
@@ -140,12 +154,16 @@ def main() -> int:
 
     args = parser.parse_args()
 
-    files = list_files(args.paths, args.extensions, args.exclude, args.recursive)
+    files = list_files(
+        args.paths, args.extensions, args.exclude, args.recursive
+    )
     if not files:
         print("No matching files found.", file=sys.stderr)
         sys.exit(1)
 
-    use_color = args.color == "always" or (args.color == "auto" and sys.stdout.isatty())
+    use_color = args.color == "always" or (
+        args.color == "auto" and sys.stdout.isatty()
+    )
 
     with multiprocessing.Pool() as pool:
         results = pool.starmap(process_file, [(file, args) for file in files])

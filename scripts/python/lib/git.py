@@ -81,7 +81,9 @@ def am(
     proc = subprocess.Popen(command, stdin=subprocess.PIPE)
     proc.communicate(patch_data.encode("utf-8"))
     if proc.returncode != 0:
-        raise RuntimeError("Command {} returned {}".format(command, proc.returncode))
+        raise RuntimeError(
+            "Command {} returned {}".format(command, proc.returncode)
+        )
 
 
 def import_patches(repo, **kwargs) -> None:
@@ -220,7 +222,8 @@ def remove_patch_filename(patch):
             "Patch-Filename: "
         )
         if not force_keep_next_line and (
-            is_patchfilename or (next_is_patchfilename and len(l.rstrip()) == 0)
+            is_patchfilename
+            or (next_is_patchfilename and len(l.rstrip()) == 0)
         ):
             pass  # drop this line
         else:

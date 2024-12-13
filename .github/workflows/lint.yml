@@ -61,4 +61,4 @@ jobs:
           # https://github.com/google/pyink?tab=readme-ov-file#why-pyink
           #
           # (If you want, you can disable/enable it on your own:)
-          # VALIDATE_PYTHON_PYINK: false
+          VALIDATE_PYTHON_PYINK: false
