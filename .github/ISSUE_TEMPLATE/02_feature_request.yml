@@ -1,9 +1,7 @@
-# yaml-language-server: $schema='none'
-
 name: Feature request
 description: Suggest a new feature or enhancement
-title: "[FEATURE]: "
-labels: ["feature request", "enhancement", "priority/low"]
+title: '[FEATURE]: '
+labels: ['feature request', 'enhancement', 'priority/low']
 body:
   - type: markdown
     attributes:

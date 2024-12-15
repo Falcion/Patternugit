@@ -8,25 +8,32 @@
 import argparse
 import sys
 
-from lib import git
+from lib import git  # type: ignore
 from lib.patches import patch_from_dir
 
 
-def main(argv):
-  parser = argparse.ArgumentParser()
-  parser.add_argument("patch_dir",
-      help="directory containing patches to apply")
-  parser.add_argument("-3", "--3way",
-      action="store_true", dest='threeway',
-      help="use 3-way merge to resolve conflicts")
-  args = parser.parse_args(argv)
+def main(argv) -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "patch_dir", help="directory containing patches to apply"
+    )
+    parser.add_argument(
+        "-3",
+        "--3way",
+        action="store_true",
+        dest="threeway",
+        help="use 3-way merge to resolve conflicts",
+    )
+    args = parser.parse_args(argv)
 
-  git.import_patches(
-      repo='.',
-      patch_data=patch_from_dir(args.patch_dir),
-      threeway=args.threeway
-  )
+    git.import_patches(
+        repo=".",
+        patch_data=patch_from_dir(args.patch_dir),
+        threeway=args.threeway,
+    )
+
+    return 0
 
 
-if __name__ == '__main__':
-  main(sys.argv[1:])
+if __name__ == "__main__":
+    main(sys.argv[1:])

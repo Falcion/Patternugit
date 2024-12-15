@@ -1,5 +1,5 @@
 # Executables
-*.exe             binary
+*.exe             filter=lfs diff=lfs merge=lfs -text
 *.pyc             binary
 # Source code
 *.bat             text eol=crlf

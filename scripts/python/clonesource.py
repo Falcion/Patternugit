@@ -4,15 +4,17 @@
 # Copyright (c) Falcion 2023-2024
 # Free to share, use or change.
 
-import shutil
 import os
+import shutil
 
 ROOT, TARGET = "./../../", "source"
 
 
 def confirm_copy():
     while True:
-        response = input("Do you want to copy the files? (Y/N): ").strip().upper()
+        response = (
+            input("Do you want to copy the files? (Y/N): ").strip().upper()
+        )
 
         if response in ("Y", "N"):
             return response == "Y"
@@ -22,7 +24,7 @@ def confirm_copy():
 
 COPIED_FILES = ["main.ts", "manifest.json"]
 
-if confirm_copy():
+try:
     if not os.path.exists(TARGET):
         os.makedirs(TARGET)
 
@@ -32,13 +34,14 @@ if confirm_copy():
 
         try:
             shutil.copy(filepath, copypath)
-
-            print(
-                f"Entity \"{file}\" was copied to \"{TARGET}\" successfully.")
-        except Exception:
-            print(
-                f"Entity {file} not found in the root directory, thrown error.")
+            print(f'Entity "{file}" was copied to "{TARGET}" successfully.')
+        except FileNotFoundError:
+            print(f"Entity {file} not found in the root directory.")
+        except PermissionError:
+            print(f"Permission denied while accessing {file}.")
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
 
     print("Copy process completed.")
-else:
-    print("Copy process aborted.")
+except Exception as e:
+    print(f"Copy process aborted due to an error: {e}")

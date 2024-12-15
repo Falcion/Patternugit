@@ -123,3 +123,6 @@ manifest-backup.json
 
 # TS config
 ts*.buildinfo*
+
+# Python VENV
+**/venv/

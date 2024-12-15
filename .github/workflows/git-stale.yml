@@ -2,7 +2,10 @@ name: Stale issues and PRs
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs every day at midnight UTC
+    - cron: '0 0 * * *' # Runs every day at midnight UTC
+permissions:
+  issues: write
+  pull-requests: write
 
 jobs:
   stale:
@@ -22,5 +25,10 @@ jobs:
           stale-pr-message: |
             This pull request is currently marked as **stale** due to inactivity.
             If you believe it is still relevant, please provide an update or comment on this pull request.
-          days-before-stale: 30
-          days-before-close: 7
+          days-before-issue-stale: 30
+          days-before-pr-stale: 45
+          days-before-issue-close: 5
+          days-before-pr-close: 10
+          exempt-issue-labels: 'backlog,blocks-release,feature request,priority/low,question,requires-help,status/considered,status/planned,WIP,WONTFIX'
+          exempt-pr-labels: 'backlog,blocks-release,feature request,priority/low,question,requires-help,status/considered,status/planned,WIP,WONTFIX'
+          exempt-issue-milestones: 'future,alpha,beta'

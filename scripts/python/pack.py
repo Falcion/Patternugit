@@ -10,7 +10,9 @@ import zipfile
 ROOT = "./../../"
 PATH = os.path.join(ROOT, "scripts", "python")
 
-ZIP = zipfile.ZipFile(os.path.join(PATH, "BACKUP.zip"), "w", zipfile.ZIP_DEFLATED)
+ZIP = zipfile.ZipFile(
+    os.path.join(PATH, "BACKUP.zip"), "w", zipfile.ZIP_DEFLATED
+)
 
 for root, dirs, files in os.walk(ROOT):
     if ".git" in dirs:
@@ -21,4 +23,4 @@ for root, dirs, files in os.walk(ROOT):
 
 ZIP.close()
 
-print("Repository compressed into \"BACKUP.zip\" successfully.")
+print('Repository compressed into "BACKUP.zip" successfully.')
