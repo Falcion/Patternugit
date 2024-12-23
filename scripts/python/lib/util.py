@@ -10,15 +10,16 @@ import platform
 import shutil
 import subprocess
 import sys
-from urllib.request import urlopen
 import zipfile
+from urllib.request import urlopen
+
+from lib.config import verbose_mode_print  # type: ignore
 
 # MIT License.
 #
 # Copyright (c) Electron contributors
 # Copyright (c) 2013-2020 GitHub Inc.
 
-from lib.config import verbose_mode_print  # type: ignore
 
 ELECTRON_DIR = os.path.abspath(
     os.path.dirname(os.path.dirname(os.path.dirname(__file__)))

@@ -10,6 +10,7 @@ import os
 import subprocess
 from typing import Dict, List
 
+# pylint: disable=E0401
 import yaml
 
 # MIT License
