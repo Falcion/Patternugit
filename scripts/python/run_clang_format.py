@@ -1,27 +1,25 @@
+"""
+run_clang_format.py
+
+This script is a wrapper for `clang-format`, providing functionality to list files,
+generate diffs, and optionally fix files in place according to the specified style.
+"""
+
 import argparse
 import difflib
 import multiprocessing
 import os
 import subprocess
 import sys
-from typing import List, Tuple, Optional
-
-# MIT License.
-#
-# Copyright (c) Electron contributors
-# Copyright (c) 2013-2020 GitHub Inc.
+from typing import List, Optional, Tuple
 
 
 class DiffError(Exception):
-    """Exception raised when there is an error generating diffs."""
-
-    pass
+    """Raised when there is an error generating diffs."""
 
 
 class UnexpectedError(Exception):
-    """Exception raised for unexpected errors."""
-
-    pass
+    """Raised for unexpected errors."""
 
 
 def list_files(
@@ -30,7 +28,9 @@ def list_files(
     exclude: Optional[List[str]] = None,
     recursive: bool = False,
 ) -> List[str]:
-    """Lists files matching given extensions, excluding specified paths."""
+    """
+    Lists files matching given extensions, excluding specified paths.
+    """
     matched_files = []
     exclude = exclude or []
     for path in paths:
@@ -51,7 +51,9 @@ def list_files(
 
 
 def make_diff(file_path: str, style: str = "file") -> Optional[str]:
-    """Generates a diff for a given file."""
+    """
+    Generates a diff for a given file based on the specified style.
+    """
     try:
         with open(file_path, "rb") as f:
             original_content = f.read()
@@ -83,14 +85,18 @@ def make_diff(file_path: str, style: str = "file") -> Optional[str]:
     except subprocess.CalledProcessError as e:
         raise DiffError(
             f"Error formatting {file_path}: {e.stderr.decode('utf-8')}"
-        )
+        ) from e
     except Exception as e:
-        raise UnexpectedError(f"Unexpected error for {file_path}: {str(e)}")
+        raise UnexpectedError(
+            f"Unexpected error for {file_path}: {str(e)}"
+        ) from e
     return None
 
 
 def colorize_diff(diff: str) -> str:
-    """Adds color to diffs using ANSI escape codes."""
+    """
+    Adds color to diffs using ANSI escape codes.
+    """
     color_diff = []
     for line in diff.splitlines():
         if line.startswith("+") and not line.startswith("+++"):
@@ -103,7 +109,9 @@ def colorize_diff(diff: str) -> str:
 
 
 def process_file(file_path: str, args) -> Tuple[str, Optional[str]]:
-    """Processes a single file to generate a diff or apply formatting."""
+    """
+    Processes a single file to generate a diff or apply formatting.
+    """
     if args.fix:
         try:
             subprocess.run(
@@ -115,12 +123,15 @@ def process_file(file_path: str, args) -> Tuple[str, Optional[str]]:
         except subprocess.CalledProcessError as e:
             raise DiffError(
                 f"Error fixing {file_path}: {e.stderr.decode('utf-8')}"
-            )
+            ) from e
     else:
         return file_path, make_diff(file_path, args.style)
 
 
 def main() -> int:
+    """
+    Entry point for the script. Parses arguments, processes files, and outputs results.
+    """
     parser = argparse.ArgumentParser(description="Wrapper for clang-format.")
     parser.add_argument(
         "paths", nargs="+", help="Paths to files or directories."
@@ -168,7 +179,7 @@ def main() -> int:
     with multiprocessing.Pool() as pool:
         results = pool.starmap(process_file, [(file, args) for file in files])
 
-    for file_path, diff in results:
+    for _, diff in results:
         if diff:
             if use_color:
                 diff = colorize_diff(diff)

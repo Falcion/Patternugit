@@ -22,6 +22,7 @@ import sys
 
 
 def is_repo_root(path) -> bool:
+    """Finds a repository root"""
     path_exists = os.path.exists(path)
     if not path_exists:
         return False
@@ -58,6 +59,7 @@ def am(
     committer_email=None,
     keep_cr=True,
 ) -> None:
+    """Apply patches to a git repository."""
     args = []
     if threeway:
         args += ["--3way"]
@@ -78,28 +80,28 @@ def am(
         root_args += ["-c", "user.email=" + committer_email]
     root_args += ["-c", "commit.gpgsign=false"]
     command = ["git"] + root_args + ["am"] + args
-    proc = subprocess.Popen(command, stdin=subprocess.PIPE)
-    proc.communicate(patch_data.encode("utf-8"))
-    if proc.returncode != 0:
-        raise RuntimeError(
-            "Command {} returned {}".format(command, proc.returncode)
-        )
+    with subprocess.Popen(command, stdin=subprocess.PIPE) as proc:
+        proc.communicate(patch_data.encode("utf-8"))
+        if proc.returncode != 0:
+            raise RuntimeError(f"Command {command} returned {proc.returncode}")
 
 
 def import_patches(repo, **kwargs) -> None:
-    """same as am(), but we save the upstream HEAD so we can refer to it when
-    we later export patches"""
+    """Same as am(), but we save the upstream HEAD so we can refer to it when
+    we later export patches."""
     update_ref(repo=repo, ref="refs/patches/upstream-head", newvalue="HEAD")
     am(repo=repo, **kwargs)
 
 
 def update_ref(repo, ref, newvalue) -> object:
+    """Update a git reference."""
     args = ["git", "-C", repo, "update-ref", ref, newvalue]
 
     return subprocess.check_call(args)
 
 
 def get_upstream_head(repo) -> str:
+    """Retrieve the upstream HEAD commit."""
     args = [
         "git",
         "-C",
@@ -112,12 +114,13 @@ def get_upstream_head(repo) -> str:
 
 
 def get_commit_count(repo, commit_range) -> int:
+    """Get the number of commits in a range."""
     args = ["git", "-C", repo, "rev-list", "--count", commit_range]
     return int(subprocess.check_output(args).decode("utf-8").strip())
 
 
 def guess_base_commit(repo):
-    """Guess which commit the patches might be based on"""
+    """Guess which commit the patches might be based on."""
     try:
         upstream_head = get_upstream_head(repo)
         num_commits = get_commit_count(repo, upstream_head + "..")
@@ -135,6 +138,7 @@ def guess_base_commit(repo):
 
 
 def format_patch(repo, since):
+    """Format patches in a repository since a specific commit."""
     args = [
         "git",
         "-C",
@@ -145,24 +149,12 @@ def format_patch(repo, since):
             os.path.dirname(os.path.realpath(__file__)),
             "electron.gitattributes",
         ),
-        # Ensure it is not possible to match anything
-        # Disabled for now as we have consistent chunk headers
-        # '-c',
-        # 'diff.electron.xfuncname=$^',
         "format-patch",
         "--keep-subject",
         "--no-stat",
         "--stdout",
-        # Per RFC 3676 the signature is separated from the body by a line with
-        # '-- ' on it. If the signature option is omitted the signature
-        # defaults to the Git version number.
         "--no-signature",
-        # The name of the parent commit object isn't useful information in this
-        # context, so zero it out to avoid needless patch-file churn.
         "--zero-commit",
-        # Some versions of git print out different numbers of characters in the
-        # 'index' line of patches, so pass --full-index to get consistent
-        # behaviour.
         "--full-index",
         since,
     ]
@@ -170,7 +162,7 @@ def format_patch(repo, since):
 
 
 def split_patches(patch_data):
-    """Split a concatenated series of patches into N separate patches"""
+    """Split a concatenated series of patches into N separate patches."""
     patches = []
     patch_start = re.compile("^From [0-9a-f]+ ")
     # Keep line endings in case any patches target files with CRLF.
@@ -183,7 +175,7 @@ def split_patches(patch_data):
 
 
 def munge_subject_to_filename(subject):
-    """Derive a suitable filename from a commit's subject"""
+    """Derive a suitable filename from a commit's subject."""
     if subject.endswith(".patch"):
         subject = subject[:-6]
 
@@ -193,7 +185,7 @@ def munge_subject_to_filename(subject):
 
 
 def get_file_name(patch):
-    """Return the name of the file to which the patch should be written"""
+    """Return the name of the file to which the patch should be written."""
     file_name = None
     for line in patch:
         if line.startswith("Patch-Filename: "):
@@ -209,12 +201,12 @@ def get_file_name(patch):
 
 
 def join_patch(patch):
-    """Joins and formats patch contents"""
+    """Joins and formats patch contents."""
     return "".join(remove_patch_filename(patch)).rstrip("\n") + "\n"
 
 
 def remove_patch_filename(patch):
-    """Strip out the Patch-Filename trailer from a patch's message body"""
+    """Strip out the Patch-Filename trailer from a patch's message body."""
     force_keep_next_line = False
     for i, l in enumerate(patch):  # noqa: E741
         is_patchfilename = l.startswith("Patch-Filename: ")
@@ -232,25 +224,24 @@ def remove_patch_filename(patch):
 
 
 def to_utf8(patch):
-    """Python 2/3 compatibility: unicode has been renamed to str in Python3"""
+    """Python 2/3 compatibility: Convert to UTF-8."""
     if sys.version_info[0] >= 3:
         return str(patch, "utf-8")
 
-    return unicode(patch, "utf-8")  # noqa: F821
+    return str(patch, "utf-8")
 
 
 def export_patches(repo, out_dir, patch_range=None, dry_run=False) -> None:
+    """Export patches from a repository."""
     if not os.path.exists(repo):
         sys.stderr.write(
-            "Skipping patches in {} because it does not exist.\n".format(repo)
+            f"Skipping patches in {repo} because it does not exist.\n"
         )
         return
     if patch_range is None:
         patch_range, num_patches = guess_base_commit(repo)
         sys.stderr.write(
-            "Exporting {} patches in {} since {}\n".format(
-                num_patches, repo, patch_range[0:7]
-            )
+            f"Exporting {num_patches} patches in {repo} since {patch_range[0:7]}\n"
         )
     patch_data = format_patch(repo, patch_range)
     patches = split_patches(patch_data)
@@ -261,14 +252,15 @@ def export_patches(repo, out_dir, patch_range=None, dry_run=False) -> None:
         pass
 
     if dry_run:
-        # If we're doing a dry run, iterate through each patch and see if the
+        # If we're doing a dry run, iterate through each patch and see if
         # newly exported patch differs from what exists. Report number of
         # mismatched patches and fail if there's more than one.
         bad_patches = []
         for patch in patches:
             filename = get_file_name(patch)
             filepath = posixpath.join(out_dir, filename)
-            existing_patch = to_utf8(io.open(filepath, "rb").read())
+            with io.open(filepath, "rb") as file:
+                existing_patch = to_utf8(file.read())
             formatted_patch = join_patch(patch)
             if formatted_patch != existing_patch:
                 bad_patches.append(filename)
@@ -295,7 +287,8 @@ def export_patches(repo, out_dir, patch_range=None, dry_run=False) -> None:
                 filename = get_file_name(patch)
                 file_path = posixpath.join(out_dir, filename)
                 formatted_patch = join_patch(patch)
-                # Write in binary mode to retain mixed line endings on write.
-                with io.open(file_path, "wb") as f:
-                    f.write(formatted_patch.encode("utf-8"))
+                # Write in binary mode to ensure the file is written
+                # with consistent line endings (e.g. CRLF).
+                with io.open(file_path, "wb") as pf:
+                    pf.write(formatted_patch.encode("utf-8"))
                 pl.write(filename + "\n")

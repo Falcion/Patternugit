@@ -1,9 +1,14 @@
+"""
+A script to run clang-tidy on specified files in a project. It handles the setup of the environment,
+generates the necessary compile commands, and executes clang-tidy on the provided source files.
+"""
+
 import argparse
 import json
 import os
 import subprocess
 import sys
-from typing import List, Optional, Dict
+from typing import Dict, List, Optional
 
 # MIT License.
 #
@@ -25,38 +30,67 @@ PLATFORM = sys.platform
 
 
 class ErrorWithExitCode(Exception):
+    """
+    Custom exception that holds an exit code to be used when the program terminates with an error.
+    """
 
     def __init__(self, message: str, exit_code: int):
         super().__init__(message)
         self.exit_code = exit_code
 
 
-def spawn_async(command: List[str], options: dict = {}) -> Dict[str, str]:
+def spawn_async(
+    command: List[str], options: Optional[dict] = None
+) -> Dict[str, str]:
+    """
+    Spawns an asynchronous subprocess to run a command and captures its output and error messages.
+
+    Args:
+        command: A list of strings representing the command and its arguments.
+        options: Additional options passed to subprocess.Popen.
+
+    Returns:
+        A dictionary containing the stdout, stderr, and return code of the process.
+    """
+    if options is None:
+        options = {}
+
     try:
-        process = subprocess.Popen(
+        with subprocess.Popen(
             command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, **options
-        )
-        stdout, stderr = process.communicate()
-        status = process.returncode
-        return {
-            "stdout": stdout.decode(),  # type: ignore
-            "stderr": stderr.decode(),  # type: ignore
-            "status": str(status),
-        }
+        ) as process:
+            stdout, stderr = process.communicate()
+            status = process.returncode
+            return {
+                "stdout": stdout.decode(),  # type: ignore
+                "stderr": stderr.decode(),  # type: ignore
+                "status": str(status),
+            }
     except Exception as e:
         raise e
 
 
 def get_depot_tools_env() -> Dict[str, str]:
+    """
+    Retrieve the environment variables required for depot tools.
+
+    Returns:
+        A dictionary with the appropriate environment variables.
+
+    Raises:
+        ErrorWithExitCode: If depot tools cannot be located or configured.
+    """
+
     def find_depot_tools_on_path() -> Optional[dict]:
         try:
             result = subprocess.run(
                 ["where" if PLATFORM == "win32" else "which", "gclient"],
                 capture_output=True,
+                check=True,
             )
             if result.returncode == 0:
                 return dict(os.environ)
-        except Exception:
+        except subprocess.CalledProcessError:
             pass
         return None
 
@@ -66,13 +100,14 @@ def get_depot_tools_env() -> Dict[str, str]:
                 ["electron-build-tools", "show", "env", "--json"],
                 capture_output=True,
                 shell=True,
+                check=True,
             )
             if result.returncode == 0:
                 return {
                     **os.environ,
                     **json.loads(result.stdout.decode().strip()),
                 }
-        except Exception:
+        except subprocess.CalledProcessError:
             pass
         return None
 
@@ -91,8 +126,19 @@ def get_depot_tools_env() -> Dict[str, str]:
 
 
 def run_clang_tidy(
-    out_dir: str, filenames: List[str], checks: str = "", jobs: int = 1
+    out_dir: str, filenames: List[str], checks: str = ""
 ) -> bool:
+    """
+    Run clang-tidy on specified files.
+
+    Args:
+        out_dir: Path to the output directory containing the compile_commands.json file.
+        filenames: List of file paths to run clang-tidy on.
+        checks: Optional string specifying the checks to enable.
+
+    Returns:
+        True if clang-tidy completes successfully; False otherwise.
+    """
     cmd = os.path.join(LLVM_BIN, "clang-tidy")
     args = [f"-p={out_dir}", "--use-color"]
 
@@ -108,6 +154,12 @@ def run_clang_tidy(
 
 
 def parse_command_line() -> argparse.Namespace:
+    """
+    Parse command-line arguments.
+
+    Returns:
+        Namespace object containing parsed arguments.
+    """
     parser = argparse.ArgumentParser(description="Run clang-tidy.")
     parser.add_argument(
         "-j", "--jobs", type=int, default=1, help="Number of parallel jobs"
@@ -121,6 +173,12 @@ def parse_command_line() -> argparse.Namespace:
 
 
 def main() -> int:
+    """
+    Main entry point for the script.
+
+    Returns:
+        Exit code indicating success or failure.
+    """
     try:
         args = parse_command_line()
         out_dir = os.path.abspath(args.out_dir)
@@ -136,6 +194,7 @@ def main() -> int:
             env=env,
             shell=True,
             capture_output=True,
+            check=True,
         )
 
         if result.returncode != 0:
@@ -150,17 +209,10 @@ def main() -> int:
             print("No files specified. Please provide file paths.")
             return 1
 
-        return (
-            0
-            if run_clang_tidy(out_dir, filenames, args.checks, args.jobs)
-            else 1
-        )
+        return 0 if run_clang_tidy(out_dir, filenames, args.checks) else 1
     except ErrorWithExitCode as e:
         print(f"ERROR: {e}")
         return e.exit_code
-    except Exception as e:
-        print(f"ERROR: {e}")
-        return 1
 
 
 if __name__ == "__main__":

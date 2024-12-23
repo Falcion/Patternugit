@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+"""Utils module."""
+
 import contextlib
 import errno
 import json
@@ -30,6 +32,7 @@ if sys.platform in ["win32", "cygwin"]:
 
 @contextlib.contextmanager
 def scoped_cwd(path):
+    """Context manager for changing the working directory."""
     cwd = os.getcwd()
     os.chdir(path)
     try:
@@ -39,6 +42,7 @@ def scoped_cwd(path):
 
 
 def download(text, url, path):
+    """Download a file from a URL and save it to the given path."""
     safe_mkdir(os.path.dirname(path))
     with open(path, "wb") as local_file, urlopen(url) as web_file:
         print(f"Downloading {url} to {path}")
@@ -73,6 +77,7 @@ def download(text, url, path):
 
 
 def make_zip(zip_file_path, files, dirs):
+    """Create a ZIP archive containing the specified files and directories."""
     safe_unlink(zip_file_path)
     if sys.platform == "darwin":
         allfiles = files + dirs
@@ -91,6 +96,7 @@ def make_zip(zip_file_path, files, dirs):
 
 
 def rm_rf(path):
+    """Recursively delete a directory."""
     try:
         shutil.rmtree(path)
     except OSError:
@@ -98,6 +104,7 @@ def rm_rf(path):
 
 
 def safe_unlink(path):
+    """Delete a file if it exists."""
     try:
         os.unlink(path)
     except OSError as e:
@@ -106,6 +113,7 @@ def safe_unlink(path):
 
 
 def safe_mkdir(path):
+    """Create a directory if it doesn't already exist."""
     try:
         os.makedirs(path)
     except OSError as e:
@@ -114,6 +122,7 @@ def safe_mkdir(path):
 
 
 def execute(argv, env=None, cwd=None):
+    """Execute a shell command."""
     if env is None:
         env = os.environ
     verbose_mode_print(" ".join(argv))
@@ -129,21 +138,23 @@ def execute(argv, env=None, cwd=None):
 
 
 def get_electron_branding():
-    SOURCE_ROOT = os.path.abspath(os.path.join(__file__, "..", "..", ".."))
+    """Retrieve Electron branding information."""
+    source_root = os.path.abspath(os.path.join(__file__, "..", "..", ".."))
     branding_file_path = os.path.join(
-        SOURCE_ROOT, "shell", "app", "BRANDING.json"
+        source_root, "shell", "app", "BRANDING.json"
     )
     with open(branding_file_path, encoding="utf-8") as file_in:
         return json.load(file_in)
 
 
-cached_electron_version = None
+CACHED_ELECTRON_VERSION = None
 
 
 def get_electron_version():
-    global cached_electron_version
-    if cached_electron_version is None:
-        cached_electron_version = str.strip(
+    """Get the Electron version."""
+    global CACHED_ELECTRON_VERSION  # pylint: disable=W0603
+    if CACHED_ELECTRON_VERSION is None:
+        CACHED_ELECTRON_VERSION = str.strip(
             execute(
                 [
                     "node",
@@ -153,15 +164,16 @@ def get_electron_version():
                 cwd=ELECTRON_DIR,
             ).decode()
         )
-    return cached_electron_version
+    return CACHED_ELECTRON_VERSION
 
 
 def store_artifact(prefix, key_prefix, files):
-    # Azure Storage
+    """Store an artifact in Azure Storage."""
     azput(prefix, key_prefix, files)
 
 
 def azput(prefix, key_prefix, files):
+    """Upload files to Azure Storage."""
     env = os.environ.copy()
     output = execute(
         [
@@ -179,6 +191,7 @@ def azput(prefix, key_prefix, files):
 
 
 def get_out_dir():
+    """Get the output directory."""
     out_dir = "Default"
     override = os.environ.get("ELECTRON_OUT_DIR")
     if override is not None:
@@ -186,13 +199,13 @@ def get_out_dir():
     return os.path.join(SRC_DIR, "out", out_dir)
 
 
-# NOTE: This path is not created by gn, it is used as a scratch zone by our
-#       upload scripts
 def get_dist_dir():
+    """Get the distribution directory."""
     return os.path.join(get_out_dir(), "gen", "electron_dist")
 
 
 def get_electron_exec():
+    """Get the path to the Electron executable."""
     out_dir = get_out_dir()
 
     if sys.platform == "darwin":
@@ -202,10 +215,13 @@ def get_electron_exec():
     if sys.platform == "linux":
         return f"{out_dir}/electron"
 
-    raise Exception(f"get_electron_exec: unexpected platform '{sys.platform}'")
+    raise NotImplementedError(
+        f"get_electron_exec: unexpected platform '{sys.platform}'"
+    )
 
 
 def get_buildtools_executable(name):
+    """Get the path to a BuildTools executable."""
     buildtools = os.path.realpath(
         os.path.join(ELECTRON_DIR, "..", "buildtools")
     )
@@ -219,7 +235,7 @@ def get_buildtools_executable(name):
     elif sys.platform in ["linux", "linux2"]:
         chromium_platform = "linux64"
     else:
-        raise Exception(f"Unsupported platform: {sys.platform}")
+        raise NotImplementedError(f"Unsupported platform: {sys.platform}")
 
     if name == "clang-format":
         chromium_platform += "-format"
@@ -231,6 +247,7 @@ def get_buildtools_executable(name):
 
 
 def get_depot_tools_executable(name):
+    """Get the path to a Depot Tools executable."""
     buildtools = os.path.realpath(
         os.path.join(ELECTRON_DIR, "..", "third_party", "depot_tools")
     )
@@ -242,6 +259,7 @@ def get_depot_tools_executable(name):
 
 
 def get_linux_binaries():
+    """Get the list of Linux binary files."""
     return [
         "chrome-sandbox",
         "chrome_crashpad_handler",

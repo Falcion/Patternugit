@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 
+"""
+A script to export patches from a Git repository.
+
+This script allows users to export patches from the current Git repository
+based on a specified range of commits or the default range since the most
+recent tag or remote branch.
+"""
+
 # MIT License.
 #
 # Copyright (c) Electron contributors
@@ -12,6 +20,15 @@ from lib import git  # type: ignore
 
 
 def main(argv) -> int:
+    """
+    Main entry point for the script.
+
+    Args:
+        argv (list): Command-line arguments.
+
+    Returns:
+        int: Exit code (0 for success, non-zero for failure).
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "-o",

@@ -1,3 +1,8 @@
+"""
+Clones venv (virtual environment) for PY from
+one directory to another. d
+"""
+
 import os
 import shutil
 import subprocess
@@ -23,7 +28,7 @@ def clone_venv(source, destination):
     try:
         shutil.copytree(source, destination, symlinks=True)
         print("Virtual environment cloned successfully.")
-    except Exception as e:
+    except shutil.Error as e:
         print(f"Error cloning virtual environment: {e}")
         return
 
@@ -38,7 +43,7 @@ def clone_venv(source, destination):
             ]
         )
         print("Virtual environment paths updated successfully.")
-    except Exception as e:
+    except subprocess.CalledProcessError as e:
         print(f"Error updating virtual environment paths: {e}")
 
 

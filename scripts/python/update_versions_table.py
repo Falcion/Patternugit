@@ -1,7 +1,15 @@
-from typing import List, Dict
+"""
+This script updates the unsupported versions markdown file and GitHub issue templates
+based on version tags and a mapping of version statuses. It retrieves Git tags, generates
+a markdown table of versions with their maintenance statuses, and updates issue templates
+to include the available versions as dropdown options.
+"""
+
 import json
 import os
 import subprocess
+from typing import Dict, List
+
 import yaml
 
 # MIT License
@@ -19,6 +27,12 @@ ISSUE_TEMPLATE_DIR = "./../../.github/ISSUE_TEMPLATE/"
 
 
 def get_git_tags() -> List[str]:
+    """
+    Retrieve a sorted list of Git tags from the repository.
+
+    Returns:
+        List[str]: A sorted list of Git tags, or an empty list if tags cannot be retrieved.
+    """
     try:
         tags = (
             subprocess.check_output(["git", "tag"])
@@ -33,8 +47,14 @@ def get_git_tags() -> List[str]:
 
 
 def load_versions_mapping() -> Dict[str, dict]:
+    """
+    Load version mappings from the `versions-mapping.json` file.
+
+    Returns:
+        Dict[str, dict]: A dictionary of version mappings, or an empty dictionary if the file is missing.
+    """
     if os.path.exists("./../../versions-mapping.json"):
-        with open("./../../versions-mapping.json", "r") as f:
+        with open("./../../versions-mapping.json", "r", encoding="utf-8") as f:
             return json.load(f)
     return {}
 
@@ -42,6 +62,16 @@ def load_versions_mapping() -> Dict[str, dict]:
 def create_markdown_table(
     tags: List[str], versions_mapping: Dict[str, dict]
 ) -> str:
+    """
+    Generate a markdown table of versions and their maintenance statuses.
+
+    Args:
+        tags (List[str]): List of Git tags.
+        versions_mapping (Dict[str, dict]): Mapping of version tags to their statuses.
+
+    Returns:
+        str: The generated markdown table as a string.
+    """
     table_lines = [AUTO_GENERATED_NOTICE]
     table_lines.append(
         "| Version                                                                 | Maintenance |"
@@ -70,11 +100,23 @@ def create_markdown_table(
 
 
 def write_markdown_file(content: str) -> None:
+    """
+    Write the generated markdown content to the `UNSUPPORTED_VERSIONS.md` file.
+
+    Args:
+        content (str): The content to write to the file.
+    """
     with open(MARKDOWN_FILE, "w", encoding="utf-8") as f:
         f.write(content)
 
 
 def update_issue_templates(tags: List[str]) -> None:
+    """
+    Update GitHub issue templates with the provided version tags.
+
+    Args:
+        tags (List[str]): List of Git tags to add to issue templates.
+    """
     if not os.path.exists(ISSUE_TEMPLATE_DIR):
         print(
             f"Warning: Issue template directory {ISSUE_TEMPLATE_DIR} not found."
@@ -107,13 +149,19 @@ def update_issue_templates(tags: List[str]) -> None:
 
 
 def main() -> int:
+    """
+    Main entry point for the script. Updates the markdown file and issue templates
+    with the latest version tags and their statuses.
+
+    Returns:
+        int: Exit status code (0 for success).
+    """
     tags = get_git_tags()
     versions_mapping = load_versions_mapping()
     markdown_content = create_markdown_table(tags, versions_mapping)
     write_markdown_file(markdown_content)
     update_issue_templates(tags)
     print(f"Updated {MARKDOWN_FILE} with version information.")
-
     return 0
 
 

@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+"""Scripts module related to working with patches metadata."""
+
 # MIT License.
 #
 # Copyright (c) Electron contributors
@@ -21,7 +23,7 @@ def read_patch(patch_dir, patch_filename) -> str:
                 "diff -"
             ) or line.startswith("---")
             if not added_filename_line and line_has_correct_start:
-                ret.append("Patch-Filename: {}\n".format(patch_filename))
+                ret.append(f"Patch-Filename: {patch_filename}\n")
                 added_filename_line = True
             ret.append(line)
     return "".join(ret)
@@ -30,7 +32,7 @@ def read_patch(patch_dir, patch_filename) -> str:
 def patch_from_dir(patch_dir) -> str:
     """Read a directory of patches into a format suitable for passing to
     'git am'"""
-    with open(os.path.join(patch_dir, ".patches")) as file:
+    with open(os.path.join(patch_dir, ".patches"), encoding="utf-8") as file:
         patch_list = [line.rstrip("\n") for line in file.readlines()]
 
     return "".join(
