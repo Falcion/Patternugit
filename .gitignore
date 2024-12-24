@@ -126,3 +126,6 @@ ts*.buildinfo*
 
 # Python VENV
 **/venv/
+
+# JSCPD reports
+report/

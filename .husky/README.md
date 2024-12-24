@@ -37,18 +37,8 @@ Next one are popular errors and fails thrown by hooks:
 
 ### Error-code "001"
 
-Code of this exception can be fixed by setting up and installing WSL or set up
-instructions of renaming executables:
-
-- Rename "npm" into "npm.cmd" within your setups;
-- Rename "npx" into "npx.cmd" within your setups;
-
-Source:\
-<https://github.com/desktop/desktop/issues/12562#issuecomment-1007154382>
-
-> [!Note]
-> If this not helping, go through entire algorithm of fixing hooks from HUSKY and
-> setting up virtual machine for UNIX-subsystem.
+Read more about this here:\
+[Error "001"](./docs/h001.md)
 
 ### Error-code "127"
 
