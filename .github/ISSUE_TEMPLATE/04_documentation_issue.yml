@@ -1,9 +1,7 @@
-# yaml-language-server: $schema='none'
-
 name: Issue about the documentation
 description: Use this form to report any issues or inconsistencies you encounter in the project's documentation
-title: "[DOCS]: "
-labels: ["documentation"]
+title: '[DOCS]: '
+labels: ['documentation']
 body:
   - type: markdown
     attributes:
@@ -17,16 +15,14 @@ body:
     id: contact
     attributes:
       label: Contact details
-      description: If possible, write down the contact information if you need additional communication, if you want contact via “github”, leave this field blank.
+      description: If possible, write down the contact information for this documentation issue. If you need additional communication, if you want contact via “github”, leave this field blank.
       placeholder: example@domain.com
-    validations:
-      required: false
   - type: input
     id: where-issue
     attributes:
       label: Where is the essence of the bug
       description: Write the file name and the line of the bugs you've encountered, like “README:L#53”, or link to the lines within service.
-      placeholder: "README:L#1 or https://github.com/Falcion/Patternugit/blob/019e50dec512bb1c735c5842a5ca5e458998c058/README.md?plain=1#L1"
+      placeholder: 'README:L#1 or https://github.com/Falcion/Patternugit/blob/019e50dec512bb1c735c5842a5ca5e458998c058/README.md?plain=1#L1'
     validations:
       required: true
   - type: textarea
@@ -42,7 +38,7 @@ body:
     id: terms
     attributes:
       label: Code of conduct
-      description: By submitting this issue, you agree to follow our code of conduct.
+      description: By submitting this documentation issue, you agree to follow our code of conduct.
       options:
         - label: I agree to follow this project's code of conduct
           required: true
@@ -50,7 +46,7 @@ body:
     id: issue-policy
     attributes:
       label: Issue policy
-      description: By submitting this issue, you agree to follow our issue policy.
+      description: By submitting this documentation issue, you agree to follow our issue policy.
       options:
         - label: I agree to follow this project's issue policy
           required: true

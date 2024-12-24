@@ -1,8 +1,11 @@
-Scripts provided in this directory are legacy, you can use them at your own risk, but it is highly recommended to use official GitHub CLI instead, more about it here:
-- https://cli.github.com/
+Scripts provided in this directory are legacy, you can use them at your own risk,
+but it is highly recommended to use official GitHub CLI instead, more about it here:
+
+- <https://cli.github.com/>
 
 > [!Note]
-> This repository uses a special GitHub app [`Settings`](https://probot.github.io/apps/settings/) which not only clones labels, but also a description, tags, links etc.
+> This repository uses a special GitHub app [`Settings`](https://probot.github.io/apps/settings/)
+> which not only clones labels, but also a description, tags, links etc.
 
 ## How to "copy" labels from one repository to other?
 

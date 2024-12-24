@@ -1,16 +1,15 @@
 {
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "tsconfig.json",
+    "project": "./tsconfig.json",
     "sourceType": "module"
   },
-  "plugins": [
-    "@typescript-eslint/eslint-plugin"
-  ],
+  "plugins": ["@typescript-eslint/eslint-plugin"],
   "extends": [
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:markdownlint/recommended",
+    "plugin:jsonc/recommended-with-jsonc",
     "prettier",
     "prettier/@typescript-eslint",
     "eslint:recommended"
@@ -19,13 +18,7 @@
   "env": {
     "node": true
   },
-  "ignorePatterns": [
-    ".eslintrc.cjs",
-    "**/database/**/*.js",
-    "**/database/**/*.ts",
-    "*.cjs",
-    "main.ts"
-  ],
+  "ignorePatterns": [".eslintrc.*js*", "**/node_modules/", "**/out/", "**/venv/"],
   "rules": {
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -36,17 +29,10 @@
   },
   "overrides": [
     {
-      "files": [
-        "*.md"
-      ],
-      "excludedFiles": [
-        "**/*.ts",
-        "**/*.js"
-      ],
+      "files": ["*.md"],
+      "excludedFiles": ["**/*.ts*", "**/*.*js*"],
       "parser": "eslint-plugin-markdownlint/parser",
-      "extends": [
-        "plugin:markdownlint/recommended"
-      ]
+      "extends": ["plugin:markdownlint/recommended"]
     }
   ]
 }

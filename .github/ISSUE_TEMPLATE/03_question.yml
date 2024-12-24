@@ -1,9 +1,7 @@
-# yaml-language-server: $schema='none'
-
 name: Question
 description: Ask the question or seek for clarification
-title: "[QUESTION]: "
-labels: ["question"]
+title: '[QUESTION]: '
+labels: ['question']
 body:
   - type: markdown
     attributes:
@@ -17,7 +15,7 @@ body:
     id: contact
     attributes:
       label: Contact details
-      description: If possible, write down the contact information if you need additional communication, if you want contact via “github”, leave this field blank.
+      description: If possible, write down the contact information for this question. If you need additional communication, if you want contact via “github”, leave this field blank.
       placeholder: example@domain.com
     validations:
       required: false
@@ -31,10 +29,18 @@ body:
     validations:
       required: true
   - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of conduct
+      description: By submitting this question, you agree to follow our code of conduct.
+      options:
+        - label: I agree to follow this project's code of conduct
+          required: true
+  - type: checkboxes
     id: issue-policy
     attributes:
       label: Issue policy
-      description: By submitting this issue, you agree to follow our issue policy.
+      description: By submitting this question, you agree to follow our issue policy.
       options:
         - label: I agree to follow this project's issue policy
           required: true
@@ -42,7 +48,7 @@ body:
     id: security-policy
     attributes:
       label: Security policy
-      description: By submitting this issue, you agree to follow our security policy.
+      description: By submitting this question, you agree to follow our security policy.
       options:
         - label: I agree to follow this project's security policy.
           required: true

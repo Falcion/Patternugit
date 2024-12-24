@@ -1,25 +1,35 @@
-This file contains instuctions and useful references to materials that can help in correcting errors when using HUSKY hooks system, as well as some other secondary materials and instructions for working with HUSKY system.
+This file contains instuctions and useful references to materials that can help
+in correcting errors when using HUSKY hooks system, as well as some other secondary
+materials and instructions for working with HUSKY system.
 
 > [!Note]
-> If OS of your machine is not UNIX-like (for example, any distributive of Linux), it is highly recommended to install the WSL and some distributives on your system, this documentation references debian-system as standard:\
+> If OS of your machine is not UNIX-like (for example, any distributive of Linux),
+> it is highly recommended to install the WSL and some distributives on your system,
+> this documentation references debian-system as standard:\
 > [Download WSL on your system](https://learn.microsoft.com/en-us/windows/wsl/install).
 
-Also, to use more advanced hooks on WSL you require to install Node.js on the WSL's distributives, it also fixes some errors within WSL:\
-https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl
+Also, to use more advanced hooks on WSL you require to install Node.js on the WSL's
+distributives, it also fixes some errors within WSL:\
+<https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl>
 
 ## Problems within setup or usage
 
-Problems can be separated in three categories: ones with WSL, ones with HUSKY itself and ones with OS/desktop clients of GIT.
+Problems can be separated in three categories: ones with WSL, ones with HUSKY itself
+and ones with OS/desktop clients of Git.
 
-- If NPM/NODE does not work in the WSL on your machine:\
-  https://github.com/microsoft/WSL/issues/4249/
-- If NPM/NPX not found message appears:\
-  https://github.com/desktop/desktop/issues/12562
+- If npm/Node does not work in the WSL on your machine:\
+  <https://github.com/microsoft/WSL/issues/4249/>
+- If npx/npx not found message appears:\
+  <https://github.com/desktop/desktop/issues/12562>
+
 > [!Tip]
 > Also, check your "%PATH% → Node.js/bin/" paths in environment variables context:\
-> - Windows users, if you have everything set up and installed, check this comment from same issue:\
->   https://github.com/desktop/desktop/issues/12562#issuecomment-1007154382
+>
+> - Windows users, if you have everything set up and installed, check this comment
 
+    from same issue:\
+
+> <https://github.com/desktop/desktop/issues/12562#issuecomment-1007154382>
 
 ## Error codes within usage
 
@@ -27,16 +37,8 @@ Next one are popular errors and fails thrown by hooks:
 
 ### Error-code "001"
 
-Code of this exception can be fixed by setting up and installing WSL or set up instructions of renaming executables:
-
-- Rename "npm" into "npm.cmd" within your setups;
-- Rename "npx" into "npx.cmd" within your setups;
-
-Source:\
-https://github.com/desktop/desktop/issues/12562#issuecomment-1007154382
-
-> [!Note]
-> If this not helping, go through entire algorithm of fixing hooks from HUSKY and setting up virtual machine for UNIX-subsystem.
+Read more about this here:\
+[Error "001"](./docs/h001.md)
 
 ### Error-code "127"
 
@@ -52,9 +54,11 @@ Code of this exception contains multiple subtypes:
   make changes "npm" → "npm.cmd" in your scripts.
 
 - **"NVM" not found:**\
-  download NVM on your computer and make ref in "%PATH%" (for win-system) variable, otherwise, set up WSL system:
-    - https://learn.microsoft.com/en-us/windows/wsl/install
-    - https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+  download NVM on your computer and make ref in "%PATH%" (for win-system) variable,
+  otherwise, set up WSL system:
+
+  - <https://learn.microsoft.com/en-us/windows/wsl/install>
+  - <https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating>
 
 - **Node not found:**\
   check "%PATH%" (for NODE correct paths), otherwise see guidelines above.
@@ -64,7 +68,7 @@ Code of this exception contains multiple subtypes:
 This is a list of links to materials and sites
 referenced by this file:
 
-- https://github.com/typicode/husky/issues/
-- [Stackoverflow #44829878](https://stackoverflow.com/questions/44829878/)
-- [Stackoverflow #67115897](https://stackoverflow.com/questions/67115897/)
-- https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+- <https://github.com/typicode/husky/issues/>
+- [Stack Overflow #44829878](https://stackoverflow.com/questions/44829878/)
+- [Stack Overflow #67115897](https://stackoverflow.com/questions/67115897/)
+- <https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating>

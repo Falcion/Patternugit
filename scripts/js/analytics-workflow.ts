@@ -1,38 +1,42 @@
-import fs from 'fs-extra';
+import fs from 'fs-extra'
 
-const WORKFLOW_FILENAME: string = 'analytics.yml';
+const WORKFLOW_FILENAME: string = 'analytics.yml'
 
-const modes: string[] = fs.readFileSync('./../../codeql-analytics.txt', { encoding: 'utf-8' })
-    .split('\n')
-    .map(str => str.replaceAll('\n', '').trim())
-    .join('')
-    .split(',')
-    .map(str => str.trim());
+const modes: string[] = fs
+  .readFileSync('./../../codeql-analytics.txt', { encoding: 'utf-8' })
+  .split('\n')
+  .map((str) => str.replaceAll('\n', '').trim())
+  .join('')
+  .split(',')
+  .map((str) => str.trim())
 
-console.info('Current enabled modes:', modes);
+console.info('Current enabled modes:', modes)
 
-const workflow: string[] = fs.readFileSync('./../../.github/workflows/' + WORKFLOW_FILENAME,
-    {
-        encoding: 'utf-8'
-    }
-).split('\n').map(str => str.trimEnd());
+const workflow: string[] = fs
+  .readFileSync('./../../.github/workflows/' + WORKFLOW_FILENAME, {
+    encoding: 'utf-8'
+  })
+  .split('\n')
+  .map((str) => str.trimEnd())
 
 for (let i = 0; i < workflow.length; i++) {
-    if (workflow[i].trim().includes('language: [') && workflow[i].trim().endsWith(']')) {
-        let tabs: number = workflow[i].split('  ').map(str => str === '').length;
+  if (workflow[i].trim().includes('language: [') && workflow[i].trim().endsWith(']')) {
+    const tabs: number = workflow[i].split('  ').map((str) => str === '').length
 
-        let temp_line: string = '';
+    let tempLine: string = ''
 
-        for (let j = 1; j < tabs; j++)
-            temp_line += '  ';
+    for (let j = 1; j < tabs; j++) {
+      tempLine += '  '
+    }
 
-        temp_line += `language: [ ${modes.join(', ')} ]`
+    tempLine += `language: [ ${modes.join(', ')} ]`
 
-        workflow[i] = temp_line;
-    } else
-        continue;
+    workflow[i] = tempLine
+  } else {
+    continue
+  }
 }
 
-console.log(workflow);
+console.log(workflow)
 
-fs.writeFileSync('./../../.github/workflows/' + WORKFLOW_FILENAME, workflow.join('\n'));
+fs.writeFileSync('./../../.github/workflows/' + WORKFLOW_FILENAME, workflow.join('\n'))

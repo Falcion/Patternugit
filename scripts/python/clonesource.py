@@ -1,44 +1,82 @@
 #!/usr/bin/env python3
 
-# MIT License
-# Copyright (c) Falcion 2023-2024
-# Free to share, use or change.
+"""
+Module for copying specific files from a root directory to a target directory.
+Includes error handling and interactive confirmation.
+"""
 
-import shutil
 import os
+import shutil
 
-ROOT, TARGET = "./../../", "source"
+# Define constants
+ROOT = "./../../"
+TARGET = "source"
+COPIED_FILES = ["main.ts", "manifest.json"]
 
 
 def confirm_copy():
+    """
+    Prompt the user to confirm the file copy operation.
+
+    Returns:
+        bool: True if the user confirms, False otherwise.
+    """
     while True:
-        response = input("Do you want to copy the files? (Y/N): ").strip().upper()
+        response = (
+            input("Do you want to copy the files? (Y/N): ").strip().upper()
+        )
 
-        if response in ("Y", "N"):
-            return response == "Y"
-        else:
-            print("Invalid input, please, enter 'Y' or 'N' as an answer.")
+        return True if response == "Y" else "N"
 
 
-COPIED_FILES = ["main.ts", "manifest.json"]
+def copy_files(root, target, files):
+    """
+    Copy a list of files from the root directory to the target directory.
 
-if confirm_copy():
-    if not os.path.exists(TARGET):
-        os.makedirs(TARGET)
+    Args:
+        root (str): Path to the root directory.
+        target (str): Path to the target directory.
+        files (list): List of filenames to copy.
 
-    for file in COPIED_FILES:
-        filepath = os.path.join(ROOT, file)
-        copypath = os.path.join(TARGET, file)
+    Returns:
+        None
+    """
+    if not os.path.exists(target):
+        os.makedirs(target)
+
+    for file in files:
+        filepath = os.path.join(root, file)
+        copypath = os.path.join(target, file)
 
         try:
             shutil.copy(filepath, copypath)
+            print(f'Entity "{file}" was copied to "{target}" successfully.')
+        except FileNotFoundError:
+            print(f"Entity {file} not found in the root directory.")
+        except PermissionError:
+            print(f"Permission denied while accessing {file}.")
+        except (shutil.Error, OSError) as e:
+            print(f"An unexpected error occurred while copying {file}: {e}")
 
-            print(
-                f"Entity \"{file}\" was copied to \"{TARGET}\" successfully.")
-        except Exception:
-            print(
-                f"Entity {file} not found in the root directory, thrown error.")
 
-    print("Copy process completed.")
-else:
-    print("Copy process aborted.")
+def main():
+    """
+    Main function to initiate the copy process with user confirmation.
+    """
+    print("Welcome to the File Copy Tool.")
+    if confirm_copy():
+        try:
+            copy_files(ROOT, TARGET, COPIED_FILES)
+            print("Copy process completed successfully.")
+        except (
+            # pylint: disable=W0718
+            Exception
+            # pylint: enable
+        ) as e:  # Avoid broad exception; add specific logging for debugging.
+            print(f"Copy process aborted due to an error: {e}")
+    else:
+        print("Copy process canceled by the user.")
+
+
+if __name__ == "__main__":
+    main()

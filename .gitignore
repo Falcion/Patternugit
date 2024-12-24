@@ -123,3 +123,9 @@ manifest-backup.json
 
 # TS config
 ts*.buildinfo*
+
+# Python VENV
+**/venv/
+
+# JSCPD reports
+report/

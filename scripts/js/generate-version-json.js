@@ -11,31 +11,34 @@
  * Copyright (c) 2013-2020 GitHub Inc.
  */
 
-const fs = require('node:fs');
-const semver = require('semver');
+import { writeFileSync } from 'node:fs'
+import { parse } from 'semver'
 
-const outputPath = process.argv[2];
-const currentVersion = process.argv[3];
+const outputPath = process.argv[2]
+const currentVersion = process.argv[3]
 
-const parsed = semver.parse(currentVersion);
+const parsed = parse(currentVersion)
 
-let prerelease = '';
+let prerelease = ''
 if (parsed.prerelease && parsed.prerelease.length > 0) {
-  prerelease = parsed.prerelease.join('.');
+  prerelease = parsed.prerelease.join('.')
 }
 
-const {
-  major,
-  minor,
-  patch
-} = parsed;
+const { major, minor, patch } = parsed
 
-fs.writeFileSync(outputPath, JSON.stringify({
-  full_version: currentVersion,
-  major,
-  minor,
-  patch,
-  prerelease,
-  prerelease_number: prerelease ? parsed.prerelease[parsed.prerelease.length - 1] : '0',
-  has_prerelease: prerelease === '' ? 0 : 1
-}, null, 2));
+writeFileSync(
+  outputPath,
+  JSON.stringify(
+    {
+      full_version: currentVersion,
+      major,
+      minor,
+      patch,
+      prerelease,
+      prerelease_number: prerelease ? parsed.prerelease[parsed.prerelease.length - 1] : '0',
+      has_prerelease: prerelease === '' ? 0 : 1
+    },
+    null,
+    2
+  )
+)
