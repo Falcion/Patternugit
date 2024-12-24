@@ -1,8 +1,66 @@
-<!-- markdownlint-disable -->
-
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.2.0](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.6...v2.2.0) (2024-12-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* **build-deps:** migrate eslint to latest versions
+* **dependencies:** mass-solve dependency issues in package's tree
+
+### Features
+
+* add new labels, backlog and etc. ([dadc35c](https://github.com/mokkapps/changelog-generator-demo/commits/dadc35c34e17e4f13ab4ffc34ec29ba812a5918e))
+* **build-deps:** migrate eslint to latest versions ([cf39931](https://github.com/mokkapps/changelog-generator-demo/commits/cf3993158d37d0967de2b0c5f79823707c9236f5))
+* implement PYTHON linters in root directory and their config-paths ([38c8c08](https://github.com/mokkapps/changelog-generator-demo/commits/38c8c087256c78cebc09cad428b451263cbaf3ef))
+* integrate LFS into the package ecosystem ([cf6475d](https://github.com/mokkapps/changelog-generator-demo/commits/cf6475d4ba0a9b95422b5af9861a136a6518bbae))
+* **lint:** add JSONC linter ([03dea79](https://github.com/mokkapps/changelog-generator-demo/commits/03dea79ad1f9dc50a0d4bb1db00ab1c719592ef8))
+* **lint:** add SHFMT to the repository, provide some GITATTRIBUTES and etc. ([e0c6afc](https://github.com/mokkapps/changelog-generator-demo/commits/e0c6afc189d9a69892add0195d333def4d8760b0))
+* **linters:** integrate markdownlint with prettier ([d6a27aa](https://github.com/mokkapps/changelog-generator-demo/commits/d6a27aa86c5d33817e208283b7da91327f598fcb))
+* **linting:** add feature to make .SH executable by hooks ([27a7bd8](https://github.com/mokkapps/changelog-generator-demo/commits/27a7bd86856c0a15cf0446e3449e53ae552c5d0d))
+* **versioning:** add issues versioning sync in sync script ([565e649](https://github.com/mokkapps/changelog-generator-demo/commits/565e64941fa836c8fded07d4aacbf8d3ce2f7f79)), closes [#181](https://github.com/Falcion/Patternugit/issues/181)
+* **versioning:** add scripts and ecosystem to automate versioning and etc. ([f331273](https://github.com/mokkapps/changelog-generator-demo/commits/f33127304c472ee91cb1a188c8d255e1005b3436)), closes [#182](https://github.com/Falcion/Patternugit/issues/182)
+
+
+### Fixes
+
+* **aftermerge:** fix aftermerge issues with dependabot ([a5dde1d](https://github.com/mokkapps/changelog-generator-demo/commits/a5dde1d3a23b1786293847334158e0a0d4d4ed30))
+* **build-hooks:** fix JS associated hooks in linting hook ([caf6e3c](https://github.com/mokkapps/changelog-generator-demo/commits/caf6e3c653c542e69ddca44b1406a87095b3d291))
+* **build-hooks:** make chmod hook crossplatform ([9272000](https://github.com/mokkapps/changelog-generator-demo/commits/927200002a2fd5d0cbd1b686a1185b588424c5d9))
+* **build:** fix esbuild and stage errors with missing modules ([5e8d378](https://github.com/mokkapps/changelog-generator-demo/commits/5e8d3789b00ec14ede923b809aa97aa67399a720))
+* **dependencies:** mass-solve dependency issues in package's tree ([12eed83](https://github.com/mokkapps/changelog-generator-demo/commits/12eed835d112c1d9796ffdbd17f5eeda1c219d88))
+* **docs:** fix changelog and it's tag policies and order ([4465410](https://github.com/mokkapps/changelog-generator-demo/commits/4465410c4138637eea2e373c1a2bfca601137b78)), closes [#179](https://github.com/Falcion/Patternugit/issues/179)
+* fix build and update lib and target of TS, append linter with them ([5357e42](https://github.com/mokkapps/changelog-generator-demo/commits/5357e42e513b07f59cc3d38159cf8a8a014afff7))
+* fix UTF encoding and tweaks in documentation ([1a66a1c](https://github.com/mokkapps/changelog-generator-demo/commits/1a66a1c888951b5bced4ef4c25c7798e79696279))
+* **husky:** add future-proof docs and fix of husky's problems ([a076372](https://github.com/mokkapps/changelog-generator-demo/commits/a07637222cc790cd9c6f53d3bfd3a5a463605302))
+* **labels:** fix of [#190](https://github.com/Falcion/Patternugit/issues/190), add new labels ([8f554e3](https://github.com/mokkapps/changelog-generator-demo/commits/8f554e3462c5a26fa6ed7ff6ac0cb312d42ba025))
+* **lint:** attempt to fix BASH according to linter ([f1140b1](https://github.com/mokkapps/changelog-generator-demo/commits/f1140b16a6cb57edbb8ae0d108c0edd5a2ac76fb))
+* **lint:** attempt to fix BASH according to linter ([4016816](https://github.com/mokkapps/changelog-generator-demo/commits/40168161197d46fd8f5b0c0afa0734e840fb25e5))
+* **lint:** attempt to fix CHECKOV according to linter ([e9b3c1e](https://github.com/mokkapps/changelog-generator-demo/commits/e9b3c1ec1b2763f5934a31ac50d9bf3054b14eb6))
+* **lint:** attempt to fix CHECKOV according to linter ([e832f51](https://github.com/mokkapps/changelog-generator-demo/commits/e832f517c2022f70a556abac1c9e1fcab0842d4a))
+* **lint:** attempt to fix CHECKOV according to linter ([c2d11dd](https://github.com/mokkapps/changelog-generator-demo/commits/c2d11ddd1b0f1b927bb853f15b3e65a09f58b5db))
+* **lint:** attempt to fix EDITORCONFIG and MARKDOWNLINT for linter ([303ece0](https://github.com/mokkapps/changelog-generator-demo/commits/303ece00c506f18287c10298f17878fa2e6bd19f))
+* **lint:** attempt to fix EDITORCONFIG and MARKDOWNLINT for linter ([04d763c](https://github.com/mokkapps/changelog-generator-demo/commits/04d763c8694f7155d8dee4a57dbfffb5e169f1ec))
+* **lint:** attempt to fix NATURAL_LANGUAGE for linter ([91c087f](https://github.com/mokkapps/changelog-generator-demo/commits/91c087f03f36c468a920f8e900b6a393de1ce93c))
+* **lint:** attempt to fix TYPESCRIPT and JAVASCRIPT for linter ([b13cabd](https://github.com/mokkapps/changelog-generator-demo/commits/b13cabd09c2293331fa9a6d7aa2fef489f198135))
+* **lint:** implement fixes by linter for PYTHON and etc. ([9db108f](https://github.com/mokkapps/changelog-generator-demo/commits/9db108f265224277ea4f455e7a3ca5de18e64473))
+
+
+### Build system
+
+* **build-ci:** implement PYLINT into the environment ([71ac537](https://github.com/mokkapps/changelog-generator-demo/commits/71ac5376f8921fdfe73022e303b86924d0794339))
+* **build-feats:** add linter again to the repository ([b6abce2](https://github.com/mokkapps/changelog-generator-demo/commits/b6abce23105a482f53904581bd5eee02a8114da8)), closes [#189](https://github.com/Falcion/Patternugit/issues/189)
+* **ci-deps:** advance actions stale in terms of labels and time ([4d9d66b](https://github.com/mokkapps/changelog-generator-demo/commits/4d9d66b8bec4c989f356cca7f697e006b3c6f9ac))
+* **deps-dev:** bump @electron/lint-roller from 2.4.0 to 3.0.0 ([c438d8f](https://github.com/mokkapps/changelog-generator-demo/commits/c438d8f258da1b154eb17368331ca05bf8fe210d))
+* **deps-dev:** bump markdownlint from 0.35.0 to 0.36.1 ([d48185b](https://github.com/mokkapps/changelog-generator-demo/commits/d48185b77552cfad3c6d1032f7347d95efdb4528))
+* **deps-dev:** bump markdownlint from 0.36.1 to 0.37.0 ([0bb6f34](https://github.com/mokkapps/changelog-generator-demo/commits/0bb6f34d57cf5f9915fa02c40779bad27d1bdb45))
+* **deps:** bump github-wiki-sidebar from 1.1.2 to 2.0.1 ([c046d0d](https://github.com/mokkapps/changelog-generator-demo/commits/c046d0d9cd0d0ec4284c4358a454eb901e6c7ee4))
+* **deps:** bump markdownlint-cli2 from 0.14.0 to 0.15.0 ([5c28253](https://github.com/mokkapps/changelog-generator-demo/commits/5c28253ab26d0939bd266d7ab367ad41abec3cc6))
+* **deps:** bump markdownlint-cli2 from 0.15.0 to 0.16.0 ([c9ab70d](https://github.com/mokkapps/changelog-generator-demo/commits/c9ab70d5ed5a0c65f2e3015616373ea8c4a09b3c))
+* **deps:** bump pozil/auto-assign-issue from 1.11.0 to 2.0.1 ([3f66875](https://github.com/mokkapps/changelog-generator-demo/commits/3f66875e007c608fac5f93decca031e4124e38bb))
+* **husky:** move related scripts for husky as MJS ([6a99def](https://github.com/mokkapps/changelog-generator-demo/commits/6a99def6becf427c370e6a417583fe1b2e045f42))
 
 ### [2.1.5](https://github.com/mokkapps/changelog-generator-demo/compare/v2.1.4...v2.1.5) (2024-10-04)
 
