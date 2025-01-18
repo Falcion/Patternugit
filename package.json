@@ -233,7 +233,7 @@
     "shx": "^0.3.4",
     "standard": "^17.1.2",
     "standard-version": "^9.5.0",
-    "stylelint": "^16.10.0",
+    "stylelint": "^16.13.2",
     "textlint": "^14.3.0",
     "textlint-rule-date-weekday-mismatch": "^1.0.6",
     "textlint-rule-editorconfig": "^1.0.3",
