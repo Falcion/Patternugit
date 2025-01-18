@@ -1,3 +1,13 @@
 {
-  "extends": ["@commitlint/config-conventional"]
+  "extends": ["@commitlint/config-conventional"],
+  "ignores": [
+    {
+      "pattern": "^Repo visualizer: update diagram$",
+      "message": "Ignoring repo-visualizer commits"
+    },
+    {
+      "pattern": "^Bumps [.+](.+) from .+ to .+.$",
+      "message": "Ignoring Dependabot commits"
+    }
+  ]
 }
