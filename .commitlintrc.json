@@ -9,5 +9,9 @@
       "pattern": "^Bumps [.+](.+) from .+ to .+.$",
       "message": "Ignoring Dependabot commits"
     }
-  ]
+  ],
+  "rules": {
+    "header-max-length": [2, "always", 72],
+    "body-max-length": [0, "always", 100]
+  }
 }
