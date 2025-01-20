@@ -6,6 +6,6 @@ module.exports = {
   ],
   rules: {
     'header-max-length': async () => [2, 'always', 72],
-    'body-max-length': async () => [0, 'always', 100],
-  },
+    'body-max-length': async () => [0, 'always', 100]
+  }
 }
