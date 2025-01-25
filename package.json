@@ -43,7 +43,7 @@
     "buildtsc": "tsc",
     "build": "tsc -noEmit -skipLibCheck prepare-template.ts && node esbuild.config.mjs production",
     "pack": "python scripts/python/pack.py",
-    "sync-release-table": "cd scripts/python && python3 -m venv venv && python update_versions_table.py",
+    "release-tags": "cd scripts/python && python3 -m venv venv && python update_versions_table.py",
     "release": "standard-version && npm run sync-release-table",
     "release:patch": "standard-version --release-as patch && npm run sync-release-table",
     "release:minor": "standard-version --release-as minor && npm run sync-release-table",
