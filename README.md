@@ -12,13 +12,13 @@
     <!-- SET UP STATUS FOR PROJECT AFTER RELEASE, FROM PRESETS AT:
          ~/.github/badges-status-presets.json
     -->
-    <a href="https://github.com/Falcion/Patternugit/releases/latest"><img src="https://img.shields.io/badge/status-development-dodgerblue" alt="commit-activity"/></a>
+    <a href="https://github.com/Falcion/Patternugit/releases/latest"><img src="https://img.shields.io/badge/status-maintenance-crimson" alt="commit-activity"/></a>
 </div>
 <!-- -->
 <br/>
 <!-- -->
 <div align="center">
-    <img src="./.github/images/icon.png" alt="icon" style="width:100;height:100%;"/>
+    <img src="./.github/images/icon.png" alt="icon" style="width:33%;height:33%;"/>
     <!-- TEXTS -->
     <h3>
         Patternugit</h3>
