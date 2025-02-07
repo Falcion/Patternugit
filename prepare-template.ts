@@ -24,14 +24,14 @@
  * Any code and/or API associated with OBSIDIAN behaves as stated in their distribution policy.
  */
 
-import * as os from 'node:os';
-import * as path from 'node:path';
+import * as os from 'os';
+import * as path from 'path';
 
 import * as fs from 'fs-extra';
 import * as readline from 'readline';
 
 import * as colors from 'colors/safe';
-import { WriteStream } from 'node:fs';
+import { WriteStream } from 'fs';
 
 const PROMPTS: string[] =
   [
