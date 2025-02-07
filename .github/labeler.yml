@@ -2,20 +2,30 @@
 # code-scanning:
 #   - code-scanning/**/*
 documentation:
-  - 'docs/**/*'
+  - changed-files:
+      - any-glob-to-any-file: 'docs/**'
 automation/ci-cd:
-  - '.github/workflows/**/*'
-  - '.github/*.yml'
+  - changed-files:
+      - any-glob-to-any-file: ['.github/workflows/**', '.github/*.yml']
 automation/tooling:
-  - 'kubernetes/**/*'
+  - changed-files:
+      - any-glob-to-any-file: 'kubernetes/**'
 dependencies:
-  - '**/package*'
-  - '**/composer*'
-  - '**/yarn*'
-  - '**/requirements'
+  - changed-files:
+      - any-glob-to-any-file: ['**/package*', '**/composer*', '**/yarn*', '**/requirements*']
 main:
-  - 'source/**/*'
+  - changed-files:
+      - any-glob-to-any-file: 'source/**'
 python:
-  - '**/*.py'
+  - changed-files:
+      - any-glob-to-any-file: '**/*.py'
 release:
-  - 'release/**/*'
+  - changed-files:
+      - any-glob-to-any-file: 'release/**'
+  - base-branch: 'release*'
+javascript:
+  - changed-files:
+      - any-glob-to-any-file: '**/*.js'
+github_actions:
+  - changed-files:
+      - any-glob-to-any-file: ['.github/workflows/**', '.github/*.yml']
