@@ -30,7 +30,8 @@ import * as path from 'node:path';
 import * as fs from 'fs-extra';
 import * as readline from 'readline';
 
-import colors from 'colors/safe';
+import * as colors from 'colors/safe';
+import { WriteStream } from 'node:fs';
 
 const PROMPTS: string[] =
   [
@@ -166,9 +167,7 @@ export default class LOCALE_MODULE {
     entries: string[],
     actions: string): void {
     if (actions.length > 1) {
-      throw new RangeError('Action input must be a char.', {
-        cause: actions
-      });
+      throw new RangeError('Action input must be a char.');
     }
 
     if (actions === 'Y') {
@@ -189,6 +188,8 @@ export default class LOCALE_MODULE {
           this.EXCLUDING_FOLDERS.push(line);
       });
     }
+
+    fs.ensureFileSync(CONFIG.LOGS_FILE);
   }
 
   /**
@@ -199,18 +200,25 @@ export default class LOCALE_MODULE {
    */
   public async search(filepath: string, data: string[]): Promise<void> {
     const buffer: string = await fs.readFile(filepath, { 'encoding': 'utf-8' });
+    const stream: WriteStream = fs.createWriteStream(CONFIG.LOGS_FILE, { flags: 'a' });
 
     const contents: string[] = buffer.split(os.EOL);
 
     for (let i = 0; i < contents.length; i++) {
       const line = contents[i].toUpperCase();
 
-      for (const target of data)
+      for (const target of data) {
         if (line.includes(target)) {
           LOCALE_LOGGER.raw(colors.green, `Found "${target}" in L#${i} of: `);
           LOCALE_LOGGER.raw(colors.cyan, filepath);
+
+          stream.write(`Found "${target}" in L#${i} of:` + os.EOL);
+          stream.write(`\t${filepath}` + os.EOL);
         }
+      }
     }
+
+    stream.end();
   }
 
   /**
@@ -221,8 +229,6 @@ export default class LOCALE_MODULE {
   public async traverse(directory: string = __dirname): Promise<void> {
     try {
       const items: string[] = await fs.readdir(directory);
-
-
 
       for (const item of items) {
         const itempath = path.join(directory, item);
@@ -249,7 +255,8 @@ export default class LOCALE_MODULE {
   **/
 const CONFIG = {
   USE_GITIGNORE: true,
-  GITIGNORE_PATH: './.gitignore'
+  GITIGNORE_PATH: './.gitignore',
+  LOGS_FILE: `preparations-${new Date().toLocaleDateString()}.logs`
 };
 
 (() => {
