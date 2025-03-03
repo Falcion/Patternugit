@@ -18,9 +18,9 @@
 <br/>
 <!-- -->
 <div align="center">
-    <img src="./.github/images/icon.png" alt="icon" style="width:33%;height:33%;"/>
+    <img src="./.github/images/icon.png" alt="icon" style="width:66%;height:66%;"/>
     <!-- TEXTS -->
-    <h3>
+    <h3 style="margin-top:auto;">
         Patternugit</h3>
      <p>
     Patterns are the keys.
@@ -181,12 +181,12 @@ to follow this algorithm:
 - [x] Upgrade and update project to the second version generation;
 - [x] Refactor to project according to integrated linters and pass the checks
       within future;
-- [ ] Write small pages site which contains philosophy and common ideology of
+- [x] Write small pages site which contains philosophy and common ideology of
       project and how to use it;
-  - [ ] Format and style it;
-- [ ] Write a Markdown file which contains a pattern for philosohpies or ideologies
+  - [x] Format and style it;
+- [x] Write a Markdown file which contains a pattern for philosohpies or ideologies
       for projects;
-  - [ ] And write down a specified philosophy for this exact project;
+  - [x] And write down a specified philosophy for this exact project;
 
 <p align="right"><a href="#readme-top" title="Back to the top of README">[^]</a></p>
 
@@ -206,6 +206,7 @@ If you want to contribute to this project, please, read contributioning policy a
 commit convention, this repository works with CLA, commits convention and on automated
 deployment system[^4].
 
+> [!Important]
 > For one-single file contributioning, use a more quicker way without forking the
 > repository through site.
 
@@ -225,6 +226,7 @@ Project thanks the [Electron.js](https://github.com/electron/electron/) and
 [Angular](https://github.com/angular/angular/) for their amazing repository
 scripts and entire infrastructure, which partially were imported to this repository.
 
+> [!Note]
 > For individual licensing and credits information, seek correspondive files and/or
 > sources.
 
