@@ -50,6 +50,7 @@ Limit to users explicitly granted read or higher access: False
 protected_branches:
     - main*
     - development*
+# Tags
 # Rules
 rulesets:
   - Auto-imported tag create protections
@@ -68,8 +69,32 @@ Allow GitHub Actions to create and approve pull requests: True
 ## Webhooks
 ## Environments
 environments:
+######## if pages enabled:
+######## - github-pages
   - development
+### Environment: development
+#### Deployment protection rules
+Required reviewers: False
+Wait timer: False
+Allow administrators to bypass configured protection rules: True
+#### Deployment branches and tags
+dev/* (branch)
+main (branch)
+v* (tag)
+release/* (branch)
+---
+Environment secrets: None
+Environment variables: None
   - production
+### Environment: production
+#### Deployment protection rules
+Required reviewers: False
+Wait timer: False
+Allow administrators to bypass configured protection rules: True
+#### Deployment branches and tags
+---
+Environment secrets: None
+Environment variables: None
 ## Codespaces
 ## Pages
 # Security
@@ -86,8 +111,9 @@ Dependabot on Actions runners: Enabled
 ## Code scanning
 Tools:
   - CodeQL Advanced (Configured)
-Copilot Autofix: False
-Copilot Autofix for third-party tools: False
+Copilot Autofix: True
+Copilot Autofix for third-party tools: True
+Prevent direct alert dismissals: True
 Protection rules:
   - Check runs failure threshold:
     - Security alert severity level: High or higher
