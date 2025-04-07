@@ -3,4 +3,4 @@ For .GITATTRIBUTES generator use:
 
 Site (https://gitattributes.io/) is deprecated and unsupported.
 
-Used (default) templates - git,gitbook,windows,macos,linux + SPECIALTY OF YOUR REPO.
+Used (default) templates - markdown, web, common + SPECIALTY OF YOUR REPO.
