@@ -1,7 +1,28 @@
-<!-- markdownlint-disable -->
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.4.0](https://github.com/mokkapps/changelog-generator-demo/compare/v2.3.0...v2.4.0) (2025-04-29)
+
+
+### Features
+
+* **lfs:** remove lfs of executables file from repo ([9eacd97](https://github.com/mokkapps/changelog-generator-demo/commits/9eacd97af61021cac110eba4fdd43878f508a8c7))
+* **settings:** import missed "raw" settings ([5278ee0](https://github.com/mokkapps/changelog-generator-demo/commits/5278ee07116af9d67a7db45524f1b62c534f95d2))
+
+
+### Build system
+
+* **build-ci:** add devcontainer for the repository ([f7d73c1](https://github.com/mokkapps/changelog-generator-demo/commits/f7d73c19a57b7ea35bd6daedcf6369c809e3f07a))
+* **build-deps:** append LFS run-script in main file ([6a03c30](https://github.com/mokkapps/changelog-generator-demo/commits/6a03c30baf549e0ecb46eb53eb9c7f51bdf05956))
+* **deps-dev:** bump globals from 15.15.0 to 16.0.0 ([3d7c18c](https://github.com/mokkapps/changelog-generator-demo/commits/3d7c18cc603cd92ba6ae949ae6642ed07a999f5d))
+* **deps-dev:** bump markdownlint-cli from 0.43.0 to 0.44.0 ([e172f93](https://github.com/mokkapps/changelog-generator-demo/commits/e172f93ff7df05c805771cab63f30c11da6441e5))
+* **deps:** bump builtin-modules from 4.0.0 to 5.0.0 ([6067144](https://github.com/mokkapps/changelog-generator-demo/commits/60671442a119a885c9f413b9ad25d9bc1e0a772d))
+* **deps:** bump esbuild from 0.24.2 to 0.25.0 ([f7b80f4](https://github.com/mokkapps/changelog-generator-demo/commits/f7b80f479d6867668a44451dd24395c83af5d382))
+* **deps:** bump shx from 0.3.4 to 0.4.0 ([f768b9c](https://github.com/mokkapps/changelog-generator-demo/commits/f768b9c52f47106422e264c4e48d86dd95494f1b))
+* **deps:** bump super-linter/super-linter from 7.2.1 to 7.3.0 ([43aea2b](https://github.com/mokkapps/changelog-generator-demo/commits/43aea2bce2487690cf4dd3bdd995607acdcee981))
+* **hooks:** create lfs pre-commit check script as hook ([fe4df2a](https://github.com/mokkapps/changelog-generator-demo/commits/fe4df2a5780d9b728c44fbc937da70b7cda961a1))
+* **lfs:** change exec files to w/ lfs mode ([470c4dc](https://github.com/mokkapps/changelog-generator-demo/commits/470c4dcbb1461013ea0dd8120e6f7791318353af))
 
 ## [2.3.0](https://github.com/mokkapps/changelog-generator-demo/compare/v2.2.0...v2.3.0) (2025-02-06)
 
