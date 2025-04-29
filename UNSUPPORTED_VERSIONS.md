@@ -25,5 +25,6 @@
 | [v2.1.3](https://github.com/Falcion/Patternugit/tree/v2.1.3)            | ❎          |
 | [v2.1.4](https://github.com/Falcion/Patternugit/tree/v2.1.4)            | ❎          |
 | [v2.1.6](https://github.com/Falcion/Patternugit/tree/v2.1.6)            | ⏭️          |
-| [v2.2.0](https://github.com/Falcion/Patternugit/tree/v2.2.0)            | ❎          |
+| [v2.2.0](https://github.com/Falcion/Patternugit/tree/v2.2.0)            | ✅          |
 | [v2.3.0](https://github.com/Falcion/Patternugit/tree/v2.3.0)            | ✅          |
+| [v2.4.0](https://github.com/Falcion/Patternugit/tree/v2.4.0)            | ✅          |
