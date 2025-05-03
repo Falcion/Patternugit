@@ -64,7 +64,7 @@ const labels = [
 ]
 
 // Function to update an existing label
-function updateLabel (label) {
+function updateLabel(label) {
   let flag = false
 
   ;[].slice.call(document.querySelectorAll('.labels-list-item')).forEach((element) => {
@@ -82,7 +82,7 @@ function updateLabel (label) {
 }
 
 // Function to add a new label
-function addNewLabel (label) {
+function addNewLabel(label) {
   document.querySelector('.js-new-label-name-input').value = label.name
   document.querySelector('.js-new-label-description-input').value = label.description
   document.querySelector('.js-new-label-color-input').value = `#${label.color}`
@@ -91,7 +91,7 @@ function addNewLabel (label) {
 }
 
 // Function to update or add a new label
-function addLabel (label) {
+function addLabel(label) {
   if (!updateLabel(label)) {
     addNewLabel(label)
   }

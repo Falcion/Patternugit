@@ -19,7 +19,7 @@ const context = await esbuild.context({
   banner: {
     js: banner
   },
-  entryPoints: ['./prepare-template.ts'],
+  entryPoints: ['./index.ts'],
   plugins: [
     sassPlugin(),
     glsl({
