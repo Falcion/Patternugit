@@ -1,8 +1,5 @@
 #!/bin/bash
 
-FILES=$(git diff --cached --name-only | grep '^APIs/.*\.json')
-[ -z "$FILES" ] && echo "No changes detected..." && exit 0;
-
 COMMON_EXT=(
 	# Archives & Installers
 	7z a ar arj cab dmg iso rar tar tbz tbz2 tgz zip zipx
