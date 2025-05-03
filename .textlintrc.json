@@ -7,15 +7,13 @@
     "no-curly-quotes": true,
     "no-todo": false,
     "period-in-header": true,
-    "editorconfig": {
-      "enable": true,
-      "exclude": ["**/release/data/*.md", "UNSUPPORTED_VERSIONS.md", "CHANGELOG.md"]
-    },
+    "editorconfig": true,
     "spelling": {
       "language": "en",
       "skipPatterns": [
         "(http|https)://[^\\s]+",
         "\\[.*?\\]\\([^)]+\\)",
+        "/repos/g",
         "JavaScript",
         "TypeScript",
         "GitHub",
