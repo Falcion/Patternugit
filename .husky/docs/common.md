@@ -10,7 +10,9 @@ itself and ones with OS and desktop client of Git.
 > Also check your "%PATH% → Node.js/bin/" paths in environment variables context:\
 >
 > - Windows users, if you have everything set up and installed, check this comment
+
     from same issue:\
+
 > <https://github.com/desktop/desktop/issues/12562#issuecomment-1007154382>
 
 If you encounter this error:
