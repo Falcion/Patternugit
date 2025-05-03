@@ -7,6 +7,10 @@
     "no-curly-quotes": true,
     "no-todo": false,
     "period-in-header": true,
+    "editorconfig": {
+      "enable": true,
+      "exclude": ["**/release/data/*.md", "UNSUPPORTED_VERSIONS.md", "CHANGELOG.md"]
+    },
     "spelling": {
       "language": "en",
       "skipPatterns": [
