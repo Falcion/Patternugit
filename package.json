@@ -258,7 +258,8 @@
     "ignore": [
       "**/out/",
       "**/lib/*",
-      "**/venv/"
+      "**/venv/",
+      "prepare*template.*ts"
     ]
   }
 }

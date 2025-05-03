@@ -5,13 +5,13 @@
     "node scripts/lint.js --js --fix --only --",
     "npx standard \"*.{mjs,js,jsx}\" --fix"
   ],
-  "{!*.d.ts, *.{mts,ts,tsx}}": [
+  "{!*.d.ts,*.{mts,ts,tsx}}": [
     "npx prettier --write '*.{mts,ts,tsx}'",
     "npx eslint '*.{mts,ts,tsx}' --fix",
     "npx ts-standard \"*.{mts,ts,tsx}\" --fix"
   ],
   "*.d.ts": ["npx prettier --write '**/*.d.ts'"],
-  "{!CHANGELOG.md, *.md}": [
+  "{!CHANGELOG.md,*.md}": [
     "npx textlint *.md --fix",
     "npx markdownlint-cli2 '!{CHANGELOG.md,node_modules/**,out/**}' '*.{md,mdown,markdown}' --fix"
   ],
