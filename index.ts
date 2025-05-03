@@ -53,58 +53,32 @@ export class LOCALE_LOGGER {
    * Logs the info message.
    * @param {...unknown} data - The data to be logged.
    */
-  public info(...data: unknown[]): void {
-    const datetime = new Date().toLocaleString()
-
-    const formattedData = data
-      .map((item) => (typeof item === 'object' ? JSON.stringify(item, null, 2) : String(item)))
-      .join(' ')
-
-    console.info(colors.blue(`[${datetime}] < ${this.session_id} > \t - ${formattedData}`))
+  public info (...data: unknown[]): void {
+    console.info(colors.blue(this.parseData(data)))
   }
 
   /**
    * Logs the warn message.
    * @param {...unknown} data - The data to be logged.
    */
-  public warn(...data: unknown[]): void {
-    const datetime = new Date().toLocaleString()
-
-    const formattedData = data
-      .map((item) => (typeof item === 'object' ? JSON.stringify(item, null, 2) : String(item)))
-      .join(' ')
-
-    console.warn(colors.yellow(`[${datetime}] < ${this.session_id} > \t - ${formattedData}`))
+  public warn (...data: unknown[]): void {
+    console.warn(colors.yellow(this.parseData(data)))
   }
 
   /**
    * Logs the error message.
    * @param {...unknown} data - The data to be logged.
    */
-  public error(...data: unknown[]): void {
-    const datetime = new Date().toLocaleString()
-
-    const formattedData = data
-      .map((item) => (typeof item === 'object' ? JSON.stringify(item, null, 2) : String(item)))
-      .join(' ')
-
-    console.error(
-      colors.bgRed(colors.white(`[${datetime}] < ${this.session_id} > \t - ${formattedData}`))
-    )
+  public error (...data: unknown[]): void {
+    console.error(colors.bgRed(colors.white(this.parseData(data))))
   }
 
   /**
    * Logs the success message.
    * @param {...unknown} data - The data to be logged.
    */
-  public success(...data: unknown[]): void {
-    const datetime = new Date().toLocaleString()
-
-    const formattedData = data
-      .map((item) => (typeof item === 'object' ? JSON.stringify(item, null, 2) : String(item)))
-      .join(' ')
-
-    console.log(colors.green(`[${datetime}] < ${this.session_id} > \t - ${formattedData}`))
+  public success (...data: unknown[]): void {
+    console.log(colors.green(this.parseData(data)))
   }
 
   /**
@@ -112,12 +86,8 @@ export class LOCALE_LOGGER {
    * @param {(str: string) => string} color - The color function.
    * @param {...unknown} data - The data to be logged.
    */
-  public raw(color: (str: string) => string, ...data: unknown[]): void {
-    const formattedData = data
-      .map((item) => (typeof item === 'object' ? JSON.stringify(item, null, 2) : String(item)))
-      .join(' ')
-
-    console.debug(color(formattedData))
+  public raw (color: (str: string) => string, ...data: unknown[]): void {
+    console.debug(color(this.parseData(data)))
   }
 
   /**
@@ -126,8 +96,16 @@ export class LOCALE_LOGGER {
    * @param {string} message - The message to be formatted.
    * @returns {string} The formatted message.
    */
-  public msg(color: (str: string) => string, message: string): string {
+  public msg (color: (str: string) => string, message: string): string {
     return color(message)
+  }
+
+  private parseData (...data: unknown[]): string {
+    const ctx = data
+      .map((item) => (typeof item === 'object' ? JSON.stringify(item, null, 2) : String(item)))
+      .join(' ')
+
+    return `[${new Date().toLocaleString()}] < ${this.session_id} > \t - ${ctx}`
   }
 }
 
@@ -175,7 +153,7 @@ export default class LOCALE_MODULE {
    * @param {string[]} entries - Entries to be added to the exclusion list.
    * @param {string} actions - User action (Y or N).
    */
-  public update(entries: string[], actions: string): void {
+  public update (entries: string[], actions: string): void {
     if (actions.length > 1) {
       throw new RangeError('Action input must be a char.')
     }
@@ -209,7 +187,7 @@ export default class LOCALE_MODULE {
    * @param {string[]} data - Words to search for.
    * @returns {Promise<void>} A promise representing the search operation.
    */
-  public async search(filepath: string, data: string[]): Promise<void> {
+  public async search (filepath: string, data: string[]): Promise<void> {
     const buffer: string = await fs.readFile(filepath, { encoding: 'utf-8' })
     const stream: WriteStream = fs.createWriteStream(CONFIG.LOGS_FILE, { flags: 'a' })
 
@@ -237,7 +215,7 @@ export default class LOCALE_MODULE {
    * @param {string} directory - The directory to start traversal from.
    * @returns {Promise<void>} A promise representing the traversal operation.
    */
-  public async traverse(directory: string = __dirname): Promise<void> {
+  public async traverse (directory: string = __dirname): Promise<void> {
     try {
       const items: string[] = await fs.readdir(directory)
 
@@ -282,6 +260,8 @@ void (async () => {
     input: process.stdin,
     output: process.stdout
   })
+
+  void (async () => {})
 
   try {
     const finder = new LOCALE_MODULE()
