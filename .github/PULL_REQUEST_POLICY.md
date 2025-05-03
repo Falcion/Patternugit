@@ -23,8 +23,7 @@ and the content in the target branch.
 > - Be very careful when force pushing commits to a pull request, force pushing
 >   changes the repository history and can corrupt your pull request, if other collaborators
 >   branch the project before a force push, the force push may overwrite commits
-
-    that collaborators based their work on.
+>   that collaborators based their work on.
 
 For more information about PRs check:
 <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests/>
