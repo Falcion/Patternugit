@@ -4,44 +4,97 @@
  */
 
 export default {
-    '*.{mjs,js,jsx}': (files) => [
-        `npx prettier --write ${files.join(' ')}`,
-        `npx eslint ${files.join(' ')} --fix`,
-        `node scripts/lint.js --js --fix --only -- ${files.join(' ')}`,
-        `npx standard ${files.join(' ')} --fix`,
-    ],
+  /** Javascript codefiles: */
+  '*.{mjs,js,jsx,cjs}': (files) => {
+    const found = files
+      .filter(
+        (f) => f.endsWith('.js') || f.endsWith('.jsx') || f.endsWith('.mjs') || f.endsWith('.cjs')
+      )
+      .map((f) => `"${f}"`)
 
-    '{!*.d.ts,*.{mts,ts,tsx}}': (files) => [
-        `npx prettier --write ${files.join(' ')}`,
-        `npx eslint ${files.join(' ')} --fix`,
-        `npx ts-standard ${files.join(' ')} --fix`,
-    ],
+    return [
+      `npx prettier --write ${found.join(' ')}`,
+      `npx eslint ${found.join(' ')} --fix`,
+      `node scripts/lint.js --js --fix --only -- ${found.join(' ')}`,
+      `npx standard ${found.join(' ')} --fix`
+    ]
+  },
+  /** Typescript codefiles (excluding typings): */
+  '*.{mts,ts,tsx,cts}': (files) => {
+    const found = files
+      .filter(
+        (f) =>
+          f.endsWith('.ts') ||
+          f.endsWith('.tsx') ||
+          f.endsWith('.mts') ||
+          (f.endsWith('.cts') && !f.endsWith('.d.ts'))
+      )
+      .map((f) => `"${f}"`)
 
-    '*.d.ts': (files) => [`npx prettier --write ${files.join(' ')}`],
+    return [
+      `npx prettier --write ${found.join(' ')}`,
+      `npx eslint ${found.join(' ')} --fix`,
+      `npx ts-standard ${found.join(' ')} --fix`
+    ]
+  },
+  /** Typescript typings: */
+  '*.d.ts': (files) => {
+    const found = files.filter((f) => f.endsWith('.d.ts')).map((f) => `"${f}"`)
 
-    '{!(CHANGELOG.md|UNSUPPORTED_VERSIONS.md|**/changes/v*),*.md}': (files) => {
-        const mdOnly = files.filter((f) => f.endsWith('.md') && ['CHANGELOG.md', 'UNSUPPORTED_VERSIONS.md'])
-        return [
-            `npx textlint ${mdOnly.join(' ')} --fix`,
-            `npx markdownlint-cli2 "!{CHANGELOG.md,node_modules/**,out/**}" ${mdOnly.join(' ')} --fix`,
-        ]
-    },
+    return [`npx prettier --write ${found.join(' ')}`]
+  },
+  /** Markdown files: */
+  '*.md': (files) => {
+    const EXCLUDING = ['CHANGELOG.md', 'UNSUPPORTED_VERSIONS.md']
 
-    '*.{gn,gni}': ['npm run gn-check', 'npm run gn-format'],
+    const found = files
+      .filter(
+        (f) =>
+          f.endsWith('.md') &&
+          !EXCLUDING.some((name) => f.endsWith(name)) &&
+          !f.match(/^.*\/changes\/v[^/]+/)
+      )
+      .map((f) => `"${f}"`)
 
-    '*.{png,jpeg,jpg,gif,svg}': 'imagemin-lint-staged',
+    return [
+      `npx textlint ${found.join(' ')} --fix`,
+      `npx markdownlint-cli2 "!{CHANGELOG.md,node_modules/**,out/**}" ${found.join(' ')} --fix`
+    ]
+  },
+  '*.{gn,gni}': ['npm run gn-check', 'npm run gn-format'],
+  /** Media: */
+  '*.{png,jpeg,jpg,gif,svg}': 'imagemin-lint-staged',
+  /** Styles: */
+  '*.*css': (files) => {
+    const found = files
+      .filter((f) => f.endsWith('.css') || f.endsWith('.scss'))
+      .map((f) => `"${f}"`)
 
-    '*.css': (files) => [
-        `stylelint --fix ${files.filter().join(' ')}`,
-        `prettier --write ${files.join(' ')}`,
-    ],
+    return [`stylelint --fix ${found.join(' ')}`, `prettier --write ${found.join(' ')}`]
+  },
+  /** Patches: */
+  '{*.patch,.patches}': (files) => {
+    const found = files
+      .filter((f) => f.endsWith('.patch') || f.endsWith('.patches'))
+      .map((f) => `"${f}"`)
 
-    '{*.patch,.patches}': (files) => [
-        `node scripts/lint.js --patches --only -- ${files.join(' ')}`,
-        `ts-node scripts/js/check-patch-diff.ts ${files.join(' ')}`,
-    ],
+    return [
+      `node scripts/lint.js --patches --only -- ${found.join(' ')}`,
+      `ts-node scripts/js/check-patch-diff.ts ${found.join(' ')}`
+    ]
+  },
+  /** YAML: */
+  '*.{yml,yaml}': (files) => {
+    const found = files.filter((f) => f.endsWith('yml') || f.endsWith('yaml')).map((f) => `"${f}"`)
 
-    '*.{yml,yaml}': (files) => [`npx prettier ${files.join(' ')} --write`],
+    return [`npx prettier ${found.join(' ')} --write`]
+  },
+  /** JSON: */
+  '*.{json,jsonc}': (files) => {
+    const found = files
+      .filter((f) => f.endsWith('json') || f.endsWith('jsonc'))
+      .map((f) => `"${f}"`)
 
-    '*.json': (files) => [`npx eslint ${files.join(' ')} --fix`],
-};
+    return [`npx eslint ${found.join(' ')} --fix`]
+  }
+}
