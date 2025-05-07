@@ -1,7 +1,25 @@
-<!-- markdownlint-disable -->
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.5.0](https://github.com/mokkapps/changelog-generator-demo/compare/v2.4.0...v2.5.0) (2025-05-07)
+
+
+### Fixes
+
+* **esbuild:** fix flat esbuild config namings ([0869bba](https://github.com/mokkapps/changelog-generator-demo/commits/0869bbaece73cd0c6af1044af67540c42910ae40))
+* **flat-config:** fix flat config of lint-staged ([7ae6783](https://github.com/mokkapps/changelog-generator-demo/commits/7ae6783dabb6fea5a8ae3a0fe60ac8069ffcb5ab))
+* **husky:** ignore husky's native files from the work tree ([3f75278](https://github.com/mokkapps/changelog-generator-demo/commits/3f75278f9e29622d10146564d1363edb6ddf6364))
+* **settings:** append null objects for settings app to work ([f025486](https://github.com/mokkapps/changelog-generator-demo/commits/f025486c314259ae5c114494892a32e2e4e334b3))
+
+
+### Build system
+
+* **bash-exec:** remove bash-exec scripts from default workflow ([f717cdf](https://github.com/mokkapps/changelog-generator-demo/commits/f717cdf2de42e015cc89335bc3de821ef7fcfb93))
+* **ci-cd:** add mocha.js ci to test index ([b2e1070](https://github.com/mokkapps/changelog-generator-demo/commits/b2e107038f33121ad3a3f21d8a3e4c024593df7f))
+* **deps-dev:** bump markdownlint from 0.37.4 to 0.38.0 ([623d18d](https://github.com/mokkapps/changelog-generator-demo/commits/623d18d347fc6088d4644c193d3d92c03fd08c32))
+* **lint-staged:** fix glob pattern and prevent pattern errors ([5a2bdc4](https://github.com/mokkapps/changelog-generator-demo/commits/5a2bdc4e68dbdea62cfddc411585003e98c029dc))
+* **lint-staged:** revamp lint-staged system to new config and hooks ([6226353](https://github.com/mokkapps/changelog-generator-demo/commits/62263538fb9c478b4333fd5bace2fba9d3814094))
 
 ## [2.4.0](https://github.com/mokkapps/changelog-generator-demo/compare/v2.3.0...v2.4.0) (2025-04-29)
 
