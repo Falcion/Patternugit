@@ -148,6 +148,33 @@ export default class LOCALE_MODULE {
 
   public readonly LOGGER: LOCALE_LOGGER = new LOCALE_LOGGER()
 
+  /** **THIS IS A MAIN CONFIG FOR THIS SCRIPT
+   * ONLY EDIT THIS VALUES.**
+   **/
+  public CONFIG = {
+    USE_GITIGNORE: true,
+    /**
+     * Path to your gitignore from the root, relative to
+     * the script's directory.
+     */
+    GITIGNORE_PATH: './.gitignore',
+    /**
+     * Path to the future logs of the locale module: by default is static of
+     * config's value.
+     */
+    LOGS_FILE: `preparations-${new Date().toLocaleDateString()}.logs`
+  }
+
+  constructor (
+    path: string = this.CONFIG.LOGS_FILE,
+    ignoreUse: boolean = this.CONFIG.USE_GITIGNORE,
+    ignorePath: string = this.CONFIG.GITIGNORE_PATH
+  ) {
+    this.CONFIG.LOGS_FILE = path
+    this.CONFIG.USE_GITIGNORE = ignoreUse
+    this.CONFIG.GITIGNORE_PATH = ignorePath
+  }
+
   /**
    * Updates the exclusion settings based on user input.
    * @param {string[]} entries - Entries to be added to the exclusion list.
@@ -168,7 +195,7 @@ export default class LOCALE_MODULE {
       this.EXCLUDING_FOLDERS = entries
     }
 
-    if (CONFIG.USE_GITIGNORE) {
+    if (this.CONFIG.USE_GITIGNORE) {
       const gitignore = fs.readFileSync('.gitignore').toString().split('\n')
 
       gitignore.forEach((line) => {
@@ -178,7 +205,7 @@ export default class LOCALE_MODULE {
       })
     }
 
-    fs.ensureFileSync(CONFIG.LOGS_FILE)
+    fs.ensureFileSync(this.CONFIG.LOGS_FILE)
   }
 
   /**
@@ -189,7 +216,7 @@ export default class LOCALE_MODULE {
    */
   public async search (filepath: string, data: string[]): Promise<void> {
     const buffer: string = await fs.readFile(filepath, { encoding: 'utf-8' })
-    const stream: WriteStream = fs.createWriteStream(CONFIG.LOGS_FILE, { flags: 'a' })
+    const stream: WriteStream = fs.createWriteStream(this.CONFIG.LOGS_FILE, { flags: 'a' })
 
     const contents: string[] = buffer.split(os.EOL)
 
@@ -238,15 +265,6 @@ export default class LOCALE_MODULE {
       this.LOGGER.error(err)
     }
   }
-}
-
-/** THIS IS A MAIN CONFIG FOR THIS SCRIPT
- * ONLY EDIT THIS VALUES.
- **/
-export const CONFIG = {
-  USE_GITIGNORE: true,
-  GITIGNORE_PATH: './.gitignore',
-  LOGS_FILE: `preparations-${new Date().toLocaleDateString()}.logs`
 }
 
 export const ask = async (rl: readline.Interface, question: string): Promise<string> => {
