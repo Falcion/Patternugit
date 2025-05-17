@@ -19,7 +19,8 @@ const config = {
      * @param {*} message entirety of commit message (header+description)
      * @returns Boolean value which shows, would commit be ignored or not
      */
-    (message) => /^build\(([^)]+)\): bump .+ from [\w.-]+ to [\w.-]+$/gm.test(message),
+    (message) =>
+      /^(build|chore|fix|deps)(\([^)]+\)): bump .+ from [\w.-]+ to [\w.-]+$/gm.test(message),
     /** Ignores:
      * @type: imgbot
      * @description while imgbot doesn't appears to be ever linted by commitlint because it's
