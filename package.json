@@ -233,7 +233,7 @@
     "imagemin-lint-staged": "^0.5.1",
     "jscpd": "^4.0.5",
     "lint": "^1.1.2",
-    "lint-staged": "^15.5.2",
+    "lint-staged": "^16.0.0",
     "markdownlint": "^0.38.0",
     "markdownlint-cli": "^0.44.0",
     "markdownlint-cli2": "^0.18.1",
