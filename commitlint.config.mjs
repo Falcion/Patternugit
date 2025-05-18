@@ -21,6 +21,8 @@ const config = {
      */
     (message) =>
       /^(build|chore|fix|deps)(\([^)]+\)): bump .+ from [\w.-]+ to [\w.-]+$/gm.test(message),
+    (message) =>
+      /^(build|chore|fix|deps)\([^)]+\): bump the [\w-]+ group with \d+ updates?$/gim.test(message),
     /** Ignores:
      * @type: imgbot
      * @description while imgbot doesn't appears to be ever linted by commitlint because it's
