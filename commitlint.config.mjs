@@ -20,9 +20,11 @@ const config = {
      * @returns Boolean value which shows, would commit be ignored or not
      */
     (message) =>
-      /^(build|chore|fix|deps)\([^)]+\): bump (?:@?[\w-]+(?:\/[\w-]+)*|.+ from [\w.-]+ to [\w.-]+)$/gm.test(message),
+      /^(build|chore|deps|ci)\([^)]+\): bump (?:@?[\w-]+(?:\/[\w-]+)*|.+ from [\w.-]+ to [\w.-]+)$/gm.test(
+        message
+      ),
     (message) =>
-      /^(build|chore|fix|deps)\([^)]+\): bump the [\w-]+ group with \d+ updates?$/gim.test(message),
+      /^(build|chore|deps|ci)\([^)]+\): bump the [\w-]+ group with \d+ updates?$/gim.test(message),
     /** Ignores:
      * @type: imgbot
      * @description while imgbot doesn't appears to be ever linted by commitlint because it's
