@@ -4,6 +4,67 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.5.1](https://github.com/mokkapps/changelog-generator-demo/compare/v2.5.0...v2.5.1) (2025-06-12)
+
+
+### Features
+
+* **commitlint:** append commitlint config for dependabot ([8eb8a08](https://github.com/mokkapps/changelog-generator-demo/commits/8eb8a08628b4160a544daef1fcac085411d0235a))
+* **commitlint:** append with more rules for commitlint ([319fbb4](https://github.com/mokkapps/changelog-generator-demo/commits/319fbb4667d804d44c3f509f126fa687bcc06bb6))
+* **commitlint:** expand and fix ignore config of commitlint ([140cac2](https://github.com/mokkapps/changelog-generator-demo/commits/140cac275eb807c708e189979e607551f0f51e53))
+* **dependabot:** advance dependabot's config ([3f88ad0](https://github.com/mokkapps/changelog-generator-demo/commits/3f88ad0fda2f56201f9d97e7e351441ab4754c90))
+
+
+### Build system
+
+* **deps-dev:** bump @changesets/cli from 2.29.2 to 2.29.3 ([1b6f21e](https://github.com/mokkapps/changelog-generator-demo/commits/1b6f21ef1344d8f4ca4d9bc091f6a079520f9e7a))
+* **deps-dev:** bump @changesets/cli from 2.29.3 to 2.29.4 ([9d28583](https://github.com/mokkapps/changelog-generator-demo/commits/9d285833162d37f5ce8786a9fef32d97322a2491))
+* **deps-dev:** bump @commitlint/cli from 19.8.0 to 19.8.1 ([0639f1c](https://github.com/mokkapps/changelog-generator-demo/commits/0639f1cb393e7f1a72feae5f8f51f5c41e1f9ccf))
+* **deps-dev:** bump @commitlint/config-conventional ([1f4e328](https://github.com/mokkapps/changelog-generator-demo/commits/1f4e32864a5fec4e0543fedc89ca3a7667557f44))
+* **deps-dev:** bump @electron/lint-roller from 3.0.0 to 3.1.1 ([bc2b49c](https://github.com/mokkapps/changelog-generator-demo/commits/bc2b49c11bd32e85d5f8275101fa2f0fa9a71a04))
+* **deps-dev:** bump @eslint/js from 9.26.0 to 9.27.0 ([7105321](https://github.com/mokkapps/changelog-generator-demo/commits/7105321244b9bd6cdf3fbe263004186d68087ad2))
+* **deps-dev:** bump @eslint/js from 9.27.0 to 9.28.0 ([cc87b1e](https://github.com/mokkapps/changelog-generator-demo/commits/cc87b1ef93cf2630690de2f35b58d487e49e43f3))
+* **deps-dev:** bump @npmcli/package-json from 6.1.1 to 6.2.0 ([8a05d27](https://github.com/mokkapps/changelog-generator-demo/commits/8a05d2752b22b3660b36b1fb91a4107a3be8dfa5))
+* **deps-dev:** bump @types/chai from 5.2.1 to 5.2.2 ([bc7e323](https://github.com/mokkapps/changelog-generator-demo/commits/bc7e32301353f1304334b0e4c485bd12566aa68d))
+* **deps-dev:** bump @types/node from 22.15.16 to 22.15.18 ([d695d44](https://github.com/mokkapps/changelog-generator-demo/commits/d695d4481cec6514bf1a8b6214291c67479ee0fe))
+* **deps-dev:** bump @types/node from 22.15.18 to 22.15.21 ([b3b8713](https://github.com/mokkapps/changelog-generator-demo/commits/b3b87135a64a0297ef3fd734b15407d66ecd87a1))
+* **deps-dev:** bump @types/node from 22.15.21 to 22.15.30 ([67847dc](https://github.com/mokkapps/changelog-generator-demo/commits/67847dc9c83a91d8b045bd2988565a4aef95cb79))
+* **deps-dev:** bump @types/node from 22.15.3 to 22.15.16 ([df45623](https://github.com/mokkapps/changelog-generator-demo/commits/df45623ad00d17b2a5d44120b70927ced80de474))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([1117f86](https://github.com/mokkapps/changelog-generator-demo/commits/1117f867928740e25d8280fe9a620cc5bc37f53e))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([9397a7c](https://github.com/mokkapps/changelog-generator-demo/commits/9397a7c51188bfacc289363ba91b71115bd33370))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([5d2261b](https://github.com/mokkapps/changelog-generator-demo/commits/5d2261bdea7c82988e62fbcbdbe6c5edd96d6fc5))
+* **deps-dev:** bump @typescript-eslint/parser from 8.31.1 to 8.32.0 ([caba28a](https://github.com/mokkapps/changelog-generator-demo/commits/caba28ada59fe0d4a1967b17bb49875eb39d25ce))
+* **deps-dev:** bump @typescript-eslint/parser from 8.32.0 to 8.32.1 ([6c7bb41](https://github.com/mokkapps/changelog-generator-demo/commits/6c7bb41f629d4c326cef75af56e47a8ca641b35d))
+* **deps-dev:** bump eslint-config-prettier from 10.1.2 to 10.1.5 ([8e52511](https://github.com/mokkapps/changelog-generator-demo/commits/8e52511a00afd683979312f9512af9669aa20551))
+* **deps-dev:** bump eslint-plugin-jsonc from 2.20.0 to 2.20.1 ([a732bb3](https://github.com/mokkapps/changelog-generator-demo/commits/a732bb3993c8d0a6a1174d67bd0f05a9e33ab111))
+* **deps-dev:** bump eslint-plugin-markdownlint from 0.6.0 to 0.9.0 ([d14ff08](https://github.com/mokkapps/changelog-generator-demo/commits/d14ff08f2483037e9c32405e2637e7b2d3ade203))
+* **deps-dev:** bump eslint-plugin-prettier from 5.2.6 to 5.4.0 ([6a0f2c5](https://github.com/mokkapps/changelog-generator-demo/commits/6a0f2c517e4a0a9e899c684c573607ce182c96cb))
+* **deps-dev:** bump globals from 16.0.0 to 16.1.0 ([52e0012](https://github.com/mokkapps/changelog-generator-demo/commits/52e00125a3fce33ad513fc47688c25986070e640))
+* **deps-dev:** bump globals from 16.1.0 to 16.2.0 ([6d31f5a](https://github.com/mokkapps/changelog-generator-demo/commits/6d31f5af07a6d716f2a8186a08887cec93e0dd85))
+* **deps-dev:** bump lint-staged from 15.5.1 to 15.5.2 ([53162d1](https://github.com/mokkapps/changelog-generator-demo/commits/53162d116a8a4df77bb3dbf9d825f067af069763))
+* **deps-dev:** bump lint-staged from 15.5.2 to 16.0.0 ([c69c658](https://github.com/mokkapps/changelog-generator-demo/commits/c69c6585e3f4347ecdb8ae7d2382d28f4715baf1))
+* **deps-dev:** bump lint-staged from 16.0.0 to 16.1.0 ([58a5476](https://github.com/mokkapps/changelog-generator-demo/commits/58a54764b44610cf83564bbc76dc46a1e4663614))
+* **deps-dev:** bump markdownlint-cli from 0.44.0 to 0.45.0 ([5a118c3](https://github.com/mokkapps/changelog-generator-demo/commits/5a118c3669b1bf173b4f88048883a30bd34fe7e4))
+* **deps-dev:** bump mocha from 11.2.2 to 11.3.0 ([4d39901](https://github.com/mokkapps/changelog-generator-demo/commits/4d39901e9fc312f22ac00950e73a03dcd1f81932))
+* **deps-dev:** bump mocha from 11.3.0 to 11.5.0 ([643b954](https://github.com/mokkapps/changelog-generator-demo/commits/643b9541533c040d1389e63d1b06c9015b1e75d1))
+* **deps-dev:** bump textlint from 14.7.1 to 14.7.2 ([c7c325c](https://github.com/mokkapps/changelog-generator-demo/commits/c7c325c63482380d6d94d653e3ff0968d5249aca))
+* **deps:** bump actions/checkout from 3 to 4 ([cac97f4](https://github.com/mokkapps/changelog-generator-demo/commits/cac97f4c478e7f2b512d9b2561fbaab4dfc90ff5))
+* **deps:** bump actions/setup-node from 3 to 4 ([43d5d63](https://github.com/mokkapps/changelog-generator-demo/commits/43d5d630b5f3eccaab6e0bb68a88d98dde1c3b4b))
+* **deps:** bump esbuild from 0.25.3 to 0.25.4 ([a508097](https://github.com/mokkapps/changelog-generator-demo/commits/a5080977ed1fdbc600653ac6b6a93260b0e7da57))
+* **deps:** bump esbuild from 0.25.4 to 0.25.5 ([96c61b2](https://github.com/mokkapps/changelog-generator-demo/commits/96c61b2b948c7f35b3bb4464541cf9ac2cdb6afc))
+* **deps:** bump markdownlint-cli2 from 0.17.2 to 0.18.1 ([a5bcdf7](https://github.com/mokkapps/changelog-generator-demo/commits/a5bcdf737bd22be79eac4adf6834d1b7a0067bb6))
+* **deps:** bump semver from 7.7.1 to 7.7.2 ([88a066a](https://github.com/mokkapps/changelog-generator-demo/commits/88a066a58bc6ea28cc5685cba12018473517b81e))
+* **deps:** bump setuptools ([669756e](https://github.com/mokkapps/changelog-generator-demo/commits/669756eaa323e8ffbf64d6e32e4052fd2faea807))
+* **deps:** bump the npm_and_yarn group with 2 updates ([65425af](https://github.com/mokkapps/changelog-generator-demo/commits/65425afe452797e6320dc87db5ffbeda51ccb520))
+
+
+### Fixes
+
+* **security:** append fix for severity CVE-2025-30167 ([1c0462c](https://github.com/mokkapps/changelog-generator-demo/commits/1c0462ceafeabd321f426766239bb9eb29bffb8a))
+* **security:** remove security issue CVE-2021-23566 ([a83b7b2](https://github.com/mokkapps/changelog-generator-demo/commits/a83b7b2044bf8207985d048e9b229730124d3173))
+* **security:** remove security issue CVE-2022-33987 ([f893737](https://github.com/mokkapps/changelog-generator-demo/commits/f893737fb5f7884393399b10d228e41d384932bf))
+* **security:** remove security issue CVE-2025-27516 ([69630b7](https://github.com/mokkapps/changelog-generator-demo/commits/69630b764e96754ea178080d508d2572416268a5))
+
 ## [2.5.0](https://github.com/mokkapps/changelog-generator-demo/compare/v2.4.0...v2.5.0) (2025-05-07)
 
 

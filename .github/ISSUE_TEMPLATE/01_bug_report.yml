@@ -43,7 +43,7 @@ body:
       label: Version of an project's essence
       description: What version of an project's essence are you running.
       options:
-        - v2.5.0
+        - v2.5.1
         - Another or unknown
       default: 1
     validations:
