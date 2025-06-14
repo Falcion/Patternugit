@@ -1,0 +1,57 @@
+This file is an instruction for manually migrating a PATTERNU repository as a template for your
+repositories from the base ZIP archive attached in the release: this instruction only applies
+when you decide to migrate this template manually and, more often than not, to an unpublished
+local repository.
+
++===============================================================+
+|   ____   _  _____ _____ _____ ____  _   _ _   _       _ _     |
+|  |  _ \ / \|_   _|_   _| ____|  _ \| \ | | | | | __ _(_) |_   |
+|  | |_) / _ \ | |   | | |  _| | |_) |  \| | | | |/ _ | | __|  |
+|  |  __/ ___ \| |   | | | |___|  _ <| |\  | |_| | (_| | | |_   |
+|  |_| /_/   \_\_|   |_| |_____|_| \_\_| \_|\___(_)__, |_|\__|  |
+|                                                 |___/         |
++===============================================================+
+
+Below is a step-by-step instruction for manually migrating a PATTERNU repository as a template for your repositories from the base ZIP archive attached in the release. This instruction applies only when you decide to migrate this template manually, often to an unpublished local repository.
+
+1) Copy the contents of the ZIP archive into your repository.
+2) Edit the basic Git environment files:
+    2.1) Edit .gitignore according to the needs of your project.
+    2.2) Edit .gitattributes according to the needs of your project.
+        * For special tools or information, refer to the corresponding *-readme files.
+    2.3) Configure the Dependabot config in the corresponding file.
+    2.4) IMPORTANT: adjust the settings.{yml,json} file for your needs, connect the appropriate applications:
+        - ImgBot;
+        - Settings (i.e., any configured GitHub Apps/Actions).
+3) Remove and/or update residual files or mentions of the template project, for example in the following files:
+    - Check for leftover data in:
+        - /.github/ISSUE_TEMPLATE/
+        - /.github/DISCUSSION_TEMPLATE/
+    - Don’t forget to replace/remove keys in /.github/keys/, otherwise you will keep using this project’s signatures.
+    - Don’t forget to change the code and commit authors in CODEOWNERS—otherwise you will not be indicated as the owner of the code/commits on the service.
+    - Change the name of this project to yours so that open-source documentation works for your project and does not refer to another repository:
+        * SECURITY.md
+        * CONTRIBUTING.md
+        * ISSUE_POLICY.md
+        * ISSUE_TEMPLATE.md
+        * CODE_OF_CONDUCT.md
+        * PULL_REQUEST_TEMPLATE.md
+    - If you consider that you do not need excessive documentation, delete documentation in the following paths:
+        - /.husky/docs/
+        - /build/README
+        - /data/
+        - /docs/
+        * If you use your own Kubernetes instance, delete /kubernetes/.
+        - /release/
+        * If you use your own shfmt instance, delete /shfmt/ and the corresponding command outlet.
+        - All pattern files *-comments, *-readme: they are used to document other files; remove if not needed.
+        - REFERENCES.md
+        - REFERENCES.json
+        - UNSUPPORTED_VERSIONS.md (if you will not use the versioning script and semver-policy).
+##
+## IMPORTANT: use PATTERNU scripts and automation elements to locate functionality to be migrated in the repository.
+## For example, the main script of this project allows you to search, by default, for mentions of this repo and its author accordingly.
+
+4) Web setup after publishing the repository:
+   4.1) Import rulesets for branches and tags from the corresponding folder /.github/rules/.
+   4.2) Configure your repository based on the web settings specified in files with web settings.
