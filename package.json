@@ -253,7 +253,7 @@
     "standard": "^17.1.2",
     "standard-version": "^9.5.0",
     "stylelint": "^16.21.1",
-    "textlint": "^15.2.0",
+    "textlint": "^15.2.1",
     "textlint-rule-date-weekday-mismatch": "^1.1.1",
     "textlint-rule-editorconfig": "^1.0.3",
     "textlint-rule-footnote-order": "^1.0.3",
