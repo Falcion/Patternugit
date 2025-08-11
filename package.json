@@ -205,7 +205,7 @@
     "@typescript-eslint/eslint-plugin": "^8.33.1",
     "@typescript-eslint/parser": "^8.36.0",
     "builtin-modules": "^5.0.0",
-    "chai": "^5.2.0",
+    "chai": "^5.2.1",
     "chalk": "^5.4.1",
     "check-for-leaks": "^1.2.1",
     "colors": "^1.4.0",
