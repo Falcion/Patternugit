@@ -42,7 +42,7 @@
     },
     {
       "type": "perf",
-      "section": "Perfomance"
+      "section": "Performance"
     },
     {
       "type": "test",
@@ -53,6 +53,6 @@
       "section": "Common"
     }
   ],
-  "commitUrlFormat": "https://github.com/mokkapps/changelog-generator-demo/commits/{{hash}}",
-  "compareUrlFormat": "https://github.com/mokkapps/changelog-generator-demo/compare/{{previousTag}}...{{currentTag}}"
+  "commitUrlFormat": "https://github.com/Falcion/Patternugit/commits/{{hash}}",
+  "compareUrlFormat": "https://github.com/Falcion/Patternugit/compare/{{previousTag}}...{{currentTag}}"
 }
