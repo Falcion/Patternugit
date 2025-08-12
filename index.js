@@ -70,7 +70,6 @@ var __async = (__this, __arguments, generator) => {
 // index.ts
 var index_exports = {}
 __export(index_exports, {
-  CONFIG: () => CONFIG,
   LOCALE_LOGGER: () => LOCALE_LOGGER,
   ask: () => ask,
   default: () => LOCALE_MODULE
@@ -143,7 +142,11 @@ var LOCALE_LOGGER = class {
   }
 }
 var LOCALE_MODULE = class {
-  constructor() {
+  constructor(
+    path2 = this.CONFIG.LOGS_FILE,
+    ignoreUse = this.CONFIG.USE_GITIGNORE,
+    ignorePath = this.CONFIG.GITIGNORE_PATH
+  ) {
     /**
      * The root directory of the module.
      * @type {string}
@@ -174,6 +177,25 @@ var LOCALE_MODULE = class {
       'PATTERNUGIT.NET'
     ])
     __publicField(this, 'LOGGER', new LOCALE_LOGGER())
+    /** **THIS IS A MAIN CONFIG FOR THIS SCRIPT
+     * ONLY EDIT THIS VALUES.**
+     **/
+    __publicField(this, 'CONFIG', {
+      USE_GITIGNORE: true,
+      /**
+       * Path to your gitignore from the root, relative to
+       * the script's directory.
+       */
+      GITIGNORE_PATH: './.gitignore',
+      /**
+       * Path to the future logs of the locale module: by default is static of
+       * config's value.
+       */
+      LOGS_FILE: `preparations-${/* @__PURE__ */ new Date().toLocaleDateString()}.logs`
+    })
+    this.CONFIG.LOGS_FILE = path2
+    this.CONFIG.USE_GITIGNORE = ignoreUse
+    this.CONFIG.GITIGNORE_PATH = ignorePath
   }
   /**
    * Updates the exclusion settings based on user input.
@@ -192,7 +214,7 @@ var LOCALE_MODULE = class {
     if (actions === 'N') {
       this.EXCLUDING_FOLDERS = entries
     }
-    if (CONFIG.USE_GITIGNORE) {
+    if (this.CONFIG.USE_GITIGNORE) {
       const gitignore = fs.readFileSync('.gitignore').toString().split('\n')
       gitignore.forEach((line) => {
         if (line[0] !== '#' && line[0] !== '!') {
@@ -200,7 +222,7 @@ var LOCALE_MODULE = class {
         }
       })
     }
-    fs.ensureFileSync(CONFIG.LOGS_FILE)
+    fs.ensureFileSync(this.CONFIG.LOGS_FILE)
   }
   /**
    * Searches for specified words in file contents.
@@ -211,7 +233,7 @@ var LOCALE_MODULE = class {
   search(filepath, data) {
     return __async(this, null, function* () {
       const buffer = yield fs.readFile(filepath, { encoding: 'utf-8' })
-      const stream = fs.createWriteStream(CONFIG.LOGS_FILE, { flags: 'a' })
+      const stream = fs.createWriteStream(this.CONFIG.LOGS_FILE, { flags: 'a' })
       const contents = buffer.split(os.EOL)
       for (let i = 0; i < contents.length; i++) {
         const line = contents[i].toUpperCase()
@@ -255,11 +277,6 @@ var LOCALE_MODULE = class {
     })
   }
 }
-var CONFIG = {
-  USE_GITIGNORE: true,
-  GITIGNORE_PATH: './.gitignore',
-  LOGS_FILE: `preparations-${/* @__PURE__ */ new Date().toLocaleDateString()}.logs`
-}
 var ask = (rl, question) =>
   __async(null, null, function* () {
     return yield new Promise((resolve) => {
@@ -272,6 +289,7 @@ void (() =>
       input: process.stdin,
       output: process.stdout
     })
+    void (() => __async(null, null, function* () {}))
     try {
       const finder = new LOCALE_MODULE()
       const mode = yield ask(RL, colors.bgBlue(colors.yellow('Add custom entries (Y/N/IGNORE): ')))
