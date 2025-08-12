@@ -159,7 +159,7 @@
   },
   "dependencies": {
     "colors": "^1.4.0",
-    "dotenv": "^16.6.1",
+    "dotenv": "^17.2.1",
     "esbuild": "^0.25.8",
     "esbuild-plugin-glsl": "^1.4.0",
     "esbuild-plugin-node-externals": "^1.0.1",
