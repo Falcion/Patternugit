@@ -255,7 +255,6 @@
     "stylelint": "^16.21.1",
     "textlint": "^15.2.0",
     "textlint-rule-date-weekday-mismatch": "^1.1.1",
-    "textlint-rule-editorconfig": "^1.0.3",
     "textlint-rule-footnote-order": "^1.0.3",
     "textlint-rule-no-curly-quotes": "^1.0.0",
     "textlint-rule-no-todo": "^2.0.1",

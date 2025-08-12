@@ -7,7 +7,6 @@
     "no-curly-quotes": true,
     "no-todo": false,
     "period-in-header": true,
-    "editorconfig": true,
     "spelling": {
       "language": "en",
       "skipPatterns": [
