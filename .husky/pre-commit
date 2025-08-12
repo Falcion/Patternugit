@@ -86,4 +86,6 @@ if [ "$WARN" -eq 1 ]; then
 	echo "💡 Reminder: After generating from this template, run 'git lfs install' and commit your updated .gitattributes.'"
 fi
 
+npx.cmd --no-install commitlint --edit --format "$1"
+
 exit 0
