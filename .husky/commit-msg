@@ -1,1 +1,1 @@
-npx.cmd --no-installcommitlint--edit"$1"
+npx.cmd --no-install commitlint --edit "$1"
