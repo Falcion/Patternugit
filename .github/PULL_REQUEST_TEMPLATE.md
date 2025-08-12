@@ -15,7 +15,7 @@ Keep in mind security issues:
        [Read security policy here.](https://github.com/Falcion/Patternugit/blob/main/.github/SECURITY.md)
 
 By agreeing and following this project's documentation, you are reminded that
-yours commit and styling of changes must follow this project's documentation,
+your commit and styling of changes must follow this project's documentation,
 in case of "de-followization", there are two ways before you make sure to publish
 your pull request:
 
