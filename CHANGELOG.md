@@ -1,8 +1,54 @@
-<!-- markdownlint-disable -->
-<!-- textlint-disable -->
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [2.5.2](https://github.com/Falcion/Patternugit/compare/v2.5.1...v2.5.2) (2025-08-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* **dependencies:** fix dependencies tree in package, fix of #341
+* **textlint:** delete textlint-editorconfig rule
+
+### Features
+
+* **docs:** add instructions for migrating template ([fa4ffe3](https://github.com/Falcion/Patternugit/commits/fa4ffe30f967202c73c4cb7316d0a2a8401eae3e))
+* **hooks:** add commitlint cause upon pre-commit hook ([cc30746](https://github.com/Falcion/Patternugit/commits/cc30746d1d319db683290e9b7f8ba914176ca5b2))
+
+
+### Fixes
+
+* **dependabot:** remove stale reviewers field, fix of [#313](https://github.com/Falcion/Patternugit/issues/313) ([2c99de6](https://github.com/Falcion/Patternugit/commits/2c99de6d8d7f6b94af2fa44157b1dfd17d29f252))
+* **dependencies:** fix dependencies tree in package, fix of [#341](https://github.com/Falcion/Patternugit/issues/341) ([fd77133](https://github.com/Falcion/Patternugit/commits/fd77133af2135e52701f4769099b6e35c14cb492))
+* **docs:** fix misspelling in pull request template, fix of [#340](https://github.com/Falcion/Patternugit/issues/340) ([251ae84](https://github.com/Falcion/Patternugit/commits/251ae84b1e199323198cc741fe1df98f19b9e466))
+* **hooks:** reformat malformed commands in husky hooks, fix of [#342](https://github.com/Falcion/Patternugit/issues/342) ([78dbbcf](https://github.com/Falcion/Patternugit/commits/78dbbcfbf54e28731ab7766d2b42d6984e086a35))
+* **textlint:** delete textlint-editorconfig rule ([a145380](https://github.com/Falcion/Patternugit/commits/a14538038a0d70c48f65cfc4760f93adff66f6a8))
+* **versionrc:** fix misspelling in perfomance and fix links ([35fac80](https://github.com/Falcion/Patternugit/commits/35fac800bac8f2547e14453be366ce7daa476e79)), closes [#342](https://github.com/Falcion/Patternugit/issues/342)
+
+
+### Build system
+
+* **deps-dev:** bump @babel/eslint-parser from 7.27.1 to 7.28.0 ([01c0519](https://github.com/Falcion/Patternugit/commits/01c05197778d6d009cc0b0086a9475e28f646c04))
+* **deps-dev:** bump @electron/lint-roller from 3.1.1 to 3.1.2 ([2f2502a](https://github.com/Falcion/Patternugit/commits/2f2502a2c7f035937542b91143c7b29074b1c200))
+* **deps-dev:** bump @eslint/js from 9.31.0 to 9.32.0 ([85e10a4](https://github.com/Falcion/Patternugit/commits/85e10a4a2c0e6aac357562087190e0401a14b5a3))
+* **deps-dev:** bump editorconfig from 2.0.1 to 3.0.1 ([c09cedb](https://github.com/Falcion/Patternugit/commits/c09cedbddb48e3ecd8e91d693a07557f7736c396))
+* **deps-dev:** bump eslint-config-prettier from 10.1.5 to 10.1.8 ([f9890f3](https://github.com/Falcion/Patternugit/commits/f9890f3451decce0b636fea84e8192019a505482))
+* **deps-dev:** bump eslint-plugin-import from 2.31.0 to 2.32.0 ([4bd468b](https://github.com/Falcion/Patternugit/commits/4bd468b13ef0c879ad714080839c4a4478fc57d7))
+* **deps-dev:** bump globals from 16.2.0 to 16.3.0 ([0e13bf3](https://github.com/Falcion/Patternugit/commits/0e13bf3f41127d83632814465bd5018fb4d38a3e))
+* **deps-dev:** bump lint-staged from 16.1.0 to 16.1.2 ([37054fa](https://github.com/Falcion/Patternugit/commits/37054fa0e9e9abb2ff503e947a01e3c85ebd00b0))
+* **deps-dev:** bump lint-staged from 16.1.2 to 16.1.4 ([3b1b888](https://github.com/Falcion/Patternugit/commits/3b1b888648d9b54f080be93b7805054e3c7d8595))
+* **deps-dev:** bump mocha from 11.5.0 to 11.7.0 ([a7eea15](https://github.com/Falcion/Patternugit/commits/a7eea150b2c9bc1f8733f4b42213279492f15dee))
+* **deps-dev:** bump sinon from 20.0.0 to 21.0.0 ([fbeca1e](https://github.com/Falcion/Patternugit/commits/fbeca1eb5ca2cf53e8cfc63eda0ba17d3a93cd14))
+* **deps-dev:** bump stylelint from 16.19.1 to 16.21.1 ([2003e83](https://github.com/Falcion/Patternugit/commits/2003e83e6f3ea15b226c4f000fc5b98b97630e64))
+* **deps-dev:** bump textlint from 14.7.2 to 15.2.0 ([64ff809](https://github.com/Falcion/Patternugit/commits/64ff809441ae163323f3225813972d3bba68f604))
+* **deps-dev:** bump textlint-rule-date-weekday-mismatch ([9d2c636](https://github.com/Falcion/Patternugit/commits/9d2c636c7380a5bd98cc74fff40ddc9bb6a020c0))
+* **deps-dev:** bump textlint-rule-terminology from 5.2.12 to 5.2.14 ([8e6b9c6](https://github.com/Falcion/Patternugit/commits/8e6b9c650622ff8f277e710253c560d223f4f4c7))
+* **deps-dev:** bump tsx from 4.19.4 to 4.20.3 ([620ce68](https://github.com/Falcion/Patternugit/commits/620ce68dee25ab632064fa971c0492e1783ada07))
+* **deps-env:** update package dependencies ([6342826](https://github.com/Falcion/Patternugit/commits/6342826c20553769b3ba1c4a565042efeb746f26)), closes [#352](https://github.com/Falcion/Patternugit/issues/352) [#351](https://github.com/Falcion/Patternugit/issues/351) [#350](https://github.com/Falcion/Patternugit/issues/350) [#349](https://github.com/Falcion/Patternugit/issues/349) [#348](https://github.com/Falcion/Patternugit/issues/348) [#347](https://github.com/Falcion/Patternugit/issues/347) [#346](https://github.com/Falcion/Patternugit/issues/346) [#345](https://github.com/Falcion/Patternugit/issues/345) [#344](https://github.com/Falcion/Patternugit/issues/344) [#343](https://github.com/Falcion/Patternugit/issues/343)
+* **deps:** bump esbuild from 0.25.5 to 0.25.8 ([2e041ef](https://github.com/Falcion/Patternugit/commits/2e041efadff55df2a995c32acb7e90c3f0abcd81))
+* **deps:** bump prettier from 3.5.3 to 3.6.2 ([e3efc7b](https://github.com/Falcion/Patternugit/commits/e3efc7b2ffd718247d321886aefe8c52fa022120))
+* **deps:** bump requests ([98a55e7](https://github.com/Falcion/Patternugit/commits/98a55e70231650f076e277c05ccdb972d38fc87e))
+* **deps:** bump urllib3 ([ac2e9d6](https://github.com/Falcion/Patternugit/commits/ac2e9d66d84fe2c1e82faea19e932bd5a98090ac))
 
 ### [2.5.1](https://github.com/mokkapps/changelog-generator-demo/compare/v2.5.0...v2.5.1) (2025-06-12)
 
