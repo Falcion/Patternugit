@@ -323,7 +323,7 @@ labels:
     color: '#5bb222'
   - name: repository
     color: '#1bd867'
-  - name: repository/javascripts
+  - name: repository/javascript
     color: '#1bd867'
   - name: repository/pages
     color: '#1bd867'
