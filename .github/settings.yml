@@ -24,7 +24,7 @@ repository:
   has_projects: true
 
   # Either `true` to enable the wiki for this repository, `false` to disable it.
-  has_wiki: false
+  has_wiki: true
 
   # Either `true` to enable downloads for this repository, `false` to disable them.
   has_downloads: true
@@ -323,7 +323,7 @@ labels:
     color: '#5bb222'
   - name: repository
     color: '#1bd867'
-  - name: repository/javascripts
+  - name: repository/javascript
     color: '#1bd867'
   - name: repository/pages
     color: '#1bd867'

@@ -1,9 +1,6 @@
 # Add 'code-scanning' label to any changes within 'code-scanning' folder or any subfolders
 # code-scanning:
 #   - code-scanning/**/*
-documentation:
-  - changed-files:
-      - any-glob-to-any-file: 'docs/**'
 automation/ci-cd:
   - changed-files:
       - any-glob-to-any-file: ['.github/workflows/**', '.github/*.yml']
@@ -23,9 +20,18 @@ release:
   - changed-files:
       - any-glob-to-any-file: 'release/**'
   - base-branch: 'release*'
-javascript:
+repository/javascript:
   - changed-files:
       - any-glob-to-any-file: '**/*.js'
-github_actions:
+localisation:
   - changed-files:
-      - any-glob-to-any-file: ['.github/workflows/**', '.github/*.yml']
+      - any-glob-to-any-file: ['**/locale/*', '**/localisation/*']
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: '**/*.md'
+meta/documentation:
+  - changed-files:
+      - any-glob-to-any-file: '**/docs/*'
+meta/policy:
+  - changed-files:
+      - any-glob-to-any-file: '**/*POLICY*'
