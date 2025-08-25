@@ -228,7 +228,7 @@
     "standard": "^17.1.2",
     "standard-version": "^9.5.0",
     "stylelint": "^16.23.1",
-    "textlint": "^15.2.1",
+    "textlint": "^15.2.2",
     "textlint-rule-date-weekday-mismatch": "^1.1.1",
     "textlint-rule-footnote-order": "^1.0.3",
     "textlint-rule-no-curly-quotes": "^1.0.0",
