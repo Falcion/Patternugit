@@ -4,8 +4,8 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import js from '@eslint/js'
 import { FlatCompat } from '@eslint/eslintrc'
-import globals from 'globals'
 import eslintPluginJsonc from 'eslint-plugin-jsonc'
+import globals from 'globals'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -32,12 +32,12 @@ export default [
     files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
     ignores: ['**/venv/'],
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 2022,
       sourceType: 'module',
       globals: {
         ...globals.node,
         ...globals.browser,
-        ...globals.es2016
+        ...globals.es2022
       }
     }
   },
