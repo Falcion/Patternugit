@@ -21,6 +21,7 @@
     "lint:docs-fiddles": "standard \"docs/fiddles/**/*.js\"",
     "lint:docs-relative-links": "electron-lint-markdown-links --root docs \"**/*.md\"",
     "lint:markdown": "node ./script/lint.js --md",
+    "lint:editorconfig": "editorconfig-checker",
     "lint:ts-check-js-in-markdown": "electron-lint-markdown-ts-check --root docs \"**/*.md\" --ignore \"breaking-changes.md\"",
     "lint:js-in-markdown": "electron-lint-markdown-standard --root docs \"**/*.md\"",
     "create-api-json": "node scripts/js/create-api-json.js",
@@ -193,6 +194,7 @@
     "dictionary-en": "^4.0.0",
     "dugite": "^2.7.1",
     "editorconfig": "^3.0.1",
+    "editorconfig-checker": "^6.1.0",
     "eslint": "^9.33.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin": "^1.0.1",
@@ -257,3 +259,4 @@
     ]
   }
 }
+
