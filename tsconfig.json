@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
     //"module": "ES6",
-    "module": "commonjs",
+    "module": "es2022",
     "declaration": false,
     "removeComments": false,
-    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "target": "ES2022",
@@ -12,7 +11,6 @@
     "outDir": "out",
     "baseUrl": "./",
     "incremental": true,
-    "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
     "sourceMap": false
