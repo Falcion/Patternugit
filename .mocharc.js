@@ -1,3 +1,1 @@
-module.exports = {
-  loader: 'ts-node/esm'
-}
+export const loader = 'ts-node/esm'
