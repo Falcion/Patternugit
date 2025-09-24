@@ -75,11 +75,11 @@ __export(index_exports, {
   default: () => LOCALE_MODULE
 })
 module.exports = __toCommonJS(index_exports)
-var os = __toESM(require('os'))
-var path = __toESM(require('path'))
-var fs = __toESM(require('fs-extra'))
-var readline = __toESM(require('readline'))
-var colors = __toESM(require('colors/safe'))
+var os = __toESM(require('os'), 1)
+var path = __toESM(require('path'), 1)
+var fs = __toESM(require('fs-extra'), 1)
+var readline = __toESM(require('readline'), 1)
+var import_chalk = __toESM(require('chalk'), 1)
 if (os.type() === 'Darwin') process.abort()
 var LOCALE_LOGGER = class {
   constructor() {
@@ -94,28 +94,28 @@ var LOCALE_LOGGER = class {
    * @param {...unknown} data - The data to be logged.
    */
   info(...data) {
-    console.info(colors.blue(this.parseData(data)))
+    console.info(import_chalk.default.blue(this.parseData(data)))
   }
   /**
    * Logs the warn message.
    * @param {...unknown} data - The data to be logged.
    */
   warn(...data) {
-    console.warn(colors.yellow(this.parseData(data)))
+    console.warn(import_chalk.default.yellow(this.parseData(data)))
   }
   /**
    * Logs the error message.
    * @param {...unknown} data - The data to be logged.
    */
   error(...data) {
-    console.error(colors.bgRed(colors.white(this.parseData(data))))
+    console.error(import_chalk.default.bgRed(import_chalk.default.white(this.parseData(data))))
   }
   /**
    * Logs the success message.
    * @param {...unknown} data - The data to be logged.
    */
   success(...data) {
-    console.log(colors.green(this.parseData(data)))
+    console.log(import_chalk.default.green(this.parseData(data)))
   }
   /**
    * Logs the message with custom color.
@@ -239,8 +239,8 @@ var LOCALE_MODULE = class {
         const line = contents[i].toUpperCase()
         for (const target of data) {
           if (line.includes(target)) {
-            this.LOGGER.raw(colors.green, `Found "${target}" in L#${i} of: `)
-            this.LOGGER.raw(colors.cyan, filepath)
+            this.LOGGER.raw(import_chalk.default.green, `Found "${target}" in L#${i} of: `)
+            this.LOGGER.raw(import_chalk.default.cyan, filepath)
             stream.write(`Found "${target}" in L#${i} of:` + os.EOL)
             stream.write(`	${filepath}` + os.EOL)
           }
@@ -292,7 +292,12 @@ void (() =>
     void (() => __async(null, null, function* () {}))
     try {
       const finder = new LOCALE_MODULE()
-      const mode = yield ask(RL, colors.bgBlue(colors.yellow('Add custom entries (Y/N/IGNORE): ')))
+      const mode = yield ask(
+        RL,
+        import_chalk.default.bgBlue(
+          import_chalk.default.yellow('Add custom entries (Y/N/IGNORE): ')
+        )
+      )
       if (mode.toUpperCase() === 'Y') {
         const params = yield ask(RL, 'Enter parameters (comma-separated): ')
         const diction = params.split(',').map((str) => str.trim())
@@ -303,7 +308,9 @@ void (() =>
       }
     } catch (error) {
       console.error(
-        colors.red(typeof error === 'object' ? JSON.stringify(error, null, 2) : String(error))
+        import_chalk.default.red(
+          typeof error === 'object' ? JSON.stringify(error, null, 2) : String(error)
+        )
       )
     } finally {
       RL.close()

@@ -43,7 +43,7 @@
     "update-analytics": "ts-node scripts/js/analytics-workflow.ts",
     "test": "mocha --timeout 10000 --import=tsx test/**/*.test.ts --reporter mocha-github-actions-reporter --exit",
     "buildtsc": "tsc",
-    "build": "tsc -noEmit -skipLibCheck index.ts && node esbuild.config.mjs production",
+    "build": "tsc -noEmit -skipLibCheck index.ts && node esbuild.config.js production",
     "pack": "python scripts/python/pack.py",
     "release-tags": "cd scripts/python && python update_versions_table.py",
     "release-utilities": "cd scripts/js && ts-node utilities.ts",
@@ -160,7 +160,6 @@
     "node": ">=21.1.0"
   },
   "dependencies": {
-    "colors": "^1.4.0",
     "dotenv": "^17.2.2",
     "esbuild": "^0.25.9",
     "esbuild-plugin-glsl": "^1.4.0",
@@ -179,6 +178,7 @@
     "@jscpd/badge-reporter": "^4.0.1",
     "@npmcli/package-json": "^7.0.0",
     "@types/chai": "^5.2.2",
+    "@types/chalk": "^0.4.31",
     "@types/fs-extra": "^11.0.4",
     "@types/minimist": "^1.2.5",
     "@types/mocha": "^10.0.10",

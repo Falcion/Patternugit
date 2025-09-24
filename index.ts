@@ -30,7 +30,8 @@ import * as path from 'path'
 import * as fs from 'fs-extra'
 import * as readline from 'readline'
 
-import * as colors from 'colors/safe'
+import chalk from 'chalk'
+
 import { WriteStream } from 'fs'
 
 /*
@@ -40,7 +41,7 @@ if (os.type() === 'Darwin') process.abort()
 
 /**
  * @class
- * Represents a logger utility for logging messages with different severity levels and colors.
+ * Represents a logger utility for logging messages with different severity levels and chalk.
  */
 export class LOCALE_LOGGER {
   /**
@@ -54,7 +55,7 @@ export class LOCALE_LOGGER {
    * @param {...unknown} data - The data to be logged.
    */
   public info (...data: unknown[]): void {
-    console.info(colors.blue(this.parseData(data)))
+    console.info(chalk.blue(this.parseData(data)))
   }
 
   /**
@@ -62,7 +63,7 @@ export class LOCALE_LOGGER {
    * @param {...unknown} data - The data to be logged.
    */
   public warn (...data: unknown[]): void {
-    console.warn(colors.yellow(this.parseData(data)))
+    console.warn(chalk.yellow(this.parseData(data)))
   }
 
   /**
@@ -70,7 +71,7 @@ export class LOCALE_LOGGER {
    * @param {...unknown} data - The data to be logged.
    */
   public error (...data: unknown[]): void {
-    console.error(colors.bgRed(colors.white(this.parseData(data))))
+    console.error(chalk.bgRed(chalk.white(this.parseData(data))))
   }
 
   /**
@@ -78,7 +79,7 @@ export class LOCALE_LOGGER {
    * @param {...unknown} data - The data to be logged.
    */
   public success (...data: unknown[]): void {
-    console.log(colors.green(this.parseData(data)))
+    console.log(chalk.green(this.parseData(data)))
   }
 
   /**
@@ -225,8 +226,8 @@ export default class LOCALE_MODULE {
 
       for (const target of data) {
         if (line.includes(target)) {
-          this.LOGGER.raw(colors.green, `Found "${target}" in L#${i} of: `)
-          this.LOGGER.raw(colors.cyan, filepath)
+          this.LOGGER.raw(chalk.green, `Found "${target}" in L#${i} of: `)
+          this.LOGGER.raw(chalk.cyan, filepath)
 
           stream.write(`Found "${target}" in L#${i} of:` + os.EOL)
           stream.write(`\t${filepath}` + os.EOL)
@@ -284,7 +285,7 @@ void (async () => {
   try {
     const finder = new LOCALE_MODULE()
 
-    const mode = await ask(RL, colors.bgBlue(colors.yellow('Add custom entries (Y/N/IGNORE): ')))
+    const mode = await ask(RL, chalk.bgBlue(chalk.yellow('Add custom entries (Y/N/IGNORE): ')))
 
     if (mode.toUpperCase() === 'Y') {
       const params = await ask(RL, 'Enter parameters (comma-separated): ')
@@ -299,7 +300,7 @@ void (async () => {
     }
   } catch (error) {
     console.error(
-      colors.red(typeof error === 'object' ? JSON.stringify(error, null, 2) : String(error))
+      chalk.red(typeof error === 'object' ? JSON.stringify(error, null, 2) : String(error))
     )
   } finally {
     RL.close()
