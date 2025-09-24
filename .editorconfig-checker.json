@@ -12,7 +12,7 @@
     "Indentation": false,
     "IndentSize": false,
     "InsertFinalNewline": true,
-    "TrimTrailingWhitespace": false,
+    "TrimTrailingWhitespace": true,
     "MaxLineLength": false
   }
 }

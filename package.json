@@ -229,6 +229,7 @@
     "shellcheck": "^4.1.0",
     "shx": "^0.4.0",
     "sinon": "^21.0.0",
+    "standard": "^17.1.2",
     "standard-version": "^9.5.0",
     "stylelint": "^16.24.0",
     "textlint": "^15.2.2",
@@ -241,6 +242,7 @@
     "textlint-rule-terminology": "^5.2.15",
     "ts-loader": "^9.5.4",
     "ts-node": "^10.9.2",
+    "ts-standard": "^12.0.2",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2"
   },

@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    //"module": "ES6",
     "module": "es2022",
     "declaration": false,
     "removeComments": false,

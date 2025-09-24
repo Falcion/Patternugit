@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-app-deployment
+  namespace: my-app-namespace
 spec:
   replicas: 3
   selector:
@@ -12,9 +13,20 @@ spec:
       labels:
         app: my-app
     spec:
-      containers: # Correctly indented
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
         - name: nginx-container
-          image: nginx
+          image: nginx:1.25.2
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 10001
+            runAsGroup: 10001
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ['ALL']
           resources:
             limits:
               memory: 512Mi
