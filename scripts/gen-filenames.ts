@@ -136,8 +136,8 @@ const main = async (): Promise<void> => {
     ${webpackTargetsWithDeps
       .map(
         (target) => `  ${target.name} = [
-    ${target.dependencies.map((dep) => `    "${dep}",`).join('\n')}]`
-      )
+    ${target.dependencies.map((dep) => `    "${dep}",`).join('\n')}
+  ]`
       .join('\n\n')}}`
   )
 }
