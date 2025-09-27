@@ -6,6 +6,7 @@ import js from '@eslint/js'
 import { FlatCompat } from '@eslint/eslintrc'
 import eslintPluginJsonc from 'eslint-plugin-jsonc'
 import globals from 'globals'
+import importPlugin from 'eslint-plugin-import'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -18,14 +19,7 @@ const compat = new FlatCompat({
 export default [
   {
     // Global ignore patterns
-    ignores: [
-      '**/node_modules/',
-      '**/dist/',
-      '**/out/',
-      '**/prepare_template.js',
-      '*.d.ts',
-      '**/venv/'
-    ]
+    ignores: ['**/node_modules/', '**/dist/', '**/out/', '*.d.ts', '**/venv/', '**/*.config.js']
   },
   {
     // JavaScript-specific configuration
@@ -46,7 +40,8 @@ export default [
     files: ['**/*.ts', '**/*.tsx'],
     ignores: ['**/*.d.ts', '**/venv/'],
     plugins: {
-      '@typescript-eslint': typescriptEslint
+      '@typescript-eslint': typescriptEslint,
+      import: importPlugin
     },
     languageOptions: {
       parser: tsParser,
@@ -54,6 +49,17 @@ export default [
         parser: '@typescript-eslint/parser',
         project: './tsconfig.json',
         tsconfigRootDir: __dirname
+      }
+    },
+    settings: {
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+          project: './tsconfig.json'
+        },
+        node: {
+          extensions: ['.js', '.jsx', '.ts', '.tsx']
+        }
       }
     },
     rules: {
@@ -65,6 +71,11 @@ export default [
       '@typescript-eslint/no-var-requires': 'off'
     }
   },
-  ...compat.extends('eslint:recommended', 'plugin:@typescript-eslint/recommended'),
+  ...compat.extends(
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript'
+  ),
   ...eslintPluginJsonc.configs['flat/recommended-with-jsonc']
 ]
