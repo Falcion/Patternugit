@@ -1,8 +1,67 @@
-<!-- markdownlint-disable -->
-<!-- textlint-disable -->
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [3.0.0](https://github.com/Falcion/Patternugit/compare/v2.5.2...v3.0.0) (2025-10-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* **eslint:** migrate to new version of ESLINT
+* **ecrc:** migrate editorconfig-checker to new version
+
+### Features
+
+* **ecrc:** migrate editorconfig-checker to new version ([ec76a02](https://github.com/Falcion/Patternugit/commits/ec76a02122241a97684f95849189d64cda60aef5))
+* **files:** advance external files from project to wiki ([d042500](https://github.com/Falcion/Patternugit/commits/d0425008aecf47f4f038a13077232212009edcdf))
+* **files:** migrate module-js files to default js files ([12ce716](https://github.com/Falcion/Patternugit/commits/12ce7168318ddb74a8aef2f6caea6502ab5445c1))
+* **files:** remove redundant files from project ([5f6d24e](https://github.com/Falcion/Patternugit/commits/5f6d24ed2c6a088e2f7cfdf8ead7f644070c4bca))
+
+
+* **eslint:** migrate to new version of ESLINT ([4ad8b42](https://github.com/Falcion/Patternugit/commits/4ad8b4228b22558317a2556994853ed57cdbcc25))
+
+
+### Build system
+
+* **build-deps:** migrate from colors/safe to chalk ([6a83c1e](https://github.com/Falcion/Patternugit/commits/6a83c1ed39e76288566d9a23cb4d0d2dd952476f))
+* **deps-dev:** bump @babel/eslint-parser from 7.28.0 to 7.28.4 ([a47f65a](https://github.com/Falcion/Patternugit/commits/a47f65a326eca7feeb139377b27a0ab1aa4d7e7f))
+* **deps-dev:** bump @changesets/cli from 2.29.5 to 2.29.6 ([a85d5bd](https://github.com/Falcion/Patternugit/commits/a85d5bda1d6f1affc2ce187e2065e3a125b9d165))
+* **deps-dev:** bump @changesets/cli from 2.29.6 to 2.29.7 ([7995e75](https://github.com/Falcion/Patternugit/commits/7995e7579464610f563de25ae40572c253d535ca))
+* **deps-dev:** bump @eslint/js from 9.33.0 to 9.34.0, fix of [#367](https://github.com/Falcion/Patternugit/issues/367) ([86e2fd6](https://github.com/Falcion/Patternugit/commits/86e2fd61f48e34265d7ef0aff65ebcf8ac969151))
+* **deps-dev:** bump @eslint/js from 9.34.0 to 9.35.0 ([9761abf](https://github.com/Falcion/Patternugit/commits/9761abf68559105ba509466f5592caf19b0c44ef))
+* **deps-dev:** bump @npmcli/package-json from 6.2.0 to 7.0.0 ([38845c5](https://github.com/Falcion/Patternugit/commits/38845c54fb581049cfa7472bd12c1d824f7cc7d9))
+* **deps-dev:** bump @types/node from 24.2.1 to 24.3.0 ([4d2df61](https://github.com/Falcion/Patternugit/commits/4d2df61b278170201ae75ad1eda3a1c1e5de501b))
+* **deps-dev:** bump @types/node from 24.3.0 to 24.3.1, closes [#383](https://github.com/Falcion/Patternugit/issues/383) ([0b73d37](https://github.com/Falcion/Patternugit/commits/0b73d378c4923a8c83fdbd87b491e0a1f97dd49d))
+* **deps-dev:** bump @types/node from 24.3.1 to 24.4.0 ([7a4b7da](https://github.com/Falcion/Patternugit/commits/7a4b7da331fee095aa93953573dfd711f7719474))
+* **deps-dev:** bump @types/semver from 7.7.0 to 7.7.1 ([2d2321f](https://github.com/Falcion/Patternugit/commits/2d2321f35d9df36dbaab7145a24c23e520b4ded6))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([e7bd822](https://github.com/Falcion/Patternugit/commits/e7bd8221172fa0166101a3476c18712b1e7e9606))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin from 8.39.1 to 8.40.0, fix of [#366](https://github.com/Falcion/Patternugit/issues/366) ([309a45a](https://github.com/Falcion/Patternugit/commits/309a45a69de579a62c23a06c0b6789325548ac31))
+* **deps-dev:** bump @typescript-eslint/parser from 8.39.1 to 8.40.0, fix of [#369](https://github.com/Falcion/Patternugit/issues/369) ([70d90fb](https://github.com/Falcion/Patternugit/commits/70d90fb9efc5c25b840ec3005b351b2b2f92ac06))
+* **deps-dev:** bump @typescript-eslint/parser from 8.41.0 to 8.42.0, closes [#384](https://github.com/Falcion/Patternugit/issues/384) ([9be4a0f](https://github.com/Falcion/Patternugit/commits/9be4a0fa33fd577369cf194de1ed8c592b341e9b))
+* **deps-dev:** bump @typescript-eslint/parser from 8.42.0 to 8.43.0 ([1b9fd94](https://github.com/Falcion/Patternugit/commits/1b9fd94082b70c1614e9585a7fe3221e33969f11))
+* **deps-dev:** bump chai from 5.2.1 to 6.0.1, fix of [#373](https://github.com/Falcion/Patternugit/issues/373) ([71e3ada](https://github.com/Falcion/Patternugit/commits/71e3ada280fb170c97fa5c9121f1dfbe65ba9270))
+* **deps-dev:** bump chalk from 5.5.0 to 5.6.0 ([e504bd8](https://github.com/Falcion/Patternugit/commits/e504bd832b184e0ae0fb2e2c84a3d7635945046a))
+* **deps-dev:** bump chalk from 5.6.0 to 5.6.2 ([c25470b](https://github.com/Falcion/Patternugit/commits/c25470bcce4c2166a07fabc41c9a77fb36bfb53c))
+* **deps-dev:** bump globals from 16.3.0 to 16.4.0 ([9444ec1](https://github.com/Falcion/Patternugit/commits/9444ec10c0ce8ae73954af0d93a84fe9768e0a25))
+* **deps-dev:** bump lint-staged from 16.1.5 to 16.1.6 ([b42983b](https://github.com/Falcion/Patternugit/commits/b42983b77d3f41059a6e156155fa37f195c59f86))
+* **deps-dev:** bump mocha from 11.7.1 to 11.7.2 ([49a9cad](https://github.com/Falcion/Patternugit/commits/49a9cadc3cce176fcdc8343075993cab6fd88c53))
+* **deps-dev:** bump shellcheck from 3.1.0 to 4.1.0 ([e16afab](https://github.com/Falcion/Patternugit/commits/e16afab566ea0c2c280cddee866e76af816e087d))
+* **deps-dev:** bump stylelint from 16.23.1 to 16.24.0 ([3dc431a](https://github.com/Falcion/Patternugit/commits/3dc431a37b6b2bf76aad7b893ad2284ecaf7db54))
+* **deps-dev:** bump textlint from 15.2.1 to 15.2.2, fix of [#368](https://github.com/Falcion/Patternugit/issues/368) ([d8556b3](https://github.com/Falcion/Patternugit/commits/d8556b32b69ad83f9a65acdcbcc44f69a0aed267))
+* **deps-dev:** bump textlint-rule-terminology from 5.2.14 to 5.2.15, fix of [#370](https://github.com/Falcion/Patternugit/issues/370) ([19d8209](https://github.com/Falcion/Patternugit/commits/19d8209ce5174b9b9eaeb4fa68dd8a8f200eecf1))
+* **deps-dev:** bump ts-loader from 9.5.2 to 9.5.4, fix of [#371](https://github.com/Falcion/Patternugit/issues/371) ([c3f0c24](https://github.com/Falcion/Patternugit/commits/c3f0c2400a541f4e62c95d36e467beb6de135b02))
+* **deps-dev:** bump tsx from 4.20.3 to 4.20.4 ([ffa75ed](https://github.com/Falcion/Patternugit/commits/ffa75ed531ec70d332cfe4321a24dc25eb9181b4))
+* **deps-dev:** bump tsx from 4.20.3 to 4.20.5, fix of [#372](https://github.com/Falcion/Patternugit/issues/372) ([93bf5a7](https://github.com/Falcion/Patternugit/commits/93bf5a7597daf7249d2be76f528e8dc73afb6469))
+* **deps:** bump dotenv from 16.6.1 to 17.2.1 ([b031e56](https://github.com/Falcion/Patternugit/commits/b031e5632b3c0a34975050ffbaf75d8cf7d69e0d))
+* **deps:** bump dotenv from 17.2.1 to 17.2.2 ([43b5f5d](https://github.com/Falcion/Patternugit/commits/43b5f5d2eb3cddfda4d55bec8976b49a2096651a))
+* **deps:** bump esbuild from 0.25.8 to 0.25.9 ([d83cc18](https://github.com/Falcion/Patternugit/commits/d83cc189dc5e2823d52476955ad70de64a584d8e))
+* **deps:** migrate chai to new version, closes [#364](https://github.com/Falcion/Patternugit/issues/364) ([2c453ac](https://github.com/Falcion/Patternugit/commits/2c453acab7bfe01bddf2ba72915f6b2c0420a2fe))
+* **target:** update es version in target for configs ([a8e134b](https://github.com/Falcion/Patternugit/commits/a8e134bf0af3bd3e911ed1646a673a630c5f7557))
+
+
+### Fixes
+
+* **mocha:** convert config of mocha to esm ([c64fb56](https://github.com/Falcion/Patternugit/commits/c64fb5649b61516d7d7f350ef780f3078d6437c2))
 
 ### [2.5.2](https://github.com/Falcion/Patternugit/compare/v2.5.1...v2.5.2) (2025-08-12)
 
