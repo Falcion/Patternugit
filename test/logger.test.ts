@@ -1,6 +1,6 @@
-import { expect } from 'chai'
+import { expect } from 'chai' // eslint-disable-line n/no-missing-import
 import { LOCALE_LOGGER } from '../index'
-import sinon from 'sinon'
+import sinon from 'sinon' // eslint-disable-line n/no-missing-import
 import chalk from 'chalk'
 
 describe('LOCALE_LOGGER', () => {
