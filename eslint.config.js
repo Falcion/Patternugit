@@ -7,7 +7,7 @@ import { FlatCompat } from '@eslint/eslintrc'
 import eslintPluginJsonc from 'eslint-plugin-jsonc'
 import globals from 'globals'
 import importPlugin from 'eslint-plugin-import'
-import { includeIgnoreFile } from "@eslint/compat";
+import { includeIgnoreFile } from '@eslint/compat'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -17,10 +17,10 @@ const compat = new FlatCompat({
   allConfig: js.configs.all
 })
 
-const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
+const gitignorePath = fileURLToPath(new URL('.gitignore', import.meta.url))
 
 export default [
-  includeIgnoreFile(gitignorePath, "Imported .gitignore patterns"),
+  includeIgnoreFile(gitignorePath, 'Imported .gitignore patterns'),
   {
     // Global ignore patterns as addition to .gitignore
     ignores: ['**/*.d.ts', '**/*.config.js']
@@ -72,7 +72,7 @@ export default [
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-non-null-assertion': 'off',
-      '@typescript-eslint/no-var-requires': 'off',
+      '@typescript-eslint/no-var-requires': 'off'
     }
   },
   ...compat.extends(
@@ -83,13 +83,9 @@ export default [
   ),
   ...eslintPluginJsonc.configs['flat/recommended-with-jsonc'],
   {
-    "overrides": [
-      {
-        "files": ["test/**/*.ts", "test/**/*.tsx", "**/*.test.ts"],
-        "rules": {
-          "n/no-missing-import": "off"
-        }
-      }
-    ]
+    files: ['test/**/*.ts', 'test/**/*.tsx', '**/*.test.ts'],
+    rules: {
+      'n/no-missing-import': 'off'
+    }
   }
 ]
