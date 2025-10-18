@@ -1,6 +1,6 @@
-import { expect } from 'chai'
+import { expect } from 'chai' // eslint-disable-line n/no-missing-import
 import LOCALE_MODULE from '../index'
-import mock from 'mock-fs'
+import mock from 'mock-fs'// eslint-disable-line n/no-missing-import
 import fs from 'fs-extra'
 
 describe('LOCALE_MODULE', () => {
