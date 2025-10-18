@@ -1,5 +1,17 @@
 {
+  "v2.5.0": {
+    "status": "unsupported",
+    "type": "stable"
+  },
   "v2.5.1": {
+    "status": "unsupported",
+    "type": "stable"
+  },
+  "v2.5.2": {
+    "status": "unsupported",
+    "type": "stable"
+  },
+  "v3.0.0": {
     "status": "supported",
     "type": "stable"
   }
