@@ -8,7 +8,6 @@
     "target": "ES2022",
     "lib": ["es2022", "DOM", "DOM.Iterable"],
     "outDir": "out",
-    "baseUrl": "./",
     "incremental": true,
     "esModuleInterop": true,
     "strict": true,
