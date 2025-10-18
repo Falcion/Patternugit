@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 /*
  * Script was made by: @electron
  * Will not be refactored or touched, for more information, see their
@@ -119,6 +117,9 @@ export async function getCurrentBranch(gitDir) {
         ORIGIN_MAIN_BRANCH_PATTERN.test(b.trim()) ||
         RELEASE_BRANCH_PATTERN.test(b.trim())
     )
+
+    console.log(`${pass} Got current branch! ${branch}`)
+
     if (!branch) {
       console.log(`${fail} no release branch exists for this ref`)
       process.exit(1)

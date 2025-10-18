@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import LOCALE_MODULE from 'index'
+import LOCALE_MODULE from '../index'
 import mock from 'mock-fs'
 import fs from 'fs-extra'
 
