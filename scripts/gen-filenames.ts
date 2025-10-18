@@ -142,6 +142,5 @@ const main = async () => {
 if (require.main === module) {
   main().catch((err) => {
     console.error(err)
-    process.exit(1)
   })
 }

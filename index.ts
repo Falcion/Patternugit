@@ -32,7 +32,7 @@ import * as readline from 'readline'
 
 import chalk from 'chalk'
 
-import { WriteStream } from 'fs'
+import { WriteStream, readFileSync, createWriteStream } from 'fs'
 
 /*
  * Declaring unsupport for macOS, iOS and any related types of platforms.
@@ -54,7 +54,7 @@ export class LOCALE_LOGGER {
    * Logs the info message.
    * @param {...unknown} data - The data to be logged.
    */
-  public info (...data: unknown[]): void {
+  public info(...data: unknown[]): void {
     console.info(chalk.blue(this.parseData(data)))
   }
 
@@ -62,7 +62,7 @@ export class LOCALE_LOGGER {
    * Logs the warn message.
    * @param {...unknown} data - The data to be logged.
    */
-  public warn (...data: unknown[]): void {
+  public warn(...data: unknown[]): void {
     console.warn(chalk.yellow(this.parseData(data)))
   }
 
@@ -70,7 +70,7 @@ export class LOCALE_LOGGER {
    * Logs the error message.
    * @param {...unknown} data - The data to be logged.
    */
-  public error (...data: unknown[]): void {
+  public error(...data: unknown[]): void {
     console.error(chalk.bgRed(chalk.white(this.parseData(data))))
   }
 
@@ -78,7 +78,7 @@ export class LOCALE_LOGGER {
    * Logs the success message.
    * @param {...unknown} data - The data to be logged.
    */
-  public success (...data: unknown[]): void {
+  public success(...data: unknown[]): void {
     console.log(chalk.green(this.parseData(data)))
   }
 
@@ -87,7 +87,7 @@ export class LOCALE_LOGGER {
    * @param {(str: string) => string} color - The color function.
    * @param {...unknown} data - The data to be logged.
    */
-  public raw (color: (str: string) => string, ...data: unknown[]): void {
+  public raw(color: (str: string) => string, ...data: unknown[]): void {
     console.debug(color(this.parseData(data)))
   }
 
@@ -97,11 +97,11 @@ export class LOCALE_LOGGER {
    * @param {string} message - The message to be formatted.
    * @returns {string} The formatted message.
    */
-  public msg (color: (str: string) => string, message: string): string {
+  public msg(color: (str: string) => string, message: string): string {
     return color(message)
   }
 
-  private parseData (...data: unknown[]): string {
+  private parseData(...data: unknown[]): string {
     const ctx = data
       .map((item) => (typeof item === 'object' ? JSON.stringify(item, null, 2) : String(item)))
       .join(' ')
@@ -166,7 +166,7 @@ export default class LOCALE_MODULE {
     LOGS_FILE: `preparations-${new Date().toLocaleDateString()}.logs`
   }
 
-  constructor (
+  constructor(
     path: string = this.CONFIG.LOGS_FILE,
     ignoreUse: boolean = this.CONFIG.USE_GITIGNORE,
     ignorePath: string = this.CONFIG.GITIGNORE_PATH
@@ -181,7 +181,7 @@ export default class LOCALE_MODULE {
    * @param {string[]} entries - Entries to be added to the exclusion list.
    * @param {string} actions - User action (Y or N).
    */
-  public update (entries: string[], actions: string): void {
+  public update(entries: string[], actions: string): void {
     if (actions.length > 1) {
       throw new RangeError('Action input must be a char.')
     }
@@ -197,7 +197,7 @@ export default class LOCALE_MODULE {
     }
 
     if (this.CONFIG.USE_GITIGNORE) {
-      const gitignore = fs.readFileSync('.gitignore').toString().split('\n')
+      const gitignore = readFileSync('.gitignore').toString().split('\n')
 
       gitignore.forEach((line) => {
         if (line[0] !== '#' && line[0] !== '!') {
@@ -215,9 +215,9 @@ export default class LOCALE_MODULE {
    * @param {string[]} data - Words to search for.
    * @returns {Promise<void>} A promise representing the search operation.
    */
-  public async search (filepath: string, data: string[]): Promise<void> {
+  public async search(filepath: string, data: string[]): Promise<void> {
     const buffer: string = await fs.readFile(filepath, { encoding: 'utf-8' })
-    const stream: WriteStream = fs.createWriteStream(this.CONFIG.LOGS_FILE, { flags: 'a' })
+    const stream: WriteStream = createWriteStream(this.CONFIG.LOGS_FILE, { flags: 'a' })
 
     const contents: string[] = buffer.split(os.EOL)
 
@@ -243,7 +243,7 @@ export default class LOCALE_MODULE {
    * @param {string} directory - The directory to start traversal from.
    * @returns {Promise<void>} A promise representing the traversal operation.
    */
-  public async traverse (directory: string = __dirname): Promise<void> {
+  public async traverse(directory: string = __dirname): Promise<void> {
     try {
       const items: string[] = await fs.readdir(directory)
 
@@ -280,7 +280,7 @@ void (async () => {
     output: process.stdout
   })
 
-  void (async () => {})
+  void (async () => { })
 
   try {
     const finder = new LOCALE_MODULE()
