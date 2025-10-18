@@ -73,9 +73,6 @@ export default [
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/no-var-requires': 'off',
-      "n/no-missing-import": ["error", {
-        "ignoreTypeImport": true
-      }]
     }
   },
   ...compat.extends(
@@ -84,5 +81,15 @@ export default [
     'plugin:import/recommended',
     'plugin:import/typescript'
   ),
-  ...eslintPluginJsonc.configs['flat/recommended-with-jsonc']
+  ...eslintPluginJsonc.configs['flat/recommended-with-jsonc'],
+  {
+    "overrides": [
+      {
+        "files": ["test/**/*.ts", "test/**/*.tsx", "**/*.test.ts"],
+        "rules": {
+          "n/no-missing-import": "off"
+        }
+      }
+    ]
+  }
 ]
