@@ -1,4 +1,4 @@
- 
+
 import * as cp from 'node:child_process'
 import * as fs from 'node:fs'
 import * as os from 'node:os'
@@ -129,26 +129,18 @@ const main = async () => {
   fs.writeFileSync(
     gniPath,
     `# THIS FILE IS AUTO-GENERATED, PLEASE DO NOT EDIT BY HAND
-auto_filenames = {
-  api_docs = [
-${allDocs.map((doc) => `    "${doc}",`).join('\n')}
-  ]
-
-${webpackTargetsWithDeps
-  .map(
-    (target) => `  ${target.name} = [
-${target.dependencies.map((dep) => `    "${dep}",`).join('\n')}
-  ]`
-  )
-  .join('\n\n')}
-}
-`
-  )
+     auto_filenames = {
+        api_docs = [
+        ${allDocs.map((doc) => `    "${doc}",`).join('\n')}
+        ],
+        ${webpackTargetsWithDeps.map((target) => `  ${target.name} = [
+        ${target.dependencies.map((dep) => `    "${dep}",`).join('\n')}
+        ]`).join('\n\n')}
+     }`);
 }
 
 if (require.main === module) {
   main().catch((err) => {
     console.error(err)
-    process.exit(1)
   })
 }

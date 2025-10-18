@@ -21,8 +21,5 @@
     "README": "plaintext",
     "*-{comments, readme}*": "markdown"
   },
-  /* Ignoring E0015 for invoking bash-like environment in some scripts.
-     Inherited from scripts and infrastructure demands for linters associations.
-   */
   "pylint.args": ["--disable=E0015"]
 }

@@ -1,7 +1,7 @@
 import { chmodSync, readdirSync, statSync } from 'fs'
 import { join } from 'path'
 
-function setExecutable(filePath) {
+function setExecutable (filePath) {
   try {
     chmodSync(filePath, '755')
   } catch (error) {
@@ -9,7 +9,7 @@ function setExecutable(filePath) {
   }
 }
 
-function processDirectory(dirPath) {
+function processDirectory (dirPath) {
   readdirSync(dirPath).forEach((file) => {
     const fullPath = join(dirPath, file)
     if (statSync(fullPath).isDirectory()) {

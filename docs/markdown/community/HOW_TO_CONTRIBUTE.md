@@ -555,7 +555,7 @@ If the project is on GitHub, here's how to submit a pull request:
   clone it locally. Connect your local to the original "upstream" repository by
   adding it as a remote. Pull in changes from "upstream" often so that you stay
   up to date so that when you submit your pull request, merge conflicts will be
-  less likely. (See more detailed instructions [here](https://help.github.com/articles/syncing-a-fork/).)
+  less likely. (See more detailed instructions [in this article](https://help.github.com/articles/syncing-a-fork/).)
 - **[Create a branch](https://guides.github.com/introduction/flow/)** for your edits.
 - **Reference any relevant issues** or supporting documentation in your PR (for
   example, "Closes #37.")
