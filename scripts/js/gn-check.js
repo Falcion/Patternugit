@@ -20,7 +20,7 @@ $ node ./script/gn-check.js [--outDir=dirName]
 import { spawnSync } from 'node:child_process'
 import { normalize, dirname, resolve, delimiter } from 'node:path'
 
-import { getOutDir } from './lib/utils'
+import { getOutDir } from '../lib/utils'
 // This is "magic code"
 // eslint-disable-next-line
 const args = require('minimist')(process.argv.slice(2), { string: ['outDir'] })

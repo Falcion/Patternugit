@@ -172,6 +172,8 @@
     "@changesets/cli": "^2.29.7",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@electron/asar": "^3.4.1",
+    "@electron/docs-parser": "^2.0.0",
     "@electron/lint-roller": "^3.1.2",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.35.0",
@@ -246,19 +248,5 @@
     "ts-standard": "^12.0.2",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2"
-  },
-  "standard": {
-    "ignore": [
-      "**/out/",
-      "**/lib/*",
-      "**/venv/"
-    ]
-  },
-  "ts-standard": {
-    "ignore": [
-      "**/out/",
-      "**/lib/*",
-      "**/venv/"
-    ]
   }
 }
