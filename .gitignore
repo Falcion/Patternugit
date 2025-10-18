@@ -126,6 +126,8 @@ ts*.buildinfo*
 
 # Python VENV
 **/venv/
+## Mypy cache
+**/.mypy_cache/
 
 # JSCPD reports
 report/

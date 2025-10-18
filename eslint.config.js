@@ -7,6 +7,7 @@ import { FlatCompat } from '@eslint/eslintrc'
 import eslintPluginJsonc from 'eslint-plugin-jsonc'
 import globals from 'globals'
 import importPlugin from 'eslint-plugin-import'
+import { includeIgnoreFile } from "@eslint/compat";
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -16,10 +17,13 @@ const compat = new FlatCompat({
   allConfig: js.configs.all
 })
 
+const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
+
 export default [
+  includeIgnoreFile(gitignorePath, "Imported .gitignore patterns"),
   {
-    // Global ignore patterns
-    ignores: ['**/node_modules/', '**/dist/', '**/out/', '*.d.ts', '**/venv/', '**/*.config.js']
+    // Global ignore patterns as addition to .gitignore
+    ignores: ['**/*.d.ts', '**/*.config.js']
   },
   {
     // JavaScript-specific configuration
