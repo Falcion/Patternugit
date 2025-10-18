@@ -15,7 +15,7 @@ import { parseDocs } from '@electron/docs-parser'
 import { promises } from 'node:fs'
 import { resolve } from 'node:path'
 
-import { getElectronVersion } from './lib/get-version'
+import { getElectronVersion } from '../lib/get-version'
 
 parseDocs({
   baseDirectory: resolve(__dirname, '..'),

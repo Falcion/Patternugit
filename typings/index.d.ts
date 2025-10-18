@@ -3,7 +3,7 @@
 declare module '@patternu/preparation' {
   import { WriteStream } from 'fs'
   import * as readline from 'readline'
-  import * as colors from 'colors/safe'
+  import chalk from 'chalk'
 
   /**
    * Configuration object for the script
