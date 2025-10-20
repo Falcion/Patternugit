@@ -170,7 +170,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.28.4",
     "@changesets/cli": "^2.29.7",
-    "@commitlint/cli": "^19.8.1",
+    "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^19.8.1",
     "@electron/asar": "^3.4.1",
     "@electron/docs-parser": "^2.0.0",
