@@ -168,7 +168,7 @@
     "fs-extra": "^11.3.2"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.28.4",
+    "@babel/eslint-parser": "^7.28.5",
     "@changesets/cli": "^2.29.7",
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^19.8.1",
