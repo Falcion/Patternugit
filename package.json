@@ -181,7 +181,7 @@
     "@jscpd/badge-reporter": "^4.0.1",
     "@npmcli/package-json": "^7.0.1",
     "@types/chai": "^5.2.2",
-    "@types/chalk": "^0.4.31",
+    "@types/chalk": "^2.2.4",
     "@types/fs-extra": "^11.0.4",
     "@types/minimist": "^1.2.5",
     "@types/mocha": "^10.0.10",
