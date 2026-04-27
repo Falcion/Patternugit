@@ -160,7 +160,7 @@
     "node": ">=21.1.0"
   },
   "dependencies": {
-    "dotenv": "^17.2.2",
+    "dotenv": "^17.4.2",
     "esbuild": "^0.25.11",
     "esbuild-plugin-glsl": "^1.4.0",
     "esbuild-plugin-node-externals": "^1.0.1",
