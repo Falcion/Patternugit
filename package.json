@@ -177,7 +177,7 @@
     "@electron/lint-roller": "^3.1.2",
     "@eslint/compat": "^1.4.0",
     "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.38.0",
+    "@eslint/js": "^10.0.1",
     "@jscpd/badge-reporter": "^4.0.1",
     "@npmcli/package-json": "^7.0.1",
     "@types/chai": "^5.2.2",
