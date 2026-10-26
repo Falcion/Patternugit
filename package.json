@@ -201,7 +201,7 @@
     "editorconfig-checker": "^6.1.0",
     "eslint": "^9.35.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin": "^1.0.1",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsonc": "^2.20.1",
